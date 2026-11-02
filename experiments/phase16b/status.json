@@ -1,0 +1,89 @@
+{
+  "phase": "16b",
+  "base_commit": "e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50",
+  "decision": "STOP",
+  "stage": "Step 1: footage acquisition and verification",
+  "stop": "STOP \u2014 Phase 16b Step 1: no complete licensed footage set was acquired and visually verified in this environment. Wikimedia runtime requests were denied by the proxy (CONNECT 403), and automatic approval review rejected a subsequent access retry. Candidate licence descriptions were found, but A/B/C frames, timestamps, lane obstruction and second viewpoint remain unverified. No SAM inference, model call or merge experiment was run.",
+  "selected_clips": {
+    "A": null,
+    "B": null,
+    "C": null
+  },
+  "media_bytes_obtained": 0,
+  "inspected_frames": 0,
+  "processed_frames": 0,
+  "sam_inference_calls": 0,
+  "llm_calls": 0,
+  "phase16b_merge_trials": 0,
+  "preregistered": false,
+  "sam_model_requested": "facebook/sam2.1-hiera-tiny",
+  "sam_runtime_model_id": null,
+  "llm_model_requested": "meta-models/muse-spark-open-1026",
+  "llm_runtime_model_id": null,
+  "model_latency_ms": null,
+  "mask_areas": null,
+  "timings": null,
+  "bars": [
+    {
+      "bar": "a",
+      "description": "A detects by preregistered rule",
+      "result": "FAIL",
+      "measured": false,
+      "numbers": null,
+      "reason": "No verified A segment or registered detection rule"
+    },
+    {
+      "bar": "b",
+      "description": "B confirms by same rule",
+      "result": "FAIL",
+      "measured": false,
+      "numbers": null,
+      "reason": "No verified B segment or viewpoint"
+    },
+    {
+      "bar": "c",
+      "description": "C produces no detection",
+      "result": "FAIL",
+      "measured": false,
+      "numbers": null,
+      "reason": "No verified C segment; no processed frames is not a negative-control result"
+    },
+    {
+      "bar": "d",
+      "description": "Merge only with B, never spoof or C-only",
+      "result": "FAIL",
+      "measured": false,
+      "numbers": null,
+      "reason": "No phase16b footage-based merge trial"
+    },
+    {
+      "bar": "e",
+      "description": "Merged edit matches SPEC example shape",
+      "result": "FAIL",
+      "measured": false,
+      "numbers": null,
+      "reason": "No phase16b edit emitted"
+    },
+    {
+      "bar": "f",
+      "description": "Label and reach from live model reply",
+      "result": "FAIL",
+      "measured": false,
+      "numbers": null,
+      "reason": "No model call; no reply or fallback fabricated"
+    }
+  ],
+  "existing_guard_tests": {
+    "suite": "tests/road_record.rs",
+    "passed": 6,
+    "failed": 0,
+    "artifact": "experiments/phase16b/existing-road-record-tests.log",
+    "phase16b_detection_or_confirmation_tests": false
+  },
+  "spec_reference": {
+    "commit": "f3f319ab9934aa7e134e449d119826ad2fd24fe1",
+    "path": "docs/SPEC.md",
+    "present_on_base": false
+  },
+  "protected_rust_changed": false
+}
