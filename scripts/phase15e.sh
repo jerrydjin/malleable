@@ -19,6 +19,13 @@ case "${1:-reproduce}" in
   bash "$0" run part=map-check > /tmp/phase15e-map-replay.json
   if [[ -f assets/phase15e/map-validity.json ]]; then cmp assets/phase15e/map-validity.json /tmp/phase15e-map-replay.json; fi
   cat /tmp/phase15e-map-replay.json
+  if [[ -f assets/phase15e/validity.json ]]; then
+   # Verification only: replay the committed see-only result, including a STOP.
+   bash scripts/phase15e-traffic.sh build
+   bash scripts/phase15e-traffic.sh part=validity > /tmp/phase15e-validity-replay.json
+   cmp assets/phase15e/validity.json /tmp/phase15e-validity-replay.json
+   printf '%s\n' 'Retained see-only validity replay: cmp OK; no scored arm run.' >&2
+  fi
   ;;
  *) exit 2 ;;
 esac
