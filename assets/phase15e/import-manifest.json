@@ -573,6 +573,10 @@
     ],
     [
       "osm",
+      12471737479
+    ],
+    [
+      "osm",
       1261495895
     ],
     [
@@ -1906,6 +1910,10 @@
     [
       "osm",
       5443111069
+    ],
+    [
+      "osm",
+      5443111076
     ],
     [
       "osm",
@@ -3318,6 +3326,10 @@
     [
       "osm",
       8164697099
+    ],
+    [
+      "osm",
+      8433983988
     ],
     [
       "osm",
@@ -37249,7 +37261,7 @@
       ],
       "to_key": [
         "osm",
-        4941621032
+        5443111076
       ],
       "osm_tags": {
         "highway": "service",
@@ -37260,18 +37272,19 @@
     },
     {
       "edge": 1334,
-      "osm_way": 565079457,
-      "part": 0,
+      "osm_way": 565079456,
+      "part": 1,
       "from_key": [
         "osm",
-        5443111086
+        5443111076
       ],
       "to_key": [
         "osm",
-        5443111083
+        4941621032
       ],
       "osm_tags": {
-        "highway": "service"
+        "highway": "service",
+        "oneway": "yes"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -37282,11 +37295,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        5443111083
+        5443111086
       ],
       "to_key": [
         "osm",
-        5443111086
+        5443111083
       ],
       "osm_tags": {
         "highway": "service"
@@ -37296,15 +37309,15 @@
     },
     {
       "edge": 1336,
-      "osm_way": 565079458,
+      "osm_way": 565079457,
       "part": 0,
       "from_key": [
         "osm",
-        5443111089
+        5443111083
       ],
       "to_key": [
         "osm",
-        5443111087
+        5443111086
       ],
       "osm_tags": {
         "highway": "service"
@@ -37318,6 +37331,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443111089
+      ],
+      "to_key": [
+        "osm",
+        5443111087
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1338,
+      "osm_way": 565079458,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443111087
       ],
       "to_key": [
@@ -37331,34 +37362,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1338,
-      "osm_way": 565079459,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443111095
-      ],
-      "to_key": [
-        "osm",
-        5443111093
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1339,
       "osm_way": 565079459,
       "part": 0,
       "from_key": [
         "osm",
-        5443111093
+        5443111095
       ],
       "to_key": [
         "osm",
-        5443111095
+        5443111093
       ],
       "osm_tags": {
         "highway": "service"
@@ -37368,6 +37381,24 @@
     },
     {
       "edge": 1340,
+      "osm_way": 565079459,
+      "part": 0,
+      "from_key": [
+        "osm",
+        5443111093
+      ],
+      "to_key": [
+        "osm",
+        5443111095
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1341,
       "osm_way": 565079461,
       "part": 0,
       "from_key": [
@@ -37387,34 +37418,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1341,
-      "osm_way": 565104367,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322827
-      ],
-      "to_key": [
-        "osm",
-        5443322461
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1342,
       "osm_way": 565104367,
       "part": 0,
       "from_key": [
         "osm",
-        5443322461
+        5443322827
       ],
       "to_key": [
         "osm",
-        5443322827
+        5443322461
       ],
       "osm_tags": {
         "highway": "service"
@@ -37424,15 +37437,15 @@
     },
     {
       "edge": 1343,
-      "osm_way": 565104368,
+      "osm_way": 565104367,
       "part": 0,
       "from_key": [
         "osm",
-        5443322466
+        5443322461
       ],
       "to_key": [
         "osm",
-        5443322465
+        5443322827
       ],
       "osm_tags": {
         "highway": "service"
@@ -37446,6 +37459,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322466
+      ],
+      "to_key": [
+        "osm",
+        5443322465
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1345,
+      "osm_way": 565104368,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322465
       ],
       "to_key": [
@@ -37459,34 +37490,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1345,
-      "osm_way": 565104369,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322469
-      ],
-      "to_key": [
-        "osm",
-        5443322467
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1346,
       "osm_way": 565104369,
       "part": 0,
       "from_key": [
         "osm",
-        5443322467
+        5443322469
       ],
       "to_key": [
         "osm",
-        5443322469
+        5443322467
       ],
       "osm_tags": {
         "highway": "service"
@@ -37496,15 +37509,15 @@
     },
     {
       "edge": 1347,
-      "osm_way": 565104370,
+      "osm_way": 565104369,
       "part": 0,
       "from_key": [
         "osm",
-        3981906006
+        5443322467
       ],
       "to_key": [
         "osm",
-        5443322470
+        5443322469
       ],
       "osm_tags": {
         "highway": "service"
@@ -37518,6 +37531,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        3981906006
+      ],
+      "to_key": [
+        "osm",
+        5443322470
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1349,
+      "osm_way": 565104370,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322470
       ],
       "to_key": [
@@ -37531,34 +37562,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1349,
-      "osm_way": 565104373,
-      "part": 0,
-      "from_key": [
-        "osm",
-        775318093
-      ],
-      "to_key": [
-        "osm",
-        5443322480
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1350,
       "osm_way": 565104373,
       "part": 0,
       "from_key": [
         "osm",
-        5443322480
+        775318093
       ],
       "to_key": [
         "osm",
-        775318093
+        5443322480
       ],
       "osm_tags": {
         "highway": "service"
@@ -37568,15 +37581,15 @@
     },
     {
       "edge": 1351,
-      "osm_way": 565104374,
+      "osm_way": 565104373,
       "part": 0,
       "from_key": [
         "osm",
-        5443322489
+        5443322480
       ],
       "to_key": [
         "osm",
-        5443322486
+        775318093
       ],
       "osm_tags": {
         "highway": "service"
@@ -37590,6 +37603,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322489
+      ],
+      "to_key": [
+        "osm",
+        5443322486
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1353,
+      "osm_way": 565104374,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322486
       ],
       "to_key": [
@@ -37603,34 +37634,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1353,
-      "osm_way": 565104375,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322493
-      ],
-      "to_key": [
-        "osm",
-        5443322490
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1354,
       "osm_way": 565104375,
       "part": 0,
       "from_key": [
         "osm",
-        5443322490
+        5443322493
       ],
       "to_key": [
         "osm",
-        5443322493
+        5443322490
       ],
       "osm_tags": {
         "highway": "service"
@@ -37640,15 +37653,15 @@
     },
     {
       "edge": 1355,
-      "osm_way": 565104376,
+      "osm_way": 565104375,
       "part": 0,
       "from_key": [
         "osm",
-        5443322496
+        5443322490
       ],
       "to_key": [
         "osm",
-        5443322494
+        5443322493
       ],
       "osm_tags": {
         "highway": "service"
@@ -37662,6 +37675,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322496
+      ],
+      "to_key": [
+        "osm",
+        5443322494
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1357,
+      "osm_way": 565104376,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322494
       ],
       "to_key": [
@@ -37675,34 +37706,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1357,
-      "osm_way": 565104377,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4710903190
-      ],
-      "to_key": [
-        "osm",
-        5443322499
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1358,
       "osm_way": 565104377,
       "part": 0,
       "from_key": [
         "osm",
-        5443322499
+        4710903190
       ],
       "to_key": [
         "osm",
-        4710903190
+        5443322499
       ],
       "osm_tags": {
         "highway": "service"
@@ -37712,15 +37725,15 @@
     },
     {
       "edge": 1359,
-      "osm_way": 565104378,
+      "osm_way": 565104377,
       "part": 0,
       "from_key": [
         "osm",
-        1472411078
+        5443322499
       ],
       "to_key": [
         "osm",
-        5443322501
+        4710903190
       ],
       "osm_tags": {
         "highway": "service"
@@ -37734,6 +37747,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        1472411078
+      ],
+      "to_key": [
+        "osm",
+        5443322501
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1361,
+      "osm_way": 565104378,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322501
       ],
       "to_key": [
@@ -37747,34 +37778,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1361,
-      "osm_way": 565104379,
-      "part": 0,
-      "from_key": [
-        "osm",
-        1261495895
-      ],
-      "to_key": [
-        "osm",
-        5443322503
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1362,
       "osm_way": 565104379,
       "part": 0,
       "from_key": [
         "osm",
-        5443322503
+        1261495895
       ],
       "to_key": [
         "osm",
-        1261495895
+        5443322503
       ],
       "osm_tags": {
         "highway": "service"
@@ -37784,15 +37797,15 @@
     },
     {
       "edge": 1363,
-      "osm_way": 565104380,
+      "osm_way": 565104379,
       "part": 0,
       "from_key": [
         "osm",
-        5443322515
+        5443322503
       ],
       "to_key": [
         "osm",
-        8434240144
+        1261495895
       ],
       "osm_tags": {
         "highway": "service"
@@ -37806,6 +37819,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322515
+      ],
+      "to_key": [
+        "osm",
+        8434240144
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1365,
+      "osm_way": 565104380,
+      "part": 0,
+      "from_key": [
+        "osm",
         8434240144
       ],
       "to_key": [
@@ -37819,34 +37850,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1365,
-      "osm_way": 565104380,
-      "part": 1,
-      "from_key": [
-        "osm",
-        8434240144
-      ],
-      "to_key": [
-        "osm",
-        5443322508
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1366,
       "osm_way": 565104380,
       "part": 1,
       "from_key": [
         "osm",
-        5443322508
+        8434240144
       ],
       "to_key": [
         "osm",
-        8434240144
+        5443322508
       ],
       "osm_tags": {
         "highway": "service"
@@ -37856,15 +37869,15 @@
     },
     {
       "edge": 1367,
-      "osm_way": 565104381,
-      "part": 0,
+      "osm_way": 565104380,
+      "part": 1,
       "from_key": [
         "osm",
-        5443322821
+        5443322508
       ],
       "to_key": [
         "osm",
-        5443322516
+        8434240144
       ],
       "osm_tags": {
         "highway": "service"
@@ -37878,6 +37891,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322821
+      ],
+      "to_key": [
+        "osm",
+        5443322516
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1369,
+      "osm_way": 565104381,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322516
       ],
       "to_key": [
@@ -37891,34 +37922,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1369,
-      "osm_way": 565104382,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322826
-      ],
-      "to_key": [
-        "osm",
-        5443322822
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1370,
       "osm_way": 565104382,
       "part": 0,
       "from_key": [
         "osm",
-        5443322822
+        5443322826
       ],
       "to_key": [
         "osm",
-        5443322826
+        5443322822
       ],
       "osm_tags": {
         "highway": "service"
@@ -37928,11 +37941,11 @@
     },
     {
       "edge": 1371,
-      "osm_way": 565104383,
+      "osm_way": 565104382,
       "part": 0,
       "from_key": [
         "osm",
-        5443322827
+        5443322822
       ],
       "to_key": [
         "osm",
@@ -37950,6 +37963,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322827
+      ],
+      "to_key": [
+        "osm",
+        5443322826
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1373,
+      "osm_way": 565104383,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322826
       ],
       "to_key": [
@@ -37963,34 +37994,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1373,
-      "osm_way": 565104383,
-      "part": 1,
-      "from_key": [
-        "osm",
-        5443322826
-      ],
-      "to_key": [
-        "osm",
-        5443322824
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1374,
       "osm_way": 565104383,
       "part": 1,
       "from_key": [
         "osm",
-        5443322824
+        5443322826
       ],
       "to_key": [
         "osm",
-        5443322826
+        5443322824
       ],
       "osm_tags": {
         "highway": "service"
@@ -38000,6 +38013,24 @@
     },
     {
       "edge": 1375,
+      "osm_way": 565104383,
+      "part": 1,
+      "from_key": [
+        "osm",
+        5443322824
+      ],
+      "to_key": [
+        "osm",
+        5443322826
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1376,
       "osm_way": 565104384,
       "part": 0,
       "from_key": [
@@ -38018,34 +38049,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1376,
-      "osm_way": 565104385,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322837
-      ],
-      "to_key": [
-        "osm",
-        5443322827
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1377,
       "osm_way": 565104385,
       "part": 0,
       "from_key": [
         "osm",
-        5443322827
+        5443322837
       ],
       "to_key": [
         "osm",
-        5443322837
+        5443322827
       ],
       "osm_tags": {
         "highway": "service"
@@ -38055,15 +38068,15 @@
     },
     {
       "edge": 1378,
-      "osm_way": 565104386,
+      "osm_way": 565104385,
       "part": 0,
       "from_key": [
         "osm",
-        5443322834
+        5443322827
       ],
       "to_key": [
         "osm",
-        5443322830
+        5443322837
       ],
       "osm_tags": {
         "highway": "service"
@@ -38077,11 +38090,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        5443322830
+        5443322834
       ],
       "to_key": [
         "osm",
-        5443322834
+        5443322830
       ],
       "osm_tags": {
         "highway": "service"
@@ -38091,11 +38104,11 @@
     },
     {
       "edge": 1380,
-      "osm_way": 565104387,
+      "osm_way": 565104386,
       "part": 0,
       "from_key": [
         "osm",
-        5443322835
+        5443322830
       ],
       "to_key": [
         "osm",
@@ -38113,6 +38126,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322835
+      ],
+      "to_key": [
+        "osm",
+        5443322834
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1382,
+      "osm_way": 565104387,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322834
       ],
       "to_key": [
@@ -38126,34 +38157,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1382,
-      "osm_way": 565104387,
-      "part": 1,
-      "from_key": [
-        "osm",
-        5443322834
-      ],
-      "to_key": [
-        "osm",
-        5443322833
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1383,
       "osm_way": 565104387,
       "part": 1,
       "from_key": [
         "osm",
-        5443322833
+        5443322834
       ],
       "to_key": [
         "osm",
-        5443322834
+        5443322833
       ],
       "osm_tags": {
         "highway": "service"
@@ -38163,6 +38176,24 @@
     },
     {
       "edge": 1384,
+      "osm_way": 565104387,
+      "part": 1,
+      "from_key": [
+        "osm",
+        5443322833
+      ],
+      "to_key": [
+        "osm",
+        5443322834
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1385,
       "osm_way": 565104388,
       "part": 0,
       "from_key": [
@@ -38181,7 +38212,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1385,
+      "edge": 1386,
       "osm_way": 565104388,
       "part": 1,
       "from_key": [
@@ -38200,34 +38231,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1386,
-      "osm_way": 565104389,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322841
-      ],
-      "to_key": [
-        "osm",
-        5443322839
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1387,
       "osm_way": 565104389,
       "part": 0,
       "from_key": [
         "osm",
-        5443322839
+        5443322841
       ],
       "to_key": [
         "osm",
-        5443322841
+        5443322839
       ],
       "osm_tags": {
         "highway": "service"
@@ -38237,11 +38250,11 @@
     },
     {
       "edge": 1388,
-      "osm_way": 565104390,
+      "osm_way": 565104389,
       "part": 0,
       "from_key": [
         "osm",
-        1264253436
+        5443322839
       ],
       "to_key": [
         "osm",
@@ -38259,6 +38272,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        1264253436
+      ],
+      "to_key": [
+        "osm",
+        5443322841
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1390,
+      "osm_way": 565104390,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322841
       ],
       "to_key": [
@@ -38272,34 +38303,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1390,
-      "osm_way": 565104390,
-      "part": 1,
-      "from_key": [
-        "osm",
-        5443322841
-      ],
-      "to_key": [
-        "osm",
-        5443322842
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1391,
       "osm_way": 565104390,
       "part": 1,
       "from_key": [
         "osm",
-        5443322842
+        5443322841
       ],
       "to_key": [
         "osm",
-        5443322841
+        5443322842
       ],
       "osm_tags": {
         "highway": "service"
@@ -38309,15 +38322,15 @@
     },
     {
       "edge": 1392,
-      "osm_way": 565104391,
-      "part": 0,
+      "osm_way": 565104390,
+      "part": 1,
       "from_key": [
         "osm",
-        5443322847
+        5443322842
       ],
       "to_key": [
         "osm",
-        5443322845
+        5443322841
       ],
       "osm_tags": {
         "highway": "service"
@@ -38331,6 +38344,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        5443322847
+      ],
+      "to_key": [
+        "osm",
+        5443322845
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1394,
+      "osm_way": 565104391,
+      "part": 0,
+      "from_key": [
+        "osm",
         5443322845
       ],
       "to_key": [
@@ -38344,34 +38375,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1394,
-      "osm_way": 565108640,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443365950
-      ],
-      "to_key": [
-        "osm",
-        5443365948
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1395,
       "osm_way": 565108640,
       "part": 0,
       "from_key": [
         "osm",
-        5443365948
+        5443365950
       ],
       "to_key": [
         "osm",
-        5443365950
+        5443365948
       ],
       "osm_tags": {
         "highway": "service"
@@ -38381,25 +38394,18 @@
     },
     {
       "edge": 1396,
-      "osm_way": 571966359,
+      "osm_way": 565108640,
       "part": 0,
       "from_key": [
         "osm",
-        4941620898
+        5443365948
       ],
       "to_key": [
         "osm",
-        4941620919
+        5443365950
       ],
       "osm_tags": {
-        "highway": "residential",
-        "lit": "yes",
-        "name": "22nd Street",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "22nd",
-        "tiger:name_type": "St",
-        "wikidata": "Q4631434"
+        "highway": "service"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -38410,11 +38416,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        4941620919
+        4941620898
       ],
       "to_key": [
         "osm",
-        4941620898
+        4941620919
       ],
       "osm_tags": {
         "highway": "residential",
@@ -38431,11 +38437,11 @@
     },
     {
       "edge": 1398,
-      "osm_way": 571966363,
+      "osm_way": 571966359,
       "part": 0,
       "from_key": [
         "osm",
-        65345916
+        4941620919
       ],
       "to_key": [
         "osm",
@@ -38445,7 +38451,6 @@
         "highway": "residential",
         "lit": "yes",
         "name": "22nd Street",
-        "surface": "asphalt",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
         "tiger:name_base": "22nd",
@@ -38461,11 +38466,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        4941620898
+        65345916
       ],
       "to_key": [
         "osm",
-        65345916
+        4941620898
       ],
       "osm_tags": {
         "highway": "residential",
@@ -38483,19 +38488,26 @@
     },
     {
       "edge": 1400,
-      "osm_way": 658556297,
+      "osm_way": 571966363,
       "part": 0,
       "from_key": [
         "osm",
-        6166796913
+        4941620898
       ],
       "to_key": [
         "osm",
-        6166796914
+        65345916
       ],
       "osm_tags": {
-        "highway": "service",
-        "surface": "asphalt"
+        "highway": "residential",
+        "lit": "yes",
+        "name": "22nd Street",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "22nd",
+        "tiger:name_type": "St",
+        "wikidata": "Q4631434"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -38506,6 +38518,25 @@
       "part": 0,
       "from_key": [
         "osm",
+        6166796913
+      ],
+      "to_key": [
+        "osm",
+        6166796914
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1402,
+      "osm_way": 658556297,
+      "part": 0,
+      "from_key": [
+        "osm",
         6166796914
       ],
       "to_key": [
@@ -38520,7 +38551,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1402,
+      "edge": 1403,
       "osm_way": 658556298,
       "part": 0,
       "from_key": [
@@ -38539,7 +38570,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1403,
+      "edge": 1404,
       "osm_way": 658556299,
       "part": 0,
       "from_key": [
@@ -38558,7 +38589,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1404,
+      "edge": 1405,
       "osm_way": 658556300,
       "part": 0,
       "from_key": [
@@ -38580,7 +38611,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1405,
+      "edge": 1406,
       "osm_way": 658556301,
       "part": 0,
       "from_key": [
@@ -38599,7 +38630,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1406,
+      "edge": 1407,
       "osm_way": 658556302,
       "part": 0,
       "from_key": [
@@ -38618,47 +38649,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1407,
-      "osm_way": 680402702,
-      "part": 0,
-      "from_key": [
-        "osm",
-        6370811848
-      ],
-      "to_key": [
-        "osm",
-        65288811
-      ],
-      "osm_tags": {
-        "bicycle": "yes",
-        "cycleway": "no",
-        "foot": "yes",
-        "highway": "residential",
-        "lane_markings": "no",
-        "name": "25th Street",
-        "oneway": "no",
-        "sidewalk": "both",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "25th",
-        "tiger:name_type": "St",
-        "trolley_wire": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1408,
       "osm_way": 680402702,
       "part": 0,
       "from_key": [
         "osm",
-        65288811
+        6370811848
       ],
       "to_key": [
         "osm",
-        6370811848
+        65288811
       ],
       "osm_tags": {
         "bicycle": "yes",
@@ -38681,27 +38681,30 @@
     },
     {
       "edge": 1409,
-      "osm_way": 680783342,
+      "osm_way": 680402702,
       "part": 0,
       "from_key": [
         "osm",
-        65312068
+        65288811
       ],
       "to_key": [
         "osm",
-        14096004615
+        6370811848
       ],
       "osm_tags": {
-        "highway": "tertiary",
-        "lanes": "2",
-        "maxheight": "14'1\"",
-        "maxspeed": "25 mph",
-        "name": "Cortland Avenue",
-        "sidewalk:both": "separate",
+        "bicycle": "yes",
+        "cycleway": "no",
+        "foot": "yes",
+        "highway": "residential",
+        "lane_markings": "no",
+        "name": "25th Street",
+        "oneway": "no",
+        "sidewalk": "both",
+        "surface": "asphalt",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Cortland",
-        "tiger:name_type": "Ave",
+        "tiger:name_base": "25th",
+        "tiger:name_type": "St",
         "trolley_wire": "yes"
       },
       "boundary_entry": false,
@@ -38713,11 +38716,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        14096004615
+        65312068
       ],
       "to_key": [
         "osm",
-        65312068
+        14096004615
       ],
       "osm_tags": {
         "highway": "tertiary",
@@ -38738,14 +38741,14 @@
     {
       "edge": 1411,
       "osm_way": 680783342,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
         14096004615
       ],
       "to_key": [
         "osm",
-        295222775
+        65312068
       ],
       "osm_tags": {
         "highway": "tertiary",
@@ -38769,6 +38772,34 @@
       "part": 1,
       "from_key": [
         "osm",
+        14096004615
+      ],
+      "to_key": [
+        "osm",
+        295222775
+      ],
+      "osm_tags": {
+        "highway": "tertiary",
+        "lanes": "2",
+        "maxheight": "14'1\"",
+        "maxspeed": "25 mph",
+        "name": "Cortland Avenue",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Cortland",
+        "tiger:name_type": "Ave",
+        "trolley_wire": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1413,
+      "osm_way": 680783342,
+      "part": 1,
+      "from_key": [
+        "osm",
         295222775
       ],
       "to_key": [
@@ -38792,7 +38823,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1413,
+      "edge": 1414,
       "osm_way": 681479553,
       "part": 0,
       "from_key": [
@@ -38825,7 +38856,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1414,
+      "edge": 1415,
       "osm_way": 681479553,
       "part": 1,
       "from_key": [
@@ -38858,7 +38889,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1415,
+      "edge": 1416,
       "osm_way": 681479564,
       "part": 0,
       "from_key": [
@@ -38891,44 +38922,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1416,
-      "osm_way": 681758088,
-      "part": 0,
-      "from_key": [
-        "osm",
-        1261495899
-      ],
-      "to_key": [
-        "osm",
-        65308820
-      ],
-      "osm_tags": {
-        "foot": "no",
-        "highway": "residential",
-        "maxspeed": "20 mph",
-        "name": "24th Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "24th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1417,
       "osm_way": 681758088,
       "part": 0,
       "from_key": [
         "osm",
-        65308820
+        1261495899
       ],
       "to_key": [
         "osm",
-        1261495899
+        65308820
       ],
       "osm_tags": {
         "foot": "no",
@@ -38948,6 +38951,34 @@
     },
     {
       "edge": 1418,
+      "osm_way": 681758088,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65308820
+      ],
+      "to_key": [
+        "osm",
+        1261495899
+      ],
+      "osm_tags": {
+        "foot": "no",
+        "highway": "residential",
+        "maxspeed": "20 mph",
+        "name": "24th Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "24th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1419,
       "osm_way": 715535739,
       "part": 0,
       "from_key": [
@@ -38976,7 +39007,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1419,
+      "edge": 1420,
       "osm_way": 715535740,
       "part": 0,
       "from_key": [
@@ -39008,7 +39039,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1420,
+      "edge": 1421,
       "osm_way": 715535741,
       "part": 0,
       "from_key": [
@@ -39045,7 +39076,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1421,
+      "edge": 1422,
       "osm_way": 721692064,
       "part": 0,
       "from_key": [
@@ -39069,7 +39100,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1422,
+      "edge": 1423,
       "osm_way": 721692064,
       "part": 0,
       "from_key": [
@@ -39093,39 +39124,16 @@
       "boundary_exit": true
     },
     {
-      "edge": 1423,
-      "osm_way": 721692064,
-      "part": 1,
-      "from_key": [
-        "osm",
-        65293503
-      ],
-      "to_key": [
-        "osm",
-        5443111055
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "maxspeed": "25 mph",
-        "name": "Kansas Street",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1424,
       "osm_way": 721692064,
       "part": 1,
       "from_key": [
         "osm",
-        5443111055
+        65293503
       ],
       "to_key": [
         "osm",
-        65293503
+        5443111055
       ],
       "osm_tags": {
         "highway": "residential",
@@ -39141,14 +39149,14 @@
     {
       "edge": 1425,
       "osm_way": 721692064,
-      "part": 2,
+      "part": 1,
       "from_key": [
         "osm",
         5443111055
       ],
       "to_key": [
         "osm",
-        65328397
+        65293503
       ],
       "osm_tags": {
         "highway": "residential",
@@ -39167,6 +39175,29 @@
       "part": 2,
       "from_key": [
         "osm",
+        5443111055
+      ],
+      "to_key": [
+        "osm",
+        65328397
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "maxspeed": "25 mph",
+        "name": "Kansas Street",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1427,
+      "osm_way": 721692064,
+      "part": 2,
+      "from_key": [
+        "osm",
         65328397
       ],
       "to_key": [
@@ -39185,39 +39216,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1427,
-      "osm_way": 721692064,
-      "part": 3,
-      "from_key": [
-        "osm",
-        65328397
-      ],
-      "to_key": [
-        "osm",
-        14066868266
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "maxspeed": "25 mph",
-        "name": "Kansas Street",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1428,
       "osm_way": 721692064,
       "part": 3,
       "from_key": [
         "osm",
-        14066868266
+        65328397
       ],
       "to_key": [
         "osm",
-        65328397
+        14066868266
       ],
       "osm_tags": {
         "highway": "residential",
@@ -39232,18 +39240,23 @@
     },
     {
       "edge": 1429,
-      "osm_way": 734375762,
-      "part": 0,
+      "osm_way": 721692064,
+      "part": 3,
       "from_key": [
         "osm",
-        6877285472
+        14066868266
       ],
       "to_key": [
         "osm",
-        6877285473
+        65328397
       ],
       "osm_tags": {
-        "highway": "service"
+        "highway": "residential",
+        "maxspeed": "25 mph",
+        "name": "Kansas Street",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -39254,6 +39267,24 @@
       "part": 0,
       "from_key": [
         "osm",
+        6877285472
+      ],
+      "to_key": [
+        "osm",
+        6877285473
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1431,
+      "osm_way": 734375762,
+      "part": 0,
+      "from_key": [
+        "osm",
         6877285473
       ],
       "to_key": [
@@ -39267,7 +39298,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1431,
+      "edge": 1432,
       "osm_way": 738401716,
       "part": 0,
       "from_key": [
@@ -39293,7 +39324,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1432,
+      "edge": 1433,
       "osm_way": 738401717,
       "part": 0,
       "from_key": [
@@ -39320,42 +39351,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1433,
-      "osm_way": 738401718,
-      "part": 0,
-      "from_key": [
-        "osm",
-        6914375077
-      ],
-      "to_key": [
-        "osm",
-        6914375076
-      ],
-      "osm_tags": {
-        "cycleway": "shared_lane",
-        "highway": "tertiary",
-        "name": "Bryant Street",
-        "sidewalk": "both",
-        "source:imagery": "Bing",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1434,
       "osm_way": 738401718,
       "part": 0,
       "from_key": [
         "osm",
-        6914375076
+        6914375077
       ],
       "to_key": [
         "osm",
-        6914375077
+        6914375076
       ],
       "osm_tags": {
         "cycleway": "shared_lane",
@@ -39373,6 +39378,32 @@
     },
     {
       "edge": 1435,
+      "osm_way": 738401718,
+      "part": 0,
+      "from_key": [
+        "osm",
+        6914375076
+      ],
+      "to_key": [
+        "osm",
+        6914375077
+      ],
+      "osm_tags": {
+        "cycleway": "shared_lane",
+        "highway": "tertiary",
+        "name": "Bryant Street",
+        "sidewalk": "both",
+        "source:imagery": "Bing",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1436,
       "osm_way": 738677928,
       "part": 0,
       "from_key": [
@@ -39391,34 +39422,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1436,
-      "osm_way": 741805861,
-      "part": 0,
-      "from_key": [
-        "osm",
-        6944300290
-      ],
-      "to_key": [
-        "osm",
-        4941850549
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1437,
       "osm_way": 741805861,
       "part": 0,
       "from_key": [
         "osm",
-        4941850549
+        6944300290
       ],
       "to_key": [
         "osm",
-        6944300290
+        4941850549
       ],
       "osm_tags": {
         "highway": "service"
@@ -39428,22 +39441,18 @@
     },
     {
       "edge": 1438,
-      "osm_way": 762905202,
+      "osm_way": 741805861,
       "part": 0,
       "from_key": [
         "osm",
-        7128815689
+        4941850549
       ],
       "to_key": [
         "osm",
-        7128815687
+        6944300290
       ],
       "osm_tags": {
-        "access": "delivery",
-        "highway": "service",
-        "service": "driveway",
-        "sidewalk": "no",
-        "surface": "asphalt"
+        "highway": "service"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -39454,11 +39463,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        7128815687
+        7128815689
       ],
       "to_key": [
         "osm",
-        7128815689
+        7128815687
       ],
       "osm_tags": {
         "access": "delivery",
@@ -39472,22 +39481,20 @@
     },
     {
       "edge": 1440,
-      "osm_way": 762905203,
+      "osm_way": 762905202,
       "part": 0,
       "from_key": [
         "osm",
-        7128815690
+        7128815687
       ],
       "to_key": [
         "osm",
-        7128815694
+        7128815689
       ],
       "osm_tags": {
-        "covered": "no",
+        "access": "delivery",
         "highway": "service",
-        "layer": "1",
-        "level": "1",
-        "service": "parking_aisle",
+        "service": "driveway",
         "sidewalk": "no",
         "surface": "asphalt"
       },
@@ -39500,11 +39507,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        7128815694
+        7128815690
       ],
       "to_key": [
         "osm",
-        7128815690
+        7128815694
       ],
       "osm_tags": {
         "covered": "no",
@@ -39520,15 +39527,15 @@
     },
     {
       "edge": 1442,
-      "osm_way": 762905204,
+      "osm_way": 762905203,
       "part": 0,
       "from_key": [
         "osm",
-        7128815691
+        7128815694
       ],
       "to_key": [
         "osm",
-        7128815700
+        7128815690
       ],
       "osm_tags": {
         "covered": "no",
@@ -39548,6 +39555,30 @@
       "part": 0,
       "from_key": [
         "osm",
+        7128815691
+      ],
+      "to_key": [
+        "osm",
+        7128815700
+      ],
+      "osm_tags": {
+        "covered": "no",
+        "highway": "service",
+        "layer": "1",
+        "level": "1",
+        "service": "parking_aisle",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1444,
+      "osm_way": 762905204,
+      "part": 0,
+      "from_key": [
+        "osm",
         7128815700
       ],
       "to_key": [
@@ -39567,40 +39598,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1444,
-      "osm_way": 762905205,
-      "part": 0,
-      "from_key": [
-        "osm",
-        7128815694
-      ],
-      "to_key": [
-        "osm",
-        7128815692
-      ],
-      "osm_tags": {
-        "covered": "no",
-        "highway": "service",
-        "layer": "1",
-        "level": "1",
-        "service": "parking_aisle",
-        "sidewalk": "no",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1445,
       "osm_way": 762905205,
       "part": 0,
       "from_key": [
         "osm",
-        7128815692
+        7128815694
       ],
       "to_key": [
         "osm",
-        7128815694
+        7128815692
       ],
       "osm_tags": {
         "covered": "no",
@@ -39616,15 +39623,15 @@
     },
     {
       "edge": 1446,
-      "osm_way": 762905206,
+      "osm_way": 762905205,
       "part": 0,
       "from_key": [
         "osm",
-        7128815697
+        7128815692
       ],
       "to_key": [
         "osm",
-        7128815695
+        7128815694
       ],
       "osm_tags": {
         "covered": "no",
@@ -39644,11 +39651,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        7128815695
+        7128815697
       ],
       "to_key": [
         "osm",
-        7128815697
+        7128815695
       ],
       "osm_tags": {
         "covered": "no",
@@ -39664,15 +39671,15 @@
     },
     {
       "edge": 1448,
-      "osm_way": 762905207,
+      "osm_way": 762905206,
       "part": 0,
       "from_key": [
         "osm",
-        7128815699
+        7128815695
       ],
       "to_key": [
         "osm",
-        7128815698
+        7128815697
       ],
       "osm_tags": {
         "covered": "no",
@@ -39692,6 +39699,30 @@
       "part": 0,
       "from_key": [
         "osm",
+        7128815699
+      ],
+      "to_key": [
+        "osm",
+        7128815698
+      ],
+      "osm_tags": {
+        "covered": "no",
+        "highway": "service",
+        "layer": "1",
+        "level": "1",
+        "service": "parking_aisle",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1450,
+      "osm_way": 762905207,
+      "part": 0,
+      "from_key": [
+        "osm",
         7128815698
       ],
       "to_key": [
@@ -39711,40 +39742,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1450,
-      "osm_way": 762905208,
-      "part": 0,
-      "from_key": [
-        "osm",
-        7128815714
-      ],
-      "to_key": [
-        "osm",
-        7128815713
-      ],
-      "osm_tags": {
-        "covered": "no",
-        "highway": "service",
-        "incline": "down",
-        "lanes": "2",
-        "service": "driveway",
-        "sidewalk": "no",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1451,
       "osm_way": 762905208,
       "part": 0,
       "from_key": [
         "osm",
-        7128815713
+        7128815714
       ],
       "to_key": [
         "osm",
-        7128815714
+        7128815713
       ],
       "osm_tags": {
         "covered": "no",
@@ -39760,11 +39767,11 @@
     },
     {
       "edge": 1452,
-      "osm_way": 762905209,
+      "osm_way": 762905208,
       "part": 0,
       "from_key": [
         "osm",
-        7128815706
+        7128815713
       ],
       "to_key": [
         "osm",
@@ -39773,9 +39780,8 @@
       "osm_tags": {
         "covered": "no",
         "highway": "service",
+        "incline": "down",
         "lanes": "2",
-        "layer": "1",
-        "level": "1",
         "service": "driveway",
         "sidewalk": "no",
         "surface": "asphalt"
@@ -39789,11 +39795,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        7128815714
+        7128815706
       ],
       "to_key": [
         "osm",
-        7128815706
+        7128815714
       ],
       "osm_tags": {
         "covered": "no",
@@ -39810,22 +39816,23 @@
     },
     {
       "edge": 1454,
-      "osm_way": 762905210,
+      "osm_way": 762905209,
       "part": 0,
       "from_key": [
         "osm",
-        7128815706
+        7128815714
       ],
       "to_key": [
         "osm",
-        7128815699
+        7128815706
       ],
       "osm_tags": {
         "covered": "no",
         "highway": "service",
+        "lanes": "2",
         "layer": "1",
         "level": "1",
-        "service": "parking_aisle",
+        "service": "driveway",
         "sidewalk": "no",
         "surface": "asphalt"
       },
@@ -39838,11 +39845,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        7128815699
+        7128815706
       ],
       "to_key": [
         "osm",
-        7128815706
+        7128815699
       ],
       "osm_tags": {
         "covered": "no",
@@ -39859,14 +39866,14 @@
     {
       "edge": 1456,
       "osm_way": 762905210,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
         7128815699
       ],
       "to_key": [
         "osm",
-        7128815695
+        7128815706
       ],
       "osm_tags": {
         "covered": "no",
@@ -39886,6 +39893,30 @@
       "part": 1,
       "from_key": [
         "osm",
+        7128815699
+      ],
+      "to_key": [
+        "osm",
+        7128815695
+      ],
+      "osm_tags": {
+        "covered": "no",
+        "highway": "service",
+        "layer": "1",
+        "level": "1",
+        "service": "parking_aisle",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1458,
+      "osm_way": 762905210,
+      "part": 1,
+      "from_key": [
+        "osm",
         7128815695
       ],
       "to_key": [
@@ -39905,40 +39936,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1458,
-      "osm_way": 762905210,
-      "part": 2,
-      "from_key": [
-        "osm",
-        7128815695
-      ],
-      "to_key": [
-        "osm",
-        7128815694
-      ],
-      "osm_tags": {
-        "covered": "no",
-        "highway": "service",
-        "layer": "1",
-        "level": "1",
-        "service": "parking_aisle",
-        "sidewalk": "no",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1459,
       "osm_way": 762905210,
       "part": 2,
       "from_key": [
         "osm",
-        7128815694
+        7128815695
       ],
       "to_key": [
         "osm",
-        7128815695
+        7128815694
       ],
       "osm_tags": {
         "covered": "no",
@@ -39955,14 +39962,14 @@
     {
       "edge": 1460,
       "osm_way": 762905210,
-      "part": 3,
+      "part": 2,
       "from_key": [
         "osm",
         7128815694
       ],
       "to_key": [
         "osm",
-        7128815700
+        7128815695
       ],
       "osm_tags": {
         "covered": "no",
@@ -39982,6 +39989,30 @@
       "part": 3,
       "from_key": [
         "osm",
+        7128815694
+      ],
+      "to_key": [
+        "osm",
+        7128815700
+      ],
+      "osm_tags": {
+        "covered": "no",
+        "highway": "service",
+        "layer": "1",
+        "level": "1",
+        "service": "parking_aisle",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1462,
+      "osm_way": 762905210,
+      "part": 3,
+      "from_key": [
+        "osm",
         7128815700
       ],
       "to_key": [
@@ -40001,40 +40032,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1462,
-      "osm_way": 762905210,
-      "part": 4,
-      "from_key": [
-        "osm",
-        7128815700
-      ],
-      "to_key": [
-        "osm",
-        7128815692
-      ],
-      "osm_tags": {
-        "covered": "no",
-        "highway": "service",
-        "layer": "1",
-        "level": "1",
-        "service": "parking_aisle",
-        "sidewalk": "no",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1463,
       "osm_way": 762905210,
       "part": 4,
       "from_key": [
         "osm",
-        7128815692
+        7128815700
       ],
       "to_key": [
         "osm",
-        7128815700
+        7128815692
       ],
       "osm_tags": {
         "covered": "no",
@@ -40051,14 +40058,14 @@
     {
       "edge": 1464,
       "osm_way": 762905210,
-      "part": 5,
+      "part": 4,
       "from_key": [
         "osm",
         7128815692
       ],
       "to_key": [
         "osm",
-        7128815697
+        7128815700
       ],
       "osm_tags": {
         "covered": "no",
@@ -40078,6 +40085,30 @@
       "part": 5,
       "from_key": [
         "osm",
+        7128815692
+      ],
+      "to_key": [
+        "osm",
+        7128815697
+      ],
+      "osm_tags": {
+        "covered": "no",
+        "highway": "service",
+        "layer": "1",
+        "level": "1",
+        "service": "parking_aisle",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1466,
+      "osm_way": 762905210,
+      "part": 5,
+      "from_key": [
+        "osm",
         7128815697
       ],
       "to_key": [
@@ -40097,40 +40128,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1466,
-      "osm_way": 762905210,
-      "part": 6,
-      "from_key": [
-        "osm",
-        7128815697
-      ],
-      "to_key": [
-        "osm",
-        7128815698
-      ],
-      "osm_tags": {
-        "covered": "no",
-        "highway": "service",
-        "layer": "1",
-        "level": "1",
-        "service": "parking_aisle",
-        "sidewalk": "no",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1467,
       "osm_way": 762905210,
       "part": 6,
       "from_key": [
         "osm",
-        7128815698
+        7128815697
       ],
       "to_key": [
         "osm",
-        7128815697
+        7128815698
       ],
       "osm_tags": {
         "covered": "no",
@@ -40147,14 +40154,14 @@
     {
       "edge": 1468,
       "osm_way": 762905210,
-      "part": 7,
+      "part": 6,
       "from_key": [
         "osm",
         7128815698
       ],
       "to_key": [
         "osm",
-        7128815706
+        7128815697
       ],
       "osm_tags": {
         "covered": "no",
@@ -40174,6 +40181,30 @@
       "part": 7,
       "from_key": [
         "osm",
+        7128815698
+      ],
+      "to_key": [
+        "osm",
+        7128815706
+      ],
+      "osm_tags": {
+        "covered": "no",
+        "highway": "service",
+        "layer": "1",
+        "level": "1",
+        "service": "parking_aisle",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1470,
+      "osm_way": 762905210,
+      "part": 7,
+      "from_key": [
+        "osm",
         7128815706
       ],
       "to_key": [
@@ -40193,40 +40224,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1470,
-      "osm_way": 762905211,
-      "part": 0,
-      "from_key": [
-        "osm",
-        7128815713
-      ],
-      "to_key": [
-        "osm",
-        7128815712
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "indoor": "yes",
-        "lanes": "2",
-        "level": "0",
-        "service": "driveway",
-        "sidewalk": "no",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1471,
       "osm_way": 762905211,
       "part": 0,
       "from_key": [
         "osm",
-        7128815712
+        7128815713
       ],
       "to_key": [
         "osm",
-        7128815713
+        7128815712
       ],
       "osm_tags": {
         "highway": "service",
@@ -40243,14 +40250,14 @@
     {
       "edge": 1472,
       "osm_way": 762905211,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
         7128815712
       ],
       "to_key": [
         "osm",
-        4941850472
+        7128815713
       ],
       "osm_tags": {
         "highway": "service",
@@ -40270,6 +40277,30 @@
       "part": 1,
       "from_key": [
         "osm",
+        7128815712
+      ],
+      "to_key": [
+        "osm",
+        4941850472
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "indoor": "yes",
+        "lanes": "2",
+        "level": "0",
+        "service": "driveway",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1474,
+      "osm_way": 762905211,
+      "part": 1,
+      "from_key": [
+        "osm",
         4941850472
       ],
       "to_key": [
@@ -40289,40 +40320,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1474,
-      "osm_way": 762905212,
-      "part": 0,
-      "from_key": [
-        "osm",
-        7128815716
-      ],
-      "to_key": [
-        "osm",
-        4949438733
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "lanes": "5",
-        "lanes:backward": "3",
-        "lanes:forward": "2",
-        "service": "driveway",
-        "sidewalk": "no",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1475,
       "osm_way": 762905212,
       "part": 0,
       "from_key": [
         "osm",
-        4949438733
+        7128815716
       ],
       "to_key": [
         "osm",
-        7128815716
+        4949438733
       ],
       "osm_tags": {
         "highway": "service",
@@ -40339,14 +40346,14 @@
     {
       "edge": 1476,
       "osm_way": 762905212,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
         4949438733
       ],
       "to_key": [
         "osm",
-        7128815715
+        7128815716
       ],
       "osm_tags": {
         "highway": "service",
@@ -40366,6 +40373,30 @@
       "part": 1,
       "from_key": [
         "osm",
+        4949438733
+      ],
+      "to_key": [
+        "osm",
+        7128815715
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "lanes": "5",
+        "lanes:backward": "3",
+        "lanes:forward": "2",
+        "service": "driveway",
+        "sidewalk": "no",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1478,
+      "osm_way": 762905212,
+      "part": 1,
+      "from_key": [
+        "osm",
         7128815715
       ],
       "to_key": [
@@ -40385,41 +40416,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1478,
-      "osm_way": 770034023,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5495861060
-      ],
-      "to_key": [
-        "osm",
-        261510687
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "lit": "yes",
-        "name": "22nd Street",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "22nd",
-        "tiger:name_type": "St",
-        "wikidata": "Q4631434"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1479,
       "osm_way": 770034023,
       "part": 0,
       "from_key": [
         "osm",
-        261510687
+        5495861060
       ],
       "to_key": [
         "osm",
-        5495861060
+        261510687
       ],
       "osm_tags": {
         "highway": "residential",
@@ -40436,11 +40442,11 @@
     },
     {
       "edge": 1480,
-      "osm_way": 770034024,
+      "osm_way": 770034023,
       "part": 0,
       "from_key": [
         "osm",
-        4941620919
+        261510687
       ],
       "to_key": [
         "osm",
@@ -40450,7 +40456,6 @@
         "highway": "residential",
         "lit": "yes",
         "name": "22nd Street",
-        "surface": "asphalt",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
         "tiger:name_base": "22nd",
@@ -40466,11 +40471,11 @@
       "part": 0,
       "from_key": [
         "osm",
-        5495861060
+        4941620919
       ],
       "to_key": [
         "osm",
-        4941620919
+        5495861060
       ],
       "osm_tags": {
         "highway": "residential",
@@ -40488,6 +40493,32 @@
     },
     {
       "edge": 1482,
+      "osm_way": 770034024,
+      "part": 0,
+      "from_key": [
+        "osm",
+        5495861060
+      ],
+      "to_key": [
+        "osm",
+        4941620919
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "lit": "yes",
+        "name": "22nd Street",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "22nd",
+        "tiger:name_type": "St",
+        "wikidata": "Q4631434"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1483,
       "osm_way": 771754804,
       "part": 0,
       "from_key": [
@@ -40510,7 +40541,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1483,
+      "edge": 1484,
       "osm_way": 776818378,
       "part": 0,
       "from_key": [
@@ -40541,34 +40572,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1484,
-      "osm_way": 784294046,
-      "part": 0,
-      "from_key": [
-        "osm",
-        7326392693
-      ],
-      "to_key": [
-        "osm",
-        7326392694
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1485,
       "osm_way": 784294046,
       "part": 0,
       "from_key": [
         "osm",
-        7326392694
+        7326392693
       ],
       "to_key": [
         "osm",
-        7326392693
+        7326392694
       ],
       "osm_tags": {
         "highway": "service"
@@ -40578,6 +40591,24 @@
     },
     {
       "edge": 1486,
+      "osm_way": 784294046,
+      "part": 0,
+      "from_key": [
+        "osm",
+        7326392694
+      ],
+      "to_key": [
+        "osm",
+        7326392693
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1487,
       "osm_way": 799023220,
       "part": 0,
       "from_key": [
@@ -40605,7 +40636,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1487,
+      "edge": 1488,
       "osm_way": 808733463,
       "part": 0,
       "from_key": [
@@ -40634,7 +40665,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1488,
+      "edge": 1489,
       "osm_way": 808733463,
       "part": 0,
       "from_key": [
@@ -40663,44 +40694,16 @@
       "boundary_exit": true
     },
     {
-      "edge": 1489,
-      "osm_way": 808733463,
-      "part": 1,
-      "from_key": [
-        "osm",
-        4941850529
-      ],
-      "to_key": [
-        "osm",
-        4941850531
-      ],
-      "osm_tags": {
-        "bicycle": "yes",
-        "highway": "unclassified",
-        "lanes": "2",
-        "name": "Napoleon Street",
-        "sidewalk": "both",
-        "source:imagery": "Bing",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Napoleon",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1490,
       "osm_way": 808733463,
       "part": 1,
       "from_key": [
         "osm",
-        4941850531
+        4941850529
       ],
       "to_key": [
         "osm",
-        4941850529
+        4941850531
       ],
       "osm_tags": {
         "bicycle": "yes",
@@ -40721,14 +40724,14 @@
     {
       "edge": 1491,
       "osm_way": 808733463,
-      "part": 2,
+      "part": 1,
       "from_key": [
         "osm",
         4941850531
       ],
       "to_key": [
         "osm",
-        65291490
+        4941850529
       ],
       "osm_tags": {
         "bicycle": "yes",
@@ -40752,6 +40755,34 @@
       "part": 2,
       "from_key": [
         "osm",
+        4941850531
+      ],
+      "to_key": [
+        "osm",
+        65291490
+      ],
+      "osm_tags": {
+        "bicycle": "yes",
+        "highway": "unclassified",
+        "lanes": "2",
+        "name": "Napoleon Street",
+        "sidewalk": "both",
+        "source:imagery": "Bing",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Napoleon",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1493,
+      "osm_way": 808733463,
+      "part": 2,
+      "from_key": [
+        "osm",
         65291490
       ],
       "to_key": [
@@ -40775,34 +40806,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1493,
-      "osm_way": 817415649,
-      "part": 0,
-      "from_key": [
-        "osm",
-        7633903448
-      ],
-      "to_key": [
-        "osm",
-        7633903449
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1494,
       "osm_way": 817415649,
       "part": 0,
       "from_key": [
         "osm",
-        7633903449
+        7633903448
       ],
       "to_key": [
         "osm",
-        7633903448
+        7633903449
       ],
       "osm_tags": {
         "highway": "service"
@@ -40812,6 +40825,24 @@
     },
     {
       "edge": 1495,
+      "osm_way": 817415649,
+      "part": 0,
+      "from_key": [
+        "osm",
+        7633903449
+      ],
+      "to_key": [
+        "osm",
+        7633903448
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1496,
       "osm_way": 821501211,
       "part": 0,
       "from_key": [
@@ -40854,7 +40885,7 @@
       "boundary_exit": true
     },
     {
-      "edge": 1496,
+      "edge": 1497,
       "osm_way": 821881142,
       "part": 0,
       "from_key": [
@@ -40891,7 +40922,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1497,
+      "edge": 1498,
       "osm_way": 908298678,
       "part": 0,
       "from_key": [
@@ -40901,27 +40932,6 @@
       "to_key": [
         "osm",
         10647758083
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "lanes": "2",
-        "oneway": "yes",
-        "surface": "concrete"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1498,
-      "osm_way": 908298678,
-      "part": 1,
-      "from_key": [
-        "osm",
-        10647758083
-      ],
-      "to_key": [
-        "osm",
-        8433983997
       ],
       "osm_tags": {
         "highway": "service",
@@ -40934,24 +40944,66 @@
     },
     {
       "edge": 1499,
-      "osm_way": 908327727,
-      "part": 0,
+      "osm_way": 908298678,
+      "part": 1,
       "from_key": [
         "osm",
-        8434240144
+        10647758083
       ],
       "to_key": [
         "osm",
-        8434240148
+        8433983988
       ],
       "osm_tags": {
-        "highway": "service"
+        "highway": "service",
+        "lanes": "2",
+        "oneway": "yes",
+        "surface": "concrete"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1500,
+      "osm_way": 908298678,
+      "part": 2,
+      "from_key": [
+        "osm",
+        8433983988
+      ],
+      "to_key": [
+        "osm",
+        8433983997
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "lanes": "2",
+        "oneway": "yes",
+        "surface": "concrete"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1501,
+      "osm_way": 908327727,
+      "part": 0,
+      "from_key": [
+        "osm",
+        8434240144
+      ],
+      "to_key": [
+        "osm",
+        8434240148
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1502,
       "osm_way": 908327727,
       "part": 0,
       "from_key": [
@@ -40969,57 +41021,57 @@
       "boundary_exit": false
     },
     {
-      "edge": 1501,
-      "osm_way": 927589209,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65288985
-      ],
-      "to_key": [
-        "osm",
-        265666763
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "25th Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "25th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1502,
-      "osm_way": 927589209,
-      "part": 0,
-      "from_key": [
-        "osm",
-        265666763
-      ],
-      "to_key": [
-        "osm",
-        65288985
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "25th Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "25th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1503,
+      "osm_way": 927589209,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65288985
+      ],
+      "to_key": [
+        "osm",
+        265666763
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "25th Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "25th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1504,
+      "osm_way": 927589209,
+      "part": 0,
+      "from_key": [
+        "osm",
+        265666763
+      ],
+      "to_key": [
+        "osm",
+        65288985
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "25th Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "25th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1505,
       "osm_way": 927589210,
       "part": 0,
       "from_key": [
@@ -41052,7 +41104,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1504,
+      "edge": 1506,
       "osm_way": 937907625,
       "part": 0,
       "from_key": [
@@ -41071,7 +41123,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1505,
+      "edge": 1507,
       "osm_way": 937907626,
       "part": 0,
       "from_key": [
@@ -41091,75 +41143,75 @@
       "boundary_exit": false
     },
     {
-      "edge": 1506,
-      "osm_way": 978913752,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65328400
-      ],
-      "to_key": [
-        "osm",
-        728865109
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "22nd Street",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "22nd",
-        "tiger:name_type": "St",
-        "wikidata": "Q4631434"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1507,
-      "osm_way": 978913752,
-      "part": 0,
-      "from_key": [
-        "osm",
-        728865109
-      ],
-      "to_key": [
-        "osm",
-        65328400
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "22nd Street",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "22nd",
-        "tiger:name_type": "St",
-        "wikidata": "Q4631434"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1508,
-      "osm_way": 983888442,
+      "osm_way": 978913752,
       "part": 0,
       "from_key": [
         "osm",
-        65286396
+        65328400
       ],
       "to_key": [
         "osm",
-        8433983997
+        728865109
       ],
       "osm_tags": {
-        "highway": "service"
+        "highway": "residential",
+        "name": "22nd Street",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "22nd",
+        "tiger:name_type": "St",
+        "wikidata": "Q4631434"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1509,
+      "osm_way": 978913752,
+      "part": 0,
+      "from_key": [
+        "osm",
+        728865109
+      ],
+      "to_key": [
+        "osm",
+        65328400
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "22nd Street",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "22nd",
+        "tiger:name_type": "St",
+        "wikidata": "Q4631434"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1510,
+      "osm_way": 983888442,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65286396
+      ],
+      "to_key": [
+        "osm",
+        8433983997
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1511,
       "osm_way": 983888442,
       "part": 0,
       "from_key": [
@@ -41177,7 +41229,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1510,
+      "edge": 1512,
       "osm_way": 996695179,
       "part": 0,
       "from_key": [
@@ -41209,7 +41261,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1511,
+      "edge": 1513,
       "osm_way": 996695179,
       "part": 0,
       "from_key": [
@@ -41241,78 +41293,16 @@
       "boundary_exit": true
     },
     {
-      "edge": 1512,
-      "osm_way": 996695179,
-      "part": 1,
-      "from_key": [
-        "osm",
-        65290305
-      ],
-      "to_key": [
-        "osm",
-        65332307
-      ],
-      "osm_tags": {
-        "bicycle": "designated",
-        "cycleway": "shared_lane",
-        "foot": "yes",
-        "highway": "residential",
-        "lanes": "2",
-        "motor_vehicle": "destination",
-        "name": "20th Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "20th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1513,
-      "osm_way": 996695179,
-      "part": 1,
-      "from_key": [
-        "osm",
-        65332307
-      ],
-      "to_key": [
-        "osm",
-        65290305
-      ],
-      "osm_tags": {
-        "bicycle": "designated",
-        "cycleway": "shared_lane",
-        "foot": "yes",
-        "highway": "residential",
-        "lanes": "2",
-        "motor_vehicle": "destination",
-        "name": "20th Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "20th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1514,
       "osm_way": 996695179,
-      "part": 2,
+      "part": 1,
       "from_key": [
         "osm",
-        65332307
+        65290305
       ],
       "to_key": [
         "osm",
-        65358921
+        65332307
       ],
       "osm_tags": {
         "bicycle": "designated",
@@ -41336,6 +41326,68 @@
     {
       "edge": 1515,
       "osm_way": 996695179,
+      "part": 1,
+      "from_key": [
+        "osm",
+        65332307
+      ],
+      "to_key": [
+        "osm",
+        65290305
+      ],
+      "osm_tags": {
+        "bicycle": "designated",
+        "cycleway": "shared_lane",
+        "foot": "yes",
+        "highway": "residential",
+        "lanes": "2",
+        "motor_vehicle": "destination",
+        "name": "20th Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "20th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1516,
+      "osm_way": 996695179,
+      "part": 2,
+      "from_key": [
+        "osm",
+        65332307
+      ],
+      "to_key": [
+        "osm",
+        65358921
+      ],
+      "osm_tags": {
+        "bicycle": "designated",
+        "cycleway": "shared_lane",
+        "foot": "yes",
+        "highway": "residential",
+        "lanes": "2",
+        "motor_vehicle": "destination",
+        "name": "20th Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "20th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1517,
+      "osm_way": 996695179,
       "part": 2,
       "from_key": [
         "osm",
@@ -41365,78 +41417,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1516,
-      "osm_way": 996695179,
-      "part": 3,
-      "from_key": [
-        "osm",
-        65358921
-      ],
-      "to_key": [
-        "osm",
-        65308721
-      ],
-      "osm_tags": {
-        "bicycle": "designated",
-        "cycleway": "shared_lane",
-        "foot": "yes",
-        "highway": "residential",
-        "lanes": "2",
-        "motor_vehicle": "destination",
-        "name": "20th Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "20th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1517,
-      "osm_way": 996695179,
-      "part": 3,
-      "from_key": [
-        "osm",
-        65308721
-      ],
-      "to_key": [
-        "osm",
-        65358921
-      ],
-      "osm_tags": {
-        "bicycle": "designated",
-        "cycleway": "shared_lane",
-        "foot": "yes",
-        "highway": "residential",
-        "lanes": "2",
-        "motor_vehicle": "destination",
-        "name": "20th Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "20th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1518,
       "osm_way": 996695179,
-      "part": 4,
+      "part": 3,
       "from_key": [
         "osm",
-        65308721
+        65358921
       ],
       "to_key": [
         "osm",
-        261510671
+        65308721
       ],
       "osm_tags": {
         "bicycle": "designated",
@@ -41460,6 +41450,68 @@
     {
       "edge": 1519,
       "osm_way": 996695179,
+      "part": 3,
+      "from_key": [
+        "osm",
+        65308721
+      ],
+      "to_key": [
+        "osm",
+        65358921
+      ],
+      "osm_tags": {
+        "bicycle": "designated",
+        "cycleway": "shared_lane",
+        "foot": "yes",
+        "highway": "residential",
+        "lanes": "2",
+        "motor_vehicle": "destination",
+        "name": "20th Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "20th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1520,
+      "osm_way": 996695179,
+      "part": 4,
+      "from_key": [
+        "osm",
+        65308721
+      ],
+      "to_key": [
+        "osm",
+        261510671
+      ],
+      "osm_tags": {
+        "bicycle": "designated",
+        "cycleway": "shared_lane",
+        "foot": "yes",
+        "highway": "residential",
+        "lanes": "2",
+        "motor_vehicle": "destination",
+        "name": "20th Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "20th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1521,
+      "osm_way": 996695179,
       "part": 4,
       "from_key": [
         "osm",
@@ -41489,76 +41541,76 @@
       "boundary_exit": false
     },
     {
-      "edge": 1520,
-      "osm_way": 1031915275,
-      "part": 0,
-      "from_key": [
-        "osm",
-        1261508302
-      ],
-      "to_key": [
-        "osm",
-        9509751989
-      ],
-      "osm_tags": {
-        "access": "customers",
-        "highway": "service",
-        "service": "parking_aisle",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1521,
-      "osm_way": 1031915275,
-      "part": 0,
-      "from_key": [
-        "osm",
-        9509751989
-      ],
-      "to_key": [
-        "osm",
-        1261508302
-      ],
-      "osm_tags": {
-        "access": "customers",
-        "highway": "service",
-        "service": "parking_aisle",
-        "surface": "asphalt"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1522,
-      "osm_way": 1031915407,
+      "osm_way": 1031915275,
       "part": 0,
       "from_key": [
         "osm",
-        65286396
+        1261508302
       ],
       "to_key": [
         "osm",
-        65345909
+        9509751989
       ],
       "osm_tags": {
-        "cycleway:left": "shared_lane",
-        "cycleway:right": "lane",
-        "highway": "residential",
-        "lcn_ref": "525",
-        "name": "23rd Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "23rd",
-        "tiger:name_type": "St"
+        "access": "customers",
+        "highway": "service",
+        "service": "parking_aisle",
+        "surface": "asphalt"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1523,
+      "osm_way": 1031915275,
+      "part": 0,
+      "from_key": [
+        "osm",
+        9509751989
+      ],
+      "to_key": [
+        "osm",
+        1261508302
+      ],
+      "osm_tags": {
+        "access": "customers",
+        "highway": "service",
+        "service": "parking_aisle",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1524,
+      "osm_way": 1031915407,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65286396
+      ],
+      "to_key": [
+        "osm",
+        65345909
+      ],
+      "osm_tags": {
+        "cycleway:left": "shared_lane",
+        "cycleway:right": "lane",
+        "highway": "residential",
+        "lcn_ref": "525",
+        "name": "23rd Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "23rd",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1525,
       "osm_way": 1031915407,
       "part": 0,
       "from_key": [
@@ -41585,52 +41637,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1524,
-      "osm_way": 1031917600,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4941620914
-      ],
-      "to_key": [
-        "osm",
-        9509809968
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1525,
-      "osm_way": 1031917600,
-      "part": 0,
-      "from_key": [
-        "osm",
-        9509809968
-      ],
-      "to_key": [
-        "osm",
-        4941620914
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1526,
-      "osm_way": 1031917601,
+      "osm_way": 1031917600,
       "part": 0,
       "from_key": [
         "osm",
-        4941620919
+        4941620914
       ],
       "to_key": [
         "osm",
-        4941620917
+        9509809968
       ],
       "osm_tags": {
         "highway": "service"
@@ -41640,6 +41656,42 @@
     },
     {
       "edge": 1527,
+      "osm_way": 1031917600,
+      "part": 0,
+      "from_key": [
+        "osm",
+        9509809968
+      ],
+      "to_key": [
+        "osm",
+        4941620914
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1528,
+      "osm_way": 1031917601,
+      "part": 0,
+      "from_key": [
+        "osm",
+        4941620919
+      ],
+      "to_key": [
+        "osm",
+        4941620917
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1529,
       "osm_way": 1031917601,
       "part": 0,
       "from_key": [
@@ -41657,47 +41709,47 @@
       "boundary_exit": false
     },
     {
-      "edge": 1528,
-      "osm_way": 1031917602,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4941620916
-      ],
-      "to_key": [
-        "osm",
-        9509809970
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "service": "parking_aisle",
-        "surface": "concrete"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1529,
-      "osm_way": 1031917602,
-      "part": 0,
-      "from_key": [
-        "osm",
-        9509809970
-      ],
-      "to_key": [
-        "osm",
-        4941620916
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "service": "parking_aisle",
-        "surface": "concrete"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1530,
+      "osm_way": 1031917602,
+      "part": 0,
+      "from_key": [
+        "osm",
+        4941620916
+      ],
+      "to_key": [
+        "osm",
+        9509809970
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "parking_aisle",
+        "surface": "concrete"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1531,
+      "osm_way": 1031917602,
+      "part": 0,
+      "from_key": [
+        "osm",
+        9509809970
+      ],
+      "to_key": [
+        "osm",
+        4941620916
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "parking_aisle",
+        "surface": "concrete"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1532,
       "osm_way": 1031919723,
       "part": 0,
       "from_key": [
@@ -41716,7 +41768,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1531,
+      "edge": 1533,
       "osm_way": 1031919724,
       "part": 0,
       "from_key": [
@@ -41735,7 +41787,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1532,
+      "edge": 1534,
       "osm_way": 1031919724,
       "part": 1,
       "from_key": [
@@ -41754,61 +41806,61 @@
       "boundary_exit": false
     },
     {
-      "edge": 1533,
-      "osm_way": 1034015965,
-      "part": 0,
-      "from_key": [
-        "osm",
-        6384556810
-      ],
-      "to_key": [
-        "osm",
-        1261495899
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "maxspeed": "20 mph",
-        "name": "24th Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "24th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1534,
-      "osm_way": 1034015965,
-      "part": 0,
-      "from_key": [
-        "osm",
-        1261495899
-      ],
-      "to_key": [
-        "osm",
-        6384556810
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "maxspeed": "20 mph",
-        "name": "24th Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "24th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1535,
+      "osm_way": 1034015965,
+      "part": 0,
+      "from_key": [
+        "osm",
+        6384556810
+      ],
+      "to_key": [
+        "osm",
+        1261495899
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "maxspeed": "20 mph",
+        "name": "24th Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "24th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1536,
+      "osm_way": 1034015965,
+      "part": 0,
+      "from_key": [
+        "osm",
+        1261495899
+      ],
+      "to_key": [
+        "osm",
+        6384556810
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "maxspeed": "20 mph",
+        "name": "24th Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "24th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1537,
       "osm_way": 1034015966,
       "part": 0,
       "from_key": [
@@ -41843,7 +41895,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1536,
+      "edge": 1538,
       "osm_way": 1034015967,
       "part": 0,
       "from_key": [
@@ -41878,7 +41930,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1537,
+      "edge": 1539,
       "osm_way": 1034015968,
       "part": 0,
       "from_key": [
@@ -41914,7 +41966,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1538,
+      "edge": 1540,
       "osm_way": 1034015969,
       "part": 0,
       "from_key": [
@@ -41949,81 +42001,81 @@
       "boundary_exit": false
     },
     {
-      "edge": 1539,
-      "osm_way": 1034015978,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4763953259
-      ],
-      "to_key": [
-        "osm",
-        65322282
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Hampshire Street",
-        "sidewalk": "both",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1540,
-      "osm_way": 1034015978,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65322282
-      ],
-      "to_key": [
-        "osm",
-        4763953259
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Hampshire Street",
-        "sidewalk": "both",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1541,
-      "osm_way": 1034015979,
+      "osm_way": 1034015978,
       "part": 0,
       "from_key": [
         "osm",
-        65322282
+        4763953259
       ],
       "to_key": [
         "osm",
-        4763953249
+        65322282
       ],
       "osm_tags": {
         "highway": "residential",
-        "lit": "yes",
         "name": "Hampshire Street",
         "sidewalk": "both",
         "surface": "asphalt",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St",
-        "trolley_wire": "yes"
+        "tiger:name_type": "St"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1542,
+      "osm_way": 1034015978,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65322282
+      ],
+      "to_key": [
+        "osm",
+        4763953259
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "Hampshire Street",
+        "sidewalk": "both",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1543,
+      "osm_way": 1034015979,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65322282
+      ],
+      "to_key": [
+        "osm",
+        4763953249
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "lit": "yes",
+        "name": "Hampshire Street",
+        "sidewalk": "both",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St",
+        "trolley_wire": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1544,
       "osm_way": 1034015979,
       "part": 0,
       "from_key": [
@@ -42044,54 +42096,6 @@
         "tiger:county": "San Francisco, CA",
         "tiger:name_type": "St",
         "trolley_wire": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1543,
-      "osm_way": 1034015984,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4763953245
-      ],
-      "to_key": [
-        "osm",
-        65288813
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "York Street",
-        "sidewalk": "both",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1544,
-      "osm_way": 1034015984,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65288813
-      ],
-      "to_key": [
-        "osm",
-        4763953245
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "York Street",
-        "sidewalk": "both",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -42099,14 +42103,14 @@
     {
       "edge": 1545,
       "osm_way": 1034015984,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
-        65288813
+        4763953245
       ],
       "to_key": [
         "osm",
-        65332316
+        65288813
       ],
       "osm_tags": {
         "highway": "residential",
@@ -42123,6 +42127,54 @@
     {
       "edge": 1546,
       "osm_way": 1034015984,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65288813
+      ],
+      "to_key": [
+        "osm",
+        4763953245
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "York Street",
+        "sidewalk": "both",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1547,
+      "osm_way": 1034015984,
+      "part": 1,
+      "from_key": [
+        "osm",
+        65288813
+      ],
+      "to_key": [
+        "osm",
+        65332316
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "York Street",
+        "sidewalk": "both",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1548,
+      "osm_way": 1034015984,
       "part": 1,
       "from_key": [
         "osm",
@@ -42145,68 +42197,19 @@
       "boundary_exit": false
     },
     {
-      "edge": 1547,
-      "osm_way": 1034015984,
-      "part": 2,
-      "from_key": [
-        "osm",
-        65332316
-      ],
-      "to_key": [
-        "osm",
-        4804855473
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "York Street",
-        "sidewalk": "both",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1548,
-      "osm_way": 1034015984,
-      "part": 2,
-      "from_key": [
-        "osm",
-        4804855473
-      ],
-      "to_key": [
-        "osm",
-        65332316
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "York Street",
-        "sidewalk": "both",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1549,
-      "osm_way": 1034015985,
-      "part": 0,
+      "osm_way": 1034015984,
+      "part": 2,
       "from_key": [
         "osm",
-        4763953257
+        65332316
       ],
       "to_key": [
         "osm",
-        65322284
+        4804855473
       ],
       "osm_tags": {
         "highway": "residential",
-        "lane_markings": "no",
         "name": "York Street",
         "sidewalk": "both",
         "surface": "asphalt",
@@ -42219,19 +42222,18 @@
     },
     {
       "edge": 1550,
-      "osm_way": 1034015985,
-      "part": 0,
+      "osm_way": 1034015984,
+      "part": 2,
       "from_key": [
         "osm",
-        65322284
+        4804855473
       ],
       "to_key": [
         "osm",
-        4763953257
+        65332316
       ],
       "osm_tags": {
         "highway": "residential",
-        "lane_markings": "no",
         "name": "York Street",
         "sidewalk": "both",
         "surface": "asphalt",
@@ -42245,14 +42247,14 @@
     {
       "edge": 1551,
       "osm_way": 1034015985,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
-        65322284
+        4763953257
       ],
       "to_key": [
         "osm",
-        4763953245
+        65322284
       ],
       "osm_tags": {
         "highway": "residential",
@@ -42270,6 +42272,56 @@
     {
       "edge": 1552,
       "osm_way": 1034015985,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65322284
+      ],
+      "to_key": [
+        "osm",
+        4763953257
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "lane_markings": "no",
+        "name": "York Street",
+        "sidewalk": "both",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1553,
+      "osm_way": 1034015985,
+      "part": 1,
+      "from_key": [
+        "osm",
+        65322284
+      ],
+      "to_key": [
+        "osm",
+        4763953245
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "lane_markings": "no",
+        "name": "York Street",
+        "sidewalk": "both",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1554,
+      "osm_way": 1034015985,
       "part": 1,
       "from_key": [
         "osm",
@@ -42293,45 +42345,45 @@
       "boundary_exit": false
     },
     {
-      "edge": 1553,
-      "osm_way": 1042048169,
-      "part": 0,
-      "from_key": [
-        "osm",
-        9592886312
-      ],
-      "to_key": [
-        "osm",
-        9592886311
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "surface": "concrete"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1554,
-      "osm_way": 1042048169,
-      "part": 0,
-      "from_key": [
-        "osm",
-        9592886311
-      ],
-      "to_key": [
-        "osm",
-        9592886312
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "surface": "concrete"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1555,
+      "osm_way": 1042048169,
+      "part": 0,
+      "from_key": [
+        "osm",
+        9592886312
+      ],
+      "to_key": [
+        "osm",
+        9592886311
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "surface": "concrete"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1556,
+      "osm_way": 1042048169,
+      "part": 0,
+      "from_key": [
+        "osm",
+        9592886311
+      ],
+      "to_key": [
+        "osm",
+        9592886312
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "surface": "concrete"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1557,
       "osm_way": 1047061938,
       "part": 0,
       "from_key": [
@@ -42364,7 +42416,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1556,
+      "edge": 1558,
       "osm_way": 1047062505,
       "part": 0,
       "from_key": [
@@ -42394,7 +42446,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1557,
+      "edge": 1559,
       "osm_way": 1051858362,
       "part": 0,
       "from_key": [
@@ -42431,7 +42483,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1558,
+      "edge": 1560,
       "osm_way": 1053839092,
       "part": 0,
       "from_key": [
@@ -42466,77 +42518,77 @@
       "boundary_exit": false
     },
     {
-      "edge": 1559,
-      "osm_way": 1062766976,
-      "part": 0,
-      "from_key": [
-        "osm",
-        9763171610
-      ],
-      "to_key": [
-        "osm",
-        9763171611
-      ],
-      "osm_tags": {
-        "cycleway:left": "track",
-        "cycleway:right": "shared_lane",
-        "highway": "tertiary",
-        "lanes": "4",
-        "lanes:backward": "2",
-        "lanes:forward": "2",
-        "lcn_ref": "25",
-        "name": "Jerrold Avenue",
-        "name:etymology:wikidata": "Q327049",
-        "placement:backward": "left_of:1",
-        "source:imagery": "Bing",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Jerrold",
-        "tiger:name_type": "Ave",
-        "turn:lanes:backward": "|",
-        "turn:lanes:forward": "|right"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1560,
-      "osm_way": 1062766976,
-      "part": 0,
-      "from_key": [
-        "osm",
-        9763171611
-      ],
-      "to_key": [
-        "osm",
-        9763171610
-      ],
-      "osm_tags": {
-        "cycleway:left": "track",
-        "cycleway:right": "shared_lane",
-        "highway": "tertiary",
-        "lanes": "4",
-        "lanes:backward": "2",
-        "lanes:forward": "2",
-        "lcn_ref": "25",
-        "name": "Jerrold Avenue",
-        "name:etymology:wikidata": "Q327049",
-        "placement:backward": "left_of:1",
-        "source:imagery": "Bing",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Jerrold",
-        "tiger:name_type": "Ave",
-        "turn:lanes:backward": "|",
-        "turn:lanes:forward": "|right"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1561,
+      "osm_way": 1062766976,
+      "part": 0,
+      "from_key": [
+        "osm",
+        9763171610
+      ],
+      "to_key": [
+        "osm",
+        9763171611
+      ],
+      "osm_tags": {
+        "cycleway:left": "track",
+        "cycleway:right": "shared_lane",
+        "highway": "tertiary",
+        "lanes": "4",
+        "lanes:backward": "2",
+        "lanes:forward": "2",
+        "lcn_ref": "25",
+        "name": "Jerrold Avenue",
+        "name:etymology:wikidata": "Q327049",
+        "placement:backward": "left_of:1",
+        "source:imagery": "Bing",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Jerrold",
+        "tiger:name_type": "Ave",
+        "turn:lanes:backward": "|",
+        "turn:lanes:forward": "|right"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1562,
+      "osm_way": 1062766976,
+      "part": 0,
+      "from_key": [
+        "osm",
+        9763171611
+      ],
+      "to_key": [
+        "osm",
+        9763171610
+      ],
+      "osm_tags": {
+        "cycleway:left": "track",
+        "cycleway:right": "shared_lane",
+        "highway": "tertiary",
+        "lanes": "4",
+        "lanes:backward": "2",
+        "lanes:forward": "2",
+        "lcn_ref": "25",
+        "name": "Jerrold Avenue",
+        "name:etymology:wikidata": "Q327049",
+        "placement:backward": "left_of:1",
+        "source:imagery": "Bing",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Jerrold",
+        "tiger:name_type": "Ave",
+        "turn:lanes:backward": "|",
+        "turn:lanes:forward": "|right"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1563,
       "osm_way": 1062766977,
       "part": 0,
       "from_key": [
@@ -42565,52 +42617,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1562,
-      "osm_way": 1064291092,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322837
-      ],
-      "to_key": [
-        "osm",
-        5443322830
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1563,
-      "osm_way": 1064291092,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443322830
-      ],
-      "to_key": [
-        "osm",
-        5443322837
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1564,
-      "osm_way": 1064291093,
+      "osm_way": 1064291092,
       "part": 0,
       "from_key": [
         "osm",
-        5443322835
+        5443322837
       ],
       "to_key": [
         "osm",
-        5443322836
+        5443322830
       ],
       "osm_tags": {
         "highway": "service"
@@ -42620,6 +42636,42 @@
     },
     {
       "edge": 1565,
+      "osm_way": 1064291092,
+      "part": 0,
+      "from_key": [
+        "osm",
+        5443322830
+      ],
+      "to_key": [
+        "osm",
+        5443322837
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1566,
+      "osm_way": 1064291093,
+      "part": 0,
+      "from_key": [
+        "osm",
+        5443322835
+      ],
+      "to_key": [
+        "osm",
+        5443322836
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1567,
       "osm_way": 1064291093,
       "part": 0,
       "from_key": [
@@ -42637,45 +42689,45 @@
       "boundary_exit": false
     },
     {
-      "edge": 1566,
-      "osm_way": 1068219639,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4941850406
-      ],
-      "to_key": [
-        "osm",
-        4710902987
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "source:imagery": "Bing"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1567,
-      "osm_way": 1068219639,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4710902987
-      ],
-      "to_key": [
-        "osm",
-        4941850406
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "source:imagery": "Bing"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1568,
+      "osm_way": 1068219639,
+      "part": 0,
+      "from_key": [
+        "osm",
+        4941850406
+      ],
+      "to_key": [
+        "osm",
+        4710902987
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "source:imagery": "Bing"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1569,
+      "osm_way": 1068219639,
+      "part": 0,
+      "from_key": [
+        "osm",
+        4710902987
+      ],
+      "to_key": [
+        "osm",
+        4941850406
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "source:imagery": "Bing"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1570,
       "osm_way": 1068219640,
       "part": 0,
       "from_key": [
@@ -42696,64 +42748,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1569,
-      "osm_way": 1079877180,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65294615
-      ],
-      "to_key": [
-        "osm",
-        65294616
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "lit": "yes",
-        "name": "Rhode Island Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1570,
-      "osm_way": 1079877180,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65294616
-      ],
-      "to_key": [
-        "osm",
-        65294615
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "lit": "yes",
-        "name": "Rhode Island Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1571,
       "osm_way": 1079877180,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
-        65294616
+        65294615
       ],
       "to_key": [
         "osm",
-        65294618
+        65294616
       ],
       "osm_tags": {
         "highway": "residential",
@@ -42770,6 +42774,54 @@
     {
       "edge": 1572,
       "osm_way": 1079877180,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65294616
+      ],
+      "to_key": [
+        "osm",
+        65294615
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "lit": "yes",
+        "name": "Rhode Island Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1573,
+      "osm_way": 1079877180,
+      "part": 1,
+      "from_key": [
+        "osm",
+        65294616
+      ],
+      "to_key": [
+        "osm",
+        65294618
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "lit": "yes",
+        "name": "Rhode Island Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1574,
+      "osm_way": 1079877180,
       "part": 1,
       "from_key": [
         "osm",
@@ -42792,7 +42844,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1573,
+      "edge": 1575,
       "osm_way": 1079877181,
       "part": 0,
       "from_key": [
@@ -42817,7 +42869,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1574,
+      "edge": 1576,
       "osm_way": 1079877182,
       "part": 0,
       "from_key": [
@@ -42842,45 +42894,45 @@
       "boundary_exit": false
     },
     {
-      "edge": 1575,
-      "osm_way": 1082593085,
-      "part": 0,
-      "from_key": [
-        "osm",
-        10824617382
-      ],
-      "to_key": [
-        "osm",
-        10824664214
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "service": "driveway"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1576,
-      "osm_way": 1082593085,
-      "part": 0,
-      "from_key": [
-        "osm",
-        10824664214
-      ],
-      "to_key": [
-        "osm",
-        10824617382
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "service": "driveway"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1577,
+      "osm_way": 1082593085,
+      "part": 0,
+      "from_key": [
+        "osm",
+        10824617382
+      ],
+      "to_key": [
+        "osm",
+        10824664214
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "driveway"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1578,
+      "osm_way": 1082593085,
+      "part": 0,
+      "from_key": [
+        "osm",
+        10824664214
+      ],
+      "to_key": [
+        "osm",
+        10824617382
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "driveway"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1579,
       "osm_way": 1113563969,
       "part": 0,
       "from_key": [
@@ -42913,7 +42965,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1578,
+      "edge": 1580,
       "osm_way": 1164067021,
       "part": 0,
       "from_key": [
@@ -42941,7 +42993,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1579,
+      "edge": 1581,
       "osm_way": 1164067224,
       "part": 0,
       "from_key": [
@@ -42971,7 +43023,7 @@
       "boundary_exit": true
     },
     {
-      "edge": 1580,
+      "edge": 1582,
       "osm_way": 1164067225,
       "part": 0,
       "from_key": [
@@ -43000,7 +43052,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1581,
+      "edge": 1583,
       "osm_way": 1164076368,
       "part": 0,
       "from_key": [
@@ -43037,64 +43089,64 @@
       "boundary_exit": false
     },
     {
-      "edge": 1582,
-      "osm_way": 1169790503,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4911186240
-      ],
-      "to_key": [
-        "osm",
-        4941850410
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "source:imagery": "Bing"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1583,
-      "osm_way": 1169790503,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4941850410
-      ],
-      "to_key": [
-        "osm",
-        4911186240
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "source:imagery": "Bing"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1584,
-      "osm_way": 1182662534,
+      "osm_way": 1169790503,
       "part": 0,
       "from_key": [
         "osm",
-        65310181
+        4911186240
       ],
       "to_key": [
         "osm",
-        10982250132
+        4941850410
       ],
       "osm_tags": {
         "highway": "service",
-        "lit": "yes"
+        "source:imagery": "Bing"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1585,
+      "osm_way": 1169790503,
+      "part": 0,
+      "from_key": [
+        "osm",
+        4941850410
+      ],
+      "to_key": [
+        "osm",
+        4911186240
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "source:imagery": "Bing"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1586,
+      "osm_way": 1182662534,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65310181
+      ],
+      "to_key": [
+        "osm",
+        10982250132
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "lit": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1587,
       "osm_way": 1182662534,
       "part": 0,
       "from_key": [
@@ -43113,7 +43165,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1586,
+      "edge": 1588,
       "osm_way": 1193777661,
       "part": 0,
       "from_key": [
@@ -43133,7 +43185,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1587,
+      "edge": 1589,
       "osm_way": 1193777662,
       "part": 0,
       "from_key": [
@@ -43152,7 +43204,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1588,
+      "edge": 1590,
       "osm_way": 1193777662,
       "part": 1,
       "from_key": [
@@ -43171,7 +43223,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1589,
+      "edge": 1591,
       "osm_way": 1202453046,
       "part": 0,
       "from_key": [
@@ -43199,98 +43251,58 @@
       "boundary_exit": false
     },
     {
-      "edge": 1590,
-      "osm_way": 1207081387,
-      "part": 0,
-      "from_key": [
-        "osm",
-        7128815712
-      ],
-      "to_key": [
-        "osm",
-        11185051066
-      ],
-      "osm_tags": {
-        "covered": "yes",
-        "highway": "service",
-        "service": "driveway",
-        "surface": "concrete"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1591,
-      "osm_way": 1207081387,
-      "part": 0,
-      "from_key": [
-        "osm",
-        11185051066
-      ],
-      "to_key": [
-        "osm",
-        7128815712
-      ],
-      "osm_tags": {
-        "covered": "yes",
-        "highway": "service",
-        "service": "driveway",
-        "surface": "concrete"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1592,
-      "osm_way": 1207081388,
+      "osm_way": 1207081387,
       "part": 0,
       "from_key": [
         "osm",
-        11185051066
+        7128815712
       ],
       "to_key": [
         "osm",
-        65344781
+        11185051066
       ],
       "osm_tags": {
+        "covered": "yes",
         "highway": "service",
         "service": "driveway",
-        "surface": "asphalt"
+        "surface": "concrete"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1593,
-      "osm_way": 1207081388,
+      "osm_way": 1207081387,
       "part": 0,
       "from_key": [
         "osm",
-        65344781
+        11185051066
       ],
       "to_key": [
         "osm",
-        11185051066
+        7128815712
       ],
       "osm_tags": {
+        "covered": "yes",
         "highway": "service",
         "service": "driveway",
-        "surface": "asphalt"
+        "surface": "concrete"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1594,
-      "osm_way": 1211649968,
+      "osm_way": 1207081388,
       "part": 0,
       "from_key": [
         "osm",
-        11225524928
+        11185051066
       ],
       "to_key": [
         "osm",
-        11983688680
+        65344781
       ],
       "osm_tags": {
         "highway": "service",
@@ -43302,6 +43314,46 @@
     },
     {
       "edge": 1595,
+      "osm_way": 1207081388,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65344781
+      ],
+      "to_key": [
+        "osm",
+        11185051066
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "driveway",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1596,
+      "osm_way": 1211649968,
+      "part": 0,
+      "from_key": [
+        "osm",
+        11225524928
+      ],
+      "to_key": [
+        "osm",
+        11983688680
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "driveway",
+        "surface": "asphalt"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1597,
       "osm_way": 1211649968,
       "part": 0,
       "from_key": [
@@ -43321,71 +43373,71 @@
       "boundary_exit": false
     },
     {
-      "edge": 1596,
-      "osm_way": 1219516608,
-      "part": 0,
-      "from_key": [
-        "osm",
-        11299881140
-      ],
-      "to_key": [
-        "osm",
-        11299881141
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "service": "driveway"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1597,
-      "osm_way": 1219516608,
-      "part": 0,
-      "from_key": [
-        "osm",
-        11299881141
-      ],
-      "to_key": [
-        "osm",
-        11299881140
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "service": "driveway"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1598,
-      "osm_way": 1232733731,
+      "osm_way": 1219516608,
       "part": 0,
       "from_key": [
         "osm",
-        65320197
+        11299881140
       ],
       "to_key": [
         "osm",
-        65294621
+        11299881141
       ],
       "osm_tags": {
-        "highway": "residential",
-        "incline": "31.5%",
-        "name": "24th Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "24th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "no"
+        "highway": "service",
+        "service": "driveway"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1599,
+      "osm_way": 1219516608,
+      "part": 0,
+      "from_key": [
+        "osm",
+        11299881141
+      ],
+      "to_key": [
+        "osm",
+        11299881140
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "driveway"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1600,
+      "osm_way": 1232733731,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65320197
+      ],
+      "to_key": [
+        "osm",
+        65294621
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "incline": "31.5%",
+        "name": "24th Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "24th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1601,
       "osm_way": 1232733731,
       "part": 0,
       "from_key": [
@@ -43411,61 +43463,61 @@
       "boundary_exit": false
     },
     {
-      "edge": 1600,
-      "osm_way": 1268560886,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4941620914
-      ],
-      "to_key": [
-        "osm",
-        65308746
-      ],
-      "osm_tags": {
-        "cycleway": "shared_lane",
-        "highway": "residential",
-        "lcn_ref": "525",
-        "name": "23rd Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "23rd",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1601,
-      "osm_way": 1268560886,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65308746
-      ],
-      "to_key": [
-        "osm",
-        4941620914
-      ],
-      "osm_tags": {
-        "cycleway": "shared_lane",
-        "highway": "residential",
-        "lcn_ref": "525",
-        "name": "23rd Street",
-        "sidewalk:both": "separate",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "23rd",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1602,
+      "osm_way": 1268560886,
+      "part": 0,
+      "from_key": [
+        "osm",
+        4941620914
+      ],
+      "to_key": [
+        "osm",
+        65308746
+      ],
+      "osm_tags": {
+        "cycleway": "shared_lane",
+        "highway": "residential",
+        "lcn_ref": "525",
+        "name": "23rd Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "23rd",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1603,
+      "osm_way": 1268560886,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65308746
+      ],
+      "to_key": [
+        "osm",
+        4941620914
+      ],
+      "osm_tags": {
+        "cycleway": "shared_lane",
+        "highway": "residential",
+        "lcn_ref": "525",
+        "name": "23rd Street",
+        "sidewalk:both": "separate",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "23rd",
+        "tiger:name_type": "St"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1604,
       "osm_way": 1292542113,
       "part": 0,
       "from_key": [
@@ -43498,7 +43550,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1603,
+      "edge": 1605,
       "osm_way": 1292542115,
       "part": 0,
       "from_key": [
@@ -43521,74 +43573,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1604,
-      "osm_way": 1295543182,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65312058
-      ],
-      "to_key": [
-        "osm",
-        6877285472
-      ],
-      "osm_tags": {
-        "highway": "tertiary",
-        "lanes": "2",
-        "lit": "yes",
-        "maxheight": "14'1\"",
-        "maxspeed": "25 mph",
-        "name": "Cortland Avenue",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Cortland",
-        "tiger:name_type": "Ave",
-        "trolley_wire": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1605,
-      "osm_way": 1295543182,
-      "part": 0,
-      "from_key": [
-        "osm",
-        6877285472
-      ],
-      "to_key": [
-        "osm",
-        65312058
-      ],
-      "osm_tags": {
-        "highway": "tertiary",
-        "lanes": "2",
-        "lit": "yes",
-        "maxheight": "14'1\"",
-        "maxspeed": "25 mph",
-        "name": "Cortland Avenue",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Cortland",
-        "tiger:name_type": "Ave",
-        "trolley_wire": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1606,
       "osm_way": 1295543182,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
-        6877285472
+        65312058
       ],
       "to_key": [
         "osm",
-        65312068
+        6877285472
       ],
       "osm_tags": {
         "highway": "tertiary",
@@ -43610,6 +43604,64 @@
     {
       "edge": 1607,
       "osm_way": 1295543182,
+      "part": 0,
+      "from_key": [
+        "osm",
+        6877285472
+      ],
+      "to_key": [
+        "osm",
+        65312058
+      ],
+      "osm_tags": {
+        "highway": "tertiary",
+        "lanes": "2",
+        "lit": "yes",
+        "maxheight": "14'1\"",
+        "maxspeed": "25 mph",
+        "name": "Cortland Avenue",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Cortland",
+        "tiger:name_type": "Ave",
+        "trolley_wire": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1608,
+      "osm_way": 1295543182,
+      "part": 1,
+      "from_key": [
+        "osm",
+        6877285472
+      ],
+      "to_key": [
+        "osm",
+        65312068
+      ],
+      "osm_tags": {
+        "highway": "tertiary",
+        "lanes": "2",
+        "lit": "yes",
+        "maxheight": "14'1\"",
+        "maxspeed": "25 mph",
+        "name": "Cortland Avenue",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Cortland",
+        "tiger:name_type": "Ave",
+        "trolley_wire": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1609,
+      "osm_way": 1295543182,
       "part": 1,
       "from_key": [
         "osm",
@@ -43637,7 +43689,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1608,
+      "edge": 1610,
       "osm_way": 1343758308,
       "part": 0,
       "from_key": [
@@ -43677,7 +43729,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1609,
+      "edge": 1611,
       "osm_way": 1343758309,
       "part": 0,
       "from_key": [
@@ -43717,7 +43769,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1610,
+      "edge": 1612,
       "osm_way": 1343758310,
       "part": 0,
       "from_key": [
@@ -43759,7 +43811,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1611,
+      "edge": 1613,
       "osm_way": 1346689071,
       "part": 0,
       "from_key": [
@@ -43787,7 +43839,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1612,
+      "edge": 1614,
       "osm_way": 1346689072,
       "part": 0,
       "from_key": [
@@ -43814,7 +43866,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1613,
+      "edge": 1615,
       "osm_way": 1348304110,
       "part": 0,
       "from_key": [
@@ -43835,7 +43887,7 @@
       "boundary_exit": true
     },
     {
-      "edge": 1614,
+      "edge": 1616,
       "osm_way": 1348304111,
       "part": 0,
       "from_key": [
@@ -43854,7 +43906,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1615,
+      "edge": 1617,
       "osm_way": 1348304111,
       "part": 1,
       "from_key": [
@@ -43873,7 +43925,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1616,
+      "edge": 1618,
       "osm_way": 1348304111,
       "part": 2,
       "from_key": [
@@ -43892,12 +43944,31 @@
       "boundary_exit": false
     },
     {
-      "edge": 1617,
+      "edge": 1619,
       "osm_way": 1348304111,
       "part": 3,
       "from_key": [
         "osm",
         12471737475
+      ],
+      "to_key": [
+        "osm",
+        12471737479
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "oneway": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1620,
+      "osm_way": 1348304111,
+      "part": 4,
+      "from_key": [
+        "osm",
+        12471737479
       ],
       "to_key": [
         "osm",
@@ -43911,9 +43982,9 @@
       "boundary_exit": false
     },
     {
-      "edge": 1618,
+      "edge": 1621,
       "osm_way": 1348304111,
-      "part": 4,
+      "part": 5,
       "from_key": [
         "osm",
         65374880
@@ -43930,7 +44001,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1619,
+      "edge": 1622,
       "osm_way": 1354932598,
       "part": 0,
       "from_key": [
@@ -43962,119 +44033,119 @@
       "boundary_exit": false
     },
     {
-      "edge": 1620,
-      "osm_way": 1381701124,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65332243
-      ],
-      "to_key": [
-        "osm",
-        65356422
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Palou Avenue",
-        "name:etymology:wikidata": "Q2636220",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Palou",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no",
-        "trolley_wire": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1621,
-      "osm_way": 1381701124,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65356422
-      ],
-      "to_key": [
-        "osm",
-        65332243
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Palou Avenue",
-        "name:etymology:wikidata": "Q2636220",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Palou",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no",
-        "trolley_wire": "yes"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1622,
-      "osm_way": 1381808434,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65340082
-      ],
-      "to_key": [
-        "osm",
-        65340086
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "maxweight:hgv": "3 st",
-        "name": "Vermont Street",
-        "oneway": "no",
-        "surface": "asphalt",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Vermont",
-        "tiger:name_type": "St",
-        "tourism": "yes",
-        "wikidata": "Q4010087",
-        "wikipedia": "en:Vermont Street (San Francisco)"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1623,
-      "osm_way": 1381808434,
+      "osm_way": 1381701124,
       "part": 0,
       "from_key": [
         "osm",
-        65340086
+        65332243
       ],
       "to_key": [
         "osm",
-        65340082
+        65356422
       ],
       "osm_tags": {
         "highway": "residential",
-        "maxweight:hgv": "3 st",
-        "name": "Vermont Street",
-        "oneway": "no",
-        "surface": "asphalt",
+        "name": "Palou Avenue",
+        "name:etymology:wikidata": "Q2636220",
+        "sidewalk:both": "separate",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Vermont",
-        "tiger:name_type": "St",
-        "tourism": "yes",
-        "wikidata": "Q4010087",
-        "wikipedia": "en:Vermont Street (San Francisco)"
+        "tiger:name_base": "Palou",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no",
+        "trolley_wire": "yes"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1624,
+      "osm_way": 1381701124,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65356422
+      ],
+      "to_key": [
+        "osm",
+        65332243
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "Palou Avenue",
+        "name:etymology:wikidata": "Q2636220",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Palou",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no",
+        "trolley_wire": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1625,
+      "osm_way": 1381808434,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65340082
+      ],
+      "to_key": [
+        "osm",
+        65340086
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "maxweight:hgv": "3 st",
+        "name": "Vermont Street",
+        "oneway": "no",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Vermont",
+        "tiger:name_type": "St",
+        "tourism": "yes",
+        "wikidata": "Q4010087",
+        "wikipedia": "en:Vermont Street (San Francisco)"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1626,
+      "osm_way": 1381808434,
+      "part": 0,
+      "from_key": [
+        "osm",
+        65340086
+      ],
+      "to_key": [
+        "osm",
+        65340082
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "maxweight:hgv": "3 st",
+        "name": "Vermont Street",
+        "oneway": "no",
+        "surface": "asphalt",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Vermont",
+        "tiger:name_type": "St",
+        "tourism": "yes",
+        "wikidata": "Q4010087",
+        "wikipedia": "en:Vermont Street (San Francisco)"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1627,
       "osm_way": 1410069456,
       "part": 0,
       "from_key": [
@@ -44096,7 +44167,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1625,
+      "edge": 1628,
       "osm_way": 1436830121,
       "part": 0,
       "from_key": [
@@ -44122,7 +44193,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1626,
+      "edge": 1629,
       "osm_way": 1436830121,
       "part": 0,
       "from_key": [
@@ -44148,87 +44219,12 @@
       "boundary_exit": true
     },
     {
-      "edge": 1627,
-      "osm_way": 1436830121,
-      "part": 1,
-      "from_key": [
-        "osm",
-        65305076
-      ],
-      "to_key": [
-        "osm",
-        11299881140
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Quesada Avenue",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Quesada",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1628,
-      "osm_way": 1436830121,
-      "part": 1,
-      "from_key": [
-        "osm",
-        11299881140
-      ],
-      "to_key": [
-        "osm",
-        65305076
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Quesada Avenue",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Quesada",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1629,
-      "osm_way": 1436830121,
-      "part": 2,
-      "from_key": [
-        "osm",
-        11299881140
-      ],
-      "to_key": [
-        "osm",
-        4941849274
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Quesada Avenue",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Quesada",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1630,
       "osm_way": 1436830121,
-      "part": 2,
+      "part": 1,
       "from_key": [
         "osm",
-        4941849274
+        65305076
       ],
       "to_key": [
         "osm",
@@ -44250,14 +44246,14 @@
     {
       "edge": 1631,
       "osm_way": 1436830121,
-      "part": 3,
+      "part": 1,
       "from_key": [
         "osm",
-        4941849274
+        11299881140
       ],
       "to_key": [
         "osm",
-        65305089
+        65305076
       ],
       "osm_tags": {
         "highway": "residential",
@@ -44275,10 +44271,10 @@
     {
       "edge": 1632,
       "osm_way": 1436830121,
-      "part": 3,
+      "part": 2,
       "from_key": [
         "osm",
-        65305089
+        11299881140
       ],
       "to_key": [
         "osm",
@@ -44300,6 +44296,81 @@
     {
       "edge": 1633,
       "osm_way": 1436830121,
+      "part": 2,
+      "from_key": [
+        "osm",
+        4941849274
+      ],
+      "to_key": [
+        "osm",
+        11299881140
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "Quesada Avenue",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Quesada",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1634,
+      "osm_way": 1436830121,
+      "part": 3,
+      "from_key": [
+        "osm",
+        4941849274
+      ],
+      "to_key": [
+        "osm",
+        65305089
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "Quesada Avenue",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Quesada",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1635,
+      "osm_way": 1436830121,
+      "part": 3,
+      "from_key": [
+        "osm",
+        65305089
+      ],
+      "to_key": [
+        "osm",
+        4941849274
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "Quesada Avenue",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Quesada",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1636,
+      "osm_way": 1436830121,
       "part": 4,
       "from_key": [
         "osm",
@@ -44323,7 +44394,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1634,
+      "edge": 1637,
       "osm_way": 1436830121,
       "part": 4,
       "from_key": [
@@ -44348,90 +44419,12 @@
       "boundary_exit": false
     },
     {
-      "edge": 1635,
-      "osm_way": 1436830385,
-      "part": 0,
-      "from_key": [
-        "osm",
-        259138404
-      ],
-      "to_key": [
-        "osm",
-        65313118
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Palou Avenue",
-        "name:etymology:wikidata": "Q2636220",
-        "sidewalk": "both",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Palou",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1636,
-      "osm_way": 1436830385,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65313118
-      ],
-      "to_key": [
-        "osm",
-        259138404
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Palou Avenue",
-        "name:etymology:wikidata": "Q2636220",
-        "sidewalk": "both",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Palou",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1637,
-      "osm_way": 1436830385,
-      "part": 1,
-      "from_key": [
-        "osm",
-        65313118
-      ],
-      "to_key": [
-        "osm",
-        4941850481
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Palou Avenue",
-        "name:etymology:wikidata": "Q2636220",
-        "sidewalk": "both",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Palou",
-        "tiger:name_type": "Ave",
-        "tiger:reviewed": "no"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1638,
       "osm_way": 1436830385,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
-        4941850481
+        259138404
       ],
       "to_key": [
         "osm",
@@ -44453,7 +44446,7 @@
     },
     {
       "edge": 1639,
-      "osm_way": 1436830386,
+      "osm_way": 1436830385,
       "part": 0,
       "from_key": [
         "osm",
@@ -44461,64 +44454,70 @@
       ],
       "to_key": [
         "osm",
-        4941850480
+        259138404
       ],
       "osm_tags": {
-        "highway": "unclassified",
-        "name": "Dorman Avenue",
+        "highway": "residential",
+        "name": "Palou Avenue",
+        "name:etymology:wikidata": "Q2636220",
         "sidewalk": "both",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Dorman",
-        "tiger:name_type": "Ave"
+        "tiger:name_base": "Palou",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1640,
-      "osm_way": 1436830386,
-      "part": 0,
+      "osm_way": 1436830385,
+      "part": 1,
       "from_key": [
-        "osm",
-        4941850480
-      ],
-      "to_key": [
         "osm",
         65313118
       ],
+      "to_key": [
+        "osm",
+        4941850481
+      ],
       "osm_tags": {
-        "highway": "unclassified",
-        "name": "Dorman Avenue",
+        "highway": "residential",
+        "name": "Palou Avenue",
+        "name:etymology:wikidata": "Q2636220",
         "sidewalk": "both",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Dorman",
-        "tiger:name_type": "Ave"
+        "tiger:name_base": "Palou",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1641,
-      "osm_way": 1436830386,
+      "osm_way": 1436830385,
       "part": 1,
       "from_key": [
         "osm",
-        4941850480
+        4941850481
       ],
       "to_key": [
         "osm",
-        4941850766
+        65313118
       ],
       "osm_tags": {
-        "highway": "unclassified",
-        "name": "Dorman Avenue",
+        "highway": "residential",
+        "name": "Palou Avenue",
+        "name:etymology:wikidata": "Q2636220",
         "sidewalk": "both",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Dorman",
-        "tiger:name_type": "Ave"
+        "tiger:name_base": "Palou",
+        "tiger:name_type": "Ave",
+        "tiger:reviewed": "no"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -44526,10 +44525,10 @@
     {
       "edge": 1642,
       "osm_way": 1436830386,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
-        4941850766
+        65313118
       ],
       "to_key": [
         "osm",
@@ -44550,6 +44549,78 @@
     {
       "edge": 1643,
       "osm_way": 1436830386,
+      "part": 0,
+      "from_key": [
+        "osm",
+        4941850480
+      ],
+      "to_key": [
+        "osm",
+        65313118
+      ],
+      "osm_tags": {
+        "highway": "unclassified",
+        "name": "Dorman Avenue",
+        "sidewalk": "both",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Dorman",
+        "tiger:name_type": "Ave"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1644,
+      "osm_way": 1436830386,
+      "part": 1,
+      "from_key": [
+        "osm",
+        4941850480
+      ],
+      "to_key": [
+        "osm",
+        4941850766
+      ],
+      "osm_tags": {
+        "highway": "unclassified",
+        "name": "Dorman Avenue",
+        "sidewalk": "both",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Dorman",
+        "tiger:name_type": "Ave"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1645,
+      "osm_way": 1436830386,
+      "part": 1,
+      "from_key": [
+        "osm",
+        4941850766
+      ],
+      "to_key": [
+        "osm",
+        4941850480
+      ],
+      "osm_tags": {
+        "highway": "unclassified",
+        "name": "Dorman Avenue",
+        "sidewalk": "both",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "Dorman",
+        "tiger:name_type": "Ave"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1646,
+      "osm_way": 1436830386,
       "part": 2,
       "from_key": [
         "osm",
@@ -44572,7 +44643,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1644,
+      "edge": 1647,
       "osm_way": 1436830386,
       "part": 2,
       "from_key": [
@@ -44596,162 +44667,87 @@
       "boundary_exit": false
     },
     {
-      "edge": 1645,
-      "osm_way": 1443068452,
-      "part": 0,
-      "from_key": [
-        "osm",
-        4941850432
-      ],
-      "to_key": [
-        "osm",
-        13241333134
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "source:imagery": "Bing"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1646,
-      "osm_way": 1443068452,
-      "part": 0,
-      "from_key": [
-        "osm",
-        13241333134
-      ],
-      "to_key": [
-        "osm",
-        4941850432
-      ],
-      "osm_tags": {
-        "highway": "service",
-        "source:imagery": "Bing"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1647,
-      "osm_way": 1459359125,
-      "part": 0,
-      "from_key": [
-        "osm",
-        65288984
-      ],
-      "to_key": [
-        "osm",
-        65345911
-      ],
-      "osm_tags": {
-        "highway": "residential",
-        "name": "Utah Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Utah",
-        "tiger:name_type": "St"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1648,
-      "osm_way": 1459359125,
+      "osm_way": 1443068452,
       "part": 0,
       "from_key": [
         "osm",
-        65345911
+        4941850432
       ],
       "to_key": [
         "osm",
-        65288984
+        13241333134
       ],
       "osm_tags": {
-        "highway": "residential",
-        "name": "Utah Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "Utah",
-        "tiger:name_type": "St"
+        "highway": "service",
+        "source:imagery": "Bing"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1649,
-      "osm_way": 1459359126,
+      "osm_way": 1443068452,
       "part": 0,
       "from_key": [
         "osm",
-        65288979
+        13241333134
       ],
       "to_key": [
         "osm",
-        1261495895
+        4941850432
       ],
       "osm_tags": {
-        "highway": "residential",
-        "name": "25th Street",
-        "sidewalk:both": "separate",
-        "tiger:cfcc": "A41",
-        "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "25th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "yes"
+        "highway": "service",
+        "source:imagery": "Bing"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1650,
-      "osm_way": 1459359126,
+      "osm_way": 1459359125,
       "part": 0,
       "from_key": [
         "osm",
-        1261495895
+        65288984
       ],
       "to_key": [
         "osm",
-        65288979
+        65345911
       ],
       "osm_tags": {
         "highway": "residential",
-        "name": "25th Street",
+        "name": "Utah Street",
         "sidewalk:both": "separate",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "25th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "yes"
+        "tiger:name_base": "Utah",
+        "tiger:name_type": "St"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1651,
-      "osm_way": 1459359126,
-      "part": 1,
+      "osm_way": 1459359125,
+      "part": 0,
       "from_key": [
         "osm",
-        1261495895
+        65345911
       ],
       "to_key": [
         "osm",
-        65288983
+        65288984
       ],
       "osm_tags": {
         "highway": "residential",
-        "name": "25th Street",
+        "name": "Utah Street",
         "sidewalk:both": "separate",
         "tiger:cfcc": "A41",
         "tiger:county": "San Francisco, CA",
-        "tiger:name_base": "25th",
-        "tiger:name_type": "St",
-        "tiger:reviewed": "yes"
+        "tiger:name_base": "Utah",
+        "tiger:name_type": "St"
       },
       "boundary_entry": false,
       "boundary_exit": false
@@ -44759,10 +44755,10 @@
     {
       "edge": 1652,
       "osm_way": 1459359126,
-      "part": 1,
+      "part": 0,
       "from_key": [
         "osm",
-        65288983
+        65288979
       ],
       "to_key": [
         "osm",
@@ -44783,6 +44779,81 @@
     },
     {
       "edge": 1653,
+      "osm_way": 1459359126,
+      "part": 0,
+      "from_key": [
+        "osm",
+        1261495895
+      ],
+      "to_key": [
+        "osm",
+        65288979
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "25th Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "25th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1654,
+      "osm_way": 1459359126,
+      "part": 1,
+      "from_key": [
+        "osm",
+        1261495895
+      ],
+      "to_key": [
+        "osm",
+        65288983
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "25th Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "25th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1655,
+      "osm_way": 1459359126,
+      "part": 1,
+      "from_key": [
+        "osm",
+        65288983
+      ],
+      "to_key": [
+        "osm",
+        1261495895
+      ],
+      "osm_tags": {
+        "highway": "residential",
+        "name": "25th Street",
+        "sidewalk:both": "separate",
+        "tiger:cfcc": "A41",
+        "tiger:county": "San Francisco, CA",
+        "tiger:name_base": "25th",
+        "tiger:name_type": "St",
+        "tiger:reviewed": "yes"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1656,
       "osm_way": 1499748158,
       "part": 0,
       "from_key": [
@@ -44802,7 +44873,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1654,
+      "edge": 1657,
       "osm_way": 1499748159,
       "part": 0,
       "from_key": [
@@ -44822,70 +44893,16 @@
       "boundary_exit": false
     },
     {
-      "edge": 1655,
-      "osm_way": 1524311614,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443111067
-      ],
-      "to_key": [
-        "osm",
-        5443111066
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1656,
-      "osm_way": 1524311614,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443111066
-      ],
-      "to_key": [
-        "osm",
-        5443111067
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
-      "edge": 1657,
-      "osm_way": 1524311615,
-      "part": 0,
-      "from_key": [
-        "osm",
-        5443111069
-      ],
-      "to_key": [
-        "osm",
-        5443111064
-      ],
-      "osm_tags": {
-        "highway": "service"
-      },
-      "boundary_entry": false,
-      "boundary_exit": false
-    },
-    {
       "edge": 1658,
-      "osm_way": 1524311615,
+      "osm_way": 1524311614,
       "part": 0,
       "from_key": [
         "osm",
-        5443111064
+        5443111067
       ],
       "to_key": [
         "osm",
-        5443111069
+        5443111066
       ],
       "osm_tags": {
         "highway": "service"
@@ -44895,25 +44912,79 @@
     },
     {
       "edge": 1659,
-      "osm_way": 1547069050,
+      "osm_way": 1524311614,
       "part": 0,
       "from_key": [
         "osm",
-        14071583313
+        5443111066
       ],
       "to_key": [
         "osm",
-        14071583314
+        5443111067
       ],
       "osm_tags": {
-        "highway": "service",
-        "service": "parking_aisle"
+        "highway": "service"
       },
       "boundary_entry": false,
       "boundary_exit": false
     },
     {
       "edge": 1660,
+      "osm_way": 1524311615,
+      "part": 0,
+      "from_key": [
+        "osm",
+        5443111069
+      ],
+      "to_key": [
+        "osm",
+        5443111064
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1661,
+      "osm_way": 1524311615,
+      "part": 0,
+      "from_key": [
+        "osm",
+        5443111064
+      ],
+      "to_key": [
+        "osm",
+        5443111069
+      ],
+      "osm_tags": {
+        "highway": "service"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1662,
+      "osm_way": 1547069050,
+      "part": 0,
+      "from_key": [
+        "osm",
+        14071583313
+      ],
+      "to_key": [
+        "osm",
+        14071583314
+      ],
+      "osm_tags": {
+        "highway": "service",
+        "service": "parking_aisle"
+      },
+      "boundary_entry": false,
+      "boundary_exit": false
+    },
+    {
+      "edge": 1663,
       "osm_way": 1547069050,
       "part": 0,
       "from_key": [
@@ -44932,7 +45003,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1661,
+      "edge": 1664,
       "osm_way": 1557740621,
       "part": 0,
       "from_key": [
@@ -44961,7 +45032,7 @@
       "boundary_exit": false
     },
     {
-      "edge": 1662,
+      "edge": 1665,
       "osm_way": 1557740622,
       "part": 0,
       "from_key": [
@@ -44991,5 +45062,6 @@
       "boundary_exit": false
     }
   ],
-  "raw_sha256": "4ad388ade425c54fd536ffab2440970531845a7b445864ac3d4bc79ba9e7e8d4"
+  "raw_sha256": "4ad388ade425c54fd536ffab2440970531845a7b445864ac3d4bc79ba9e7e8d4",
+  "rejected_edges": []
 }

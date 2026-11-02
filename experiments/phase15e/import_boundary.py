@@ -29,11 +29,15 @@ def import_boundary(path,box=BBOX):
   for r in set(refs):count[r]=count.get(r,0)+1
  lat=(box[1]+box[3])/2;scale=111320*math.cos(math.radians(lat))
  def dist(a,b):return math.hypot((b[0]-a[0])*scale,(b[1]-a[1])*111320)
- coords={};segments=[]
+ coords={};segments=[];rejected=[]
  def key(xy,original=None):
   k=('osm',original) if original is not None else ('boundary',round(xy[0],11),round(xy[1],11))
   coords[k]=xy;return k
  for wid,refs,t in sorted(ways):
+  # Split every closed source ring, including one attached at only one junction.
+  # Additional shared intersections may split it further; no way ID is special.
+  interior=refs[1:-1] if len(refs)>2 and refs[0]==refs[-1] else []
+  ring_split=next((r for r in interior[len(interior)//2:]+interior[:len(interior)//2] if r!=refs[0]),None)
   pieces=[];active=[]
   for index,(ra,rb) in enumerate(zip(refs,refs[1:])):
    a,b=points[ra],points[rb];c=clip(a,b,box)
@@ -47,23 +51,36 @@ def import_boundary(path,box=BBOX):
     active=[]
    if not active:active=[ka]
    active.append(kb)
-   if hi<1-1e-12 or count.get(rb,0)>1 or index==len(refs)-2:
+   if hi<1-1e-12 or count.get(rb,0)>1 or rb==ring_split or index==len(refs)-2:
     if len(active)>=2:pieces.append(active)
     active=[]
   if len(active)>=2:pieces.append(active)
   highway=t['highway'];cls='ramp' if highway.endswith('_link') else 'motorway' if highway in ['motorway','trunk'] else 'arterial' if highway in ['primary','secondary','tertiary'] else 'street'
   oneway=t.get('oneway','yes' if highway=='motorway' or t.get('junction')=='roundabout' else 'no');direction=-1 if oneway=='-1' else 1 if oneway in ['yes','1','true'] else 0
   default=65*.44704 if cls=='motorway' else 35*.44704 if cls=='ramp' else 25*.44704
+  bad_tags=[]
   try:
    s=t.get('maxspeed','');speed=float(s.replace('mph','').replace('km/h','').strip())*(.44704 if 'mph' in s else 1/3.6)
-  except ValueError:speed=default
-  total=int(t.get('lanes',2 if direction==0 else 1));forward=int(t.get('lanes:forward',max(total//2,1) if direction==0 else total));back=int(t.get('lanes:backward',max(total//2,1)))
-  if not 1<=forward<=8 or not 1<=back<=8:raise ValueError('unsupported explicit OSM lane count')
+  except ValueError:
+   speed=default
+   if t.get('maxspeed'):bad_tags.append('unparseable maxspeed tag')
+  try:
+   total=int(t.get('lanes',2 if direction==0 else 1));forward=int(t.get('lanes:forward',max(total//2,1) if direction==0 else total));back=int(t.get('lanes:backward',max(total//2,1)))
+  except ValueError:
+   total=forward=back=0;bad_tags.append('unparseable lanes tag')
   for part,ks in enumerate(pieces):
    length=sum(dist(coords[a],coords[b]) for a,b in zip(ks,ks[1:]))
-   if length<=.1:continue
    directions=[(ks,forward)] if direction==1 else [(ks[::-1],total)] if direction==-1 else [(ks,forward),(ks[::-1],back)]
-   for directed,lanes in directions:segments.append({'keys':directed,'length':length,'lanes':lanes,'speed':speed,'class':cls,'way':wid,'part':part,'tags':t})
+   for directed,lanes in directions:
+    why=bad_tags.copy()
+    if directed[0]==directed[-1]:why.append('self-loop after ring split')
+    if not math.isfinite(length) or length<=.1:why.append('nonfinite/zero length or below retained 0.1 m import threshold')
+    if not 1<=lanes<=8:why.append('bad lane count (supported 1..8)')
+    if not math.isfinite(speed) or speed<=0:why.append('nonpositive/nonfinite speed')
+    if why:
+     rejected.append({'osm_way':wid,'part':part,'from_key':directed[0],'to_key':directed[-1],'reasons':why,'osm_tags':t,'protected_freeway':(highway=='motorway' and '101' in t.get('ref','')) or highway=='motorway_link'})
+     continue
+    segments.append({'keys':directed,'length':length,'lanes':lanes,'speed':speed,'class':cls,'way':wid,'part':part,'tags':t})
  used=sorted({s['keys'][i] for s in segments for i in [0,-1]},key=str);ids={k:i for i,k in enumerate(used)}
  incoming={k:0 for k in used};outgoing=incoming.copy()
  for s in segments:outgoing[s['keys'][0]]+=1;incoming[s['keys'][-1]]+=1
@@ -82,10 +99,13 @@ def import_boundary(path,box=BBOX):
   meta.append({'edge':eid,'osm_way':s['way'],'part':s['part'],'from_key':ks[0],'to_key':ks[-1],'osm_tags':s['tags'],'boundary_entry':boundary(coords[ks[0]]),'boundary_exit':boundary(coords[ks[-1]])})
   nodes[ids[ks[0]]]['trim_m']=min(nodes[ids[ks[0]]]['trim_m'],s['length']*.25);nodes[ids[ks[-1]]]['trim_m']=min(nodes[ids[ks[-1]]]['trim_m'],s['length']*.25)
  data={'version':1,'attribution':'© OpenStreetMap contributors · ODbL 1.0 · https://www.openstreetmap.org/copyright','origin':[lat,(box[0]+box[2])/2],'schedule_scale':1.,'nodes':nodes,'edges':edges}
- metadata={'mode':'boundary opt-in; no SCC deletion','bbox_west_south_east_north':box,'node_keys':used,'edges':meta,'raw_sha256':hashlib.sha256(Path(path).read_bytes()).hexdigest()}
+ metadata={'mode':'boundary opt-in; no SCC deletion','bbox_west_south_east_north':box,'node_keys':used,'edges':meta,'raw_sha256':hashlib.sha256(Path(path).read_bytes()).hexdigest(),'rejected_edges':rejected}
  return data,metadata
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--boundary',action='store_true',required=True);args=p.parse_args()
  data,meta=import_boundary('maps/us101.osm')
  Path('maps/us101.json').write_text(json.dumps(data,indent=2)+'\n');Path('assets/phase15e/import-manifest.json').write_text(json.dumps(meta,indent=2)+'\n')
- print(json.dumps({'nodes':len(data['nodes']),'edges':len(data['edges']),'boundary_entries':sum(n['demand_per_s']>0 for n in data['nodes']),'boundary_exits':sum(n['sink_weight']>0 for n in data['nodes'])}))
+ Path('assets/phase15e/rejected-edges.json').write_text(json.dumps(meta['rejected_edges'],indent=2)+'\n')
+ protected=any(e['protected_freeway'] for e in meta['rejected_edges'])
+ print(json.dumps({'nodes':len(data['nodes']),'edges':len(data['edges']),'boundary_entries':sum(n['demand_per_s']>0 for n in data['nodes']),'boundary_exits':sum(n['sink_weight']>0 for n in data['nodes']),'dropped_edges':len(meta['rejected_edges']),'protected_freeway_dropped':protected,'decision':'STOP' if protected else 'CONTINUE_TO_MAP_GATE'}))
+ if protected:raise SystemExit('STOP: a US-101 mainline or motorway-link edge was dropped')

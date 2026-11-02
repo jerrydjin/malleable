@@ -22,10 +22,11 @@
   "copyright_url": "https://www.openstreetmap.org/copyright",
   "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
   "map_file": "maps/us101.json",
-  "map_sha256": "24d1ca826fce5b7de2fdc6db1478e035686767fa4f8d393f1d32a0c557be72f0",
+  "map_sha256": "554e5a2a62d166374ff97e320b1b1daa6317f991b44edaaa142254d2b4e06b35",
   "importer": "experiments/phase15e/import_boundary.py --boundary (opt-in)",
-  "nodes": 821,
-  "edges": 1663,
+  "nodes": 824,
+  "edges": 1666,
   "scc_filter": false,
-  "lane_counts": "OSM directional tags, no two-lane clamp"
+  "lane_counts": "OSM directional tags, no two-lane clamp",
+  "import_revision": "r2: generic closed-ring split and explicit invalid-edge report; no dropped edges in this extract"
 }
