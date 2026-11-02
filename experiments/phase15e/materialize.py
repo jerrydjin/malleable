@@ -11,10 +11,11 @@ with tempfile.TemporaryDirectory(prefix='phase15e-source-') as tmp:
  stage=Path(tmp)
  for name in names:
   b=(base/name).read_bytes()
-  if name=='Cargo.toml':b=b.replace(b'phase15_v2_gate',b'phase15e_gate')
+  if name=='Cargo.toml':
+   b=b.replace(b'phase15_v2_gate',b'phase15e_gate')+b'\n[[example]]\nname = "phase15e_traffic"\npath = "examples/phase15e_traffic.rs"\n'
   sync(stage/name,b)
  subprocess.run(['patch','--batch','-s','-p1','-d',str(stage),'-i',str(ROOT/'experiments/phase15e/full-lanes.patch')],check=True)
- for source,target in [('gate.rs','examples/phase15e_gate.rs'),('tests.rs','tests/phase15e.rs')]:sync(stage/target,(ROOT/'experiments/phase15e'/source).read_bytes());names.append(target)
+ for source,target in [('gate.rs','examples/phase15e_gate.rs'),('tests.rs','tests/phase15e.rs'),('traffic.rs','examples/phase15e_traffic.rs')]:sync(stage/target,(ROOT/'experiments/phase15e'/source).read_bytes());names.append(target)
  sync(stage/'generated-code.sha256',(base/'generated-code.sha256').read_bytes());names.append('generated-code.sha256')
  for f in sorted(set(names)):sync(OUT/f,(stage/f).read_bytes())
 for name in ['maps','assets','scenarios','docs']:
