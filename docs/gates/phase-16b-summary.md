@@ -20,11 +20,20 @@ The experiment stopped before Step 2. No preregistration, prompts, lane regions,
 Read-only integration audit at base `e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50`:
 
 - [`src/record.rs::sam_summary`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/record.rs#L253) reads `assets/phase15/sam.json`, checks the requested SAM model, fixed original photograph hash and mask hash. The retained result is a still-image cache; it is not live video evidence.
-- [`examples/phase15_gate.rs::live`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/examples/phase15_gate.rs#L333) already calls `muse::select_talk` / `GeminiChat` with the SAM summary. [`src/muse.rs`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/muse.rs#L216) supplies the requested Baseten/Meta model default. No new client was written and this entry point was not invoked.
+- [`examples/phase15_gate.rs::live`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/examples/phase15_gate.rs#L333) already calls `muse::select_talk` / `GeminiChat` with the SAM summary. [`src/muse.rs`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/muse.rs#L218) supplies the requested Baseten/Meta model default. No new client was written and this entry point was not invoked.
 - [`Reply::validate`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/record.rs#L34) permits a nonempty label/rationale, `road|lane|none`, `nearby|route|city`, and finite radius in `[0,100000]` metres. Label is not a closed enum in the existing code; a future preregistration must state the actual constraint.
 - [`RoadEdit::review`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/record.rs#L119) requires a distinct later reviewer and a positive observation before merging. Model classification alone does not review an edit.
 - `docs/SPEC.md` is absent from the requested main base. Its actual [hazard example at `f3f319ab9934aa7e134e449d119826ad2fd24fe1`](https://github.com/jerrydjin/malleable/blob/f3f319ab9934aa7e134e449d119826ad2fd24fe1/docs/SPEC.md#L58) was read without merging an unrelated documentation branch. It is a projection of the isolated v2 message, including `kind: hazard`; schema conformance is unmeasured because no edit was emitted.
 
-Existing guard verification: **6 passed, 0 failed** in the unchanged `tests/road_record.rs`, including distinct later sensor witnesses, rejection of model motion fields and spoof/no-knowledge route checks. [Full retained test output](../../experiments/phase16b/existing-road-record-tests.log). These inherited tests do not substitute for new video detection/confirmation tests or any bar above. No Rust source file changed.
+Existing guard verification: **6 passed, 0 failed** in the unchanged `tests/road_record.rs`, including distinct later sensor witnesses, rejection of model motion fields and spoof/no-knowledge route checks. [Full retained test output](../../experiments/phase16b/existing-road-record-tests.log). The recorded command was:
+
+```sh
+PATH=/workspace/.toolchains/rust/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH \
+CARGO_HOME=/workspace/.toolchains/rust/cargo \
+CARGO_TARGET_DIR=/tmp/phase16b-target \
+cargo test --offline --test road_record -- --nocapture
+```
+
+These inherited tests do not substitute for new video detection/confirmation tests or any bar above. No Rust source file changed.
 
 Automatic approval review rejected a subsequent Wikimedia access retry because it repeated a previously denied host using additional network access; the exact rejected action and stated reason are preserved in `search-evidence.json`. No workaround followed it.
