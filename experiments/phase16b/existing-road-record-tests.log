@@ -10,4 +10,3 @@ test spoof_is_rejected_without_delivery_knowledge_or_reroutes ... ok
 test no_car_changes_route_before_its_own_sighting_or_edit_delivery ... ok
 
 test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.05s
-
