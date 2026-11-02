@@ -1,0 +1,18 @@
+[
+  {
+    "repository": "jerrydjin/malleable",
+    "commit": "6d8b38c3aa9bbaff670334a694cb011eb1228a16",
+    "path": "experiments/phase15c/README.md",
+    "archived_path": "evidence/phase15c-README.md",
+    "url": "https://github.com/jerrydjin/malleable/blob/6d8b38c3aa9bbaff670334a694cb011eb1228a16/experiments/phase15c/README.md",
+    "sha256": "a1b95dc5fd4533a9722b78f187f398eaeadebdcae41a3afbacbd88a080cfe13b"
+  },
+  {
+    "repository": "jerrydjin/malleable",
+    "commit": "6d8b38c3aa9bbaff670334a694cb011eb1228a16",
+    "path": "docs/phase-15c-results.md",
+    "archived_path": "evidence/phase15c-results.md",
+    "url": "https://github.com/jerrydjin/malleable/blob/6d8b38c3aa9bbaff670334a694cb011eb1228a16/docs/phase-15c-results.md",
+    "sha256": "bfa2fdbfee41b3765b79e4e076870dd6a5df58493ab2c620ff5b21eeb86f5af5"
+  }
+]

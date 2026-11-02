@@ -1,0 +1,7 @@
+Command attempted before the prerequisite mismatch was confirmed:
+python -m pip install eclipse-sumo traci
+
+The resolver selected eclipse-sumo 1.28.0, traci 1.28.0, sumo-data 1.28.0, and sumolib 1.28.0. Installation did not complete:
+ERROR: Could not install packages due to an OSError: [Errno 30] Read-only file system: '/home/agent/.local/lib'
+
+No SUMO executable was installed and no SUMO runtime version is claimed. The resolver selection is not a measured runtime version. No retry or later setup/traffic run followed the mandatory prerequisite STOP.
