@@ -1,0 +1,16 @@
+[
+  {
+    "osm": "maps/sf-zsfg.osm",
+    "osm_sha256": "285c955b7ed48b6be2dab528ee59e7d6422ba96328543300bb6032b9426d306a",
+    "default_json_sha256": "4576c0f82d5d6b502e783c364632094d2d8c0eb2ab4c80a4bdbd1ee6d05cb573",
+    "default_json_bytes": 1298282,
+    "produced_by": "unmodified e4ba2a6 root CLI import-osm before any 15e map validity"
+  },
+  {
+    "osm": "maps/sf-zsfg-13i.osm",
+    "osm_sha256": "e4421498ed3f4e363f8b4e3c4785189e1363f507238eea2e5d54186ab9fa0aa1",
+    "default_json_sha256": "1fad05050600bc8c3da49363eb3fa8e0cacd491181cda6781cf19efeb9f848a4",
+    "default_json_bytes": 5556236,
+    "produced_by": "unmodified e4ba2a6 root CLI import-osm before any 15e map validity"
+  }
+]

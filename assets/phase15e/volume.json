@@ -1,0 +1,43 @@
+{
+  "source_url": "https://dot.ca.gov/-/media/dot-media/programs/traffic-operations/documents/census/aadt/tc-2016-aadt-volumes-a11y.pdf",
+  "source_title": "Caltrans 2016 Traffic Volumes on California State Highways",
+  "year": 2016,
+  "row": {
+    "district": "04",
+    "route": "101",
+    "county": "SF",
+    "postmile": 2.92,
+    "description": "SAN FRANCISCO, ARMY STREET",
+    "back_peak_hour_both_directions": 16000,
+    "back_peak_month_adt": 236000,
+    "back_aadt": 229000,
+    "ahead_peak_hour_both_directions": 15200,
+    "ahead_peak_month_adt": 224000,
+    "ahead_aadt": 217000
+  },
+  "leg": "Ahead, north of the Army Street/Cesar Chavez interchange, covering the hospital-curve stretch",
+  "selected_hourly_total_vph": 15200,
+  "direction_split": 0.5,
+  "mainline_vph_each_direction": 7600,
+  "derivation": "Use the published ahead peak-hour total, divided equally between directions. This is a hypothetical equal directional split, not a published D-factor. Do not substitute AADT/24 because a peak-hour figure is present.",
+  "peak_hour_definition_url": "https://dot.ca.gov/programs/traffic-operations/census/traffic-volumes",
+  "geographic_selection": "US-101 at Army Street (now Cesar Chavez), within the requested extract; use ahead leg for the stretch north of that junction",
+  "recency_limitation": "Historical 2016 census, not claimed current traffic. The 2024 XLSX link was found but could not be parsed through the available web reader; the GIS query was inaccessible. The 2016 primary table was directly readable and verified before any simulation.",
+  "local_demand_rule": "Retained network::demand_vph by incoming road class (arterial 1250 veh/h, other 125 veh/h)",
+  "arrival_window_s": 900,
+  "horizon_steps_inclusive": 10000,
+  "dt_s": 0.25,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "source_page": 118
+}

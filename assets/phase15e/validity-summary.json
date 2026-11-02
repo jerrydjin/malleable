@@ -1,0 +1,594 @@
+{
+  "all_trips_finished": false,
+  "decision": "STOP",
+  "delay_qualifying_seeds": 0,
+  "generated_code_sha256": "ae7fb9b9534bfa06cc47fcde681435b5cad3d731a2ba9bd16e5e01f3bfc5929b",
+  "kind": "see_only_validity_before_record_scoring",
+  "queue_on_map": false,
+  "safety": false,
+  "traffic_inputs_sha256": "cc75f4eb281c2ad0223705295cc191b4d703025d0abf829dd6516b1b484c0379",
+  "valid": false,
+  "volume_sha256": "09af4d93bc3ffbfefdd7ed641b59d135857ac49a468309ec6203e49f161c4e30",
+  "seed_summary": [
+    {
+      "affected_expected": 1394,
+      "affected_off_map_wait": {
+        "max_s": 306.0059445262923,
+        "mean_s": 190.7215745731033,
+        "median_s": 190.70331294737258,
+        "min_s": 74.66383926315464,
+        "n": 1271,
+        "p95_s": 283.53226031576753
+      },
+      "affected_on_map_excess": {
+        "max_s": 1036.5,
+        "mean_s": 997.3576388888889,
+        "median_s": 996.125,
+        "min_s": 960.5,
+        "n": 72,
+        "p95_s": 1032.5
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 251.75,
+            "pending": 33,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 258.5,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 265.5,
+            "pending": 34,
+            "sources": [
+              580
+            ]
+          }
+        ],
+        "first_at_s": 251.75,
+        "peak_pending": 188,
+        "seconds": 57.75
+      },
+      "collisions": 0,
+      "completed": 9804,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1938,
+      "queue_on_map": false,
+      "seed": 1,
+      "sensor_range_m": 300,
+      "trips": 13034
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 919.8803105789183,
+        "mean_s": 234.90794876989497,
+        "median_s": 200.60399478947727,
+        "min_s": 74.73557373683889,
+        "n": 1393,
+        "p95_s": 790.1434684736571
+      },
+      "affected_on_map_excess": {
+        "max_s": 1735.75,
+        "mean_s": 1406.071104387292,
+        "median_s": 1408.75,
+        "min_s": 1146.75,
+        "n": 661,
+        "p95_s": 1646.75
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 251.75,
+            "pending": 32,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 257.75,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 265.0,
+            "pending": 34,
+            "sources": [
+              580
+            ]
+          }
+        ],
+        "first_at_s": 251.75,
+        "peak_pending": 153,
+        "seconds": 50.25
+      },
+      "collisions": 0,
+      "completed": 10680,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1934,
+      "queue_on_map": false,
+      "seed": 2,
+      "sensor_range_m": 300,
+      "trips": 13034
+    },
+    {
+      "affected_expected": 1394,
+      "affected_off_map_wait": {
+        "max_s": 965.9896526315498,
+        "mean_s": 237.0914045004837,
+        "median_s": 200.33833684210322,
+        "min_s": 74.7001789473654,
+        "n": 1394,
+        "p95_s": 808.0554421052351
+      },
+      "affected_on_map_excess": {
+        "max_s": 1771.75,
+        "mean_s": 1401.7843137254902,
+        "median_s": 1404.0,
+        "min_s": 1131.0,
+        "n": 663,
+        "p95_s": 1651.25
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 251.75,
+            "pending": 31,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 257.5,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 264.5,
+            "pending": 34,
+            "sources": [
+              580
+            ]
+          }
+        ],
+        "first_at_s": 251.75,
+        "peak_pending": 234,
+        "seconds": 47.25
+      },
+      "collisions": 0,
+      "completed": 10681,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1934,
+      "queue_on_map": false,
+      "seed": 3,
+      "sensor_range_m": 300,
+      "trips": 13034
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 962.0613871052341,
+        "mean_s": 237.26943864113073,
+        "median_s": 200.11401868420762,
+        "min_s": 74.66665026315468,
+        "n": 1393,
+        "p95_s": 808.9561239473427
+      },
+      "affected_on_map_excess": {
+        "max_s": 1756.5,
+        "mean_s": 1402.8076054216867,
+        "median_s": 1401.5,
+        "min_s": 1127.75,
+        "n": 664,
+        "p95_s": 1659.25
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 257.0,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 264.0,
+            "pending": 34,
+            "sources": [
+              580
+            ]
+          },
+          {
+            "at_s": 268.25,
+            "pending": 38,
+            "sources": [
+              578
+            ]
+          }
+        ],
+        "first_at_s": 257.0,
+        "peak_pending": 142,
+        "seconds": 49.5
+      },
+      "collisions": 0,
+      "completed": 10683,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1938,
+      "queue_on_map": false,
+      "seed": 4,
+      "sensor_range_m": 300,
+      "trips": 13034
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 945.3831215789183,
+        "mean_s": 233.72822113688022,
+        "median_s": 200.47522684210196,
+        "min_s": 74.73838473683892,
+        "n": 1393,
+        "p95_s": 809.4620689473417
+      },
+      "affected_on_map_excess": {
+        "max_s": 1740.75,
+        "mean_s": 1407.2530257186081,
+        "median_s": 1408.5,
+        "min_s": 1135.75,
+        "n": 661,
+        "p95_s": 1642.25
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 240.25,
+            "pending": 34,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 256.25,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 263.5,
+            "pending": 34,
+            "sources": [
+              580
+            ]
+          }
+        ],
+        "first_at_s": 240.25,
+        "peak_pending": 188,
+        "seconds": 49.5
+      },
+      "collisions": 0,
+      "completed": 10704,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1941,
+      "queue_on_map": false,
+      "seed": 5,
+      "sensor_range_m": 300,
+      "trips": 13063
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 974.74246363155,
+        "mean_s": 237.09054803856907,
+        "median_s": 200.5845688947336,
+        "min_s": 74.8477267894705,
+        "n": 1393,
+        "p95_s": 809.3740425789206
+      },
+      "affected_on_map_excess": {
+        "max_s": 1780.25,
+        "mean_s": 1400.2928679817906,
+        "median_s": 1401.75,
+        "min_s": 1121.75,
+        "n": 659,
+        "p95_s": 1680.75
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 254.0,
+            "pending": 30,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 256.0,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 261.75,
+            "pending": 40,
+            "sources": [
+              578
+            ]
+          }
+        ],
+        "first_at_s": 254.0,
+        "peak_pending": 216,
+        "seconds": 53.25
+      },
+      "collisions": 0,
+      "completed": 10678,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1934,
+      "queue_on_map": false,
+      "seed": 6,
+      "sensor_range_m": 300,
+      "trips": 13034
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 981.3141981052343,
+        "mean_s": 237.97574833762084,
+        "median_s": 200.22209284210714,
+        "min_s": 74.3141981052598,
+        "n": 1393,
+        "p95_s": 801.1957770526041
+      },
+      "affected_on_map_excess": {
+        "max_s": 1777.25,
+        "mean_s": 1404.8522727272727,
+        "median_s": 1410.0,
+        "min_s": 1123.0,
+        "n": 660,
+        "p95_s": 1651.75
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 240.5,
+            "pending": 33,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 255.5,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 258.25,
+            "pending": 38,
+            "sources": [
+              578
+            ]
+          }
+        ],
+        "first_at_s": 240.5,
+        "peak_pending": 211,
+        "seconds": 49.5
+      },
+      "collisions": 0,
+      "completed": 10703,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1943,
+      "queue_on_map": false,
+      "seed": 7,
+      "sensor_range_m": 300,
+      "trips": 13063
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 960.280669421023,
+        "mean_s": 237.11076916790003,
+        "median_s": 200.64909047368667,
+        "min_s": 74.74119573683896,
+        "n": 1393,
+        "p95_s": 800.1754062631317
+      },
+      "affected_on_map_excess": {
+        "max_s": 1760.5,
+        "mean_s": 1410.0768645357687,
+        "median_s": 1405.75,
+        "min_s": 1109.5,
+        "n": 657,
+        "p95_s": 1659.75
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 241.5,
+            "pending": 33,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 246.75,
+            "pending": 31,
+            "sources": [
+              578
+            ]
+          },
+          {
+            "at_s": 254.5,
+            "pending": 33,
+            "sources": [
+              578
+            ]
+          }
+        ],
+        "first_at_s": 241.5,
+        "peak_pending": 236,
+        "seconds": 51.5
+      },
+      "collisions": 0,
+      "completed": 10704,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1941,
+      "queue_on_map": false,
+      "seed": 8,
+      "sensor_range_m": 300,
+      "trips": 13069
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 909.49527463155,
+        "mean_s": 235.80672851754292,
+        "median_s": 200.20580094736863,
+        "min_s": 73.7452746315756,
+        "n": 1393,
+        "p95_s": 802.7715904210269
+      },
+      "affected_on_map_excess": {
+        "max_s": 1752.5,
+        "mean_s": 1411.6261467889908,
+        "median_s": 1409.75,
+        "min_s": 1105.0,
+        "n": 654,
+        "p95_s": 1665.25
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 254.5,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 261.5,
+            "pending": 34,
+            "sources": [
+              580
+            ]
+          },
+          {
+            "at_s": 268.75,
+            "pending": 34,
+            "sources": [
+              581
+            ]
+          }
+        ],
+        "first_at_s": 254.5,
+        "peak_pending": 125,
+        "seconds": 50.5
+      },
+      "collisions": 0,
+      "completed": 10697,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1939,
+      "queue_on_map": false,
+      "seed": 9,
+      "sensor_range_m": 300,
+      "trips": 13063
+    },
+    {
+      "affected_expected": 1393,
+      "affected_off_map_wait": {
+        "max_s": 964.961745947339,
+        "mean_s": 236.78238107790116,
+        "median_s": 200.4749038421072,
+        "min_s": 74.67227226315478,
+        "n": 1393,
+        "p95_s": 806.5933248947111
+      },
+      "affected_on_map_excess": {
+        "max_s": 1773.75,
+        "mean_s": 1409.0956554878048,
+        "median_s": 1409.0,
+        "min_s": 1110.25,
+        "n": 656,
+        "p95_s": 1675.5
+      },
+      "all_trips_finished": false,
+      "arm": "see_only",
+      "boundary_spillback": {
+        "examples": [
+          {
+            "at_s": 253.75,
+            "pending": 34,
+            "sources": [
+              579
+            ]
+          },
+          {
+            "at_s": 261.0,
+            "pending": 34,
+            "sources": [
+              580
+            ]
+          },
+          {
+            "at_s": 268.0,
+            "pending": 34,
+            "sources": [
+              581
+            ]
+          }
+        ],
+        "first_at_s": 253.75,
+        "peak_pending": 242,
+        "seconds": 48.5
+      },
+      "collisions": 0,
+      "completed": 10699,
+      "delay_at_least_30s": false,
+      "leak_violations": 0,
+      "overlaps": 1943,
+      "queue_on_map": false,
+      "seed": 10,
+      "sensor_range_m": 300,
+      "trips": 13063
+    }
+  ]
+}

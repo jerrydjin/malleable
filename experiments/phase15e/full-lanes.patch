@@ -1,0 +1,110 @@
+--- a/src/road_map.rs
++++ b/src/road_map.rs
+@@ -115,7 +115,10 @@
+             Ok(projected)
+         }
+     }
+-    pub fn validate(&self) -> Result<(), String> {
++    pub fn validate(&self) -> Result<(), String> { self.validate_lane_limit(2) }
++    /// Explicit freeway mode; ordinary import/validation retains its two-lane limit.
++    pub fn validate_full_lanes(&self) -> Result<(), String> { self.validate_lane_limit(8) }
++    fn validate_lane_limit(&self, maximum_lanes:u8) -> Result<(), String> {
+         if let Some(profile) = &self.demand_profile {
+             profile.validate(self)?;
+         }
+@@ -155,7 +158,7 @@
+                 || e.from >= self.nodes.len()
+                 || e.to >= self.nodes.len()
+                 || e.from == e.to
+-                || !(1..=2).contains(&e.lanes)
++                || !(1..=maximum_lanes).contains(&e.lanes)
+                 || !e.speed_limit_mps.is_finite()
+                 || e.speed_limit_mps <= 0.0
+                 || !e.length_m.is_finite()
+--- a/src/network.rs
++++ b/src/network.rs
+@@ -208,6 +208,7 @@
+ 
+ #[derive(Clone, Debug)]
+ pub struct Network {
++    full_lane_inventory: bool,
+     experiment_routes: Vec<Vec<usize>>,
+     incidents: Vec<crate::incident::RecordedIncident>,
+     pub demand_profile: Option<crate::demand::CorridorDemand>,
+@@ -347,7 +348,18 @@
+     /// importer uses it to name roads that belong to a collapsed connector and
+     /// drop them. Loaded maps still go through `from_road_map`.
+     pub(crate) fn from_road_map_lenient(map: &crate::road_map::RoadMap) -> Result<Self, String> {
+-        map.validate()?;
++        Self::from_road_map_lane_mode(map,false)
++    }
++    /// Explicit opt-in full OSM lane inventory, with ordinary host motion rules.
++    pub fn from_road_map_full_lanes(map:&crate::road_map::RoadMap)->Result<Self,String> {
++        let net=Self::from_road_map_lane_mode(map,true)?;
++        if net.links.iter().any(|l|!l.len.is_finite() || l.len<=0. || l.pts.len()<2) {
++            return Err(format!("full-lane map has degenerate geometry: {:?}",net.links.iter().filter(|l|!l.len.is_finite() || l.len<=0. || l.pts.len()<2).take(12).map(|l|(l.id,l.edge,l.via,l.len)).collect::<Vec<_>>()));
++        }
++        Ok(net)
++    }
++    fn from_road_map_lane_mode(map:&crate::road_map::RoadMap,full_lanes:bool)->Result<Self,String> {
++        if full_lanes {map.validate_full_lanes()?;}else{map.validate()?;}
+         let nodes = map
+             .nodes
+             .iter()
+@@ -383,7 +395,7 @@
+                 })
+             })
+             .collect::<Result<Vec<_>, String>>()?;
+-        let mut net = build((nodes, edges));
++        let mut net = build_lane_mode((nodes, edges),full_lanes);
+         net.schedule_scale = map.schedule_scale;
+         net.hospital_node = map.hospital_node;
+         net.attribution = map.attribution.clone();
+@@ -644,7 +656,8 @@
+     (nodes, edges)
+ }
+ 
+-fn build((nodes, edges): (Vec<Node>, Vec<EdgeDef>)) -> Network {
++fn build(plan:(Vec<Node>,Vec<EdgeDef>))->Network {build_lane_mode(plan,false)}
++fn build_lane_mode((nodes, edges): (Vec<Node>, Vec<EdgeDef>),full_lanes:bool) -> Network {
+     let plan_nodes = nodes.clone();
+     let plan_edges = edges.clone();
+     let mut degree = vec![0usize; nodes.len()];
+@@ -748,6 +761,20 @@
+                 *d *= length_factor;
+             }
+         }
++        if full_lanes && edge.lanes>1 {
++            let directions=if edge.two_way {vec![forward_id,links.len()-1]}else{vec![forward_id]};
++            for first in directions {
++                let original=links[first].clone();
++                for lane_index in 0..edge.lanes {
++                    let mut lane=original.clone();
++                    let displacement=(lane_index as f64-(edge.lanes as f64-1.0)/2.0)*LANE_WIDTH_M;
++                    lane.pts=offset(&original.pts,displacement);lane.cum=measures(&lane.pts);
++                    let factor=original.len/lane.cum.last().copied().unwrap_or(original.len);
++                    for d in &mut lane.cum {*d*=factor;}
++                    if lane_index==0 {lane.id=first;links[first]=lane;}else{lane.id=links.len();links.push(lane);}
++                }
++            }
++        }
+     }
+ 
+     let roads = links.len();
+@@ -848,6 +875,7 @@
+     }
+ 
+     Network {
++        full_lane_inventory: full_lanes,
+         experiment_routes: Vec::new(),
+         incidents: Vec::new(),
+         demand_profile: None,
+@@ -1586,7 +1614,7 @@
+         self.experiment
+             .as_ref()
+             .ok_or("broadcast requires scheduled experiment")?;
+-        if config.lane_changes {
++        if config.lane_changes && !self.net.full_lane_inventory {
+             let original = self.net.links.len();
+             for link in 0..original {
+                 if self.net.links[link].is_connector()
