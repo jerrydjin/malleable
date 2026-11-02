@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "id": "potrero-near-tree-v2",
+  "kind": "blocked_road",
+  "map": "maps/sf-zsfg.json",
+  "edge": 15,
+  "from_node": 55,
+  "to_node": 45,
+  "lane": 0,
+  "position_m": 78.11860845051004,
+  "length_m": 8.0,
+  "start_s": 240.0,
+  "duration_s": 900.0,
+  "rationale": "V2 NEAR control explicitly accepted after the retained FAR stop: edge 15, last turn-off 55, D 85.118833 m. Centred 8 m footprint; unchanged start 240 s and hypothetical duration 900 s. Same committed SAM photo evidence as v1."
+}

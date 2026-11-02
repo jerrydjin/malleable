@@ -1,0 +1,315 @@
+--- a/src/record.rs
++++ b/src/record.rs
+@@ -103,6 +103,7 @@
+ }
+ #[derive(Clone, Debug, Serialize, Deserialize)]
+ pub struct RoadEdit {
++    pub kind: String,
+     pub id: String,
+     pub link: usize,
+     pub route: Vec<usize>,
+@@ -198,8 +199,14 @@
+     pub expires_at: f64,
+     pub reach: Reach,
+ }
++#[derive(Clone, Debug, Serialize, Deserialize)]
++pub struct RouteDecision {pub at_s:f64,pub old_free_s:f64,pub known_wait_s:f64,pub old_cost_s:f64,pub new_free_s:f64,pub new_block_s:f64,pub old_remaining_m:f64,pub new_remaining_m:f64,pub choice:String}
++#[derive(Clone, Debug, Serialize, Deserialize)]
++pub struct Delivery { pub edit_id: String, pub car: u32, pub at_s: f64 }
+ #[derive(Clone, Debug, Default, Serialize, Deserialize)]
+ pub struct Snapshot {
++    pub route_decisions: BTreeMap<u32,RouteDecision>,
++    pub deliveries: Vec<Delivery>,
+     pub priorities: Vec<PriorityEdit>,
+     pub edits: Vec<RoadEdit>,
+     pub known: BTreeMap<u32, KnownHazards>,
+@@ -227,6 +234,8 @@
+     }
+ }
+ pub(crate) struct RecordState {
++    pub cached_occupancy: Vec<usize>,
++    pub route_cache: BTreeMap<(usize,usize,Vec<usize>),Option<Vec<usize>>>,
+     pub config: RecordConfig,
+     pub snapshot: Snapshot,
+     pub pending: BTreeMap<u32, f64>,
+--- a/src/record_host.rs
++++ b/src/record_host.rs
+@@ -41,6 +41,7 @@
+         self.experiment.as_mut().unwrap().broadcast = None;
+         self.set_admit_occupants(true);
+         self.record = Some(record::RecordState {
++            cached_occupancy:Vec::new(),route_cache:BTreeMap::new(),
+             config,
+             snapshot: Default::default(),
+             pending: BTreeMap::new(),
+@@ -63,6 +64,31 @@
+             .collect();
+         result.ended_at_s = self.time;
+         result
++    }
++    fn record_route_counts(&self)->(Vec<usize>,Vec<usize>) {
++        let mut occupied=vec![0;self.net.links.len()];let mut eligible=occupied.clone();
++        for c in &self.cars {
++            let r=&self.routes[c.route];
++            for l in r.links[c.idx..].iter().copied().collect::<BTreeSet<_>>() {
++                occupied[l]+=1;
++                if self.route_eta(r,c.d,r.start[c.idx]+self.net.links[l].len)<=BroadcastConfig::default().lookahead_s {eligible[l]+=1;}
++            }
++        }
++        (occupied,eligible)
++    }
++    pub fn record_node_observations(&self, hazard: usize, node: usize) -> Vec<(u32, bool, bool, bool)> {
++        let ex=self.experiment.as_ref().unwrap();
++        self.cars.iter().map(|c| {
++            let current=&self.routes[c.route];let link=current.links[c.idx];let offset=c.d-current.start[c.idx];
++            let original=&self.routes[ex.route_by_car[&c.id]];
++            let junction=original.links.iter().position(|l|self.net.links[*l].is_connector() && self.net.links[*l].from==node);
++            let on_route=current.links[c.idx..].contains(&hazard);
++            let before=junction.is_some_and(|k| original.links[..k].contains(&link)
++                || (original.links[k]==link && offset<self.net.links[link].len/2.0));
++            let passed=(self.net.links[link].is_connector() && self.net.links[link].from==node && offset>=self.net.links[link].len/2.0)
++                || (!self.net.links[link].is_connector() && self.net.links[link].from==node && c.idx>0);
++            (c.id,on_route,before,passed)
++        }).collect()
+     }
+     fn record_front(&self, ci: usize) -> [f64; 2] {
+         let c = &self.cars[ci];
+@@ -192,6 +218,7 @@
+                 };
+                 if let Some(author) = author {
+                     s.snapshot.edits.push(RoadEdit {
++                        kind: "hazard".into(),
+                         id: if p.spoof { "spoof" } else { "tree" }.into(),
+                         link: p.link,
+                         route: self
+@@ -284,6 +311,7 @@
+                 for (id, at) in due {
+                     s.pending.remove(&id);
+                     s.snapshot.delivered.insert(id, at);
++                    s.snapshot.deliveries.push(record::Delivery {edit_id:edit.id.clone(),car:id,at_s:at});
+                     self.learn_record(
+                         &mut s,
+                         id,
+@@ -302,11 +330,15 @@
+                     }
+                 }
+             }
++            let mut counts=self.record_route_counts();
++            if s.cached_occupancy!=counts.0 {s.route_cache.clear();s.cached_occupancy=counts.0.clone();}
+             for ci in 0..self.cars.len() {
+                 let id = self.cars[ci].id;
+                 if let Some(known) = s.snapshot.known.get(&id) {
+-                    if let Some(event) = self.hazard_reroute(ci, known) {
++                    if let Some(event) = self.hazard_reroute(ci, known, &mut s.snapshot.route_decisions, &counts, &mut s.route_cache) {
+                         s.snapshot.events.push(event);
++                        counts=self.record_route_counts();
++                        if s.cached_occupancy!=counts.0 {s.route_cache.clear();s.cached_occupancy=counts.0.clone();}
+                     }
+                 }
+             }
+@@ -316,7 +348,7 @@
+     }
+     /// Decision boundary: static graph, local position and KnownHazards only.
+     /// This deliberately has no access to net.incidents or reachability guards.
+-    fn hazard_reroute(&mut self, ci: usize, known: &KnownHazards) -> Option<RecordEvent> {
++    fn hazard_reroute(&mut self, ci: usize, known: &KnownHazards, decisions: &mut BTreeMap<u32,record::RouteDecision>, counts:&(Vec<usize>,Vec<usize>), cache:&mut BTreeMap<(usize,usize,Vec<usize>),Option<Vec<usize>>>) -> Option<RecordEvent> {
+         let c = &self.cars[ci];
+         let old = &self.routes[c.route];
+         let link = old.links[c.idx];
+@@ -331,18 +363,13 @@
+             .filter(|(_, k)| k.learned_at <= self.time && self.time < k.expires_at)
+             .map(|(l, _)| *l)
+             .collect();
++        if blocked.contains(&link) {return None;} // Every legal candidate retains the current link.
+         let hazard = *old.links[c.idx..].iter().find(|l| blocked.contains(l))?;
+         let sink = *old.links.last()?;
+-        let mut occupied = vec![0usize; self.net.links.len()];
+-        for other in &self.cars {
+-            for l in self.routes[other.route].links[other.idx..]
+-                .iter()
+-                .copied()
+-                .collect::<BTreeSet<_>>()
+-            {
+-                occupied[l] += 1;
+-            }
+-        }
++        let occupied=&counts.0;
++        let key=(link,sink,blocked.iter().copied().collect::<Vec<_>>());
++        let suffix=if let Some(found)=cache.get(&key) {found.clone()} else {
++            let found=(|| {
+         let mut best = vec![f64::INFINITY; self.net.links.len()];
+         let mut prev = vec![None; self.net.links.len()];
+         let mut heap = BinaryHeap::new();
+@@ -352,6 +379,7 @@
+             if cost > best[at] {
+                 continue;
+             }
++            if at==sink {break;}
+             for next in successors(&self.net, at) {
+                 if blocked.contains(&next) {
+                     continue;
+@@ -366,7 +394,10 @@
+                 }
+             }
+         }
+-        let suffix = walk_back(&prev, link, sink)?;
++        walk_back(&prev, link, sink)
++            })();
++            cache.insert(key,found.clone());found
++        }?;
+         let mut links = old.links[..c.idx].to_vec();
+         links.extend(suffix);
+         let candidate = Route::new(links.clone(), &self.net);
+@@ -379,26 +410,11 @@
+                 .map(|l| self.net.links[*l].len / self.net.links[*l].speed)
+                 .sum::<f64>()
+         };
+-        let new_block = candidate.links[c.idx + 1..]
+-            .iter()
+-            .map(|l| {
+-                2.5 * self
+-                    .cars
+-                    .iter()
+-                    .filter(|o| {
+-                        let route = &self.routes[o.route];
+-                        o.id != c.id
+-                            && route.links[o.idx..].contains(l)
+-                            && self.route_eta(
+-                                route,
+-                                o.d,
+-                                route.start[o.idx] + self.net.links[*l].len,
+-                            ) <= BroadcastConfig::default().lookahead_s
+-                    })
+-                    .count() as f64
+-            })
+-            .sum();
+-        let action = make_way::route_choice(&make_way::RouteTerms {
++        let new_block=candidate.links[c.idx+1..].iter().map(|l| {
++            let own=old.links[c.idx..].contains(l) && self.route_eta(old,c.d,old.start[c.idx]+self.net.links[*l].len)<=BroadcastConfig::default().lookahead_s;
++            2.5*(counts.1[*l]-usize::from(own)) as f64
++        }).sum();
++        let action = record_hazard_choice(&make_way::RouteTerms {
+             connected: true,
+             reached: true,
+             on_path_ahead: true,
+@@ -413,7 +429,9 @@
+             new_remaining_m: candidate.total - c.d,
+             new_block_s: new_block,
+             same_links: candidate.links == old.links,
+-        });
++        }, &known[&hazard], self.time);
++
++        decisions.entry(c.id).or_insert(record::RouteDecision {at_s:self.time,old_free_s:free(old),known_wait_s:(known[&hazard].expires_at-self.time).max(0.0),old_cost_s:record_known_route_cost(free(old),&known[&hazard],self.time),new_free_s:free(&candidate),new_block_s:new_block,old_remaining_m:(old.total-c.d).max(0.0),new_remaining_m:candidate.total-c.d,choice:format!("{action:?}")});
+         let request = make_way::MakeWayRequest {
+             id: "known-hazard".into(),
+             issuer: u32::MAX,
+@@ -460,6 +478,16 @@
+                 continue;
+             };
+             if !s.priority_started.contains_key(&beneficiary) {
++                if s.config.arm != Arm::SensorOnly {
++                    s.snapshot.edits.push(RoadEdit {
++                        kind: "priority".into(), id: format!("priority:{beneficiary}"),
++                        link: self.routes[self.cars[bi].route].links[self.cars[bi].idx],
++                        route: self.routes[self.cars[bi].route].links.clone(), blocks: Blocks::None,
++                        since_s:self.time, author_car:beneficiary,
++                        evidence:record::Evidence {image_sha256:String::new(), mask_sha256:String::new(), label:"host-granted priority claim".into()},
++                        status:Status::Merged, confirmations:Vec::new(), expires_at:self.time+240.0, merged_at:Some(self.time),
++                    });
++                }
+                 s.snapshot.priorities.push(record::PriorityEdit {
+                     kind: "priority".into(),
+                     author_car: beneficiary,
+@@ -550,8 +578,17 @@
+                 let Some(&delivery) = s.priority_pending.get(&(beneficiary, c.id)) else {
+                     continue;
+                 };
+-                if delivery > self.time {
+-                    continue;
++                if delivery > self.time { continue; }
++                if s.config.arm != Arm::SensorOnly {
++                    let edit_id=format!("priority:{beneficiary}");
++                    if !s.snapshot.edits.iter().any(|e|e.id==edit_id && e.kind=="priority" && e.status==Status::Merged && e.since_s<=delivery && delivery<e.expires_at) {continue;}
++                    if !s.snapshot.deliveries.iter().any(|d|d.edit_id==edit_id && d.car==c.id) {
++                        s.snapshot.deliveries.push(record::Delivery {edit_id:edit_id.clone(),car:c.id,at_s:delivery});
++                        s.snapshot.delivered.entry(c.id).or_insert(delivery);
++                    }
++                    // Public record receipt, rather than a scheduled future hop,
++                    // is now the prerequisite for any accepted priority action.
++                    if !s.snapshot.deliveries.iter().any(|d|d.edit_id==edit_id && d.car==c.id && d.at_s<=self.time) {continue;}
+                 }
+                 // Local-only awareness lasts only while the issuer is visible.
+                 if s.config.arm == Arm::SensorOnly {
+@@ -741,3 +778,64 @@
+         }
+     }
+ }
++
++// This term is a decision cost only. The physical incident and all make-way
++// acceptance limits remain unchanged. Read only this car's KnownHazard.
++fn record_known_route_cost(free_s:f64, known:&KnownHazard, now:f64)->f64 {
++    free_s+if known.learned_at<=now {(known.expires_at-now).max(0.0)}else{0.0}
++}
++// A yielding detour's 25% distance ceiling must not suppress a cheaper route
++// around a known road closure. No physical length is fabricated: the exception
++// compares declared time costs, then the existing receiver checks legality.
++fn record_hazard_choice(terms:&make_way::RouteTerms, known:&KnownHazard, now:f64)->make_way::DrivingAction {
++    let mut t=terms.clone();t.old_free_s=record_known_route_cost(terms.old_free_s,known,now);
++    let mut action=make_way::route_choice(&t);
++    let has_wait=known.learned_at<=now && known.expires_at>now;
++    if action==make_way::DrivingAction::Ignore && has_wait && t.connected && t.reached && t.on_path_ahead
++        && t.reroutes && !t.lane_changes && t.parallel.is_none() && !t.same_links
++        && t.old_remaining_m>0.0 && t.new_remaining_m>0.0
++        && t.new_free_s+t.new_block_s<=t.old_free_s+3.0 {
++        action=make_way::DrivingAction::Reroute(Vec::new());
++    }
++    action
++}
++#[cfg(test)]
++mod v2_cost_tests {
++    use super::*;
++    #[test]
++    fn known_remaining_blockage_changes_the_old_route_cost_without_changing_make_way() {
++        let known=KnownHazard {learned_at:240.0,expires_at:1140.0,source:"sensor".into()};
++        assert_eq!(record_known_route_cost(57.6,&known,540.0),657.6);
++        assert_eq!(record_known_route_cost(57.6,&known,1141.0),57.6);
++        assert_eq!(record_known_route_cost(57.6,&known,239.0),57.6);
++        let mut t=make_way::RouteTerms {connected:true,reached:true,on_path_ahead:true,lane_changes:false,reroutes:true,
++            parallel:None,gap_ok:false,room_before_exit:false,old_free_s:57.6,new_free_s:74.2,old_remaining_m:1000.0,
++            new_remaining_m:1100.0,new_block_s:0.0,same_links:false};
++        assert_eq!(make_way::route_choice(&t),make_way::DrivingAction::Ignore);
++        t.old_free_s=record_known_route_cost(57.6,&known,540.0);
++        assert!(matches!(make_way::route_choice(&t),make_way::DrivingAction::Reroute(_)));
++        t.old_free_s=44.878780964987584;t.new_free_s=61.49314886769604;t.new_block_s=332.5;
++        t.old_remaining_m=554.047836188673;t.new_remaining_m=703.7128685801151;
++        let mut yield_terms=t.clone();yield_terms.old_free_s=record_known_route_cost(t.old_free_s,&known,240.0);
++        assert_eq!(make_way::route_choice(&yield_terms),make_way::DrivingAction::Ignore);
++        assert!(matches!(record_hazard_choice(&t,&known,240.0),make_way::DrivingAction::Reroute(_)));
++        assert_eq!(record_hazard_choice(&t,&known,1141.0),make_way::DrivingAction::Ignore);
++    }
++}
++
++#[cfg(test)]
++mod v2_count_tests {
++ use super::*;
++ #[test]
++ fn cached_counts_equal_the_original_per_candidate_counts() {
++  let n=Network::town();let schedule:Vec<_>=(1..12).map(|id|ScheduledCar {id,route:0,depart_s:id as f64*1.5}).collect();
++  let mut sim=TownSim::with_schedule_on(1,&schedule,n).unwrap();
++  for _ in 0..100 {sim.step();}
++  let (occupied,eligible)=sim.record_route_counts();
++  for link in 0..sim.net.links.len() {
++   let old_occupied=sim.cars.iter().filter(|c|sim.routes[c.route].links[c.idx..].contains(&link)).count();
++   let old_eligible=sim.cars.iter().filter(|c| {let r=&sim.routes[c.route];r.links[c.idx..].contains(&link) && sim.route_eta(r,c.d,r.start[c.idx]+sim.net.links[link].len)<=BroadcastConfig::default().lookahead_s}).count();
++   assert_eq!(occupied[link],old_occupied);assert_eq!(eligible[link],old_eligible);
++  }
++ }
++}
+--- a/src/rush_hour.rs
++++ b/src/rush_hour.rs
+@@ -1791,3 +1791,5 @@
+     };
+     Ok((run, record))
+ }
++
++include!("phase15_v2_runner.rs");
