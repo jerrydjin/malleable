@@ -1,0 +1,9 @@
+{
+  "source_url": "https://dot.ca.gov/-/media/dot-media/programs/traffic-operations/documents/census/aadt/tc-2016-aadt-volumes-a11y.pdf",
+  "printed_page": 118,
+  "table_columns": ["Dist", "Route", "County", "Postmile", "Description", "Back Peak Hour", "Back Peak Month", "Back AADT", "Ahead Peak Hour", "Ahead Peak Month", "Ahead AADT"],
+  "row": ["04", "101", "SF", 2.92, "SAN FRANCISCO, ARMY STREET", 16000, 236000, 229000, 15200, 224000, 217000],
+  "verification": "Read in the indexed primary Caltrans PDF, printed page 118, before any simulation. Full PDF was too large for the browser's direct-open limit; indexed find/open exposed this row and its headers.",
+  "traffic_volume_definition": "Caltrans says peak-hour values and traffic volumes include both directions unless otherwise indicated.",
+  "definition_url": "https://dot.ca.gov/programs/traffic-operations/census/traffic-volumes"
+}

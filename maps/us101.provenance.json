@@ -1,0 +1,31 @@
+{
+  "source": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.410,37.738,-122.400,37.762",
+  "query": "OSM API 0.6 map bbox west -122.410 south 37.738 east -122.400 north 37.762",
+  "fetched_utc": "2026-11-02T14:42:28.035049+00:00",
+  "raw_file": "maps/us101.osm",
+  "bytes": 12794248,
+  "sha256": "4ad388ade425c54fd536ffab2440970531845a7b445864ac3d4bc79ba9e7e8d4",
+  "bbox_west_south_east_north": [
+    -122.41,
+    37.738,
+    -122.4,
+    37.762
+  ],
+  "osm_attributes": {
+    "version": "0.6",
+    "generator": "openstreetmap-cgimap 2.1.0 (1476375 spike-06.openstreetmap.org)",
+    "copyright": "OpenStreetMap and contributors",
+    "attribution": "http://www.openstreetmap.org/copyright",
+    "license": "http://opendatacommons.org/licenses/odbl/1-0/"
+  },
+  "attribution": "\u00a9 OpenStreetMap contributors. ODbL 1.0.",
+  "copyright_url": "https://www.openstreetmap.org/copyright",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "map_file": "maps/us101.json",
+  "map_sha256": "24d1ca826fce5b7de2fdc6db1478e035686767fa4f8d393f1d32a0c557be72f0",
+  "importer": "experiments/phase15e/import_boundary.py --boundary (opt-in)",
+  "nodes": 821,
+  "edges": 1663,
+  "scc_filter": false,
+  "lane_counts": "OSM directional tags, no two-lane clamp"
+}
