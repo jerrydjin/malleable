@@ -1,0 +1,74 @@
+{
+  "version": 2,
+  "kind": "near_control_declaration",
+  "accepted_far_stop_commit": "de1b1a2",
+  "near": {
+    "edge": 15,
+    "footprint_length_m": 8,
+    "footprint_position_m": 78.11860845051004,
+    "from": 55,
+    "last_turnoff": {
+      "D_centerline_m": 85.11784402009567,
+      "D_from_approach_stopline_m": 92.11905752422234,
+      "D_m": 85.1188329873662,
+      "D_upper_bound_at_trimmed_edge_end_m": 171.23744143787627,
+      "D_upper_bound_centerline_at_full_edge_end_m": 178.23568804019135,
+      "D_upper_bound_from_stopline_at_trimmed_edge_end_m": 178.2376659747324,
+      "corridor_road_index": 4,
+      "detour_witness_links": [
+        1047,
+        494,
+        1383,
+        252,
+        971,
+        9,
+        962,
+        317,
+        1701,
+        513,
+        1499,
+        302,
+        1049,
+        306
+      ],
+      "detour_witness_road_edges": [
+        261,
+        129,
+        4,
+        167,
+        271,
+        155,
+        159
+      ],
+      "far_eligible": false,
+      "incoming_link": 26,
+      "near_eligible": true,
+      "node": 55,
+      "on_map_road_links_only_upstream_m": 264.44353510641247,
+      "on_map_upstream_condition": true,
+      "on_map_upstream_m": 313.44631240796434,
+      "on_map_upstream_to_approach_stopline_m": 306.4460878711082
+    },
+    "link": 27,
+    "to": 45,
+    "trimmed_length_m": 164.23721690102008
+  },
+  "scenario": "scenarios/sf-potrero-near-tree-v2.json",
+  "sensor_ranges_m": [
+    60,
+    150,
+    300
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ]
+}
