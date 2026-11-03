@@ -36,6 +36,8 @@ impl MappingEvidence {
     pub fn viewpoint_note(&self) -> &'static str {
         if self.clip == "B" {
             "same source, different viewpoint"
+        } else if self.clip == "heldout" {
+            "held-out clip"
         } else {
             "A/C development clip"
         }

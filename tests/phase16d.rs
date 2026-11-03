@@ -74,6 +74,8 @@ fn b_always_carries_the_same_source_different_viewpoint_note() {
         observed.clip = clip.into();
         assert_eq!(observed.viewpoint_note(), "A/C development clip");
     }
+    observed.clip = "heldout".into();
+    assert_eq!(observed.viewpoint_note(), "held-out clip");
 }
 
 #[test]

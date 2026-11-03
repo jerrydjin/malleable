@@ -1,5 +1,6 @@
 {
   "policy_checked_at_utc": "2026-11-03T20:41:18Z",
+  "policy_rechecked_at_utc": "2026-11-03T20:58:30Z",
   "network_policy_state": "enforced",
   "observations_current": true,
   "required_host": "dl.fbaipublicfiles.com",

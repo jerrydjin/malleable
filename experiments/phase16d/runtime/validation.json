@@ -1,0 +1,578 @@
+{
+  "cargo": {
+    "exit_code": 0,
+    "failed": 0,
+    "ignored": 3,
+    "log": "runtime/milestone-2-cargo.log",
+    "log_sha256": "16eff88369eaf5550c313069871d0a297a793737d9571260c9f37d6791969ec8",
+    "original_code_manifest_sha256": "0d042e1460dee19f2a037a69469d427e7cbf153d6afb1ec9c8fda000a3e21ebf",
+    "passed": 218,
+    "reuse_reason": "Only Python protocol/runner and README changed after the complete Cargo suite; all 91 Rust/Cargo input hashes are unchanged. Python tests were rerun after the generated-sidecar manifest regression fix.",
+    "reused_after_python_only_fix": true,
+    "status": "PASS",
+    "unchanged_rust_inputs": [
+      {
+        "path": "Cargo.lock",
+        "sha256": "949a3ad27a1bd832c434444465d0558658f06e4b27419de0bb9477c6c660d109"
+      },
+      {
+        "path": "Cargo.toml",
+        "sha256": "2681c27c726f82bd56cefbc508709865790e657d6dc1f8b08223cb8c91ade9f1"
+      },
+      {
+        "path": "examples/boxed_gate.rs",
+        "sha256": "6fce04e7aaf997af3daaf9d428f0fa631e0c4db8f9c5ed251f93778e32ce8bb6"
+      },
+      {
+        "path": "examples/driving_gate.rs",
+        "sha256": "e7cf79f9b6bed20885437d7e564059daf0ed39ef87587c94cb55afd7977b8ee9"
+      },
+      {
+        "path": "examples/map_roundtrip.rs",
+        "sha256": "0d224f2c7fe4c30d2f63acdf3ffe6bb294233e71749b95a9e8df8d49d348fe98"
+      },
+      {
+        "path": "examples/osm_gate.rs",
+        "sha256": "ba7acf7607d4e2200124e9086d5306ce9d640d1b399af6d69c8155160ba6941f"
+      },
+      {
+        "path": "examples/phase13e_gate.rs",
+        "sha256": "8212b0525a189e133dbf5d6bfb907a67d376b20d0a1be596052ebf52b49215d0"
+      },
+      {
+        "path": "examples/phase13f_gate.rs",
+        "sha256": "c0bf401d92079aac68f405cc619672059e0bec37f45fe76a3e1677db1e4619f8"
+      },
+      {
+        "path": "examples/phase13f_sites.rs",
+        "sha256": "df6544d514a0b41ca59cc4077545d6ad3e63acde8c8e1770a0753a52a58b49bb"
+      },
+      {
+        "path": "examples/phase13f_trace.rs",
+        "sha256": "c679ca9b275cfc6970e4373b525bc632772589bff0053d9ef2417fe6618fd099"
+      },
+      {
+        "path": "examples/phase13g_gate.rs",
+        "sha256": "977ca2cb4ead0e93507dd4c006ddf72e1dfb3868a4ed2e315092a3e90f02605d"
+      },
+      {
+        "path": "examples/phase13h_evidence.rs",
+        "sha256": "d81101d3e38ebc8b75802761784635566300e9ececaa43fa8607253aaaa3cebc"
+      },
+      {
+        "path": "examples/phase13h_gate.rs",
+        "sha256": "50a8b71a99738dd9b72cb44e6f14a382066b059d52db9da48d5b1d0395df69d3"
+      },
+      {
+        "path": "examples/phase13i_gate.rs",
+        "sha256": "a2ca524b2344f5fff0cdd8108f32afa4829d4c97c133abed30f2a591ab74fd5d"
+      },
+      {
+        "path": "examples/phase15_birth.rs",
+        "sha256": "906bbee7e76144327154fc3dce0f5794ab75cf558b1fc5a0ce950212a4e0fe15"
+      },
+      {
+        "path": "examples/phase15_gate.rs",
+        "sha256": "e8aed0a2e3b17530364adb45fcf1a92acbd984ee0166e2f94b990162e138d29e"
+      },
+      {
+        "path": "examples/phase15_v2_sites.rs",
+        "sha256": "ec7125f28af85bf2aa9b44cade9a43f0f1f975631e670304e38c4167e89fc3ae"
+      },
+      {
+        "path": "examples/phase16d_record.rs",
+        "sha256": "499d1ef28f1672b624e50376b00b8220d4e5182e73ecd74f984026da2dbe1d9c"
+      },
+      {
+        "path": "examples/sf_corridor_gate.rs",
+        "sha256": "7954a3855917b75b40b92eb6e226babf650546d7d814f79da26a864eb2375692"
+      },
+      {
+        "path": "experiments/phase15-v2/gate.rs",
+        "sha256": "219880a4a337760e2c9438f802a045973b502b27ecde06e2db2526224d5b4bc0"
+      },
+      {
+        "path": "experiments/phase15-v2/runner.rs",
+        "sha256": "01a6421f8b61b662d2a979c3c3c093226cf0c0f3d8a61020e41e25d89db4efe8"
+      },
+      {
+        "path": "experiments/phase15-v2/tests.rs",
+        "sha256": "79e3cd02132b0b7f6f702e4a4c48bb52cc608dc8f9b6422155826304fcd5a797"
+      },
+      {
+        "path": "experiments/phase16d/record_adapter.rs",
+        "sha256": "7fe45567a82c903d6b9eaf2924150e53252f07549366527a72737afda15e4bd6"
+      },
+      {
+        "path": "src/agents.rs",
+        "sha256": "073d73b1f23c22b4a3350fa8367bb247001ee73a26756ef573c4fefb3f3b12b6"
+      },
+      {
+        "path": "src/board.rs",
+        "sha256": "84c6a2f2ed96415bf4fd1440d5787ebee5593442852d81b493fd9d9cf00deb30"
+      },
+      {
+        "path": "src/board_server.rs",
+        "sha256": "5c1838940b0977d0f95d10edefe0000f7ce4e6a3037eaf86662ab602d0bee889"
+      },
+      {
+        "path": "src/demand.rs",
+        "sha256": "427e9ecc40c5e57125c36dbee09e70dd04edd7d35cb30bd8584f0e86689ee5a5"
+      },
+      {
+        "path": "src/demo.rs",
+        "sha256": "0d3ac2d60fcf515d598e27fb02a776445e4c7beda22e8e96e3f80365be7cd631"
+      },
+      {
+        "path": "src/episode.rs",
+        "sha256": "0cd07f5c5483351c926772ab68b97a87e7c5b73b8a95b540cd88a1dfb0fb6902"
+      },
+      {
+        "path": "src/error.rs",
+        "sha256": "e423b4a32e7e7f3cfc388783c05e765664f5dd522412b39c0268067455e1fe63"
+      },
+      {
+        "path": "src/incident.rs",
+        "sha256": "ee69d8cb51d6c2a666905643277af5ce62c53937b8e428ce3ce9653610710c9c"
+      },
+      {
+        "path": "src/judge.rs",
+        "sha256": "53553e2ca0b7ecdf84895d64f3d6c02f2388df3905bb803fa7681d752f4dcee0"
+      },
+      {
+        "path": "src/junction.rs",
+        "sha256": "cbeea4ef79f14add7671b41e3e32475f6ad89dc45c79348c2644c6bcdb695afc"
+      },
+      {
+        "path": "src/lib.rs",
+        "sha256": "62de4ad6261c228065d2146b96da6b817f36f27c10fa933fb78b73359e98cd07"
+      },
+      {
+        "path": "src/main.rs",
+        "sha256": "b15501e771539b0328b0a9bbde9f9d5159b2f9233ec769c1e9848609bf5ea0f8"
+      },
+      {
+        "path": "src/make_way.rs",
+        "sha256": "9281a040ded99765ee69e90dc85a0eb110944b2617fc90a5deb7672b45ad15cf"
+      },
+      {
+        "path": "src/muse.rs",
+        "sha256": "fdf1af535190c5e399118851eed9b2fbaf56aee3175d70eabc0e160f2e077cfd"
+      },
+      {
+        "path": "src/negotiate.rs",
+        "sha256": "3387c6d3161ea1f00abe55e332d3d4b842ea7c5c04bad334d6e1cc8c70096a76"
+      },
+      {
+        "path": "src/network.rs",
+        "sha256": "8982e0dabdf4affa993ae64b4b60d9ddb337ce7e80e26fef24a3a2925b343f3a"
+      },
+      {
+        "path": "src/osm.rs",
+        "sha256": "6fd729b5bbb74f3587ab8a2e81d9390a13bfe3c9f0109ae5ed0ab03c667aaa39"
+      },
+      {
+        "path": "src/prefs.rs",
+        "sha256": "b840992e4e7642d9c77d5c53ca0f637990c6e5eeaa1c4e9635ec391e09365999"
+      },
+      {
+        "path": "src/reason.rs",
+        "sha256": "db5b7d2ba23ad740d545fe5cebf90369aad7734f4f4e511235b555ca5921a60f"
+      },
+      {
+        "path": "src/reason_server.rs",
+        "sha256": "1125706f9aec04242fb65452a124df4e33e7e433eb7bb29b788e6c1a395953d1"
+      },
+      {
+        "path": "src/record.rs",
+        "sha256": "377cc047abf854a46d651670ef9313d2c2b5691d27c38de7596fb6d3cfdefd8a"
+      },
+      {
+        "path": "src/record_host.rs",
+        "sha256": "4413cc4caf6046d2d24775ab3972cd4d085b77fa635e0a01538ce95b1d12a365"
+      },
+      {
+        "path": "src/replay.rs",
+        "sha256": "b40322fd99a89cf48a9af9a08b52a09a8926ae879d75788643e3bae57549fe26"
+      },
+      {
+        "path": "src/road_map.rs",
+        "sha256": "eecdcc2d9fb2a1cd78dac4a5cf60360a09cffc8612729eec40a915a6b6163021"
+      },
+      {
+        "path": "src/rush_board.rs",
+        "sha256": "47aa7f4e63f82a1b2d8b8754ff7a7b87e2eadc1d1b4a08a40ce9db2b658f6a91"
+      },
+      {
+        "path": "src/rush_hour.rs",
+        "sha256": "2ea2f0cfc7c4d8c2aafaff3d69299ee5039cdb54ad3dd101aa74c34af4906f90"
+      },
+      {
+        "path": "src/rush_server.rs",
+        "sha256": "20804e390def6a5d46998471af784c7ebfa5b279a3556ed7b243caabe5bbaeee"
+      },
+      {
+        "path": "src/schema.rs",
+        "sha256": "54e80f03470d57251ffdb8729f86e0eb543a62a7bd419600a2fee3835db0002a"
+      },
+      {
+        "path": "src/signal.rs",
+        "sha256": "b6519c2db2df9b1e8cf893e2e815c61071787afd44566b5df3afc9a72a040cf6"
+      },
+      {
+        "path": "src/slot.rs",
+        "sha256": "fee256970ff12c544b3da2683cb757a046929282786385a6fcec1d79bb2fb643"
+      },
+      {
+        "path": "src/story.rs",
+        "sha256": "196c81d8917f51c36da3fbcf0f88da948434c6aa40ca7d6d4c99af722af9bb62"
+      },
+      {
+        "path": "src/world.rs",
+        "sha256": "e328b9c1b98a2a4ff4274e97cf4090cf9543b2d7306a2b239ac6b212335171c1"
+      },
+      {
+        "path": "tests/admission.rs",
+        "sha256": "8a7e41f0709cd27a0578031cfe92503f8dd91350ccfab920a453fca141e72d83"
+      },
+      {
+        "path": "tests/board.rs",
+        "sha256": "dfd9645a3686c19e735df3a0ee48aadb27b1a8f043342aa3d5d4fbfbf50a4395"
+      },
+      {
+        "path": "tests/boxed_in.rs",
+        "sha256": "f17c95e1b3f4d20edb20736ca03e751fee9245427d48d30c71146629c4743ad5"
+      },
+      {
+        "path": "tests/corridor_demand.rs",
+        "sha256": "66e4515d2c22d4232f31e60095978d0cd77cfb27b131cbafec1ed35d405f183d"
+      },
+      {
+        "path": "tests/demo.rs",
+        "sha256": "84021d76b819852ccce058393dae26bfed08bf9c89c7b0f80cdeb12d99043553"
+      },
+      {
+        "path": "tests/driving_actions.rs",
+        "sha256": "6edf235fb51c99c94b38bbe12601c6a4524ca068e3cae8c6c28bbe4dbbbdec59"
+      },
+      {
+        "path": "tests/fleet_interface.rs",
+        "sha256": "37f484d4497158f340282d8159187b45ebce40628d71fc0849937958055ecb44"
+      },
+      {
+        "path": "tests/incidents.rs",
+        "sha256": "437a86be75810fcc83580cd4f6a46d29ca726374976d8829ca7c1d65332c23c0"
+      },
+      {
+        "path": "tests/live_adapter.rs",
+        "sha256": "b63f0cb3e8a8d564ec306cf57e082f6b7216508eb0e8a44a889a110c7c86e21c"
+      },
+      {
+        "path": "tests/live_prefetch.rs",
+        "sha256": "be7e3e8d819afbdefd47d95cd02550b9a7d1e8c03e1893e4450be571e173baad"
+      },
+      {
+        "path": "tests/make_way.rs",
+        "sha256": "f02c9b9377702cc97a687db851e3edeaeaac3d02d64e5be780ced11402b4cbc7"
+      },
+      {
+        "path": "tests/map_board.rs",
+        "sha256": "baef486ef28bdece6a17de8e19310e86e127ad8ac25caf231e0ce79673f1b509"
+      },
+      {
+        "path": "tests/negotiate.rs",
+        "sha256": "85a62c24256031d8816218419dc750e15dd76e0609fb039306590c28495a523f"
+      },
+      {
+        "path": "tests/network.rs",
+        "sha256": "cc4d6973d661729457d5af65c4dc841db1b1934e5f66073bbf415c2272f4cc86"
+      },
+      {
+        "path": "tests/osm_import.rs",
+        "sha256": "1f0a9046b52d78b3ebc73eeb54a5b62047786160675eb6365eb681a71067fbfc"
+      },
+      {
+        "path": "tests/payoff.rs",
+        "sha256": "2dda60905e5fde9ec5a4090cff864567dc8f727929f0b0d20d8fd4730132037e"
+      },
+      {
+        "path": "tests/phase16b.rs",
+        "sha256": "8327e2cd99bcdd7a84b93a195b6d2b257de25dfcb642ab490221cb3776abf944"
+      },
+      {
+        "path": "tests/phase16d.rs",
+        "sha256": "78c7a6e6ee8ec10f6fa928e4e0487dab1f3f18c390265e4ea57d1b6254b906b1"
+      },
+      {
+        "path": "tests/priority.rs",
+        "sha256": "b2bbd7861765e69d0d1cd5a02b3f2d1f81855670ec04760103337c089d2e137e"
+      },
+      {
+        "path": "tests/propagation.rs",
+        "sha256": "29642bc37dfa61a8c27f5b2cafefe95f019e437ddc55dc23c9a62c63d3d3ef84"
+      },
+      {
+        "path": "tests/reasons.rs",
+        "sha256": "1bbf3056983665a25b26683f8bb4274b068eef23186bef27eb93f26046a9ec24"
+      },
+      {
+        "path": "tests/recording.rs",
+        "sha256": "b6d53ae024a336ca0024f90a74e3a1d5e835dd82565ce1675cbb6b8b2f9be26e"
+      },
+      {
+        "path": "tests/replay.rs",
+        "sha256": "93e60161a07f3ffc9bda0150c21bd124141f7e08ebd3251182ea129994838599"
+      },
+      {
+        "path": "tests/rider_history.rs",
+        "sha256": "11833087cff84e1ef96edd7f92b672cb5b71afac124fc4e67031ce1255c51cff"
+      },
+      {
+        "path": "tests/road_map.rs",
+        "sha256": "f37fc21f8a72c7f6e57fc326d57125d10c4c0a428e321a89eb189b68621320ec"
+      },
+      {
+        "path": "tests/road_record.rs",
+        "sha256": "2027e6d4756e995779720d2e7f1834238ab386477691ba16c10d747a5cbc926a"
+      },
+      {
+        "path": "tests/road_record_birth.rs",
+        "sha256": "eda6e979b14524ed41d6a9e0d19dfc4e5354c637358b9451057a58b619f1114c"
+      },
+      {
+        "path": "tests/rush_board.rs",
+        "sha256": "21bb4a9f83fc210c9e32f1ad4eb69f6e1ac55033403ab037f6ee0ca12473f86b"
+      },
+      {
+        "path": "tests/rush_hour.rs",
+        "sha256": "e80a40257f2d5ba0904e6355433ac3e1dc96b1e15f249dadec7bb74750d257dd"
+      },
+      {
+        "path": "tests/scale_sweep.rs",
+        "sha256": "b163d86fdd28157d2e9ac54c550b0a20fd6b7912631bcb87cfe2504538e8b35d"
+      },
+      {
+        "path": "tests/signals.rs",
+        "sha256": "0fcbdc60af54a23ac91d7b426837b95ac3e681f517a4ed655c4c836115b5e32d"
+      },
+      {
+        "path": "tests/slot.rs",
+        "sha256": "1b3c4d7fc533abce22199214658ae7223bb002fe3c8139301d5019c898d5ec6a"
+      },
+      {
+        "path": "tests/slot_cited.rs",
+        "sha256": "4c0802db84d9d44e0c982da80b458b8e6ae522cbd5179a9efe549d7e288403a2"
+      },
+      {
+        "path": "tests/slot_v2.rs",
+        "sha256": "3b6d57bf98bd725a6c7f5ef1515745021288165a0753d82620e83db56ff38bef"
+      },
+      {
+        "path": "tests/sticky_fail.rs",
+        "sha256": "fd46f9bbada3468ff5062c9533b3f25dc06af15a84627fe00ac955cc2cc8ed0b"
+      },
+      {
+        "path": "tests/stories.rs",
+        "sha256": "d71212b142e166313ffce074e0f89f5376c31b941b47bebdeef04e39f2fa9aa9"
+      }
+    ]
+  },
+  "checked_at_utc": "2026-11-03T20:58:23.475942+00:00",
+  "code_manifest_sha256": "8fab23caa522a26a88d573f2b2b3dfded80dcd5a7143ecb782efb0b0c51d2d15",
+  "python": {
+    "failed": 0,
+    "log": "runtime/milestone-2-final-python.log",
+    "outcomes": {
+      "test_emission.EmissionTests.test_missing_frame_or_lane_change_resets_run": {
+        "status": "PASS"
+      },
+      "test_emission.EmissionTests.test_moving_unknown_shoulder_and_background_never_emit": {
+        "status": "PASS"
+      },
+      "test_emission.EmissionTests.test_n_frames_emit_once_and_later_frames_do_not_duplicate": {
+        "status": "PASS"
+      },
+      "test_emission.EmissionTests.test_nested_duplicate_track_does_not_emit_a_second_edit": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_ambiguous_geometry_cannot_select_by_desired_class": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_analysis_cannot_override_causal_background_role": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_clear_control_candidate_is_failure_even_when_adapter_abstains": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_complete_five_targets_with_scaled_geometry_and_source_offsets": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_empty_or_partial_clear_control_cannot_pass": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_false_edit_on_white_fragment_cannot_hide_behind_moving_whole_mask": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_invalid_shared_pixel_position_cannot_pass_host_evidence_match": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_label_cannot_merge_or_rewrite_host_mapping": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_missing_development_clip_returns_failed_five_rows": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_missing_masks_reset_runs_without_becoming_sampling_gaps": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_one_moving_frame_cannot_pass_moving_target": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_stationary_edit_requires_actual_support_not_only_claimed_count": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_two_strong_incompatible_runs_are_mixed": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_unmatched_target_fails_even_with_correct_track_class": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_wrong_source_offset_or_duplicate_observation_fails": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_background_homography_recovers_known_translation_deterministically": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_contact_feature_motion_matches_static_road": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_missing_background_support_is_not_zero_motion": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_same_image_object_against_observable_ego_is_moving": {
+        "status": "PASS"
+      },
+      "test_motion.LaneTests.test_lane_shoulder_and_uncertainty": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_comoving_vehicle_with_zero_image_flow_is_moving": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_low_quality_cannot_be_stationary": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_stationary_ground_contact": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_stationary_measurement_noise": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_unobservable_zero_ego_motion_is_unknown": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_empty_bundle_does_not_create_placeholder": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_h264_actual_cadence_all_masks_and_every_b_frame": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_irregular_timestamps_are_not_resampled": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_missing_measurement_does_not_publish_video": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_single_frame_requires_real_cadence_metadata": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_annotation_cannot_claim_model_provenance": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_csv_preserves_scores_and_provenance_and_zero_visible_track": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_jsonl_empty_is_zero_edits_and_wrong_viewpoint_fails": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_jsonl_retains_actual_edit_and_rejects_duplicate": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_canonical_export_sidecars_do_not_change_frozen_code_manifest": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_changed_or_new_code_after_freeze_refuses_heldout": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_deferred_label_snapshot_cannot_freeze": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_freeze_marker_must_be_committed_before_heldout_access": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_heldout_reservation_is_single_shot_and_binds_input_bytes": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_manifest_does_not_enumerate_heldout_and_includes_added_code": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_missing_freeze_refuses_before_heldout_directory_enumeration": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_retained_stop_change_prevents_freeze": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_skipped_actual_tracker_repeat_cannot_be_presented_as_a_pass": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_uncommitted_config_cannot_freeze_even_if_validation_is_updated": {
+        "status": "PASS"
+      },
+      "test_tracker.ActualTrackingDeterminism.test_fixed_development_clip_first_three_sampled_frames_repeat": {
+        "reason": "Actual SAM tracker determinism UNMEASURED: local native checkpoint is absent",
+        "status": "SKIP"
+      },
+      "test_tracker.CacheTests.test_cache_lock_rejects_a_second_writer": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_destination_signature_detects_unrelated_writes": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_missing_checkpoint_refuses_before_decode_or_cache_creation": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_packed_masks_round_trip_and_stable_fingerprint": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_tracking_cache_key_changes_for_sampling_but_not_motion_thresholds": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_association_is_one_to_one_and_preserves_video_ids": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_large_background_containment_does_not_delete_a_small_object": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_later_background_role_does_not_rewrite_earlier_foreground": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_proposal_order_and_duplicate_retention_are_deterministic": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_track_cap_raises_instead_of_truncating_proposals": {
+        "status": "PASS"
+      }
+    },
+    "passed": 58,
+    "skipped": 1,
+    "status": "PASS",
+    "tests": 59
+  },
+  "sam_determinism": {
+    "log": "runtime/milestone-2-final-python.log",
+    "reason": "Actual SAM tracker determinism UNMEASURED: local native checkpoint is absent",
+    "skipped": 1,
+    "status": "SKIP",
+    "test": "test_tracker.ActualTrackingDeterminism.test_fixed_development_clip_first_three_sampled_frames_repeat"
+  },
+  "version": 1
+}
