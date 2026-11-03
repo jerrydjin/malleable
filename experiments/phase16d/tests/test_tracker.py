@@ -148,6 +148,81 @@ class CacheTests(unittest.TestCase):
             self.assertNotEqual(empty, tracker._directory_signature(cache))
 
 
+class BoundedMemoryTests(unittest.TestCase):
+    def test_read_through_masks_stream_the_same_fingerprint_with_bounded_cache(self):
+        with tempfile.TemporaryDirectory() as directory:
+            paths, original = [], []
+            for index in range(24):
+                objects = {index + 1: rectangle((19, 23), (index % 10, 2, index % 10 + 8, 17))}
+                path = Path(directory) / f"{index:05d}.npz"
+                tracker._write_mask_frame(path, objects, (19, 23))
+                paths.append(path)
+                original.append(objects)
+            streamed = tracker.ReadThroughSequence(paths, tracker._read_mask_frame, cache_size=2)
+            indices = list(range(0, 72, 3))
+            self.assertEqual(tracker.tracking_fingerprint(original, indices),
+                             tracker.tracking_fingerprint(streamed, indices))
+            self.assertEqual(len(streamed.cache), 2)
+            self.assertEqual(list(streamed.cache), [22, 23])
+            self.assertEqual(list(streamed[-1]), [24])
+            self.assertEqual(len(streamed[:3]), 3)
+            self.assertEqual(len(streamed.cache), 2)
+            with self.assertRaises(IndexError):
+                streamed[24]
+
+    def test_lazy_native_jpegs_match_actual_official_eager_preprocessing_exactly(self):
+        import torch
+        from PIL import Image
+        from sam2.utils.misc import load_video_frames_from_jpg_images
+        with tempfile.TemporaryDirectory() as directory:
+            paths = []
+            rng = np.random.default_rng(491)
+            for index in range(7):
+                path = Path(directory) / f"{index:05d}.jpg"
+                Image.fromarray(rng.integers(0, 256, (19, 27, 3), dtype=np.uint8)).save(path)
+                paths.append(path)
+            native, height, width = load_video_frames_from_jpg_images(
+                directory, 32, offload_video_to_cpu=True, compute_device=torch.device("cpu"))
+            lazy = tracker.NativeJPEGFrames(paths, 32, cache_size=2)
+            self.assertEqual((height, width), (19, 27))
+            for index in [0, 6, 1, 5, 2, 4, 3, 0]:
+                self.assertEqual(lazy[index].dtype, torch.float32)
+                self.assertTrue(torch.equal(lazy[index], native[index]))
+                self.assertLessEqual(len(lazy.cache), 2)
+
+    def test_history_pruning_preserves_all_native_forward_conditioning_and_pointer_lookups(self):
+        from sam2.modeling.sam2_utils import select_closest_cond_frames
+        reference_cond = {index: index for index in range(0, 1000, 10)}
+        reference_noncond = {index: index for index in range(1000) if index % 10}
+        state = {
+            "output_dict_per_obj": {0: {"cond_frame_outputs": dict(reference_cond),
+                                        "non_cond_frame_outputs": dict(reference_noncond)}},
+            "point_inputs_per_obj": {0: {index: index for index in range(1000)}},
+            "mask_inputs_per_obj": {0: {index: index for index in range(1000)}},
+            "frames_tracked_per_obj": {0: {index: index for index in range(1000)}},
+            "temp_output_dict_per_obj": {0: {"cond_frame_outputs": {}, "non_cond_frame_outputs": {}}},
+        }
+        radius = tracker.prune_native_history(state, 999, num_maskmem=7, memory_stride=1,
+                                               max_obj_ptrs=16, max_cond_frames=2)
+        current = state["output_dict_per_obj"][0]
+        self.assertEqual(radius, 17)
+        self.assertLessEqual(sum(map(len, current.values())), radius + 3)
+        self.assertEqual(list(state["mask_inputs_per_obj"][0]), [999])
+        self.assertEqual(list(state["point_inputs_per_obj"][0]), [999])
+        self.assertLessEqual(len(state["frames_tracked_per_obj"][0]), radius + 1)
+        # Use the installed official selector, not a replacement model. Check
+        # current-boundary corrections and every future lookup into this history.
+        for frame in range(999, 1040):
+            selected, unselected = select_closest_cond_frames(frame, reference_cond, 2)
+            actual_selected, actual_unselected = select_closest_cond_frames(
+                frame, current["cond_frame_outputs"], 2)
+            self.assertEqual(selected, actual_selected)
+            for previous in range(frame - 15, frame):
+                expected = reference_noncond.get(previous, unselected.get(previous))
+                actual = current["non_cond_frame_outputs"].get(previous, actual_unselected.get(previous))
+                self.assertEqual(expected, actual)
+
+
 class ActualTrackingDeterminism(unittest.TestCase):
     def test_fixed_development_clip_first_three_sampled_frames_repeat(self):
         cfg = config()
@@ -171,6 +246,10 @@ class ActualTrackingDeterminism(unittest.TestCase):
             self.assertGreater(first["calls"]["automatic_mask_generation"], 0)
             self.assertGreater(first["calls"]["propagated_frame_outputs"], 0)
             self.assertTrue(first["backend_parameters"]["add_all_frames_to_correct_as_cond"])
+            self.assertEqual(first["backend_parameters"]["max_cond_frames_in_attn"],
+                             int(cfg["sam"].get("max_cond_frames_in_attn", 2)))
+            self.assertIsInstance(loaded["frames"], tracker.ReadThroughSequence)
+            self.assertIsInstance(loaded["masks"], tracker.ReadThroughSequence)
             self.assertGreater(sum(frame["matched_existing"] for frame in first["keyframes"][1:]), 0)
 
 

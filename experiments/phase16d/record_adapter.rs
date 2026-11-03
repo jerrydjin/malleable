@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 use std::time::Instant;
 
 pub const PROPOSAL_LIFETIME_S: f64 = 30.0;
-const LABEL_SYSTEM: &str = "Classify the supplied host-mapped stationary-object evidence and choose communication reach. Return only JSON {\"label\":string,\"blocks\":\"road\"|\"lane\"|\"none\",\"reach\":{\"scope\":\"nearby\"|\"route\"|\"city\",\"radius_m\":number},\"rationale\":string}. No status, confirmation, merge, link IDs, motion controls or extra fields. Confidence is a host heuristic, not a calibrated probability. Coordinates are scene-local image coordinates, not a city map. Label and reach never authorize a merge or move a vehicle.";
+const LABEL_SYSTEM: &str = "Classify the supplied host-mapped stationary-object evidence and choose communication reach. Return only JSON {\"label\":string,\"reach\":{\"scope\":\"nearby\"|\"route\"|\"city\",\"radius_m\":number}}. Only label and reach are model-written. No blocks, rationale, status, confirmation, merge, link IDs, motion controls or extra fields. Confidence is a host heuristic, not a calibrated probability. Coordinates are scene-local image coordinates, not a city map. Label and reach never authorize a merge or move a vehicle.";
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
@@ -121,8 +121,23 @@ impl LabelOutcome {
     }
 }
 
+/// The model's wire format has exactly two fields. Shared Reply metadata is
+/// supplied by the host and is never accepted from the model.
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct LabelReach {
+    label: String,
+    reach: Reach,
+}
+
 pub fn parse_label(raw: &str) -> Result<Reply, String> {
-    let reply: Reply = serde_json::from_str(raw.trim()).map_err(|_| "parse".to_string())?;
+    let model: LabelReach = serde_json::from_str(raw.trim()).map_err(|_| "parse".to_string())?;
+    let reply = Reply {
+        label: model.label,
+        blocks: Blocks::None,
+        reach: model.reach,
+        rationale: "Host mapping determines proposal eligibility and lane blockage; model supplies label and reach only.".into(),
+    };
     reply.validate().map_err(|_| "parse".to_string())?;
     Ok(reply)
 }

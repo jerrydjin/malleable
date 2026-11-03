@@ -1,0 +1,19 @@
+test_association_is_one_to_one_and_preserves_video_ids (tracker_tests.ProposalTests.test_association_is_one_to_one_and_preserves_video_ids) ... ok
+test_large_background_containment_does_not_delete_a_small_object (tracker_tests.ProposalTests.test_large_background_containment_does_not_delete_a_small_object) ... ok
+test_later_background_role_does_not_rewrite_earlier_foreground (tracker_tests.ProposalTests.test_later_background_role_does_not_rewrite_earlier_foreground) ... ok
+test_proposal_order_and_duplicate_retention_are_deterministic (tracker_tests.ProposalTests.test_proposal_order_and_duplicate_retention_are_deterministic) ... ok
+test_track_cap_raises_instead_of_truncating_proposals (tracker_tests.ProposalTests.test_track_cap_raises_instead_of_truncating_proposals) ... ok
+test_cache_lock_rejects_a_second_writer (tracker_tests.CacheTests.test_cache_lock_rejects_a_second_writer) ... ok
+test_destination_signature_detects_unrelated_writes (tracker_tests.CacheTests.test_destination_signature_detects_unrelated_writes) ... ok
+test_missing_checkpoint_refuses_before_decode_or_cache_creation (tracker_tests.CacheTests.test_missing_checkpoint_refuses_before_decode_or_cache_creation) ... ok
+test_packed_masks_round_trip_and_stable_fingerprint (tracker_tests.CacheTests.test_packed_masks_round_trip_and_stable_fingerprint) ... ok
+test_tracking_cache_key_changes_for_sampling_but_not_motion_thresholds (tracker_tests.CacheTests.test_tracking_cache_key_changes_for_sampling_but_not_motion_thresholds) ... ok
+test_history_pruning_preserves_all_native_forward_conditioning_and_pointer_lookups (tracker_tests.BoundedMemoryTests.test_history_pruning_preserves_all_native_forward_conditioning_and_pointer_lookups) ... ok
+test_lazy_native_jpegs_match_actual_official_eager_preprocessing_exactly (tracker_tests.BoundedMemoryTests.test_lazy_native_jpegs_match_actual_official_eager_preprocessing_exactly) ... frame loading (JPEG):   0%|          | 0/7 [00:00<?, ?it/s]frame loading (JPEG): 100%|██████████| 7/7 [00:00<00:00, 4379.49it/s]
+ok
+test_read_through_masks_stream_the_same_fingerprint_with_bounded_cache (tracker_tests.BoundedMemoryTests.test_read_through_masks_stream_the_same_fingerprint_with_bounded_cache) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.880s
+
+OK

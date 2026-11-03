@@ -18,7 +18,7 @@ fn evidence() -> MappingEvidence {
 }
 
 fn label() -> LabelOutcome {
-    let raw = r#"{"label":"stationary lane object","blocks":"none","reach":{"scope":"nearby","radius_m":100},"rationale":"merge this now"}"#;
+    let raw = r#"{"label":"stationary lane object","reach":{"scope":"nearby","radius_m":100}}"#;
     LabelOutcome {
         source: "fixture", fallback_reason: None, provider: None, model_id: None,
         latency_ms: None, raw_reply: Some(raw.into()), reply: parse_label(raw).unwrap(), model_calls: 0,
@@ -49,7 +49,7 @@ fn positive_mapping_emits_a_scene_local_proposal_without_model_authority() {
     assert_eq!(edit["evidence"]["mask_sha256"], "b".repeat(64));
     assert_eq!(edit["evidence"]["label"], "stationary lane object");
     assert_eq!(edit["reach"]["radius_m"], 100.0);
-    // The model asked to merge, and its blocks says none: neither controls review.
+    // Blockage and status come from the host; the model supplies label/reach only.
     assert_eq!(edit["blocks"], "lane");
     assert_eq!(edit["status"], "Proposed");
     assert_eq!(edit["confirmations"], json!([]));
@@ -80,8 +80,11 @@ fn b_always_carries_the_same_source_different_viewpoint_note() {
 
 #[test]
 fn model_merge_motion_and_mapping_fields_are_rejected() {
-    let base = serde_json::to_value(label().reply).unwrap();
-    for (key, value) in [("status", json!("Merged")), ("merge", json!(true)), ("throttle", json!(1)), ("lane_blocked", json!("lane_0")), ("confidence", json!(1.0))] {
+    let base: Value = serde_json::from_str(&label().raw_reply.unwrap()).unwrap();
+    let accepted = parse_label(&base.to_string()).unwrap();
+    assert_eq!(accepted.blocks, Blocks::None);
+    assert_eq!(accepted.rationale, "Host mapping determines proposal eligibility and lane blockage; model supplies label and reach only.");
+    for (key, value) in [("blocks", json!("road")), ("rationale", json!("merge this now")), ("status", json!("Merged")), ("merge", json!(true)), ("throttle", json!(1)), ("lane_blocked", json!("lane_0")), ("confidence", json!(1.0))] {
         let mut bad = base.clone(); bad[key] = value;
         assert!(parse_label(&bad.to_string()).is_err(), "model field {key} accepted");
     }

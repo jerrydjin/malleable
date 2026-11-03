@@ -8,6 +8,8 @@ after every sampled frame and its mask file have been written and hashed.
 from __future__ import annotations
 
 import copy
+from collections import OrderedDict
+from collections.abc import Sequence
 from contextlib import contextmanager
 import fcntl
 import gc
@@ -269,7 +271,118 @@ def _read_mask_frame(path: Path) -> dict[int, np.ndarray]:
                 .reshape(shape).astype(bool) for row, ident in enumerate(identifiers)}
 
 
-def tracking_fingerprint(masks: list[dict[int, np.ndarray]], frame_indices: list[int]) -> str:
+class ReadThroughSequence(Sequence):
+    """Disk-backed ordered records with bounded read-through caching."""
+
+    def __init__(self, paths, reader, cache_size=8):
+        if int(cache_size) <= 0:
+            raise ValueError("Read-through cache_size must be positive")
+        self.paths, self.reader = tuple(paths), reader
+        self.cache_size, self.cache = int(cache_size), OrderedDict()
+
+    def __len__(self):
+        return len(self.paths)
+
+    def __getitem__(self, index):
+        if isinstance(index, slice):
+            return [self[i] for i in range(*index.indices(len(self)))]
+        if not isinstance(index, (int, np.integer)):
+            raise TypeError("Sequence indices must be integers or slices")
+        index = int(index)
+        if index < 0:
+            index += len(self)
+        if not 0 <= index < len(self):
+            raise IndexError(index)
+        if index in self.cache:
+            self.cache.move_to_end(index)
+            return self.cache[index]
+        value = self.reader(self.paths[index])
+        self.cache[index] = value
+        while len(self.cache) > self.cache_size:
+            self.cache.popitem(last=False)
+        return value
+
+
+class NativeJPEGFrames(ReadThroughSequence):
+    """The native eager JPEG loader's exact FP32 preprocessing, loaded on demand.
+
+    Native init_state's async option retains every image (and uses FP64 here).
+    This adapter instead retains only a fixed number of normalized tensors.
+    """
+
+    def __init__(self, paths, image_size, cache_size=2):
+        import torch
+        from sam2.utils.misc import _load_img_as_tensor
+        mean = torch.tensor((0.485, 0.456, 0.406), dtype=torch.float32)[:, None, None]
+        std = torch.tensor((0.229, 0.224, 0.225), dtype=torch.float32)[:, None, None]
+
+        def read(path):
+            # Native eager loading assigns the helper's FP64 image into an FP32
+            # tensor *before* normalization; preserve that rounding exactly.
+            image, _, _ = _load_img_as_tensor(str(path), int(image_size))
+            image = image.to(dtype=torch.float32)
+            image.sub_(mean).div_(std)
+            return image
+
+        super().__init__(paths, read, cache_size)
+
+
+def _bounded_native_state(predictor, paths, cache_size):
+    """Keep one genuine native session, with a bounded image backing Sequence."""
+    # init_state always eagerly loads its input directory. Warm its original
+    # feature/cache machinery on the exact first JPEG, then expose the remaining
+    # JPEGs through the same integer-indexed tensor interface.
+    with tempfile.TemporaryDirectory(prefix=".native-init-", dir=Path(paths[0]).parent.parent) as directory:
+        os_path = Path(directory) / "00000.jpg"
+        os_path.hardlink_to(paths[0])
+        state = predictor.init_state(directory, offload_video_to_cpu=True,
+                                     offload_state_to_cpu=True, async_loading_frames=False)
+    state["images"] = NativeJPEGFrames(paths, predictor.image_size, cache_size)
+    state["num_frames"] = len(paths)
+    return state
+
+
+def prune_native_history(state, frame_index, *, num_maskmem, memory_stride,
+                         max_obj_ptrs, max_cond_frames):
+    """Drop outputs that forward native SAM can never attend again.
+
+    The current boundary frame may be corrected/repropagated, so retain its
+    entire backwards lookup radius as well as every later frame. The two most
+    recent older conditioning frames survive even outside this radius. Inputs
+    and tracked-frame bookkeeping have the same bounded lifetime.
+    """
+    if min(num_maskmem, memory_stride, max_obj_ptrs) <= 0 or max_cond_frames < 2:
+        raise ValueError("Bounded history requires positive radii and 2+ conditioning frames")
+    radius = max(num_maskmem * memory_stride + 2, max_obj_ptrs + 1)
+    keep_from = int(frame_index) - radius
+    for obj_idx, outputs in state["output_dict_per_obj"].items():
+        cond = outputs["cond_frame_outputs"]
+        older = sorted((index for index in cond if index < keep_from), reverse=True)
+        keep_old_cond = set(older[:max_cond_frames])
+        for storage in (cond, outputs["non_cond_frame_outputs"]):
+            for index in list(storage):
+                if index < keep_from and not (storage is cond and index in keep_old_cond):
+                    del storage[index]
+        # Prompt tensors are not read once their output has been consolidated.
+        # Only the current boundary can receive a correction again; keeping old
+        # 1024-square FP32 prompt masks would defeat the history bound.
+        for name in ("point_inputs_per_obj", "mask_inputs_per_obj"):
+            records = state[name][obj_idx]
+            for index in list(records):
+                if index < frame_index:
+                    del records[index]
+        records = state["frames_tracked_per_obj"][obj_idx]
+        for index in list(records):
+            if index < keep_from:
+                del records[index]
+        for records in state["temp_output_dict_per_obj"][obj_idx].values():
+            for index in list(records):
+                if index < frame_index:
+                    raise RuntimeError("Unconsolidated native output predates the propagation boundary")
+    return radius
+
+
+def tracking_fingerprint(masks: Sequence, frame_indices: Sequence) -> str:
     """Result identity excludes elapsed wall times and cache paths."""
     result = hashlib.sha256()
     if len(masks) != len(frame_indices):
@@ -380,12 +493,19 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
     decoded = _decode(input_path, output / "frames", config, limit_frames)
     decode_seconds = time.perf_counter() - decode_started
     paths = sorted((output / "frames").glob("*.jpg"))
-    frames = [_read_rgb(path) for path in paths]
+    decoded_cache_size = int(sam.get("decoded_frame_cache_size", 8))
+    video_cache_size = int(sam.get("video_frame_cache_size", 2))
+    max_cond_frames = int(sam.get("max_cond_frames_in_attn", 2))
+    retire_after = int(sam.get("retire_after_empty_frames", 20))
+    if max_cond_frames < 2 or retire_after <= 0:
+        raise ValueError("Bounded tracking requires 2+ conditioning frames and positive empty-frame retirement")
+    frames = ReadThroughSequence(paths, _read_rgb, decoded_cache_size)
     height, width = frames[0].shape[:2]
     started = time.perf_counter()
     predictor = build_sam2_video_predictor(str(sam["model_config"]), str(checkpoint),
                                           device=device, apply_postprocessing=False, vos_optimized=False,
-                                          hydra_overrides_extra=["++model.add_all_frames_to_correct_as_cond=true"])
+                                          hydra_overrides_extra=["++model.add_all_frames_to_correct_as_cond=true",
+                                                                 f"++model.max_cond_frames_in_attn={max_cond_frames}"])
     predictor.to(dtype=torch.float32)
     if not predictor.add_all_frames_to_correct_as_cond:
         raise RuntimeError("AMG keyframe refreshes must remain conditioning frames during propagation")
@@ -395,7 +515,12 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
         mask_threshold=float(sam["mask_threshold"]), box_nms_thresh=float(sam["box_nms_threshold"]),
         crop_n_layers=0, min_mask_region_area=0, output_mode="binary_mask", multimask_output=True)
     model_load_seconds = time.perf_counter() - started
-    tracks, masks, keyframes = {}, {}, []
+    tracks, boundary_masks, keyframes = {}, {}, []
+    mask_directory = output / "masks"
+    mask_directory.mkdir()
+    written_frames, last_visible = set(), {}
+    maximum_active_tracks, maximum_native_records = 0, 0
+    history_radius = None
     calls = {"automatic_mask_generation": 0, "add_new_mask": 0,
              "propagate_chunks": 0, "propagated_frame_outputs": 0}
     interval = int(sam["keyframe_interval_frames"])
@@ -403,8 +528,7 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
         raise ValueError("keyframe_interval_frames must be positive")
     with torch.inference_mode():
         initialized = time.perf_counter()
-        state = predictor.init_state(str(output / "frames"), offload_video_to_cpu=True,
-                                     offload_state_to_cpu=True, async_loading_frames=False)
+        state = _bounded_native_state(predictor, paths, video_cache_size)
         state_init_seconds = time.perf_counter() - initialized
         for keyframe in range(0, len(frames), interval):
             generated = time.perf_counter()
@@ -412,9 +536,9 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
             amg_seconds = time.perf_counter() - generated
             calls["automatic_mask_generation"] += 1
             proposals, counts = prepare_proposals(raw, (height, width), sam)
-            associations = associate_proposals(proposals, masks.get(keyframe, {}), sam)
+            associations = associate_proposals(proposals, boundary_masks, sam)
             new_count = len(proposals) - len(associations)
-            require_capacity(len(tracks), new_count, int(sam["maximum_tracks"]))
+            require_capacity(len(state["obj_ids"]), new_count, int(sam["maximum_tracks"]))
             updates = []
             seed_started = time.perf_counter()
             for index, proposal in enumerate(proposals):
@@ -439,24 +563,47 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
                     update = {"proposal_index": index, "track_id": ident, "new_track": True}
                 predictor.add_new_mask(state, frame_idx=keyframe, obj_id=ident, mask=proposal["mask"])
                 calls["add_new_mask"] += 1
+                last_visible.setdefault(ident, keyframe)
                 updates.append(update)
+            maximum_active_tracks = max(maximum_active_tracks, len(state["obj_ids"]))
             seed_seconds = time.perf_counter() - seed_started
             end = min(keyframe + interval, len(frames) - 1)
             propagation_started = time.perf_counter()
-            if tracks:
+            if state["obj_ids"]:
                 calls["propagate_chunks"] += 1
                 for frame_index, identifiers, logits in predictor.propagate_in_video(
                         state, start_frame_idx=keyframe, max_frame_num_to_track=end - keyframe):
                     values = (logits.detach().float().cpu().numpy() > float(sam["mask_threshold"]))
                     if values.shape != (len(identifiers), 1, height, width):
                         raise RuntimeError(f"Unexpected SAM video output shape {values.shape}")
-                    masks[int(frame_index)] = {int(ident): values[row, 0].astype(bool)
-                                               for row, ident in enumerate(identifiers)}
+                    boundary_masks = {int(ident): values[row, 0]
+                                      for row, ident in enumerate(identifiers)}
+                    _write_mask_frame(mask_directory / f"{frame_index:05d}.npz", boundary_masks, (height, width))
+                    written_frames.add(int(frame_index))
+                    for ident, mask in boundary_masks.items():
+                        if mask.any():
+                            last_visible[ident] = int(frame_index)
+                    history_radius = prune_native_history(
+                        state, int(frame_index), num_maskmem=int(predictor.num_maskmem),
+                        memory_stride=int(predictor.memory_temporal_stride_for_eval),
+                        max_obj_ptrs=int(predictor.max_obj_ptrs_in_encoder), max_cond_frames=max_cond_frames)
+                    maximum_native_records = max(maximum_native_records, max(
+                        (sum(len(records) for records in storage.values())
+                         for storage in state["output_dict_per_obj"].values()), default=0))
                     calls["propagated_frame_outputs"] += 1
+                # Native remove_object renumbers internal indices only. External
+                # IDs and all previously published track evidence stay stable.
+                for ident in list(state["obj_ids"]):
+                    if end - last_visible[ident] >= retire_after:
+                        predictor.remove_object(state, ident, strict=True, need_output=False)
+                        tracks[str(ident)].update({"retired_frame": end,
+                                                  "retirement_reason": "consecutive_empty_native_masks"})
             else:
                 # Real AMG zero-proposal result, not invented propagated masks.
+                boundary_masks = {}
                 for frame_index in range(keyframe, end + 1):
-                    masks[frame_index] = {}
+                    _write_mask_frame(mask_directory / f"{frame_index:05d}.npz", {}, (height, width))
+                    written_frames.add(frame_index)
             keyframes.append({"frame_index": keyframe, "source_frame_index": decoded["source_frame_indices"][keyframe],
                               "timestamp_s": decoded["timestamps_s"][keyframe], **counts,
                               "matched_existing": len(associations), "new_tracks": new_count,
@@ -464,20 +611,29 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
                               "automatic_generation_s": amg_seconds, "mask_seeding_s": seed_seconds,
                               "propagation_s": time.perf_counter() - propagation_started,
                               "propagation_start": keyframe, "propagation_end_inclusive": end})
-    if set(masks) != set(range(len(frames))):
+    if written_frames != set(range(len(frames))):
         raise RuntimeError("Video predictor did not provide every sampled frame")
-    ordered = [masks[index] for index in range(len(frames))]
-    mask_directory = output / "masks"
-    mask_directory.mkdir()
-    for index, frame_masks in enumerate(ordered):
-        _write_mask_frame(mask_directory / f"{index:05d}.npz", frame_masks, (height, width))
-    for ident, item in tracks.items():
-        visible = [index for index, frame in enumerate(ordered)
-                   if int(ident) in frame and bool(frame[int(ident)].any())]
-        areas = [int(ordered[index][int(ident)].sum()) for index in visible]
-        item.update({"visible_frame_indices": visible, "first_frame": min(visible) if visible else None,
-                     "last_frame": max(visible) if visible else None, "visible_frames": len(visible),
-                     "minimum_area_px": min(areas) if areas else 0, "maximum_area_px": max(areas) if areas else 0})
+    ordered = ReadThroughSequence(
+        [mask_directory / f"{index:05d}.npz" for index in range(len(frames))],
+        _read_mask_frame, decoded_cache_size)
+    for item in tracks.values():
+        item.update({"visible_frame_indices": [], "first_frame": None, "last_frame": None,
+                     "visible_frames": 0, "minimum_area_px": 0, "maximum_area_px": 0})
+    # One streaming pass computes per-track summaries without retaining the
+    # clip's expanded masks (packed files remain the source of truth).
+    for index, frame in enumerate(ordered):
+        for ident, mask in frame.items():
+            area = int(mask.sum())
+            if not area:
+                continue
+            item = tracks[str(ident)]
+            item["visible_frame_indices"].append(index)
+            if item["first_frame"] is None:
+                item["first_frame"] = index
+            item["last_frame"] = index
+            item["visible_frames"] += 1
+            item["minimum_area_px"] = min(item["minimum_area_px"], area) if item["minimum_area_px"] else area
+            item["maximum_area_px"] = max(item["maximum_area_px"], area)
     (output / "tracks.json").write_text(json.dumps(tracks, indent=2, sort_keys=True) + "\n")
     manifest = [{"path": str(path.relative_to(output)), "sha256": _sha(path), "bytes": path.stat().st_size}
                 for path in sorted(output.rglob("*")) if path.is_file()]
@@ -494,8 +650,19 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
             "backend_parameters": {"apply_postprocessing": False, "vos_optimized": False,
                                    "offload_video_to_cpu": True, "offload_state_to_cpu": True,
                                    "add_all_frames_to_correct_as_cond": True,
+                                   "max_cond_frames_in_attn": max_cond_frames,
+                                   "video_frame_cache_size": video_cache_size,
+                                   "decoded_frame_cache_size": decoded_cache_size,
+                                   "native_history_radius_frames": history_radius,
+                                   "retire_after_empty_frames": retire_after,
+                                   "maximum_tracks_scope": "simultaneously active native objects; IDs never reused",
+                                   "native_initialization": "official init_state on first source JPEG; exact eager-equivalent lazy FP32 image Sequence",
+                                   "mask_storage": "packed NPZ per frame, boundary correction replaces same frame",
                                    "amg_grid": "uniform over the full frame", "amg_crop_n_layers": 0},
             "keyframes": keyframes, "calls": calls, "track_count": len(tracks),
+            "maximum_active_tracks": maximum_active_tracks,
+            "maximum_native_history_records_per_object": maximum_native_records,
+            "retired_track_count": sum("retired_frame" in item for item in tracks.values()),
             "foreground_tracks": sum(item["role"] == "foreground" for item in tracks.values()),
             "background_surface_tracks": sum(item["role"] == "background_surface" for item in tracks.values()),
             "mask_frame_count": sum(len(frame) for frame in ordered),
@@ -581,8 +748,11 @@ def load_tracking(cache_dir: str | Path) -> dict:
         if not path.is_file() or path.stat().st_size != entry["bytes"] or _sha(path) != entry["sha256"]:
             raise CacheMismatch(f"Tracking cache file hash/size differs: {relative}")
     count = int(metadata["decoded"]["sampled_frames"])
-    frames = [_read_rgb(cache_dir / "frames" / f"{index:05d}.jpg") for index in range(count)]
-    masks = [_read_mask_frame(cache_dir / "masks" / f"{index:05d}.npz") for index in range(count)]
+    cache_size = int(metadata["tracking_config"]["sam"].get("decoded_frame_cache_size", 8))
+    frames = ReadThroughSequence([cache_dir / "frames" / f"{index:05d}.jpg" for index in range(count)],
+                                 _read_rgb, cache_size)
+    masks = ReadThroughSequence([cache_dir / "masks" / f"{index:05d}.npz" for index in range(count)],
+                                _read_mask_frame, cache_size)
     if tracking_fingerprint(masks, metadata["decoded"]["source_frame_indices"]) != metadata["result_fingerprint"]:
         raise CacheMismatch("Tracking result fingerprint differs")
     tracks = json.loads((cache_dir / "tracks.json").read_text())

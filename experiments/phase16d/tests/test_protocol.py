@@ -174,10 +174,55 @@ class FreezeProtocolTests(unittest.TestCase):
     def test_freeze_marker_must_be_committed_before_heldout_access(self):
         manifest = self.freeze()
         self.assertEqual(manifest["code_commit"], self.git("rev-parse", "HEAD"))
-        with self.assertRaisesRegex(protocol.ProtocolError, "Commit this artifact"):
-            protocol.prepare_heldout(self.root)
+        with patch.object(Path, "iterdir", side_effect=AssertionError("Premature held-out enumeration")):
+            with self.assertRaisesRegex(protocol.ProtocolError, "Commit this artifact"):
+                protocol.prepare_heldout(self.root)
         self.commit("freeze")
         self.assertEqual(protocol.prepare_heldout(self.root)["state"], "MISSING")
+
+    def test_freeze_report_copies_parameters_measurements_and_label_provenance(self):
+        config = {"emission": {"consecutive_frames": 6}, "frame_stride": 3,
+                  "working_width": 640, "motion_lag_frames": 3,
+                  "sam": {"model_id": "official fixture architecture", "device": "cpu"},
+                  "motion": {"stationary_max_residual_px": 2.0}}
+        write_json(self.experiment / "config.json", config)
+        self.make_complete_evidence()
+        result = json.loads((self.run / "dev-results.json").read_text())
+        for row in result["rows"]:
+            is_control = row["id"] == "C_clear_road"
+            stationary = "red" in row["id"]
+            row.update({"target": row["id"], "candidate_count": int(stationary),
+                        "edit_count": int(stationary)})
+            if not is_control:
+                row.update({"expected_class": "STATIONARY" if stationary else "MOVING",
+                            "class": "STATIONARY" if stationary else "MOVING",
+                            "longest_stationary_run": 9 if stationary else 0,
+                            "longest_moving_run": 0 if stationary else 11})
+        write_json(self.run / "dev-results.json", result)
+        records = json.loads((self.run / "records.json").read_text())
+        records["edits"] = [
+            {"clip": "A", "track_id": 8, "label_provenance": {
+                "source": "model", "fallback_reason": None, "provider": "baseten",
+                "model_id": "meta-models/muse-spark-open-1026", "model_calls": 1}},
+            {"clip": "B", "track_id": 9, "label_provenance": {
+                "source": "fallback", "fallback_reason": "fixture_transport", "provider": "baseten",
+                "model_id": "meta-models/muse-spark-open-1026", "model_calls": 1}},
+        ]
+        write_json(self.run / "records.json", records)
+        self.commit("fixture measurements and provenance")
+        manifest = self.freeze()
+        report = (self.experiment / "FROZEN.md").read_text()
+        for value in (manifest["created_at_utc"], manifest["code_commit"],
+                      manifest["checkpoint_sha256"], manifest["code_manifest"]["sha256"],
+                      "6 consecutive processed frames", '"working_width": 640',
+                      '"stationary_max_residual_px": 2.0', "same source, different viewpoint",
+                      "| A_red_stationary | STATIONARY | STATIONARY | 9 | 0 | 1 | 1 | PASS |",
+                      "| A_white_moving | MOVING | MOVING | 0 | 11 | 0 | 0 | PASS |",
+                      "| A | 8 | model | none | baseten | meta-models/muse-spark-open-1026 | 1 |",
+                      "| B | 9 | fallback | fixture_transport | baseten | meta-models/muse-spark-open-1026 | 1 |"):
+            self.assertIn(value, report)
+        self.assertIn("hash of its own commit", report)
+        self.assertIn("No held-out result is asserted", report)
 
     def test_heldout_reservation_is_single_shot_and_binds_input_bytes(self):
         manifest = self.freeze_and_commit()

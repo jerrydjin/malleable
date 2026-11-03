@@ -8,39 +8,78 @@ import os
 from pathlib import Path
 import tempfile
 import urllib.error
+import urllib.parse
 import urllib.request
 
 EXPERIMENT = Path(__file__).resolve().parent
-URL = "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt"
+URL = "https://huggingface.co/facebook/sam2.1-hiera-large/resolve/main/sam2.1_hiera_large.pt"
+FALLBACK_URL = "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt"
+
+
+def official_destination(url):
+    parsed = urllib.parse.urlsplit(url)
+    host = (parsed.hostname or "").lower()
+    return (parsed.scheme == "https" and not parsed.username and not parsed.password
+            and parsed.port in (None, 443)
+            and (host in {"huggingface.co", "dl.fbaipublicfiles.com"}
+                 or host.endswith(".hf.co")))
+
+
+def public_destination(url):
+    # HF redirect queries contain temporary credentials; never persist them.
+    parsed = urllib.parse.urlsplit(url)
+    return urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, "", ""))
 
 
 class OfficialRedirects(urllib.request.HTTPRedirectHandler):
+    def __init__(self, redirects):
+        super().__init__()
+        self.redirects = redirects
+
     def redirect_request(self, request, fp, code, msg, headers, newurl):
-        if newurl != URL:
-            raise RuntimeError("Unexpected checkpoint redirect; no alternate destination was requested")
+        if not official_destination(newurl):
+            raise RuntimeError("Unexpected checkpoint redirect host: "
+                               + str(urllib.parse.urlsplit(newurl).hostname))
+        self.redirects.append({"http_status": code, "destination": public_destination(newurl)})
         return super().redirect_request(request, fp, code, msg, headers, newurl)
 
 
 def acquire(config, record_path):
     if config["sam"]["official_checkpoint_url"] != URL:
-        raise ValueError("Acquisition requires the pinned official tiny checkpoint URL")
+        raise ValueError("Acquisition requires the pinned official Hiera Large checkpoint URL")
     destination = Path(config["sam"]["checkpoint"]).expanduser()
+    if not destination.is_absolute():
+        destination = EXPERIMENT.parents[1] / destination
     record = {"requested_url": URL, "model_id": config["sam"]["model_id"],
               "checked_at_utc": datetime.now(timezone.utc).isoformat(),
               "checkpoint_path": str(destination), "state": "started",
-              "bytes_downloaded": 0, "tls_verification": True, "proxy": "inherited"}
+              "bytes_downloaded": 0, "tls_verification": True, "proxy": "inherited",
+              "attempts": []}
     temporary = None
     try:
         if destination.exists():
             raise FileExistsError("Refusing to overwrite an existing checkpoint")
         destination.parent.mkdir(parents=True, exist_ok=True)
-        opener = urllib.request.build_opener(OfficialRedirects())
-        with opener.open(URL, timeout=60) as response:
+        for url in (URL, FALLBACK_URL):
+            attempt = {"requested_url": url, "redirects": []}
+            record["attempts"].append(attempt)
+            opener = urllib.request.build_opener(OfficialRedirects(attempt["redirects"]))
+            try:
+                response = opener.open(url, timeout=60)
+                break
+            except urllib.error.HTTPError as error:
+                attempt.update({"http_status": error.code,
+                                "failed_host": urllib.parse.urlsplit(error.url).hostname})
+                if url == FALLBACK_URL:
+                    raise RuntimeError("Checkpoint download failed: " + "; ".join(
+                        f"{item['failed_host']} HTTP {item['http_status']}" for item in record["attempts"])) from None
+        with response:
             record["http_status"] = response.status
-            record["final_url"] = response.geturl()
+            record["final_url"] = public_destination(response.geturl())
             record["declared_content_length"] = response.headers.get("Content-Length")
-            if response.status != 200 or response.geturl() != URL:
-                raise RuntimeError("Checkpoint response was not a direct HTTP 200 from the pinned URL")
+            attempt.update({"http_status": response.status, "final_url": record["final_url"]})
+            if response.status != 200 or not official_destination(response.geturl()):
+                raise RuntimeError("Checkpoint response was not an official HTTPS HTTP 200")
             digest = hashlib.sha256()
             with tempfile.NamedTemporaryFile(dir=destination.parent, prefix=".sam2.1-", suffix=".part", delete=False) as stream:
                 temporary = Path(stream.name)

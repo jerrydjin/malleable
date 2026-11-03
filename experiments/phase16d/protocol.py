@@ -155,6 +155,70 @@ def _validation(root, validation_path, current):
     return validation
 
 
+def _freeze_markdown(manifest, config, results, records):
+    """Render only recorded development evidence; never infer a result."""
+    def cell(value):
+        if value is None:
+            return "NOT RECORDED"
+        return str(value).replace("|", "\\|").replace("\n", " ")
+
+    commit = manifest["code_commit"]
+    lines = [
+        "# Phase 16d freeze", "",
+        f"Freeze UTC: `{manifest['created_at_utc']}`.", "",
+        f"Frozen code/config commit: `{commit}`.", "",
+        "This file binds the committed code/config above. Its containing freeze "
+        "commit is verified by Git before held-out access; a file cannot contain "
+        "the hash of its own commit. Resolve the freeze commit with "
+        "`git log --diff-filter=A --format=%H -- experiments/phase16d/FROZEN.md`.", "",
+        f"Code manifest SHA-256: `{manifest['code_manifest']['sha256']}`.", "",
+        f"Checkpoint SHA-256: `{manifest['checkpoint_sha256']}`.", "",
+        f"N: **{config['emission']['consecutive_frames']} consecutive processed frames**. "
+        f"Native frame stride: `{cell(config.get('frame_stride'))}`; exact cadence "
+        "is recorded from each source clip's FPS.", "",
+        f"Development run: `{manifest['development_run']}`. Actual SAM repeat, "
+        "complete Python suite and Cargo validation passed. "
+        "See `freeze.json` for committed evidence hashes.", "",
+        "## Measured A/B/C gates", "",
+        "B is **same source, different viewpoint**.", "",
+        "| Target | Required | Measured class | Longest stationary run | "
+        "Longest moving run | Candidates | Edits | Result |",
+        "| --- | --- | --- | ---: | ---: | ---: | ---: | --- |",
+    ]
+    for row in results["rows"]:
+        lines.append("| " + " | ".join(cell(value) for value in (
+            row.get("target", row["id"]), row.get("expected_class", "no edit"),
+            row.get("class", "clear-road control" if row["id"] == "C_clear_road" else None),
+            row.get("longest_stationary_run"), row.get("longest_moving_run"),
+            row.get("candidate_count"), row.get("edit_count"),
+            "PASS" if row["pass"] is True else "FAIL")) + " |")
+    lines.extend(["", "## Muse label and reach provenance", "",
+                  "Muse is Meta's LLM. Its output is limited to label and reach; "
+                  "the host controls proposal eligibility and blockage. "
+                  "`RoadEdit::review` remains the merge authority.", "",
+                  "| Clip | Track ID | Source | Fallback reason | Provider | Model | Model calls |",
+                  "| --- | ---: | --- | --- | --- | --- | ---: |"])
+    for edit in records.get("edits", []):
+        label = edit.get("label_provenance", {})
+        lines.append("| " + " | ".join(cell(value) for value in (
+            edit.get("clip"), edit.get("track_id"), label.get("source"),
+            label.get("fallback_reason") or "none", label.get("provider"),
+            label.get("model_id"), label.get("model_calls"))) + " |")
+    if not records.get("edits"):
+        lines.extend(["", "No edit label provenance was recorded."])
+    parameters = {key: config[key] for key in (
+        "seed", "working_width", "frame_stride", "motion_lag_frames", "sam", "ego",
+        "motion", "lanes", "emission") if key in config}
+    lines.extend(["", "## Frozen inference parameters", "",
+                  "Lane assignments are camera-relative perspective hypotheses. "
+                  "The complete parameter sections below are copied from the frozen config.", "",
+                  "```json", json.dumps(parameters, indent=2, sort_keys=True, allow_nan=False),
+                  "```", "", "Commit this freeze before opening the held-out clip. "
+                  "Code/config affecting inference must remain unchanged for its single attempt. "
+                  "No held-out result is asserted by this file.", ""])
+    return "\n".join(lines)
+
+
 def freeze(root, run_dir, validation_path):
     """Create freeze artifacts after code and successful evidence are committed."""
     root = Path(root).resolve()
@@ -247,14 +311,7 @@ def freeze(root, run_dir, validation_path):
         stream.write(encoded)
     try:
         with (directory / "FROZEN.md").open("x") as stream:
-            stream.write(f"# Phase 16d freeze\n\nCode/config commit: `{commit}`.\n\n"
-                         f"Code manifest SHA-256: `{current['sha256']}`.\n\n"
-                         f"Development run: `{manifest['development_run']}`. All five development "
-                         "targets passed; actual SAM repeat and Cargo validation passed. "
-                         "See `freeze.json` for committed evidence hashes.\n\n"
-                         "Commit this freeze before opening the held-out clip. The code/config "
-                         "must remain unchanged for its single attempt. No held-out result "
-                         "is asserted by this file.\n")
+            stream.write(_freeze_markdown(manifest, config, results, records))
     except BaseException:
         (directory / "freeze.json").unlink()
         raise

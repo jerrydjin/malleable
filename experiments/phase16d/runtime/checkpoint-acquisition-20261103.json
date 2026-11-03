@@ -1,0 +1,30 @@
+{
+  "attempts": [
+    {
+      "final_url": "https://us.aws.cdn.hf.co/xet-bridge-us/66f20f13c95c2e91726ef9cb/2f04b959cb54a718eee67bd98b5cd20a795f1508cc597b5f96b2ed0144a8099d",
+      "http_status": 200,
+      "redirects": [
+        {
+          "destination": "https://us.aws.cdn.hf.co/xet-bridge-us/66f20f13c95c2e91726ef9cb/2f04b959cb54a718eee67bd98b5cd20a795f1508cc597b5f96b2ed0144a8099d",
+          "http_status": 302
+        }
+      ],
+      "requested_url": "https://huggingface.co/facebook/sam2.1-hiera-large/resolve/main/sam2.1_hiera_large.pt"
+    }
+  ],
+  "bytes_downloaded": 898083611,
+  "checked_at_utc": "2026-11-03T21:37:55.655468+00:00",
+  "checkpoint_path": "/workspace/malleable/experiments/phase16d/checkpoints/sam2.1_hiera_large.pt",
+  "declared_content_length": "898083611",
+  "final_url": "https://us.aws.cdn.hf.co/xet-bridge-us/66f20f13c95c2e91726ef9cb/2f04b959cb54a718eee67bd98b5cd20a795f1508cc597b5f96b2ed0144a8099d",
+  "http_status": 200,
+  "model_id": "facebook/sam2.1-hiera-large",
+  "native_parameter_elements": 224446898,
+  "native_tensor_count": 903,
+  "proxy": "inherited",
+  "requested_url": "https://huggingface.co/facebook/sam2.1-hiera-large/resolve/main/sam2.1_hiera_large.pt",
+  "sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+  "state": "verified",
+  "tls_verification": true,
+  "validation": "torch.load(weights_only=True), native model tensor dictionary; strict architecture load occurs in tracker"
+}

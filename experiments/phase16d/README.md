@@ -10,7 +10,7 @@ The parent is Phase 16b commit `874c0c8`. All parent files, including masks,
 preregistration and the live label result, stay unchanged. New work is isolated
 under this experiment, its example and tests. No vehicle/physics API is used.
 
-SAM 2.1 automatic masks cover a grid over each keyframe. The official SAM 2
+Official SAM 2.1 Hiera Large automatic masks cover a grid over each keyframe. The official SAM 2
 video predictor propagates retained masks with deterministic track IDs. Grid
 proposals are not a guarantee that every physical object is found; proposal,
 filtering, identity-association and tracking counts must be reported.
@@ -32,7 +32,10 @@ unlocalized scene-local road, not a Potrero or city-map location.
 `examples/phase16d_record.rs` uses the existing Muse/Baseten client to label
 eligible stationary lane evidence and choose reach. It emits Proposed
 `RoadEdit` records with lane, position and heuristic-confidence metadata.
-The label model cannot set confirmations/status or operate vehicle physics.
+Muse is Meta's LLM; the project is Malleable. The model writes only `label` and
+`reach`; a strict local response schema rejects extra fields. The host supplies
+blockage, confirmations and status, and `RoadEdit::review` remains the merge
+authority. The label model cannot operate vehicle physics.
 It receives numerical mapping evidence and image/mask hashes through the
 existing text client; it does not receive the images or the evaluation boxes.
 An object type inferred from those numbers is not a separate visual observation.
@@ -40,15 +43,45 @@ B is always **same source, different viewpoint**. Another view from that
 recording is not independent confirmation.
 
 Runtime packages are pinned in `runtime/requirements.lock.txt`; official SAM 2
-source provenance is in `runtime/sam2-source.json`. The checkpoint is external
-to Git. Its official host must be permitted by the managed runtime policy, or
-an accessible native SAM 2.1 checkpoint must be supplied. No proxy bypass or
-unverified replacement weights are used.
+source provenance is in `runtime/sam2-source.json`. The checkpoint is cached
+under `experiments/phase16d/checkpoints/`, which is gitignored. The configured
+architecture is Hiera Large, using this official primary URL:
+
+```text
+https://huggingface.co/facebook/sam2.1-hiera-large/resolve/main/sam2.1_hiera_large.pt
+```
+
+The official fallback serves the same checkpoint:
+
+```text
+https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt
+```
+
+Acquisition follows HTTPS redirects. The managed runtime allows
+`huggingface.co`, its redirected `*.hf.co` download hosts and
+`dl.fbaipublicfiles.com`. Inherited proxy settings and verified TLS remain in
+use. A transport failure records the actual host and HTTP code. No proxy bypass,
+replacement model or simulated SAM output is used.
+
+The current executor is CPU-only with an 8 GiB cgroup memory limit. The current
+configuration uses two Torch threads, a full-frame 16 by 16 point grid and prompt
+batches of eight. Reducing the prompt batch size retains every grid point.
+The tracker keeps one official native video-predictor session, backed by an
+on-demand JPEG sequence with a two-image cache and the native FP32 normalization.
+Past predictor records are pruned beyond the configured mask-memory and
+object-pointer horizon; attention retains at most two conditioning frames.
+Packed per-frame masks are written to disk, and loaded RGB/mask sequences cache
+eight records each. Tracks are retired through the official `remove_object`
+method after twenty consecutive empty processed frames; IDs are never reused.
+The 128-object capacity applies to active tracks, and metadata records retirement,
+history and peak-active counts. These memory controls are part of the inference
+configuration and freeze. Genuine development inference and repeat determinism
+must establish the result; the implementation alone supplies no measured score.
 
 ## Running development
 
 The installed runtime is `/workspace/.venvs/phase16d`. Checkpoint acquisition is
-explicit and uses the pinned official URL, inherited proxy and verified TLS:
+explicit and uses the configured official primary and fallback URLs:
 
 ```sh
 /workspace/.venvs/phase16d/bin/python experiments/phase16d/acquire_checkpoint.py
@@ -57,8 +90,6 @@ explicit and uses the pinned official URL, inherited proxy and verified TLS:
 It records the actual byte count, native tensor structure and SHA-256, or the
 actual transport failure. Existing weights are never overwritten. The tracker
 then loads the native architecture strictly and verifies the pinned SAM source.
-The current managed-runtime host denial must be resolved in network settings
-before this command can download weights.
 
 For Cargo in this workspace, use the installed toolchain and offline cache:
 
@@ -105,13 +136,20 @@ evidence and validation logs before creating the freeze:
 
 Commit the generated `FROZEN.md` and `freeze.json` before opening held-out inputs.
 The freeze binds the code commit, complete code/config manifest, checkpoint hash,
-passing target rows and validation evidence. The helper refuses stale results,
-modified retained evidence, skipped determinism or deferred labels.
+passing target rows and validation evidence. `FROZEN.md` includes freeze UTC,
+checkpoint SHA-256, N, the measured A/B/C table, Muse model/fallback provenance
+and the complete frozen inference parameter sections. It records the code/config
+commit; Git verifies the containing freeze commit before held-out access. The
+helper refuses stale results, modified retained evidence, skipped determinism or
+deferred labels.
 
-Only then run `heldout-preflight`. Missing Michael-supplied input returns MISSING
-without reserving an attempt. A supplied `heldout/prereg.md` and exactly one
-video are hashed and exposed for preregistration review. Run the frozen algorithm
-with that exact preregistration hash:
+Only after that freeze commit, merge `phase-16d-heldout` into this branch. Verify
+the supplied preregistration SHA-256 is
+`22410c75b5d1aee3b6eaa7d164b870c2044df365e7d23aa8dd56d623c9f4fd8d`
+before filling its `16d commit` line with the frozen SHA. Then run
+`heldout-preflight`; it hashes the completed preregistration and the sole supplied
+video. Missing inputs return MISSING without reserving an attempt. Run the frozen
+algorithm with the exact completed preregistration hash returned by preflight:
 
 ```sh
 /workspace/.venvs/phase16d/bin/python experiments/phase16d/run_mapping.py heldout-preflight
