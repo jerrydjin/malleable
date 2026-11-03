@@ -1,0 +1,82 @@
+{
+  "phase": "16",
+  "status": "BLOCKED_RUNTIME",
+  "observed_at_utc": "2026-11-03 11:47:01 UTC",
+  "previous_structural_stop_commit": "a7337c25fe41565f184b5799731a301988e1e3e7",
+  "map_change": {
+    "old_bbox_west_south_east_north": [
+      -122.41,
+      37.738,
+      -122.4,
+      37.762
+    ],
+    "new_bbox_west_south_east_north": [
+      -122.425,
+      37.738,
+      -122.385,
+      37.762
+    ],
+    "reason": "Include the surface grid connecting the last southbound exit to a US-101 southbound on-ramp past the fixed tree; verify rather than assume the connection.",
+    "authorizations": 1,
+    "further_widening_allowed": false,
+    "declared_before_traffic": true,
+    "expanded_network_built": false
+  },
+  "fixed_inputs": {
+    "reference_commit": "a7337c25fe41565f184b5799731a301988e1e3e7",
+    "reference_path": "experiments/phase16/rerun/map-gate.json",
+    "tree_center_lon_lat": [
+      -122.40814970805161,
+      37.73936974950687
+    ],
+    "closure_length_m": 8,
+    "closure_start_s": 240,
+    "closure_duration_s": 900,
+    "mainline_vph_each_direction": 7600
+  },
+  "runtime_evidence": [
+    {
+      "tool": "cloud_environment.environment_status",
+      "connectivity": "offline",
+      "observed_phase": "running",
+      "observations_current": true
+    },
+    {
+      "tool": "exec_command",
+      "error": "No usable execution environment is available. Wait for an environment to become available before using this tool."
+    }
+  ],
+  "acquisition": {
+    "status": "interrupted; completion of background tiled acquisition unknown",
+    "full_area_osm_api_status": 400,
+    "full_area_error": "You requested too many nodes (limit is 50000). Either request a smaller area, or use planet.osm",
+    "coarse_tiled_osm_api_status": 400,
+    "overpass_attempt_status": 502,
+    "fine_tiles_within_same_authorized_bbox_started": true
+  },
+  "expanded_map_gate": {
+    "evaluated": false,
+    "result": null,
+    "exit_ramp": "8915060",
+    "affected_destinations": [
+      {
+        "edge": "28326941",
+        "route_avoiding_closed_edges": null,
+        "length_m": null,
+        "free_flow_time_s": null
+      }
+    ],
+    "closed_edges": [
+      "1343758309"
+    ]
+  },
+  "sumo_traffic_runs": 0,
+  "validity_seeds_run": 0,
+  "record_runs": 0,
+  "spoof_runs": 0,
+  "scored_rows": 0,
+  "current_outcome_bars": "not evaluated; no expanded-map result inferred from historical narrow-map STOP",
+  "resume": "Restore attached execution runtime, inspect saved acquisition/working tree, build exactly authorized bbox, run expanded map gate and report bypass metrics. If it fails, identify missing link and STOP; otherwise continue the unchanged Phase16 brief with preregistration committed before record arm.",
+  "local_pretraffic_declaration_commit": "0b18df4 (committed locally before runtime loss; not pushed)",
+  "local_prepared_code_status": "fetch_map.py and expanded map_gate.py changes saved in workspace before disconnect; untested and uncommitted; not claimed in this remote commit"
+}

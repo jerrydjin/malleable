@@ -1,4 +1,49 @@
-# Phase 16 citation-fix rerun: STOP at the required bypass
+# Phase 16: authorized map change; execution blocked before the new gate
+
+## Map change (pre-traffic)
+
+The user authorizes one west/east expansion:
+
+| Bounds | West longitude | East longitude | South latitude | North latitude |
+| --- | --- | --- | --- | --- |
+| Previous | -122.410 | -122.400 | 37.738 | 37.762 |
+| Authorized | -122.425 | -122.385 | 37.738 | 37.762 |
+
+The reason is to include a surface-grid connection from the last southbound exit
+to a US-101 southbound on-ramp past the unchanged 15e tree. The tree point,
+8 m all-lane closure at [240,1140) s, and Caltrans 7600 veh/h per direction
+remain fixed. No second widening is authorized. This declaration precedes
+traffic. Exact inputs and the blocked execution state are recorded in
+[blocker.json](../../experiments/phase16/map-change/blocker.json).
+
+**Current status: BLOCKED — the attached execution runtime disconnected and
+reports offline. The expanded SUMO network has not been built and its map gate
+has not been run.** No new structural PASS or FAIL is claimed. Bypass route
+length and free-flow time are null because they have not been measured.
+
+The full-area OSM API request exceeded its 50000-node limit; coarse tiling also
+encountered that limit, and an Overpass attempt returned HTTP 502. Finer
+acquisition tiles were started within the same authorized bbox. Their completion
+became unknown when the runtime disconnected. The locally prepared acquisition
+and expanded-gate code has not been tested or pushed.
+
+There have been **0 traffic runs, 0 validity seeds, 0 record runs, 0 spoof runs
+and 0 scored rows**. No expanded-map outcome, bootstrap interval, FCD or efficacy
+preregistration exists. All bars remain unmeasured. The previously committed
+narrow-map STOP remains valid historical evidence, with its artifacts unchanged.
+
+Once the runtime is restored, finish acquisition, build exactly the authorized
+box, and rerun the map gate with a drivable bypass to each affected destination,
+reporting route length and free-flow time. If the gate still fails, identify the
+missing on-ramp/link and STOP without widening again. If it passes, continue
+the Phase 16 brief unchanged, including the see-only validity gate and a committed
+preregistration before the record arm.
+
+The exact [previous summary](../../experiments/phase16/map-change/previous-summary.md)
+and all earlier STOP evidence remain retained. The following report describes
+the **previous narrow bbox only**, not the unrun expanded map.
+
+## Previous structural STOP (a7337c2)
 
 STOP: the fixed SUMO map has no passenger-vehicle route from the last southbound exit to the retained destination beyond the tree while avoiding the blocked section. The required affected-trip alternative is absent; no traffic, validity, record or spoof run was started.
 
@@ -11,7 +56,7 @@ was seen under either citation. The earlier citation STOP commit
 setup log are retained. The [replacement request](../../experiments/phase16/rerun/rerun-request.txt)
 authorizes this rerun; this is a new structural STOP.
 
-## Setup and topology
+### Setup and topology
 
 Runtime: **Eclipse SUMO sumo 1.28.0**. Installation succeeded in a writable
 virtual environment. [Exact dependencies](../../experiments/phase16/rerun/requirements.txt),
@@ -59,7 +104,7 @@ vehicle trajectory was simulated. Waiting for reopening is not a surface
 alternative. Using a different destination or extending the box would change
 the specified experiment, so neither was done.
 
-## Traffic and outcome bars
+### Traffic and outcome bars
 
 The demand remains **7600 veh/h per direction**, from Caltrans 2016 AADT,
 printed page 118, route 101, SF postmile 2.92, Army Street: ahead peak hour
@@ -93,7 +138,7 @@ documented in `src/replay.rs` and `src/network.rs`; no FCD exists to convert.
 All new executable code is under `experiments/phase16/`. Every `src/` file and
 the fixed 15e map, placement, volume and closure inputs remain unchanged.
 
-## Citation and verification
+### Citation and verification
 
 > 15 s on at least 7 of 10 seeds is the phase 15c gain bar (experiments/phase15c/README.md, PR #45), reused unchanged so the freeway is not judged by a looser standard.
 
