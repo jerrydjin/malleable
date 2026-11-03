@@ -1,0 +1,57 @@
+Warning: Value of key 'maxspeed:type' is not numeric ('urban') in edge '8916271'.
+Warning: Using default width for edge '8922728' as value '21'4"' could not be parsed.
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.primary_link' (first occurrence for edge '8915027').
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.secondary' (first occurrence for edge '8917043').
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.primary' (first occurrence for edge '8917480').
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.residential' (first occurrence for edge '24547840').
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.tertiary' (first occurrence for edge '25821944').
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '2580478'.
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '2580479'.
+Warning: Ignoring restriction relation '2580638' with unknown type.
+Warning: Ignoring restriction relation '2580639' with unknown type.
+Warning: Ignoring restriction relation '2580640' with unknown type.
+Warning: Ignoring restriction relation '2592574' with unknown type.
+Warning: Ignoring restriction relation '2592577' with unknown type.
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '3762397'.
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '3762552'.
+Warning: to-edge '133781824' of restriction relation could not be determined
+Warning: Ignoring restriction relation '4007777'.
+Warning: direction of restriction relation could not be determined
+Warning: from-edge '1178380139' of restriction relation could not be determined
+Warning: to-edge '1563212387' of restriction relation could not be determined
+Warning: to-edge '27553818' of restriction relation could not be determined
+Warning: Found sharp turn with radius 6.65 at the start of edge '-8917058#0'.
+Warning: Found sharp turn with radius 5.98 at the end of edge '-8918032#0'.
+Warning: Found sharp turn with radius 8.17 at the start of edge '-8920888'.
+Warning: Found sharp turn with radius 6.12 at the start of edge '1429279515'.
+Warning: Found sharp turn with radius 7.86 at the start of edge '25655734#4'.
+Warning: Shape for junction '65283647' has distance 27.63 to its given position.
+Warning: Shape for junction '65284677' has distance 53.02 to its given position.
+Warning: Shape for junction '65322266' has distance 34.86 to its given position.
+Warning: Shape for junction '65348923' has distance 27.31 to its given position.
+Warning: Shape for junction '766946830' has distance 25.82 to its given position.
+Warning: Converting invalid rail_crossing to priority junction '3112129883'.
+Warning: Converting invalid rail_crossing to priority junction '4407694102'.
+Warning: Minor green from edge '1178379353' to edge '1383549493#0' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '-1383549492' to edge '-1383954428' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '225518501' to edge '225518496#0' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '1513089801' to edge '254982297#0' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '-398499278' to edge '397098178#0' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Speed of straight connection '1164067021_0->1164067225_0' reduced by 11.71 due to turning radius of 20.59 (length=1.67, angle=19.83).
+Warning: Speed of straight connection '1348304110_0->8918887#4_0' reduced by 10.12 due to turning radius of 11.46 (length=7.67, angle=56.26).
+Warning: Speed of straight connection '-24444482#0_0->8919319#0_0' reduced by 6.38 due to turning radius of 10.26 (length=3.44, angle=35.86).
+Warning: Speed of straight connection '183198771#1_0->539196797_0' reduced by 6.19 due to turning radius of 84.73 (length=11.89, angle=23.12).
+Warning: Speed of straight connection '61636694#1_0->8917058#0_0' reduced by 5.52 due to turning radius of 12.75 (length=3.90, angle=33.69).
+Warning: 17 total messages of type: Discarding unknown compound '%' in type '%' (first occurrence for edge '%').
+Warning: 8 total messages of type: Found sharp turn with radius % at the % of edge '%'.
+Warning: 11 total messages of type: Ignoring restriction relation '%' with unknown type.
+Warning: 58 total messages of type: Ignoring restriction relation '%'.
+Warning: 106 total messages of type: Minor green from edge '%' to edge '%' exceeds %m/s. Maybe a left-turn lane is missing.
+Warning: 6 total messages of type: Shape for junction '%' has distance % to its given position.
+Warning: 37 total messages of type: Speed of % connection '%' reduced by % due to turning radius of % (length=%, angle=%).
+Warning: 54 total messages of type: direction of restriction relation could not be determined%
+Success.

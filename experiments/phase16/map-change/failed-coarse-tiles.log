@@ -1,0 +1,42 @@
+{"request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.405,37.738,-122.395,37.762", "bbox_west_south_east_north": [-122.405, 37.738, -122.395, 37.762], "http_status": 200, "started_at_utc": "2026-11-03T11:38:40.194401+00:00", "completed_at_utc": "2026-11-03T11:38:48.969759+00:00", "response_headers": {"date": "Tue, 03 Nov 2026 11:38:45 GMT", "etag": null, "content-type": "application/xml; charset=utf-8"}, "raw_bytes": 9811477, "raw_sha256": "941a90395da12f306c95517306274663fedddf25c5884f830c492f25b79e1e88", "compressed_path": "experiments/phase16/map-change/source-tiles/tile-2.osm.gz", "compressed_sha256": "7d6db43ca891667e451b8b62e66eef9fbd10112db03139b99f8e70cbeaa17b7f", "nodes": 29651, "ways": 4061, "relations": 189}
+Traceback (most recent call last):
+  File "/workspace/phase-16-sumo/experiments/phase16/fetch_map.py", line 114, in <module>
+    main()
+  File "/workspace/phase-16-sumo/experiments/phase16/fetch_map.py", line 62, in main
+    acquired = list(pool.map(fetch, enumerate(TILES)))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/phase-16-sumo/experiments/phase16/fetch_map.py", line 37, in fetch
+    with urllib.request.urlopen(request, timeout=120) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request

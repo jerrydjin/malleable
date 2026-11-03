@@ -1,0 +1,1 @@
+{"decision": "STOP", "map_gate_passed": true, "affected_destination_alternative_gate_passed": false, "stop": "STOP: the fixed SUMO map has no passenger-vehicle route from the last southbound exit to the retained destination beyond the tree while avoiding the blocked section. The required affected-trip alternative is absent; no traffic, validity, record or spoof run was started."}

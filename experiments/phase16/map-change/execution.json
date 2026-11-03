@@ -1,0 +1,24 @@
+{
+  "declaration_commit": "0b18df4",
+  "dependencies": [
+    "certifi==2026.10.23",
+    "eclipse-sumo==1.28.0",
+    "pyproj==3.8.0",
+    "sumo-data==1.28.0",
+    "sumolib==1.28.0",
+    "traci==1.28.0"
+  ],
+  "expanded_build_command": "PATH=/tmp/phase16-sumo-venv/bin:$PATH python experiments/phase16/map_gate.py --expanded --build",
+  "expanded_gate_exit_code": 2,
+  "further_widening_performed": false,
+  "record_runs": 0,
+  "resumed_at_utc": "2026-11-03T14:21:59.421787+00:00",
+  "runtime_blocker_commit": "b223bc28a14e1e7b54b25b827e209adf20b46e3c",
+  "runtime_status": "commands available; previous blocker retained as historical evidence",
+  "scored_rows": 0,
+  "spoof_runs": 0,
+  "stage": "single authorized pre-traffic expansion; static gate complete",
+  "sumo_traffic_runs": 0,
+  "sumo_version": "Eclipse SUMO sumo 1.28.0",
+  "validity_seeds_run": 0
+}

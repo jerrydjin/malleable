@@ -1,0 +1,27 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting certifi==2026.10.23 (from -r experiments/phase16/rerun/requirements.txt (line 1))
+  Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Collecting eclipse-sumo==1.28.0 (from -r experiments/phase16/rerun/requirements.txt (line 2))
+  Downloading eclipse_sumo-1.28.0-py3-none-manylinux_2_28_x86_64.whl.metadata (6.4 kB)
+Collecting pyproj==3.8.0 (from -r experiments/phase16/rerun/requirements.txt (line 3))
+  Downloading pyproj-3.8.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting sumo-data==1.28.0 (from -r experiments/phase16/rerun/requirements.txt (line 4))
+  Downloading sumo_data-1.28.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting sumolib==1.28.0 (from -r experiments/phase16/rerun/requirements.txt (line 5))
+  Downloading sumolib-1.28.0-py2.py3-none-any.whl.metadata (2.8 kB)
+Collecting traci==1.28.0 (from -r experiments/phase16/rerun/requirements.txt (line 6))
+  Downloading traci-1.28.0-py2.py3-none-any.whl.metadata (3.2 kB)
+Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+Downloading eclipse_sumo-1.28.0-py3-none-manylinux_2_28_x86_64.whl (148.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 148.5/148.5 MB 35.6 MB/s eta 0:00:00
+Downloading pyproj-3.8.0-cp312-cp312-manylinux_2_28_x86_64.whl (10.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 38.1 MB/s eta 0:00:00
+Downloading sumo_data-1.28.0-py3-none-any.whl (16.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.3/16.3 MB 39.3 MB/s eta 0:00:00
+Downloading sumolib-1.28.0-py2.py3-none-any.whl (236 kB)
+Downloading traci-1.28.0-py2.py3-none-any.whl (139 kB)
+Installing collected packages: sumolib, sumo-data, traci, eclipse-sumo, certifi, pyproj
+Successfully installed certifi-2026.10.23 eclipse-sumo-1.28.0 pyproj-3.8.0 sumo-data-1.28.0 sumolib-1.28.0 traci-1.28.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python -m pip install --upgrade pip

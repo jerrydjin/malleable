@@ -1,0 +1,424 @@
+{
+  "bbox_west_south_east_north": [
+    -122.425,
+    37.738,
+    -122.385,
+    37.762
+  ],
+  "full_area_request": {
+    "body": "You requested too many nodes (limit is 50000). Either request a smaller area, or use planet.osm",
+    "http_status": 400,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.425,37.738,-122.385,37.762"
+  },
+  "merge_policy": "Frozen original entities take precedence by type/id; new tiles add coverage. Exact geometric clipping to the one authorized bbox occurs before netconvert.",
+  "merged_compressed_sha256": "3fedccfbb86a8e2be47e85da0034d383937c1b42708f427a893f0312492c3481",
+  "merged_path": "experiments/phase16/map-change/us101-expanded.osm.gz",
+  "merged_raw_bytes": 44888264,
+  "merged_raw_sha256": "350371c1aceb279c329caec1d2290528b37c8650098ddeeb893c99a7c0681e75",
+  "osm_nodes": 161454,
+  "osm_relations": 756,
+  "osm_ways": 20950,
+  "overlap_entities_retained": {
+    "node": 41487,
+    "relation": 233,
+    "way": 5367
+  },
+  "overlap_version_differences": [
+    {
+      "fetched_version": "89",
+      "id": 18970694,
+      "retained_version": "88",
+      "type": "relation"
+    }
+  ],
+  "retained_source_path": "maps/us101.osm",
+  "retained_source_sha256": "4ad388ade425c54fd536ffab2440970531845a7b445864ac3d4bc79ba9e7e8d4",
+  "tile_duplicate_version_conflicts": [],
+  "tiles": [
+    {
+      "bbox_west_south_east_north": [
+        -122.425,
+        37.738,
+        -122.42,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:40:35.991879+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-0.osm.gz",
+      "compressed_sha256": "c3659d286f50ed89454f5a3e2503f7a519923bd37359c4d80f6a33a2452efd44",
+      "http_status": 200,
+      "nodes": 16481,
+      "raw_bytes": 4486518,
+      "raw_sha256": "6d06ea16c07b592ca683ccf7cdde88175c93dff52acc8b1025a0e76b1b4b6273",
+      "relations": 107,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.425,37.738,-122.42,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:32 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:26.723982+00:00",
+      "ways": 1812
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.425,
+        37.75,
+        -122.42,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:40:35.773343+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-1.osm.gz",
+      "compressed_sha256": "80d7639676147dddc1326600b4f99f791b835adaa59ed9d3b66db8f60916454f",
+      "http_status": 200,
+      "nodes": 17050,
+      "raw_bytes": 4406016,
+      "raw_sha256": "296bf8049dc76cd842921fd151fd18d3acc018cacbf5b0a8d7a8309d5c450220",
+      "relations": 98,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.425,37.75,-122.42,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:32 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:26.724583+00:00",
+      "ways": 2006
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.42,
+        37.738,
+        -122.415,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:40:43.254373+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-2.osm.gz",
+      "compressed_sha256": "919087e4d24ae9261468bed26518ec768a05349f43e4dddb24a9a38f6c5bec74",
+      "http_status": 200,
+      "nodes": 17232,
+      "raw_bytes": 4696167,
+      "raw_sha256": "f9d33cc9f6156f9ce502459b499a805fc6911ca1d13d53823bea0b1f0d579482",
+      "relations": 102,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.42,37.738,-122.415,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:40 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:36.115101+00:00",
+      "ways": 2085
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.42,
+        37.75,
+        -122.415,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:40:43.874932+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-3.osm.gz",
+      "compressed_sha256": "66abb80fc3bcc57df6e94d8f9ffd162223f5469ca07a9c560d502ccbddb45237",
+      "http_status": 200,
+      "nodes": 15424,
+      "raw_bytes": 4384466,
+      "raw_sha256": "515b36c0f8376cb56b78282600b10698b0e571b8883025da7b6da941712ac3fb",
+      "relations": 153,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.42,37.75,-122.415,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:41 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:36.338112+00:00",
+      "ways": 1916
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.415,
+        37.738,
+        -122.41,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:40:49.838676+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-4.osm.gz",
+      "compressed_sha256": "6769fa8bb9432a05f1942ccc653d7ac4d25c3cddab00734b5e46f14abadf713c",
+      "http_status": 200,
+      "nodes": 15729,
+      "raw_bytes": 4023996,
+      "raw_sha256": "6754f82fc0c44c3a8725c88e8ef2b03bdb77c1dcb41938442642ff48b5422fe3",
+      "relations": 67,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.415,37.738,-122.41,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:47 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:43.556089+00:00",
+      "ways": 1857
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.415,
+        37.75,
+        -122.41,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:40:49.765838+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-5.osm.gz",
+      "compressed_sha256": "33cf567759c7a47fc2419b6faa7b9d6f8e1992fdaad4b4f6e5e974f9e80411c6",
+      "http_status": 200,
+      "nodes": 14678,
+      "raw_bytes": 3649826,
+      "raw_sha256": "76814f32b077eaa44c3e5a7565f856b30a526dcd78a0a932b082dcb80ffff2a6",
+      "relations": 61,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.415,37.75,-122.41,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:47 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:44.148155+00:00",
+      "ways": 1580
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.41,
+        37.738,
+        -122.405,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:40:56.315216+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-6.osm.gz",
+      "compressed_sha256": "8607b1410abea80eedc18f42d33b8263536392011e420c226f0e461afc8e2f81",
+      "http_status": 200,
+      "nodes": 11708,
+      "raw_bytes": 4129931,
+      "raw_sha256": "284f45dfaf98f27692cf3cb69ea55e811c627e11192603cc5afa9336898c12d4",
+      "relations": 94,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.41,37.738,-122.405,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:54 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:50.253783+00:00",
+      "ways": 1653
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.41,
+        37.75,
+        -122.405,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:40:55.766998+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-7.osm.gz",
+      "compressed_sha256": "ce7c2be9e4364ad0e722cc13f1386801d0d1f9e9c5d12d6e43e865c544ce585e",
+      "http_status": 200,
+      "nodes": 15188,
+      "raw_bytes": 4808000,
+      "raw_sha256": "091e7f6a05533afd7a439f65fda14fb36e121815797bf5aede36062af7ac4538",
+      "relations": 104,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.41,37.75,-122.405,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:53 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:50.297754+00:00",
+      "ways": 1653
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.405,
+        37.738,
+        -122.4,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:40:59.043694+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-8.osm.gz",
+      "compressed_sha256": "2779d0c63dada503320168955486a1359896266b78f79954020677f13e65030d",
+      "http_status": 200,
+      "nodes": 4532,
+      "raw_bytes": 3417271,
+      "raw_sha256": "e607a948ce16a811dffdaa794e0cb3867dd9c3b2acd0011211e03d6d929041e0",
+      "relations": 106,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.405,37.738,-122.4,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:57 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:56.149560+00:00",
+      "ways": 728
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.405,
+        37.75,
+        -122.4,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:41:00.057458+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-9.osm.gz",
+      "compressed_sha256": "87d33ec4707298d0a980ddbac55bdfd8d13918b2d19937801c3b69d6775d3891",
+      "http_status": 200,
+      "nodes": 13167,
+      "raw_bytes": 3978995,
+      "raw_sha256": "d25c9c87b4da8b1bec89ce52b52eca6b29406851b31cc1b18586219235c91f92",
+      "relations": 72,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.405,37.75,-122.4,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:40:58 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:56.660529+00:00",
+      "ways": 1537
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.4,
+        37.738,
+        -122.395,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:41:01.592050+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-10.osm.gz",
+      "compressed_sha256": "d093ea00693038fa1cdffdf5b02276a926eaa375b9c9b0acfc1ed600de0ad56d",
+      "http_status": 200,
+      "nodes": 3821,
+      "raw_bytes": 2253908,
+      "raw_sha256": "c2c157e42acc18e889ab36f5d48552d299625f3289d35fbed00564d56f0dad9a",
+      "relations": 61,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.4,37.738,-122.395,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:41:00 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:40:59.311233+00:00",
+      "ways": 620
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.4,
+        37.75,
+        -122.395,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:41:02.959334+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-11.osm.gz",
+      "compressed_sha256": "f4e451aae4aafa9d1cb6b03f03c8e1fc8d0013152f7e1b2ffee76480b9cb8aee",
+      "http_status": 200,
+      "nodes": 10799,
+      "raw_bytes": 2836530,
+      "raw_sha256": "73a185ef83b1593bd02c62c58f4287a839a535df04e0a9cebf59e38160d6cd03",
+      "relations": 46,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.4,37.75,-122.395,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:41:02 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:41:00.337879+00:00",
+      "ways": 1358
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.395,
+        37.738,
+        -122.39,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:41:05.131744+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-12.osm.gz",
+      "compressed_sha256": "9bd412d1eb5d24f8c516102481ebe51054ff4015a4df0e4732b2cb3ddfc524b8",
+      "http_status": 200,
+      "nodes": 4917,
+      "raw_bytes": 2740249,
+      "raw_sha256": "226be7e86c2e74c439a9dd2a76e3bd01ce6ca1f4fafd208901e42cac22ee01f4",
+      "relations": 84,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.395,37.738,-122.39,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:41:04 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:41:01.803441+00:00",
+      "ways": 548
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.395,
+        37.75,
+        -122.39,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:41:07.402614+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-13.osm.gz",
+      "compressed_sha256": "9dd5b1f925a8e3c586e46b5fe5880cda3b463359f463f13333a21b54a8b1c2ac",
+      "http_status": 200,
+      "nodes": 6595,
+      "raw_bytes": 3346763,
+      "raw_sha256": "fa7eb131efb4f66d4983d85b7695d6783fdca424dfb2cbde38cac789033ca4df",
+      "relations": 106,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.395,37.75,-122.39,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:41:05 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:41:03.178999+00:00",
+      "ways": 915
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.39,
+        37.738,
+        -122.385,
+        37.75
+      ],
+      "completed_at_utc": "2026-11-03T11:41:11.508095+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-14.osm.gz",
+      "compressed_sha256": "9d65919157712b246499bdd859a24dd45a3befe4b37b20e1aa64183c1f2bfa34",
+      "http_status": 200,
+      "nodes": 6529,
+      "raw_bytes": 2158030,
+      "raw_sha256": "c1d1a1acd600bd2e43b9268f30a8d84512f9707c185254a62fe43010ecaff631",
+      "relations": 84,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.39,37.738,-122.385,37.75",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:41:09 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:41:05.336646+00:00",
+      "ways": 902
+    },
+    {
+      "bbox_west_south_east_north": [
+        -122.39,
+        37.75,
+        -122.385,
+        37.762
+      ],
+      "completed_at_utc": "2026-11-03T11:41:13.339665+00:00",
+      "compressed_path": "experiments/phase16/map-change/source-tiles/grid-15.osm.gz",
+      "compressed_sha256": "56094ba86b978d10f96be33857cd8f16bd8239c6abd2c06d61987798df8f3cff",
+      "http_status": 200,
+      "nodes": 5427,
+      "raw_bytes": 1887286,
+      "raw_sha256": "df0a41b77370f4960fc8199097210bc71502ab7846efffcc89fbc504d34d3b7b",
+      "relations": 69,
+      "request_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.39,37.75,-122.385,37.762",
+      "response_headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "date": "Tue, 03 Nov 2026 11:41:11 GMT",
+        "etag": null
+      },
+      "started_at_utc": "2026-11-03T11:41:07.671895+00:00",
+      "ways": 1033
+    }
+  ],
+  "traffic_runs": 0
+}

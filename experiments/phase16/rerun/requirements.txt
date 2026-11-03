@@ -1,0 +1,6 @@
+certifi==2026.10.23
+eclipse-sumo==1.28.0
+pyproj==3.8.0
+sumo-data==1.28.0
+sumolib==1.28.0
+traci==1.28.0

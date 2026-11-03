@@ -1,0 +1,147 @@
+{
+  "bars": [
+    {
+      "bar": "a",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "affected mean gain >=15 s on >=7/10 seeds; pooled 95% bootstrap CI excludes 0",
+      "sensor_range_m": 300,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "b",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "0 collisions in every arm",
+      "sensor_range_m": 300,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "c",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "spoof merges 0/10",
+      "sensor_range_m": 300,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "d",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "unaffected mean travel time no more than 5% worse than see-only",
+      "sensor_range_m": 300,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "a",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "affected mean gain >=15 s on >=7/10 seeds; pooled 95% bootstrap CI excludes 0",
+      "sensor_range_m": 60,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "b",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "0 collisions in every arm",
+      "sensor_range_m": 60,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "c",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "spoof merges 0/10",
+      "sensor_range_m": 60,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "d",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "unaffected mean travel time no more than 5% worse than see-only",
+      "sensor_range_m": 60,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "a",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "affected mean gain >=15 s on >=7/10 seeds; pooled 95% bootstrap CI excludes 0",
+      "sensor_range_m": 150,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "b",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "0 collisions in every arm",
+      "sensor_range_m": 150,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "c",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "spoof merges 0/10",
+      "sensor_range_m": 150,
+      "status": "FAIL",
+      "value": null
+    },
+    {
+      "bar": "d",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "qualifying_seeds": null,
+      "reason": "Required same-destination bypass absent; no traffic run",
+      "requirement": "unaffected mean travel time no more than 5% worse than see-only",
+      "sensor_range_m": 150,
+      "status": "FAIL",
+      "value": null
+    }
+  ],
+  "decision": "STOP",
+  "model_calls": 0,
+  "original_stop_commit": "cafad04f4635a8d8113874555425d525768a8e0d",
+  "preregistered": false,
+  "record_runs": 0,
+  "scored_rows": 0,
+  "spoof_runs": 0,
+  "stop": "STOP: the fixed SUMO map has no passenger-vehicle route from the last southbound exit to the retained destination beyond the tree while avoiding the blocked section. The required affected-trip alternative is absent; no traffic, validity, record or spoof run was started.",
+  "sumo_traffic_runs": 0,
+  "sumo_version": "Eclipse SUMO sumo 1.28.0",
+  "validity_seeds_run": 0
+}

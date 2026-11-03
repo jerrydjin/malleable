@@ -1,0 +1,144 @@
+{
+  "bars": [
+    {
+      "bar": "a",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 300,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "b",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 300,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "c",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 300,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "d",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 300,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "a",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 60,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "b",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 60,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "c",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 60,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "d",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 60,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "a",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 150,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "b",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 150,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "c",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 150,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    },
+    {
+      "bar": "d",
+      "bootstrap_ci_95_s": null,
+      "evaluated": false,
+      "observed_value": null,
+      "qualifying_seeds": null,
+      "range_m": 150,
+      "reason": "Required bypass absent after the single authorized map expansion",
+      "status": "FAIL"
+    }
+  ],
+  "bbox_expansions_used": 1,
+  "decision": "STOP",
+  "further_widening_performed": false,
+  "preregistered": false,
+  "record_runs": 0,
+  "requirements": {
+    "ci_must_exclude": 0,
+    "collisions_per_arm": 0,
+    "gain_s": 15,
+    "gain_seeds": 7,
+    "max_unaffected_mean_cost_fraction": 0.05,
+    "pooled_bootstrap_confidence": 0.95,
+    "spoof_merges": 0,
+    "total_seeds": 10
+  },
+  "scored_rows": 0,
+  "spoof_runs": 0,
+  "stop": "STOP: the single authorized east-west expansion still has no drivable bypass from exit ramp 8915060 to affected destination 28326941 while avoiding tree edge 1343758309. No southbound on-ramp joins the post-tree mainline inside latitude 37.738 to 37.762; ramp 1164067021 leaves US-101 for I-280 South and is not a re-entry. No further widening or traffic, validity, record or spoof run was performed.",
+  "sumo_traffic_runs": 0,
+  "validity_seeds_run": 0
+}

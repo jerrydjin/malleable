@@ -1,0 +1,30 @@
+{
+  "allowed_updated_paths": [
+    "docs/gates/phase-16-summary.md",
+    "experiments/phase16/README.md",
+    "experiments/phase16/map_gate.py"
+  ],
+  "bbox_expansions_used": 1,
+  "bypass_free_flow_time_s": null,
+  "bypass_route_exists": false,
+  "bypass_route_length_m": null,
+  "expanded_audit_byte_exact": true,
+  "expanded_audit_exit": 2,
+  "historical_narrow_audit_preserved_and_reproduced": true,
+  "merged_source_raw_sha256_verified": true,
+  "native_control_route_length_m": 2279.7599999999998,
+  "native_control_route_time_s": 103.43824979819207,
+  "passed": true,
+  "raw_audit_reproduced": true,
+  "record_runs": 0,
+  "retained_base_commit": "a7337c25fe41565f184b5799731a301988e1e3e7",
+  "retained_paths_checked": 504,
+  "retained_paths_unchanged": 501,
+  "scored_rows": 0,
+  "source_tiles_verified": 16,
+  "spoof_runs": 0,
+  "src_files_unchanged": 32,
+  "sumo_traffic_runs": 0,
+  "tree_point_closure_volume_unchanged": true,
+  "validity_seeds_run": 0
+}
