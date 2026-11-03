@@ -1,0 +1,256 @@
+{
+  "clip": "C",
+  "role": "negative_control",
+  "decision": {
+    "positive_frames": 0,
+    "longest_consecutive_positive": 0,
+    "detected": false,
+    "since_s": null,
+    "confirm_at_s": null,
+    "max_lane_pixels": 2225,
+    "median_lane_pixels": 1786,
+    "sampled_frames": 15
+  },
+  "frames": [
+    {
+      "clip": "C",
+      "index": 0,
+      "source_s": 0.0,
+      "lane_pixels": 2089,
+      "infer_s": 2.310114872999975,
+      "iou_scores": [
+        0.5503370761871338
+      ],
+      "mask_sha256": "0cbbc1f5e458ba00d2f807455d5123146317a8d428d4ad480a7ad48fd71d4e26",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0000.png"
+    },
+    {
+      "clip": "C",
+      "index": 10,
+      "source_s": 0.3333333333333333,
+      "lane_pixels": 2225,
+      "infer_s": 2.3513106520001656,
+      "iou_scores": [
+        0.7245978116989136
+      ],
+      "mask_sha256": "6b90b8820f8e5e3a0ff2b644ad6217a12cdf6cae7ae73e9fdcbf9fab27eff015",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0010.png"
+    },
+    {
+      "clip": "C",
+      "index": 20,
+      "source_s": 0.6666666666666666,
+      "lane_pixels": 2023,
+      "infer_s": 2.5609291499999927,
+      "iou_scores": [
+        0.7406204342842102
+      ],
+      "mask_sha256": "d62bd29610e30068cb566ef963d174ac489afe7c96027667e07d98e140fc8c0c",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0020.png"
+    },
+    {
+      "clip": "C",
+      "index": 30,
+      "source_s": 1.0,
+      "lane_pixels": 1962,
+      "infer_s": 2.6536004310000862,
+      "iou_scores": [
+        0.7669830322265625
+      ],
+      "mask_sha256": "50e1791517b47b44577cc921437e225c58ec2a76bcb348dc4b8b355656b55b05",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0030.png"
+    },
+    {
+      "clip": "C",
+      "index": 40,
+      "source_s": 1.3333333333333333,
+      "lane_pixels": 2065,
+      "infer_s": 2.4468276889999743,
+      "iou_scores": [
+        0.7110903859138489
+      ],
+      "mask_sha256": "c21f6d1ca612ebf7c5f24e13c1350ac746dca5ef1a709a4d222758102e4be1fa",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0040.png"
+    },
+    {
+      "clip": "C",
+      "index": 50,
+      "source_s": 1.6666666666666667,
+      "lane_pixels": 2008,
+      "infer_s": 2.466562411000041,
+      "iou_scores": [
+        0.8371108174324036
+      ],
+      "mask_sha256": "c149467a1485cf30dcba87520411243df419d5c5a329935856e475831f151996",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0050.png"
+    },
+    {
+      "clip": "C",
+      "index": 60,
+      "source_s": 2.0,
+      "lane_pixels": 1809,
+      "infer_s": 2.367954284999996,
+      "iou_scores": [
+        0.8557400107383728
+      ],
+      "mask_sha256": "c608ecaac031658ee87da6054af760f61a65bb57ee242d525a2733d8777b68ab",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0060.png"
+    },
+    {
+      "clip": "C",
+      "index": 70,
+      "source_s": 2.3333333333333335,
+      "lane_pixels": 1786,
+      "infer_s": 2.323076402999959,
+      "iou_scores": [
+        0.624075174331665
+      ],
+      "mask_sha256": "b51a38bb44d332b92293202c394c7923a18bb1c7cf2482080c275a1eacb45764",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0070.png"
+    },
+    {
+      "clip": "C",
+      "index": 80,
+      "source_s": 2.6666666666666665,
+      "lane_pixels": 1147,
+      "infer_s": 2.3522805009999956,
+      "iou_scores": [
+        0.7258439064025879
+      ],
+      "mask_sha256": "ea7c076a76e2e1f9308c2366c26920aa2fc45f18b9023b49ae25b4fc0975ef49",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0080.png"
+    },
+    {
+      "clip": "C",
+      "index": 90,
+      "source_s": 3.0,
+      "lane_pixels": 882,
+      "infer_s": 2.348338440000134,
+      "iou_scores": [
+        0.7605745792388916
+      ],
+      "mask_sha256": "5752a4c6028dd72be4f9d899745975ff70e8480bde8a716a94adbcc0d6c1662c",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0090.png"
+    },
+    {
+      "clip": "C",
+      "index": 100,
+      "source_s": 3.3333333333333335,
+      "lane_pixels": 309,
+      "infer_s": 2.4095367879999685,
+      "iou_scores": [
+        0.7347871661186218
+      ],
+      "mask_sha256": "791e07353081a3bee1faa12bcc007c1eb171dfbfd275effb2e3cb62ab73ffa8a",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0100.png"
+    },
+    {
+      "clip": "C",
+      "index": 110,
+      "source_s": 3.6666666666666665,
+      "lane_pixels": 732,
+      "infer_s": 2.365855960999852,
+      "iou_scores": [
+        0.8015114068984985
+      ],
+      "mask_sha256": "d2d17f2c672d46201ef0ff005bcdab00bfbc2b790300910ffb26b7afdf227181",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0110.png"
+    },
+    {
+      "clip": "C",
+      "index": 120,
+      "source_s": 4.0,
+      "lane_pixels": 524,
+      "infer_s": 2.362356193000096,
+      "iou_scores": [
+        0.6402273774147034
+      ],
+      "mask_sha256": "d0d3409a54be1c54b6e1e4aca5892a032530c291bbc45c243e426a28fdc18005",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0120.png"
+    },
+    {
+      "clip": "C",
+      "index": 130,
+      "source_s": 4.333333333333333,
+      "lane_pixels": 655,
+      "infer_s": 2.3171533849999832,
+      "iou_scores": [
+        0.6373042464256287
+      ],
+      "mask_sha256": "03eb005f32a82b689ec4b2759cbda0b8d0f8cbc04ffc9aeaab8b8eb5634aac22",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0130.png"
+    },
+    {
+      "clip": "C",
+      "index": 140,
+      "source_s": 4.666666666666667,
+      "lane_pixels": 1308,
+      "infer_s": 2.313443559999996,
+      "iou_scores": [
+        0.7182803750038147
+      ],
+      "mask_sha256": "38cc156538ef5d9e379c1b296b255209bd31b177bacfc22a3a7eba6924f35b9d",
+      "point_xy": [
+        980,
+        620
+      ],
+      "mask_path": "experiments/phase16b/masks/C/0140.png"
+    }
+  ]
+}

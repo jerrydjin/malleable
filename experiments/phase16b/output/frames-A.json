@@ -1,0 +1,160 @@
+{
+  "clip": "A",
+  "role": "proposal",
+  "decision": {
+    "positive_frames": 2,
+    "longest_consecutive_positive": 1,
+    "detected": false,
+    "since_s": null,
+    "confirm_at_s": null,
+    "max_lane_pixels": 16450,
+    "median_lane_pixels": 8332,
+    "sampled_frames": 9
+  },
+  "frames": [
+    {
+      "clip": "A",
+      "index": 0,
+      "source_s": 11.0,
+      "lane_pixels": 6636,
+      "infer_s": 2.3759445480000068,
+      "iou_scores": [
+        0.8944127559661865
+      ],
+      "mask_sha256": "0290b35ce681a17cbb1fd889a0e7d28fc69a86e593b598069a65168442d9eaee",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0000.png"
+    },
+    {
+      "clip": "A",
+      "index": 10,
+      "source_s": 11.333333333333334,
+      "lane_pixels": 7958,
+      "infer_s": 2.3563956699999835,
+      "iou_scores": [
+        0.8800316452980042
+      ],
+      "mask_sha256": "94ea20149babaae4d15f4589eb71cee3cef1bc5e9a3c6059d3db6ceb3395657c",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0010.png"
+    },
+    {
+      "clip": "A",
+      "index": 20,
+      "source_s": 11.666666666666666,
+      "lane_pixels": 7859,
+      "infer_s": 2.3306972949999363,
+      "iou_scores": [
+        0.8500248789787292
+      ],
+      "mask_sha256": "fcb1807aa241abd49b557e1e55aae372d09fc7c36d7b34d391142252c97a2bf1",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0020.png"
+    },
+    {
+      "clip": "A",
+      "index": 30,
+      "source_s": 12.0,
+      "lane_pixels": 9110,
+      "infer_s": 2.3073933530001796,
+      "iou_scores": [
+        0.8349940180778503
+      ],
+      "mask_sha256": "625397d41b30b3314857b5b2c09d4e90f681578ad4369fda7aa5dc2221df07b9",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0030.png"
+    },
+    {
+      "clip": "A",
+      "index": 40,
+      "source_s": 12.333333333333334,
+      "lane_pixels": 10372,
+      "infer_s": 2.318941517999974,
+      "iou_scores": [
+        0.7688266038894653
+      ],
+      "mask_sha256": "024bf4f9e655d3583930b8f9f3df59d473854bc6c247c833a7a6e9c0e0f8ea54",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0040.png"
+    },
+    {
+      "clip": "A",
+      "index": 50,
+      "source_s": 12.666666666666666,
+      "lane_pixels": 8172,
+      "infer_s": 2.3443066690001615,
+      "iou_scores": [
+        0.48348745703697205
+      ],
+      "mask_sha256": "b4673647bb41e4d7ff6f0fb105169f73f733ad23c1f45423c4526ad6e23d7860",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0050.png"
+    },
+    {
+      "clip": "A",
+      "index": 60,
+      "source_s": 13.0,
+      "lane_pixels": 8332,
+      "infer_s": 2.393406455999866,
+      "iou_scores": [
+        0.721412181854248
+      ],
+      "mask_sha256": "4e0324d99fc8e6a2995879f6ac3a5bdbec731c907e6f292ff03c05b332fa4b50",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0060.png"
+    },
+    {
+      "clip": "A",
+      "index": 70,
+      "source_s": 13.333333333333334,
+      "lane_pixels": 8995,
+      "infer_s": 2.3304849990001912,
+      "iou_scores": [
+        0.803164541721344
+      ],
+      "mask_sha256": "39dafb1657031c4440ee17530c634fb947107e4ecf025005947499f0040fcb58",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0070.png"
+    },
+    {
+      "clip": "A",
+      "index": 80,
+      "source_s": 13.666666666666666,
+      "lane_pixels": 16450,
+      "infer_s": 2.323949887000026,
+      "iou_scores": [
+        0.8359889984130859
+      ],
+      "mask_sha256": "5edce1fe966723be61b96db7b4a93891867b403c20bf38292f2a27408bcde16a",
+      "point_xy": [
+        910,
+        560
+      ],
+      "mask_path": "experiments/phase16b/masks/A/0080.png"
+    }
+  ]
+}

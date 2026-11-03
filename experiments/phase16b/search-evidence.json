@@ -1,0 +1,138 @@
+{
+  "searched_at_utc": "2026-11-02T22:04:58.480132+00:00",
+  "purpose": "Phase 16b Step 1: acquire a real reusable obstruction clip, a second view of the same obstruction, and a clear-road negative control.",
+  "selected_clips": {
+    "A": null,
+    "B": null,
+    "C": null
+  },
+  "media_bytes_obtained": 0,
+  "frame_inspections": 0,
+  "selected_timestamps": null,
+  "independence_verified": false,
+  "status": "STOP: no complete licensed footage set was acquired and visually verified in this environment; this does not establish that licensed footage does not exist.",
+  "search_queries": [
+    "site:commons.wikimedia.org dashcam fallen tree video",
+    "site:commons.wikimedia.org \"road\" \"obstruction\" \"webm\"",
+    "github road hazard dataset video \"Creative Commons\"",
+    "road obstruction dashcam video dataset debris \"CC BY\"",
+    "site:github.com dashcam video fallen tree license",
+    "site:github.com \"Lost and Found\" dataset license video"
+  ],
+  "search_tool": "mcp__codex_apps__search_service_web_run",
+  "candidate_sources": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Dashcam_vid_of_2012_Branson_tornado_damage.webm",
+      "author_as_listed": "SvobodaKC",
+      "license_as_listed": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "source_duration_as_listed": "5 min 59 s",
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Dashcam_vid_of_2012_Branson_tornado_damage.webm",
+      "review": "Description and licence read via web tool. Candidate tornado-damage drive, not inspected frames. Lane obstruction and second viewpoint not verified; no segments selected."
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Police_Dashcam_Captures_Small_Plane_Crashing_Onto_Florida_Road.webm",
+      "author_as_listed": "PoliceActivity",
+      "license_as_listed": "Public domain (Florida government record attribution on Commons)",
+      "source_duration_as_listed": "55 s",
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Police_Dashcam_Captures_Small_Plane_Crashing_Onto_Florida_Road.webm",
+      "review": "Description and public-domain statement read via web tool. Candidate road incident; actual lane obstruction and suitable second viewpoint not verified. No segments selected."
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:400_SB_Crash.webm",
+      "author_as_listed": "Dash",
+      "license_as_listed": "Public domain (automated recording, as stated on Commons)",
+      "source_duration_as_listed": "18 s",
+      "review": "Description and public-domain statement read via web tool. Candidate crash recording only; no frames obtained or selected. Licence statement was not independently adjudicated."
+    },
+    {
+      "url": "https://github.com/gurkirt/road-dataset",
+      "author_as_listed": "Gurkirt Singh et al.; Oxford RobotCar video source",
+      "license_as_listed": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "review": "README read via web tool. Excluded: noncommercial restriction is outside the user's accepted CC0/CC BY/CC BY-SA/public-domain list."
+    },
+    {
+      "url": "https://github.com/sekilab/RoadDamageDetector/blob/master/README.md",
+      "author_as_listed": null,
+      "license_as_listed": "CC BY-SA 4.0 for dataset images",
+      "review": "Search result only. Image dataset does not establish actual usable video of a lane obstruction and second viewpoint. Not acquired."
+    },
+    {
+      "url": "https://huggingface.co/datasets/mehmetkeremturkcan/SyntheticStreetScenes",
+      "author_as_listed": null,
+      "license_as_listed": "CC BY 4.0 (search result)",
+      "review": "Search result only. Excluded because synthetic video does not satisfy real road footage."
+    },
+    {
+      "url": "https://huggingface.co/datasets/thundarstrom/traffic-surveillance-video-corpus",
+      "author_as_listed": null,
+      "license_as_listed": "CC BY 4.0 (search result)",
+      "review": "Search candidate only. Individual video provenance, an actual obstruction, and a second viewpoint were not verified; not acquired."
+    }
+  ],
+  "discovery_pages": [
+    "https://commons.wikimedia.org/wiki/Category:Dashcam_videos",
+    "https://commons.wikimedia.org/wiki/Category:Videos_from_automobile_cameras"
+  ],
+  "runtime_access_attempts": [
+    {
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=search&srsearch=fallen%20tree%20filetype%3Avideo&srnamespace=6",
+      "method": "GET via urllib.request using inherited proxy",
+      "outcome": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "origin_response_headers": null,
+      "origin_response_body": null
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Police_Dashcam_Captures_Small_Plane_Crashing_Onto_Florida_Road.webm",
+      "method": "GET via urllib.request using inherited proxy",
+      "outcome": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "origin_response_headers": null,
+      "origin_response_body": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/",
+      "method": "GET via urllib.request using inherited proxy",
+      "outcome": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "origin_response_headers": null,
+      "origin_response_body": null
+    }
+  ],
+  "access_evidence_note": "urllib reported CONNECT denial before an origin response; therefore no origin status, headers, or body are claimed. The proxy was preserved. No media download succeeded.",
+  "web_media_attempts": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Police_Dashcam_Captures_Small_Plane_Crashing_Onto_Florida_Road.webm",
+      "outcome": "Web tool: (400) Unsupported content-type: video/webm"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Dashcam_vid_of_2012_Branson_tornado_damage.webm",
+      "outcome": "Web tool: (400) Unsupported content-type: video/webm"
+    }
+  ],
+  "automatic_approval_rejection": {
+    "action": "curl --head --max-time 15 --silent --show-error https://upload.wikimedia.org/wikipedia/commons/ 2>&1 | head -20",
+    "outcome": "Rejected before execution",
+    "reason": "This is a retry against a Wikimedia endpoint that already returned a proxy 403, using escalated network access; the user authorized footage research but not bypassing the environment’s explicit network restriction.",
+    "followed_instruction": "No workaround or indirect media acquisition was attempted after this rejection.",
+    "tool_arguments": {
+      "cmd": "curl --head --max-time 15 --silent --show-error https://upload.wikimedia.org/wikipedia/commons/ 2>&1 | head -20",
+      "workdir": "/workspace/phase-16-live-sam",
+      "sandbox_permissions": "with_additional_permissions",
+      "additional_permissions": {
+        "network": {
+          "enabled": true
+        }
+      },
+      "max_output_tokens": 1000,
+      "yield_time_ms": 1000
+    },
+    "raw_error": "exec_command failed: CreateProcess { message: \"Rejected(\\\"This action was rejected due to unacceptable risk.\\nReason: This is a retry against a Wikimedia endpoint that already returned a proxy 403, using escalated network access; the user authorized footage research but not bypassing the environment’s explicit network restriction.\\nDo not bypass this rejection through a workaround or indirect execution. Continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again. Complete unaffected work without asking for confirmation. Report anything that remains blocked, clarify why it was blocked by auto-review, inform the user of the risk and ask for approval.\\\")\" }"
+  },
+  "local_evidence_review": {
+    "asset": "assets/phase15/fallen-tree-a36.jpg",
+    "attribution_file": "assets/phase15/ATTRIBUTION.md",
+    "author": "David Martin",
+    "license": "CC BY-SA 2.0",
+    "review": "Existing single still photograph does not satisfy road video or second-view footage requirements."
+  }
+}

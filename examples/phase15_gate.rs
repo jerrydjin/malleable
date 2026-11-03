@@ -330,7 +330,118 @@ fn row(
         "unaffected_bar_at_300m":if range==300.0 && !spoof{Some(cost["p95_s"].as_f64().is_some_and(|v|v<=30.0) && cost["max_s"].as_f64().is_some_and(|v|v<60.0) && costs.len()==unaffected_n && complete)}else{None},
         "per_trip":per,"record":s})
 }
+fn evidence_system() -> &'static str {
+    "Classify evidence and choose communication reach. Return only JSON {\"label\":string,\"blocks\":\"road\"|\"lane\"|\"none\",\"reach\":{\"scope\":\"nearby\"|\"route\"|\"city\",\"radius_m\":number},\"rationale\":string}. No motion controls, grants, link IDs or extra fields. SAM geometry is evidence, not a calibrated road map."
+}
+
+/// Label/reach only. Used when `MALLEABLE_REPLY_OUT` is set, so the Phase 15
+/// reply file is left untouched. A missing key records the existing mock reply
+/// as `source: fallback` / `fallback_reason: no_key` and does not invent model text.
+fn live_label() -> Result<(), String> {
+    let out = std::env::var("MALLEABLE_REPLY_OUT").map_err(|_| "MALLEABLE_REPLY_OUT is unset")?;
+    let user = match std::env::var("MALLEABLE_LABEL_USER") {
+        Ok(path) if !path.is_empty() => std::fs::read_to_string(path).map_err(|e| e.to_string())?,
+        _ => serde_json::to_string(&record::sam_summary()?).map_err(|e| e.to_string())?,
+    };
+    let key = std::env::var("BASETEN_API_KEY").ok();
+    let model = std::env::var("MODEL_API_MODEL").ok();
+    let endpoint = malleable::muse::select_talk(malleable::muse::TalkKeys {
+        baseten: key.as_deref(),
+        merge: None,
+        gemini: None,
+        base: None,
+        model: model.as_deref(),
+    });
+    let system = evidence_system();
+    let (source, fallback_reason, provider, model_id, latency_ms, raw_reply, reply) =
+        if let Some(endpoint) = endpoint {
+            let provider = endpoint.provider.clone();
+            let model_id = endpoint.model.clone();
+            let chat = malleable::muse::GeminiChat::from_endpoint(endpoint);
+            let started = std::time::Instant::now();
+            match chat.complete(system, &user) {
+                Ok(raw) => {
+                    let latency_ms = started.elapsed().as_secs_f64() * 1000.0;
+                    let parsed = serde_json::from_str::<Reply>(raw.trim())
+                        .ok()
+                        .filter(|reply| reply.validate().is_ok());
+                    match parsed {
+                        Some(reply) => (
+                            "model",
+                            None,
+                            Some(provider),
+                            Some(model_id),
+                            Some(latency_ms),
+                            Some(raw),
+                            reply,
+                        ),
+                        None => (
+                            "fallback",
+                            Some("parse".to_string()),
+                            Some(provider),
+                            Some(model_id),
+                            Some(latency_ms),
+                            Some(raw),
+                            Reply::mock(),
+                        ),
+                    }
+                }
+                Err(reason) => (
+                    "fallback",
+                    Some(reason),
+                    Some(provider),
+                    Some(model_id),
+                    Some(started.elapsed().as_secs_f64() * 1000.0),
+                    None,
+                    Reply::mock(),
+                ),
+            }
+        } else {
+            (
+                "fallback",
+                Some("no_key".to_string()),
+                None,
+                None,
+                None,
+                None,
+                Reply::mock(),
+            )
+        };
+    println!(
+        "{}",
+        json!({
+            "part": "live_label",
+            "source": source,
+            "fallback_reason": fallback_reason.clone(),
+            "provider": provider.clone(),
+            "model_id": model_id.clone(),
+            "latency_ms": latency_ms,
+            "reply_file": &out,
+        })
+    );
+    let doc = json!({
+        "source": source,
+        "fallback_reason": fallback_reason,
+        "provider": provider,
+        "model_id": model_id,
+        "latency_ms": latency_ms,
+        "raw_reply": raw_reply,
+        "reply": reply,
+    });
+    if let Some(parent) = std::path::Path::new(&out).parent() {
+        std::fs::create_dir_all(parent).map_err(|e| e.to_string())?;
+    }
+    std::fs::write(&out, serde_json::to_string_pretty(&doc).unwrap() + "\n").map_err(|e| e.to_string())?;
+    Ok(())
+}
+
 fn live() -> Result<(), String> {
+    if std::env::var("MALLEABLE_REPLY_OUT")
+        .ok()
+        .is_some_and(|path| !path.is_empty())
+    {
+        return live_label();
+    }
     let sam = record::sam_summary()?;
     let mut r = Replies {
         version: 1,
@@ -362,7 +473,7 @@ fn live() -> Result<(), String> {
         model: model.as_deref(),
     }) {
         let chat = malleable::muse::GeminiChat::from_endpoint(endpoint);
-        let system="Classify evidence and choose communication reach. Return only JSON {\"label\":string,\"blocks\":\"road\"|\"lane\"|\"none\",\"reach\":{\"scope\":\"nearby\"|\"route\"|\"city\",\"radius_m\":number},\"rationale\":string}. No motion controls, grants, link IDs or extra fields. SAM geometry is evidence, not a calibrated road map.";
+        let system = evidence_system();
         let raw = chat.complete(system, &serde_json::to_string(&sam).unwrap())?;
         r.tree = ReplyEntry {
             source: "model".into(),

@@ -1,0 +1,18 @@
+{
+  "author_car": 1,
+  "blocks": "road",
+  "confirmations": [],
+  "evidence": {
+    "image_sha256": "50912949f9bdd479b6e9d0605ad6ee6d49f09a2f502f0ea36e46b9aeb75a5531",
+    "label": "potential lane hazard - SAM single-source detection",
+    "mask_sha256": "5edce1fe966723be61b96db7b4a93891867b403c20bf38292f2a27408bcde16a"
+  },
+  "expires_at": 30.0,
+  "id": "obstruction",
+  "kind": "hazard",
+  "link": 0,
+  "merged_at": null,
+  "route": [],
+  "since_s": 12.0,
+  "status": "Proposed"
+}

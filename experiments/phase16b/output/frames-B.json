@@ -1,0 +1,160 @@
+{
+  "clip": "B",
+  "role": "SAME SOURCE, DIFFERENT VIEWPOINT",
+  "decision": {
+    "positive_frames": 9,
+    "longest_consecutive_positive": 9,
+    "detected": true,
+    "since_s": 14.5,
+    "confirm_at_s": 15.166666666666666,
+    "max_lane_pixels": 13090,
+    "median_lane_pixels": 12137,
+    "sampled_frames": 9
+  },
+  "frames": [
+    {
+      "clip": "B",
+      "index": 0,
+      "source_s": 14.5,
+      "lane_pixels": 11339,
+      "infer_s": 2.336316049000061,
+      "iou_scores": [
+        0.8984408974647522
+      ],
+      "mask_sha256": "e3759580743334e47b42631e4fef54ed88e481ed8f7ab54c13e8f058be008d9b",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0000.png"
+    },
+    {
+      "clip": "B",
+      "index": 10,
+      "source_s": 14.833333333333334,
+      "lane_pixels": 12772,
+      "infer_s": 2.3904288809999343,
+      "iou_scores": [
+        0.8315987586975098
+      ],
+      "mask_sha256": "a16549055990373f5ec8d6539bf5cd9c6d457e40af3e80b4937026010a144fa4",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0010.png"
+    },
+    {
+      "clip": "B",
+      "index": 20,
+      "source_s": 15.166666666666666,
+      "lane_pixels": 11746,
+      "infer_s": 2.348862259000043,
+      "iou_scores": [
+        0.8004747033119202
+      ],
+      "mask_sha256": "7438ab17bf413ad4bfe8f8ad4f7881e1a94403665bde13fd7c38761aa5baed4f",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0020.png"
+    },
+    {
+      "clip": "B",
+      "index": 30,
+      "source_s": 15.5,
+      "lane_pixels": 13090,
+      "infer_s": 2.378565510000044,
+      "iou_scores": [
+        0.7903140783309937
+      ],
+      "mask_sha256": "247a81d5284d4f7767ad3297a111bd4b6a443d76f76d6c8b30aac38b227820cd",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0030.png"
+    },
+    {
+      "clip": "B",
+      "index": 40,
+      "source_s": 15.833333333333334,
+      "lane_pixels": 12137,
+      "infer_s": 2.3220530779999535,
+      "iou_scores": [
+        0.8062828779220581
+      ],
+      "mask_sha256": "50605c1679555ca8d70ae767f666183228149817b3113234aaa21bd772919814",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0040.png"
+    },
+    {
+      "clip": "B",
+      "index": 50,
+      "source_s": 16.166666666666668,
+      "lane_pixels": 10903,
+      "infer_s": 2.379962552000052,
+      "iou_scores": [
+        0.8251143097877502
+      ],
+      "mask_sha256": "24c0447b81383f51f21d5f8cd1ca4933ea2fd92da368f7af3fda84eae8bd2c9d",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0050.png"
+    },
+    {
+      "clip": "B",
+      "index": 60,
+      "source_s": 16.5,
+      "lane_pixels": 12152,
+      "infer_s": 2.442689961999804,
+      "iou_scores": [
+        0.7472437620162964
+      ],
+      "mask_sha256": "68ae59c3c9b1a3f77527c651dfb1a3abee1cc9b1946ac86583fa0c820c6579a5",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0060.png"
+    },
+    {
+      "clip": "B",
+      "index": 70,
+      "source_s": 16.833333333333332,
+      "lane_pixels": 12521,
+      "infer_s": 2.3894769999999426,
+      "iou_scores": [
+        0.8204697966575623
+      ],
+      "mask_sha256": "1272bbe2045666a9af6bafee50762fa4cb57d2b49ca1161bebe3334eb835b5cf",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0070.png"
+    },
+    {
+      "clip": "B",
+      "index": 80,
+      "source_s": 17.166666666666668,
+      "lane_pixels": 11939,
+      "infer_s": 2.325316900000189,
+      "iou_scores": [
+        0.798869252204895
+      ],
+      "mask_sha256": "21c41cc78ae1c1e3eb29beeb9af7df71932e593753be2d4d65c905d0219179f0",
+      "point_xy": [
+        880,
+        530
+      ],
+      "mask_path": "experiments/phase16b/masks/B/0080.png"
+    }
+  ]
+}
