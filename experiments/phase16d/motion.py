@@ -1,0 +1,301 @@
+"""Road-plane ego compensation and ground-contact motion classification.
+
+Every engineering threshold is supplied through the root config's ``ego``,
+``motion`` and ``lanes`` sections. A quality failure is UNKNOWN, never a zero
+motion observation. Confidence is an evidence-quality heuristic, not a
+calibrated probability. These functions neither emit edits nor move vehicles.
+"""
+
+import cv2
+import numpy as np
+
+
+def _gray(rgb):
+    pixels = np.asarray(rgb)
+    if pixels.ndim == 2:
+        return pixels.astype(np.uint8, copy=False)
+    if pixels.ndim != 3 or pixels.shape[2] != 3:
+        raise ValueError("expected an RGB or grayscale image")
+    return cv2.cvtColor(pixels.astype(np.uint8, copy=False), cv2.COLOR_RGB2GRAY)
+
+
+def _mask(mask, shape):
+    if mask is None:
+        return np.zeros(shape, dtype=np.uint8)
+    result = np.asarray(mask)
+    if result.shape != shape:
+        raise ValueError("mask and frame dimensions differ")
+    return (result != 0).astype(np.uint8) * 255
+
+
+def _morph(mask, radius, dilate):
+    radius = int(radius)
+    if radius <= 0:
+        return mask.copy()
+    kernel = np.ones((radius * 2 + 1, radius * 2 + 1), dtype=np.uint8)
+    return cv2.dilate(mask, kernel) if dilate else cv2.erode(mask, kernel)
+
+
+def _project(matrix, points):
+    points = np.asarray(points, dtype=np.float64).reshape(-1, 2)
+    homogeneous = np.column_stack((points, np.ones(len(points))))
+    projected = homogeneous @ np.asarray(matrix, dtype=np.float64).T
+    if not np.isfinite(projected).all() or np.any(np.abs(projected[:, 2]) <= np.finfo(float).eps):
+        raise ValueError("nonfinite or singular projective location")
+    return projected[:, :2] / projected[:, 2:3]
+
+
+def _feature_flow(prev, curr, source_mask, target_mask, ego_cfg):
+    points = cv2.goodFeaturesToTrack(
+        prev,
+        maxCorners=int(ego_cfg["max_corners"]),
+        qualityLevel=float(ego_cfg["quality_level"]),
+        minDistance=float(ego_cfg["min_distance_px"]),
+        blockSize=int(ego_cfg["block_size"]),
+        mask=source_mask,
+    )
+    empty = np.empty((0, 2), dtype=np.float32)
+    if points is None:
+        return empty, empty, np.empty(0), "no_features"
+    params = {
+        "winSize": (int(ego_cfg["lk_window_px"]),) * 2,
+        "maxLevel": int(ego_cfg["lk_levels"]),
+        "criteria": (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT,
+                     int(ego_cfg["lk_max_iterations"]), float(ego_cfg["lk_epsilon"])),
+    }
+    forward, status, _ = cv2.calcOpticalFlowPyrLK(prev, curr, points, None, **params)
+    if forward is None or status is None:
+        return empty, empty, np.empty(0), "forward_flow_failed"
+    original = points.reshape(-1, 2)
+    forward = forward.reshape(-1, 2)
+    h, w = curr.shape
+    keep = (status.reshape(-1) != 0) & np.isfinite(forward).all(axis=1)
+    keep &= ((forward[:, 0] >= 0) & (forward[:, 0] < w)
+             & (forward[:, 1] >= 0) & (forward[:, 1] < h))
+    indexes = np.flatnonzero(keep)
+    if not len(indexes):
+        return empty, empty, np.empty(0), "no_forward_matches"
+    coords = np.rint(forward[indexes]).astype(int)
+    coords[:, 0] = np.clip(coords[:, 0], 0, w - 1)
+    coords[:, 1] = np.clip(coords[:, 1], 0, h - 1)
+    indexes = indexes[target_mask[coords[:, 1], coords[:, 0]] != 0]
+    if not len(indexes):
+        return empty, empty, np.empty(0), "matches_outside_target_support"
+    backward, backward_status, _ = cv2.calcOpticalFlowPyrLK(
+        curr, prev, forward[indexes].reshape(-1, 1, 2), None, **params)
+    if backward is None or backward_status is None:
+        return empty, empty, np.empty(0), "backward_flow_failed"
+    backward = backward.reshape(-1, 2)
+    error = np.linalg.norm(backward - original[indexes], axis=1)
+    keep = ((backward_status.reshape(-1) != 0) & np.isfinite(backward).all(axis=1)
+            & (error <= float(ego_cfg["fb_error_px"])))
+    return original[indexes][keep], forward[indexes][keep], error[keep], "ok"
+
+
+def _ego_failure(reason, **updates):
+    result = {"H": None, "valid": False, "inliers": 0, "ratio": 0.0,
+              "reprojection_error": None, "reason": reason, "matches": 0,
+              "coverage_fraction": 0.0, "occupied_cells": 0}
+    result.update(updates)
+    return result
+
+
+def estimate_ego(prev_rgb, curr_rgb, foreground_prev_bool, foreground_curr_bool, cfg):
+    """Estimate road H mapping previous working-frame pixels into current pixels.
+
+    Foreground masks must contain admitted object instances, not road/sky stuff
+    masks. Homography support is restricted to the configured road ROI.
+    """
+    params = cfg["ego"]
+    prev, curr = _gray(prev_rgb), _gray(curr_rgb)
+    if prev.shape != curr.shape:
+        return _ego_failure("frame_dimensions_differ")
+    h, w = prev.shape
+    x0, y0, x1, y1 = (float(v) for v in params["roi"])
+    xa, ya = max(0, int(x0 * w)), max(0, int(y0 * h))
+    xb, yb = min(w, int(x1 * w)), min(h, int(y1 * h))
+    if xb <= xa or yb <= ya:
+        return _ego_failure("empty_road_roi")
+    roi = np.zeros_like(prev, dtype=np.uint8)
+    roi[ya:yb, xa:xb] = 255
+    previous_objects = _morph(_mask(foreground_prev_bool, prev.shape), params["exclusion_dilate_px"], True)
+    current_objects = _morph(_mask(foreground_curr_bool, curr.shape), params["exclusion_dilate_px"], True)
+    source_support = cv2.bitwise_and(roi, cv2.bitwise_not(previous_objects))
+    target_support = cv2.bitwise_and(roi, cv2.bitwise_not(current_objects))
+    p0, p1, fb, reason = _feature_flow(prev, curr, source_support, target_support, params)
+    if len(p0) < int(params["min_matches"]):
+        return _ego_failure("too_few_background_matches:" + reason, matches=len(p0))
+    cv2.setRNGSeed(int(params["rng_seed"]))
+    matrix, inlier_mask = cv2.findHomography(
+        p0, p1, cv2.RANSAC, float(params["ransac_reprojection_px"]),
+        maxIters=int(params["ransac_max_iterations"]), confidence=float(params["ransac_confidence"]))
+    if matrix is None or inlier_mask is None or not np.isfinite(matrix).all():
+        return _ego_failure("homography_fit_failed", matches=len(p0))
+    inlier_mask = inlier_mask.reshape(-1).astype(bool)
+    count = int(inlier_mask.sum())
+    ratio = count / len(p0)
+    if count < int(params["min_inliers"]) or ratio < float(params["min_inlier_ratio"]):
+        return _ego_failure("insufficient_homography_inliers", matches=len(p0), inliers=count, ratio=ratio)
+    points = p0[inlier_mask]
+    hull = cv2.convexHull(points)
+    coverage = float(cv2.contourArea(hull)) / ((xb - xa) * (yb - ya))
+    cols, rows = (int(value) for value in params["coverage_grid"])
+    cells = {(min(cols - 1, max(0, int((x - xa) / (xb - xa) * cols))),
+              min(rows - 1, max(0, int((y - ya) / (yb - ya) * rows)))) for x, y in points}
+    quality = {"matches": len(p0), "inliers": count, "ratio": ratio,
+               "coverage_fraction": coverage, "occupied_cells": len(cells)}
+    if coverage < float(params["min_coverage_fraction"]) or len(cells) < int(params["min_occupied_cells"]):
+        return _ego_failure("insufficient_spatial_background_support", **quality)
+    try:
+        predictions = _project(matrix, points)
+        projected_hull = _project(matrix, hull.reshape(-1, 2))
+    except ValueError:
+        return _ego_failure("singular_homography_projection", **quality)
+    error = float(np.median(np.linalg.norm(predictions - p1[inlier_mask], axis=1)))
+    before_area = cv2.contourArea(hull, oriented=True)
+    after_area = cv2.contourArea(projected_hull.astype(np.float32), oriented=True)
+    displacement = np.linalg.norm(projected_hull - hull.reshape(-1, 2), axis=1)
+    if (before_area * after_area <= 0 or not np.isfinite(error)
+            or float(displacement.max()) > float(params["max_corner_displacement_fraction"]) * np.hypot(w, h)):
+        return _ego_failure("implausible_supported_homography", reprojection_error=error, **quality)
+    scale = matrix[2, 2]
+    if abs(scale) <= np.finfo(float).eps:
+        return _ego_failure("singular_homography_normalization", **quality)
+    return {"H": (matrix / scale).tolist(), "valid": True, "reprojection_error": error,
+            "reason": "ok", "median_forward_backward_error": float(np.median(fb)), **quality}
+
+
+def classify_residual(observed_flow_xy, ego_flow_xy, cfg, quality=1.0):
+    """Classify two contact-anchor flow vectors; all thresholds come from config."""
+    params = cfg["motion"]
+    observed = np.asarray(observed_flow_xy, dtype=np.float64)
+    ego = np.asarray(ego_flow_xy, dtype=np.float64)
+    if observed.shape != (2,) or ego.shape != (2,) or not np.isfinite(observed).all() or not np.isfinite(ego).all():
+        return {"class": "UNKNOWN", "residual_px": None, "relative_residual": None,
+                "ego_motion_px": None, "observed_motion_px": None, "confidence": 0.0,
+                "reason": "nonfinite_motion"}
+    ego_motion = float(np.linalg.norm(ego))
+    residual = float(np.linalg.norm(observed - ego))
+    confidence = float(np.clip(quality, 0.0, 1.0)) if np.isfinite(quality) else 0.0
+    result = {"class": "UNKNOWN", "residual_px": residual, "relative_residual": None,
+              "ego_motion_px": ego_motion, "observed_motion_px": float(np.linalg.norm(observed)),
+              "confidence": confidence, "reason": "insufficient_ego_motion"}
+    if confidence < float(params["min_confidence"]):
+        result["reason"] = "low_motion_quality"
+        return result
+    if ego_motion < float(params["min_ego_motion_px"]):
+        return result
+    relative = residual / ego_motion
+    result["relative_residual"] = relative
+    if residual <= float(params["stationary_max_residual_px"]) and relative <= float(params["stationary_max_relative_residual"]):
+        result.update({"class": "STATIONARY", "reason": "matches_road_ego_motion"})
+    elif relative >= float(params["moving_min_relative_residual"]):
+        result.update({"class": "MOVING", "reason": "nonzero_ego_compensated_motion"})
+    else:
+        result["reason"] = "ambiguous_ego_compensated_motion"
+    return result
+
+
+def _contact(mask, quantile):
+    ys, xs = np.nonzero(mask)
+    if not len(ys):
+        return None
+    y = float(np.quantile(ys, float(quantile)))
+    return np.array([float(np.median(xs[ys >= y])), y], dtype=np.float64)
+
+
+def _track_failure(reason, contact=None, featurecount=0, **updates):
+    result = {"class": "UNKNOWN", "residual_px": None, "relative_residual": None,
+              "ego_motion_px": None, "observed_motion_px": None,
+              "contact_xy": None if contact is None else np.asarray(contact).tolist(),
+              "confidence": 0.0, "reason": reason, "featurecount": int(featurecount), "inliers": 0}
+    result.update(updates)
+    return result
+
+
+def classify_track(prev_rgb, curr_rgb, prev_mask, curr_mask, ego, cfg):
+    """Use lower-instance feature motion at a robust ground-contact proxy.
+
+    Whole-instance SAM masks are required: a mask of a trailer door alone has
+    no justified ground-contact proxy and should not be admitted as a vehicle
+    instance upstream. No semantic target-specific ROI is used here.
+    """
+    params = cfg["motion"]
+    prev, curr = _gray(prev_rgb), _gray(curr_rgb)
+    if prev.shape != curr.shape:
+        return _track_failure("frame_dimensions_differ")
+    previous_mask, current_mask = _mask(prev_mask, prev.shape), _mask(curr_mask, curr.shape)
+    anchor = _contact(previous_mask, params["contact_quantile"])
+    current_anchor = _contact(current_mask, params["contact_quantile"])
+    if anchor is None or current_anchor is None:
+        return _track_failure("empty_object_mask", current_anchor)
+    if not ego.get("valid") or ego.get("H") is None:
+        return _track_failure("invalid_ego:" + str(ego.get("reason", "missing")), current_anchor)
+    feature_support = _morph(previous_mask, params["mask_erode_px"], False)
+    ys, _ = np.nonzero(previous_mask)
+    cutoff = float(ys.max()) - float(params["lower_band_fraction"]) * (float(ys.max()) - float(ys.min()) + 1.)
+    feature_support[np.arange(prev.shape[0]) < cutoff, :] = 0
+    p0, p1, fb, reason = _feature_flow(prev, curr, feature_support, current_mask, cfg["ego"])
+    if len(p0) < int(params["min_features"]):
+        return _track_failure("too_few_object_features:" + reason, current_anchor, len(p0))
+    cv2.setRNGSeed(int(cfg["ego"]["rng_seed"]))
+    affine, inlier_mask = cv2.estimateAffinePartial2D(
+        p0, p1, method=cv2.RANSAC,
+        ransacReprojThreshold=float(params["affine_reprojection_px"]),
+        maxIters=int(params["affine_max_iterations"]), confidence=float(params["affine_confidence"]))
+    if affine is None or inlier_mask is None or not np.isfinite(affine).all():
+        return _track_failure("object_affine_fit_failed", current_anchor, len(p0))
+    inliers = inlier_mask.reshape(-1).astype(bool)
+    count, ratio = int(inliers.sum()), float(inliers.sum()) / len(p0)
+    if count < int(params["min_features"]) or ratio < float(params["min_affine_inlier_ratio"]):
+        return _track_failure("insufficient_object_affine_inliers", current_anchor, len(p0), inliers=count)
+    fitted = np.column_stack((p0[inliers], np.ones(count))) @ affine.T
+    affine_error = float(np.median(np.linalg.norm(fitted - p1[inliers], axis=1)))
+    observed_anchor = affine @ np.array([anchor[0], anchor[1], 1.])
+    try:
+        expected_anchor = _project(ego["H"], anchor)[0]
+    except ValueError:
+        return _track_failure("invalid_contact_projection", current_anchor, len(p0), inliers=count)
+    fit_quality = max(0., 1. - affine_error / float(params["affine_reprojection_px"]))
+    quality = min(float(ego.get("ratio", 0.0)), ratio) * fit_quality
+    result = classify_residual(observed_anchor - anchor, expected_anchor - anchor, cfg, quality)
+    result.update({"contact_xy": observed_anchor.tolist(), "previous_contact_xy": anchor.tolist(),
+                   "mask_contact_xy": current_anchor.tolist(), "featurecount": len(p0), "inliers": count,
+                   "affine_inlier_ratio": ratio, "affine_reprojection_error": affine_error,
+                   "median_forward_backward_error": float(np.median(fb))})
+    return result
+
+
+def assign_lane(contact_xy, size_wh, cfg):
+    """Assign a camera-relative lane using configured perspective boundaries.
+
+    Boundaries are normalized endpoint pairs, ordered from left to right.
+    Regions outside the outer boundaries are shoulders. A point too close to a
+    boundary or outside the configured vertical validity range is unknown.
+    """
+    if contact_xy is None:
+        return "unknown"
+    params = cfg["lanes"]
+    w, h = (float(value) for value in size_wh)
+    x, y = (float(value) for value in contact_xy)
+    if not np.isfinite([x, y, w, h]).all() or w <= 0 or h <= 0 or not (0 <= x < w and 0 <= y < h):
+        return "unknown"
+    low, high = (float(value) for value in params["valid_y_range"])
+    if not low <= y / h <= high:
+        return "unknown"
+    boundaries = []
+    for line in params["boundaries"]:
+        (x0, y0), (x1, y1) = np.asarray(line, dtype=float)
+        if not np.isfinite([x0, y0, x1, y1]).all() or y0 == y1:
+            return "unknown"
+        boundaries.append(float((x0 + (x1 - x0) * ((y / h - y0) / (y1 - y0))) * w))
+    if len(boundaries) < 2 or any(b <= a for a, b in zip(boundaries, boundaries[1:])):
+        return "unknown"
+    if any(abs(x - boundary) <= float(params["boundary_margin_px"]) for boundary in boundaries):
+        return "unknown"
+    if x < boundaries[0] or x > boundaries[-1]:
+        return "shoulder"
+    for index, (left, right) in enumerate(zip(boundaries, boundaries[1:])):
+        if left < x < right:
+            return f"lane_{index}"
+    return "unknown"

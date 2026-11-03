@@ -1,0 +1,30 @@
+test_missing_frame_or_lane_change_resets_run (test_emission.EmissionTests.test_missing_frame_or_lane_change_resets_run) ... ok
+test_moving_unknown_shoulder_and_background_never_emit (test_emission.EmissionTests.test_moving_unknown_shoulder_and_background_never_emit) ... ok
+test_n_frames_emit_once_and_later_frames_do_not_duplicate (test_emission.EmissionTests.test_n_frames_emit_once_and_later_frames_do_not_duplicate) ... ok
+test_nested_duplicate_track_does_not_emit_a_second_edit (test_emission.EmissionTests.test_nested_duplicate_track_does_not_emit_a_second_edit) ... ok
+test_background_homography_recovers_known_translation_deterministically (test_motion.ImageMotionTests.test_background_homography_recovers_known_translation_deterministically) ... ok
+test_contact_feature_motion_matches_static_road (test_motion.ImageMotionTests.test_contact_feature_motion_matches_static_road) ... ok
+test_missing_background_support_is_not_zero_motion (test_motion.ImageMotionTests.test_missing_background_support_is_not_zero_motion) ... ok
+test_same_image_object_against_observable_ego_is_moving (test_motion.ImageMotionTests.test_same_image_object_against_observable_ego_is_moving) ... ok
+test_lane_shoulder_and_uncertainty (test_motion.LaneTests.test_lane_shoulder_and_uncertainty) ... ok
+test_comoving_vehicle_with_zero_image_flow_is_moving (test_motion.ResidualTests.test_comoving_vehicle_with_zero_image_flow_is_moving) ... ok
+test_low_quality_cannot_be_stationary (test_motion.ResidualTests.test_low_quality_cannot_be_stationary) ... ok
+test_stationary_ground_contact (test_motion.ResidualTests.test_stationary_ground_contact) ... ok
+test_stationary_measurement_noise (test_motion.ResidualTests.test_stationary_measurement_noise) ... ok
+test_unobservable_zero_ego_motion_is_unknown (test_motion.ResidualTests.test_unobservable_zero_ego_motion_is_unknown) ... ok
+test_fixed_development_clip_first_three_sampled_frames_repeat (test_tracker.ActualTrackingDeterminism.test_fixed_development_clip_first_three_sampled_frames_repeat) ... skipped 'Actual SAM tracker determinism UNMEASURED: local native checkpoint is absent'
+test_cache_lock_rejects_a_second_writer (test_tracker.CacheTests.test_cache_lock_rejects_a_second_writer) ... ok
+test_destination_signature_detects_unrelated_writes (test_tracker.CacheTests.test_destination_signature_detects_unrelated_writes) ... ok
+test_missing_checkpoint_refuses_before_decode_or_cache_creation (test_tracker.CacheTests.test_missing_checkpoint_refuses_before_decode_or_cache_creation) ... ok
+test_packed_masks_round_trip_and_stable_fingerprint (test_tracker.CacheTests.test_packed_masks_round_trip_and_stable_fingerprint) ... ok
+test_tracking_cache_key_changes_for_sampling_but_not_motion_thresholds (test_tracker.CacheTests.test_tracking_cache_key_changes_for_sampling_but_not_motion_thresholds) ... ok
+test_association_is_one_to_one_and_preserves_video_ids (test_tracker.ProposalTests.test_association_is_one_to_one_and_preserves_video_ids) ... ok
+test_large_background_containment_does_not_delete_a_small_object (test_tracker.ProposalTests.test_large_background_containment_does_not_delete_a_small_object) ... ok
+test_later_background_role_does_not_rewrite_earlier_foreground (test_tracker.ProposalTests.test_later_background_role_does_not_rewrite_earlier_foreground) ... ok
+test_proposal_order_and_duplicate_retention_are_deterministic (test_tracker.ProposalTests.test_proposal_order_and_duplicate_retention_are_deterministic) ... ok
+test_track_cap_raises_instead_of_truncating_proposals (test_tracker.ProposalTests.test_track_cap_raises_instead_of_truncating_proposals) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.043s
+
+OK (skipped=1)

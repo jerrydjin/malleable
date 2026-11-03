@@ -1,0 +1,20 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting git+https://github.com/facebookresearch/sam2.git@2b90b9f5ceec907a1c18123530e92e794ad901a4
+  Cloning https://github.com/facebookresearch/sam2.git (to revision 2b90b9f5ceec907a1c18123530e92e794ad901a4) to /tmp/pip-req-build-o53xo7qp
+  Running command git clone --filter=blob:none --quiet https://github.com/facebookresearch/sam2.git /tmp/pip-req-build-o53xo7qp
+  Running command git rev-parse -q --verify 'sha^2b90b9f5ceec907a1c18123530e92e794ad901a4'
+  Running command git fetch -q https://github.com/facebookresearch/sam2.git 2b90b9f5ceec907a1c18123530e92e794ad901a4
+  Resolved https://github.com/facebookresearch/sam2.git to commit 2b90b9f5ceec907a1c18123530e92e794ad901a4
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: SAM-2
+  Building wheel for SAM-2 (pyproject.toml): started
+  Building wheel for SAM-2 (pyproject.toml): finished with status 'done'
+  Created wheel for SAM-2: filename=sam_2-1.0-py3-none-any.whl size=181434 sha256=7902f63f7e1a5d2f47dfbdfad89bd54e54b0293cc6ba2fd86c0afa816c54efe5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-5f4ez19_/wheels/c5/31/42/359b3d3b2fd28b52b59125c6e627ea799ddd986ea435862773
+Successfully built SAM-2
+Installing collected packages: SAM-2
+Successfully installed SAM-2-1.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python -m pip install --upgrade pip
