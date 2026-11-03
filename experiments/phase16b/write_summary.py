@@ -187,6 +187,12 @@ def main():
         "The edit's `blocks` value is the preregistered `road`, not the reply's `blocks`. "
         "Merge is `RoadEdit::review`. The reply does not set status and does not move a vehicle.",
         "",
+        f"Measured `since_s`: `{merge.get('since_s_measured')}`. "
+        f"Value stored on the edit: `{merge.get('since_s_on_edit')}`. "
+        f"{merge.get('since_s_note')} {merge.get('link_note')} "
+        f"B review applied: `{merge.get('b_review_applied')}`. "
+        f"C review applied: `{merge.get('c_review_applied')}`.",
+        "",
         "A machine with `BASETEN_API_KEY` reruns only the label step, rewrites the edit metadata, "
         "reruns the merge check and refreshes this summary:",
         "",

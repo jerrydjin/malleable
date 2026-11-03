@@ -1,39 +1,54 @@
-# Phase 16b: Step 1 STOP
+# Phase 16b
+
+B is the SAME SOURCE, DIFFERENT VIEWPOINT. It is not a second vehicle and not an independent camera.
+
+The previous run stopped before this footage was attached. That stop, verbatim:
 
 STOP — Phase 16b Step 1: no complete licensed footage set was acquired and visually verified in this environment. Wikimedia runtime requests were denied by the proxy (CONNECT 403), and automatic approval review rejected a subsequent access retry. Candidate licence descriptions were found, but A/B/C frames, timestamps, lane obstruction and second viewpoint remain unverified. No SAM inference, model call or merge experiment was run.
 
-This is an acquisition STOP, not a measured detector result. Licensed candidates were identified; a complete usable set was not acquired. [Sources and licences](../../experiments/phase16b/SOURCES.md), [search/access evidence](../../experiments/phase16b/search-evidence.json), and [machine-readable status](../../experiments/phase16b/status.json) preserve the distinction.
+This run used the attached file. It did not download from Wikimedia. The original sha256 is `ab4e593ff348713a41ab341cb5fde51de8ef7f7896d139702e63ba4948df31f3`.
 
-| Bar | Result | Evidence |
+## Bars
+
+| Bar | Result | Numbers |
 | --- | --- | --- |
-| a. A detects | FAIL — not measured | No verified A segment; mask areas and detection frame counts unavailable. |
-| b. B confirms | FAIL — not measured | No verified B segment or second viewpoint. |
-| c. C has no detection | FAIL — not measured | No verified C segment; zero processed frames cannot establish a negative control. |
-| d. Only B enables merge | FAIL — not measured | No footage-based merge, C-only or spoof trial run. |
-| e. SPEC-shaped merged edit | FAIL — not measured | No phase-16b edit emitted. |
-| f. Live label and reach | FAIL — not measured | No live model call or reply; no fallback manufactured. |
+| a. A detects by the preregistered rule | FAIL | positive 2/9, longest run 1 (need 3), max lane pixels 16450 (threshold 10000) |
+| b. B confirms by the same rule. B is the SAME SOURCE, DIFFERENT VIEWPOINT | PASS | positive 9/9, longest run 9, max lane pixels 13090 |
+| c. C produces no detection | PASS | positive 0/15, longest run 0, max lane pixels 2225 |
+| d. Merge only with B. A spoof and C do not merge | FAIL | spoof merged False, C merged False, B merged False |
+| e. Merged edit has the SPEC hazard keys | FAIL | status Proposed, kind hazard, confirmations 0 |
+| f. Label and reach come from a live model reply | FAIL | source fallback, fallback_reason no_key, provider None, model_id None, latency_ms None |
 
-The status records **0 acquired media bytes, 0 inspected/processed frames, 0 SAM calls, 0 model calls and 0 phase-16b merge trials**. Mask areas, per-frame timings, model latency and runtime model IDs are **unavailable**, not zero. Requested model IDs are `facebook/sam2.1-hiera-tiny` and `meta-models/muse-spark-open-1026`. No runtime model/package-version claim follows from the retained cache.
+## Detection
 
-The experiment stopped before Step 2. No preregistration, prompts, lane regions, detection thresholds, trimmed clips, masks, overlays, live-output adapter or new detector tests are presented as completed. An accessible licensed set with verified views and timestamps is required before preregistering and running inference.
+Threshold 10000 lane pixels, 3 consecutive sampled frames, stride 10 at 30 fps. Lane polygon area 306000 px.
 
-Read-only integration audit at base `e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50`:
+| Clip | Role | Sampled | Positive | Longest run | Max lane px | Median lane px | Infer sum s | Infer mean s |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A | proposal | 9 | 2 | 1 | 16450 | 8332 | 21.082 | 2.342 |
+| B | SAME SOURCE, DIFFERENT VIEWPOINT | 9 | 9 | 9 | 13090 | 12137 | 21.314 | 2.368 |
+| C | negative_control | 15 | 0 | 0 | 2225 | 1786 | 35.949 | 2.397 |
 
-- [`src/record.rs::sam_summary`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/record.rs#L253) reads `assets/phase15/sam.json`, checks the requested SAM model, fixed original photograph hash and mask hash. The retained result is a still-image cache; it is not live video evidence.
-- [`examples/phase15_gate.rs::live`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/examples/phase15_gate.rs#L333) already calls `muse::select_talk` / `GeminiChat` with the SAM summary. [`src/muse.rs`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/muse.rs#L218) supplies the requested Baseten/Meta model default. No new client was written and this entry point was not invoked.
-- [`Reply::validate`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/record.rs#L34) permits a nonempty label/rationale, `road|lane|none`, `nearby|route|city`, and finite radius in `[0,100000]` metres. Label is not a closed enum in the existing code; a future preregistration must state the actual constraint.
-- [`RoadEdit::review`](https://github.com/jerrydjin/malleable/blob/e4ba2a6e9555f99baec8dfaf1ea9c5a6a7766b50/src/record.rs#L119) requires a distinct later reviewer and a positive observation before merging. Model classification alone does not review an edit.
-- `docs/SPEC.md` is absent from the requested main base. Its actual [hazard example at `f3f319ab9934aa7e134e449d119826ad2fd24fe1`](https://github.com/jerrydjin/malleable/blob/f3f319ab9934aa7e134e449d119826ad2fd24fe1/docs/SPEC.md#L58) was read without merging an unrelated documentation branch. It is a projection of the isolated v2 message, including `kind: hazard`; schema conformance is unmeasured because no edit was emitted.
+## Models
 
-Existing guard verification: **6 passed, 0 failed** in the unchanged `tests/road_record.rs`, including distinct later sensor witnesses, rejection of model motion fields and spoof/no-knowledge route checks. [Full retained test output](../../experiments/phase16b/existing-road-record-tests.log). The recorded command was:
+SAM runtime model id `facebook/sam2.1-hiera-tiny`, Hugging Face revision `de431c4043854a71d8101e17995dfe596bf101a5`, torch `2.15.0+cpu`, transformers `5.22.1`, device `cpu`.
+
+Label client: existing `src/muse.rs` Baseten path, requested model `meta-models/muse-spark-open-1026`. Recorded source `fallback`, fallback_reason `no_key`, provider `None`, model_id `None`, latency_ms `None`.
+
+The stored reply label is what that source produced. On `fallback` / `no_key` the body is `Reply::mock()` from `src/record.rs` (`fallen tree`). That text is not a classification of these frames. The edit's `blocks` value is the preregistered `road`, not the reply's `blocks`. Merge is `RoadEdit::review`. The reply does not set status and does not move a vehicle.
+
+Measured `since_s`: `None`. Value stored on the edit: `12.0`. A produced no qualifying run. RoadEdit requires a since_s, so the edit keeps the test fixture value 12.0. That number is not a measured detection time. link 0 and an empty route are placeholders. This recording is not localized onto the Potrero graph. B review applied: `False`. C review applied: `True`.
+
+A machine with `BASETEN_API_KEY` reruns only the label step, rewrites the edit metadata, reruns the merge check and refreshes this summary:
 
 ```sh
-PATH=/workspace/.toolchains/rust/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH \
-CARGO_HOME=/workspace/.toolchains/rust/cargo \
-CARGO_TARGET_DIR=/tmp/phase16b-target \
-cargo test --offline --test road_record -- --nocapture
+experiments/phase16b/run_live_label.sh
 ```
 
-These inherited tests do not substitute for new video detection/confirmation tests or any bar above. No Rust source file changed.
+The script reads the key from the environment and does not print it.
 
-Automatic approval review rejected a subsequent Wikimedia access retry because it repeated a previously denied host using additional network access; the exact rejected action and stated reason are preserved in `search-evidence.json`. No workaround followed it.
+## Sources
+
+[https://commons.wikimedia.org/wiki/File:400_SB_Crash.webm](https://commons.wikimedia.org/wiki/File:400_SB_Crash.webm). Author as listed: Dash. Licence as listed: Commons public-domain statement for an automated recording. That statement was not independently adjudicated.
+
+Per-frame lane pixels and infer times: `experiments/phase16b/output/frames-A.json`, `frames-B.json`, `frames-C.json`. Masks: `experiments/phase16b/masks/`. Overlays: `experiments/phase16b/overlays/`. Edit: `experiments/phase16b/output/edit.json`. Merge check: `experiments/phase16b/output/merge-check.json`.

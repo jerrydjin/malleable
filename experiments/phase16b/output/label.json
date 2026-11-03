@@ -1,0 +1,17 @@
+{
+  "fallback_reason": "no_key",
+  "latency_ms": null,
+  "model_id": null,
+  "provider": null,
+  "raw_reply": null,
+  "reply": {
+    "blocks": "road",
+    "label": "fallen tree",
+    "rationale": "Mock: fixed positive SAM footprint is labelled fallen tree; warn affected routes.",
+    "reach": {
+      "radius_m": 300.0,
+      "scope": "route"
+    }
+  },
+  "source": "fallback"
+}
