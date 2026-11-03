@@ -1,19 +1,27 @@
-# Phase 16b footage search
+# Phase 16b footage
+
+The original file is `footage/400_SB_Crash.webm`. Its sha256 is `ab4e593ff348713a41ab341cb5fde51de8ef7f7896d139702e63ba4948df31f3`, the same digest supplied with the attachment. Width 1920, height 1080, duration 17.585 s.
+
+| Item | As listed |
+| --- | --- |
+| Page | https://commons.wikimedia.org/wiki/File:400_SB_Crash.webm |
+| Author | Dash |
+| Licence | Commons public-domain statement for an automated recording. Not independently adjudicated. |
+
+The cuts below were made in this workspace with `ffmpeg -ss <start> -t <dur> -i 400_SB_Crash.webm -c:v libx264 -pix_fmt yuv420p -an`. Hashes and frame counts are in `footage/MANIFEST.json`.
+
+| Clip | Window | What it is |
+| --- | --- | --- |
+| A | 11.0–14.0 s | Approach. Jackknifed trucks block the lanes ahead. |
+| B | 14.5–17.5 s | SAME SOURCE, DIFFERENT VIEWPOINT. A closer stretch of this same recording. Not a second vehicle. Not an independent camera. |
+| C | 0.0–5.0 s | Clear snowy highway. No jackknifed obstruction in the lanes ahead. |
+
+## Prior acquisition stop
+
+The previous run stopped before any of these files were in the tree. That stop, verbatim:
 
 STOP — Phase 16b Step 1: no complete licensed footage set was acquired and visually verified in this environment. Wikimedia runtime requests were denied by the proxy (CONNECT 403), and automatic approval review rejected a subsequent access retry. Candidate licence descriptions were found, but A/B/C frames, timestamps, lane obstruction and second viewpoint remain unverified. No SAM inference, model call or merge experiment was run.
 
-No A, B or C clip was selected, downloaded, trimmed or inspected. Timestamps and independent-view claims remain unverified. These are candidate source-page descriptions, not experimental inputs. Full search queries, access attempts, exact original media URLs, and the automatic approval rejection are in [search-evidence.json](search-evidence.json).
+This continuation did not retry Wikimedia. The bytes above are the attached file. The earlier candidate table and the access errors remain in `search-evidence.json` and `STOP.md`.
 
-| Candidate | Author as listed | Licence as listed | Timestamp selection | Finding |
-| --- | --- | --- | --- | --- |
-| [Dashcam video of 2012 Branson tornado damage](https://commons.wikimedia.org/wiki/File:Dashcam_vid_of_2012_Branson_tornado_damage.webm) | SvobodaKC | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | Unselected | Source description and licence read; frames unavailable. Lane blockage and repeated viewpoint unverified. |
-| [Police dashcam captures small plane crashing onto Florida road](https://commons.wikimedia.org/wiki/File:Police_Dashcam_Captures_Small_Plane_Crashing_Onto_Florida_Road.webm) | PoliceActivity | Public domain, Florida government record statement on Commons | Unselected | Source description read; frames unavailable. No A/B/C segment designated. |
-| [400 SB Crash](https://commons.wikimedia.org/wiki/File:400_SB_Crash.webm) | Dash | Public-domain automated-recording statement on Commons | Unselected | Source description read; licence assertion not independently adjudicated and frames unavailable. |
-| [ROAD dataset](https://github.com/gurkirt/road-dataset) | Gurkirt Singh et al.; Oxford RobotCar source | CC BY-NC-SA 4.0 | Unselected | Excluded: the noncommercial licence is outside the permitted list. |
-| [RoadDamageDetector](https://github.com/sekilab/RoadDamageDetector/blob/master/README.md) | Not verified | Dataset images described as CC BY-SA 4.0 in search result | Unselected | Images do not establish usable obstruction video or a second viewpoint. |
-| [SyntheticStreetScenes](https://huggingface.co/datasets/mehmetkeremturkcan/SyntheticStreetScenes) | Not verified | Search result says CC BY 4.0 | Unselected | Synthetic footage fails the real-footage requirement. |
-| [Traffic surveillance video corpus](https://huggingface.co/datasets/thundarstrom/traffic-surveillance-video-corpus) | Not verified | Search result says CC BY 4.0 | Unselected | Individual provenance, obstruction and second view not verified. |
-
-The retained [A36 photograph attribution](../../assets/phase15/ATTRIBUTION.md) names David Martin and CC BY-SA 2.0. That single still cannot establish real video or second-clip confirmation. It was not reused as footage.
-
-Search covered Commons dashcam categories, fallen-tree/obstruction video, GitHub road-hazard video datasets, and permitted-licence alternatives. Commons runtime requests failed before an origin response, with `Tunnel connection failed: 403 Forbidden`. Thus no origin response headers or video bytes are claimed. The web tool could read source descriptions but reported unsupported `video/webm` when opening media. No proxy workaround followed the denied retry.
+B is one viewpoint of the file above. It is not a second car and not an independent camera.

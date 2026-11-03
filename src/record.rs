@@ -251,7 +251,15 @@ pub fn sha256(path: &str) -> Result<String, String> {
         .ok_or("empty sha256".into())
 }
 /// Read committed evidence only. No image decoding, model inference or Python at score time.
+///
+/// `MALLEABLE_SAM_CACHE`, when set to a non-empty path, selects a live cache in
+/// the same format. Unset, this is the Phase 15 photograph cache.
 pub fn sam_summary() -> Result<serde_json::Value, String> {
+    if let Ok(path) = std::env::var("MALLEABLE_SAM_CACHE") {
+        if !path.is_empty() {
+            return sam_summary_from(&path);
+        }
+    }
     let v: serde_json::Value = serde_json::from_slice(
         &std::fs::read("assets/phase15/sam.json").map_err(|e| e.to_string())?,
     )
@@ -260,6 +268,35 @@ pub fn sam_summary() -> Result<serde_json::Value, String> {
         || v["image_sha256"] != "07030ee22246306d776c80c74defe29c214914eac81cb2a7fbaae17b3997e55d"
         || v["mask_sha256"] != sha256("assets/phase15/mask.png")?
     {
+        return Err("SAM cache integrity mismatch".into());
+    }
+    Ok(v)
+}
+
+/// Live SAM output in the Phase 15 cache format.
+///
+/// Requires `version` 1, model id `facebook/sam2.1-hiera-tiny`, `device` `cpu`,
+/// and `image_path` / `mask_path` files whose sha256 match the cache.
+pub fn sam_summary_from(path: &str) -> Result<serde_json::Value, String> {
+    let v: serde_json::Value = serde_json::from_slice(
+        &std::fs::read(path).map_err(|e| e.to_string())?,
+    )
+    .map_err(|e| e.to_string())?;
+    if v["version"] != serde_json::json!(1)
+        || v["model_id"] != "facebook/sam2.1-hiera-tiny"
+        || v["device"] != "cpu"
+    {
+        return Err("SAM cache integrity mismatch".into());
+    }
+    let image = v["image_path"]
+        .as_str()
+        .ok_or("SAM cache missing image_path")?;
+    let mask = v["mask_path"]
+        .as_str()
+        .ok_or("SAM cache missing mask_path")?;
+    let image_hash = sha256(image)?;
+    let mask_hash = sha256(mask)?;
+    if v["image_sha256"] != image_hash.as_str() || v["mask_sha256"] != mask_hash.as_str() {
         return Err("SAM cache integrity mismatch".into());
     }
     Ok(v)

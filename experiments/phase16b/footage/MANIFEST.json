@@ -1,0 +1,45 @@
+{
+  "original": {
+    "path": "experiments/phase16b/footage/400_SB_Crash.webm",
+    "source_url": "https://commons.wikimedia.org/wiki/File:400_SB_Crash.webm",
+    "sha256": "ab4e593ff348713a41ab341cb5fde51de8ef7f7896d139702e63ba4948df31f3",
+    "width": 1920,
+    "height": 1080,
+    "duration_s": 17.585,
+    "sha256_check": "matched the supplied hash before any cut"
+  },
+  "cuts": {
+    "command": "ffmpeg -ss <start> -t <dur> -i 400_SB_Crash.webm -c:v libx264 -pix_fmt yuv420p -an <clip>",
+    "A": {
+      "path": "experiments/phase16b/footage/clip_A.mp4",
+      "start_s": 11.0,
+      "duration_s": 3.0,
+      "sha256": "cbc0678241cfed684f0bb41d7e6df4587bdf8af09cb75a8cdb260abd524c8b0c",
+      "width": 1920,
+      "height": 1080,
+      "nb_frames": 90,
+      "avg_frame_rate": "30/1"
+    },
+    "B": {
+      "path": "experiments/phase16b/footage/clip_B.mp4",
+      "start_s": 14.5,
+      "duration_s": 3.0,
+      "sha256": "69aacfa02ba73de9d2f5c63fcf7155bb5dc71fbf8c71eda731677669bf08a44a",
+      "width": 1920,
+      "height": 1080,
+      "nb_frames": 90,
+      "avg_frame_rate": "30/1",
+      "viewpoint": "SAME SOURCE, DIFFERENT VIEWPOINT"
+    },
+    "C": {
+      "path": "experiments/phase16b/footage/clip_C.mp4",
+      "start_s": 0.0,
+      "duration_s": 5.0,
+      "sha256": "f2a0694c5b131541d31d275689a8d53210217df4647763fb5063edf6a6647a99",
+      "width": 1920,
+      "height": 1080,
+      "nb_frames": 150,
+      "avg_frame_rate": "30/1"
+    }
+  }
+}
