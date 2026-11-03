@@ -126,6 +126,13 @@ fn main() -> ExitCode {
             }
         };
         println!("Replay: saved trajectories and dialogue; model calls=0");
+        if let Some(shot) = &archive.board.phase15a {
+            println!("{}", shot.label);
+            println!("{}", shot.note);
+            for beat in &shot.beats {
+                println!("{}", beat.text);
+            }
+        }
         if let Some(path) = &args.export_replay {
             if let Err(error) = std::fs::write(path, malleable::board::render_board_html(&archive.board))
             {

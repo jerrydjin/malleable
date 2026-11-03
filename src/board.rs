@@ -97,6 +97,9 @@ pub struct DinnerBoard {
     pub reason: Option<crate::reason::ReasonReport>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub rush: Option<crate::rush_board::RushBoard>,
+    /// Playback of one already-scored Phase 15a run. Absent on every other board.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub phase15a: Option<crate::phase15a_replay::Phase15aView>,
 }
 
 /// Run the dinner path and shape it for the window.
@@ -197,6 +200,7 @@ pub fn board_from_run_with(
         demo: None,
         reason: None,
         rush: None,
+        phase15a: None,
     }
 }
 
@@ -354,7 +358,19 @@ pub fn render_board_html(board: &DinnerBoard) -> String {
             verdict = esc(&strip.verdict),
         ));
     }
+    let title = board
+        .phase15a
+        .as_ref()
+        .map(|shot| shot.label.as_str())
+        .unwrap_or("dinner board");
+    let aria = board
+        .phase15a
+        .as_ref()
+        .map(|shot| shot.label.as_str())
+        .unwrap_or("Cars negotiate on a town road network");
     PAGE_TEMPLATE
+        .replace("__TITLE__", &esc(title))
+        .replace("__ARIA__", &esc(aria))
         .replace("__PILLS__", &pills)
         .replace("__BOARD_JSON__", &json)
 }
@@ -372,7 +388,7 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-store">
-<title>dinner board</title>
+<title>__TITLE__</title>
 <style>
   :root { color-scheme: light; }
   html, body { margin: 0; height: 100%; background: #fff; }
@@ -394,7 +410,7 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
 </style>
 </head>
 <body>
-<svg id="network" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cars negotiate on a town road network"></svg>
+<svg id="network" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="__ARIA__"></svg>
 <div id="pills">__PILLS__</div>
 <button id="replay" type="button" title="Replay the saved words and motion (R)">replay</button>
 <form id="reason-form" hidden>
@@ -408,8 +424,20 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
   var isReplay = /[?&]replay=1(?:&|$)/.test(location.search);
   var isDemo = !!data.demo && (isReplay || /[?&]demo=1(?:&|$)/.test(location.search));
   var isRush = !!data.rush;
-  var isReason = !isRush && (!!data.reason || /[?&]reason=1(?:&|$)/.test(location.search));
+  var phase15a = data.phase15a || null;
+  var isPhase15a = !!phase15a;
+  var isReason = !isRush && !isPhase15a && (!!data.reason || /[?&]reason=1(?:&|$)/.test(location.search));
   if(isRush){document.getElementById("pills").hidden=true;document.getElementById("pills").style.display="none";document.getElementById("replay").hidden=true;}
+  if(isPhase15a){
+    document.title = phase15a.label;
+    var phaseNet = document.getElementById("network");
+    phaseNet.setAttribute("aria-label", phase15a.label);
+    phaseNet.dataset.phase15aLabel = phase15a.label;
+    phaseNet.dataset.seed = String(phase15a.seed);
+    var phaseReplay = document.getElementById("replay");
+    phaseReplay.textContent = phase15a.label;
+    phaseReplay.title = phase15a.label;
+  }
   var demoView = null;
   var maxTick = 0;
   data.strips.forEach(function (strip) {
@@ -860,9 +888,21 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     if (p.y > bounds.maxY) bounds.maxY = p.y;
   }
   links.forEach(function (r) { r.pts.forEach(take); });
-  if (!isRush) {
+  if (!isRush && !isPhase15a) {
     dinnerMain.pts.forEach(take);
     dinnerRamp.pts.forEach(take);
+  }
+  if (isPhase15a) {
+    var focus = links[phase15a.link];
+    if (focus) {
+      var pad = phase15a.focus_m || 220;
+      bounds = { minX: 1e9, minY: 1e9, maxX: -1e9, maxY: -1e9 };
+      focus.pts.forEach(take);
+      bounds.minX -= pad;
+      bounds.minY -= pad;
+      bounds.maxX += pad;
+      bounds.maxY += pad;
+    }
   }
 
   function svgNode(tag, attrs, text) {
@@ -917,7 +957,7 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     stroke(low, "#e2e2e2", lane + 0.6);
     if (!isRush) stroke(high.filter(function (r) { return r.cls !== "connector"; }), "#fff", lane + 1.6 * view.sc);
     stroke(high, "#e2e2e2", lane + 0.6);
-    if(!isRush)stroke([dinnerMain, dinnerRamp], "#e2e2e2", lane + 0.6);
+    if(!isRush && !isPhase15a)stroke([dinnerMain, dinnerRamp], "#e2e2e2", lane + 0.6);
   }
 
   function drawHome(ctx, view) {
@@ -1324,6 +1364,59 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     });
   }
 
+  function drawPhase15a(ctx, view, now) {
+    var elapsed = seekTo != null ? Math.max(0, seekTo) : elapsedSec(now);
+    var beats = phase15a.beats;
+    var hold = 6;
+    var index = Math.min(beats.length - 1, Math.floor(elapsed / hold));
+    var beat = beats[index];
+    var complete = elapsed >= beats.length * hold;
+    var svg = document.getElementById("network");
+    svg.dataset.phase15aLabel = phase15a.label;
+    svg.dataset.phase15aBeat = beat.kind;
+    svg.dataset.phase15aComplete = String(complete);
+    svg.dataset.time = Number(beat.at_s).toFixed(3);
+    if (complete) {
+      svg.dataset.rushComplete = "true";
+      svg.dataset.recordingComplete = "true";
+    }
+    var link = links[phase15a.link];
+    if (link) {
+      ctx.appendChild(svgNode("path", { d: pathFor(view, link.pts), fill: "none", stroke: "#6e4434",
+        "stroke-width": 6, "data-role": "phase15a-edit-link", "data-link": phase15a.link }));
+    }
+    ctx.appendChild(svgNode("text", {
+      x: 16, y: 28, fill: "#222", "font-family": "system-ui, sans-serif", "font-size": 16,
+      stroke: "white", "stroke-width": 4, "paint-order": "stroke", "data-role": "phase15a-label"
+    }, phase15a.label));
+    ctx.appendChild(svgNode("text", {
+      x: 16, y: 48, fill: "#555", "font-family": "system-ui, sans-serif", "font-size": 12,
+      stroke: "white", "stroke-width": 4, "paint-order": "stroke", "data-role": "phase15a-note"
+    }, phase15a.note));
+    beat.text.split(" · ").forEach(function (line, i) {
+      ctx.appendChild(svgNode("text", {
+        x: 16, y: 78 + i * 18, fill: "#222", "font-family": "system-ui, sans-serif", "font-size": 14,
+        stroke: "white", "stroke-width": 4, "paint-order": "stroke",
+        "data-role": "phase15a-beat", "data-beat": beat.kind, "data-line": String(i)
+      }, line));
+    });
+    if (beat.car != null && link) {
+      var mid = link.pts[Math.floor(link.pts.length / 2)];
+      var at = toScreen(view, mid);
+      var verb = beat.kind === "propose" ? "proposes edit" : "reviews edit";
+      ctx.appendChild(svgNode("circle", {
+        cx: at.x, cy: at.y, r: 8, fill: "none",
+        stroke: beat.kind === "propose" ? "#2f6fdb" : "#2f7a4a", "stroke-width": 2,
+        "data-role": "phase15a-car", "data-car": beat.car, "data-beat": beat.kind
+      }));
+      ctx.appendChild(svgNode("text", {
+        x: at.x + 12, y: at.y - 12, fill: "#222", "font-family": "system-ui, sans-serif", "font-size": 13,
+        stroke: "white", "stroke-width": 3, "paint-order": "stroke",
+        "data-role": "phase15a-car-label", "data-car": beat.car
+      }, verb + " · car " + beat.car));
+    }
+  }
+
   function paint(now) {
     var canvas = document.getElementById("network");
     if (!canvas) return;
@@ -1331,9 +1424,12 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     var ctx = fitted.ctx;
     var view = makeView(fitted.w, fitted.h);
     drawRoads(ctx, view);
-    if(!isRush)drawHome(ctx, view);
-    drawTown(ctx, view, townTime(now));
-    drawIncidents(ctx,view,townTime(now));
+    if(!isRush && !isPhase15a)drawHome(ctx, view);
+    if(!isPhase15a)drawTown(ctx, view, townTime(now));
+    drawIncidents(ctx,view,isPhase15a ? phase15a.incident_visible_s : townTime(now));
+    if (isPhase15a) {
+      drawPhase15a(ctx, view, now);
+    } else {
     var simT = simTime(now);
     var strip = data.strips[active];
     if (!strip) return;
@@ -1347,6 +1443,7 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
       drawPriorityHome(ctx, view, townTime(now));
       drawStory(ctx, view, townTime(now));
       drawReason(ctx, view, townTime(now));
+    }
     }
     if(town.attribution){
       var credit=svgNode("a",{href:"https://www.openstreetmap.org/copyright",target:"_blank"});

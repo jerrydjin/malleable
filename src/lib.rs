@@ -23,6 +23,7 @@ pub mod make_way;
 pub mod muse;
 pub mod negotiate;
 pub mod network;
+pub mod phase15a_replay;
 pub mod prefs;
 pub mod reason;
 pub mod reason_server;
