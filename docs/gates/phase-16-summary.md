@@ -119,3 +119,7 @@ in [verification.json](../../experiments/phase16/rerun/verification.json).
 **Handoff:** Jerry reviews PR #48's new topology STOP. A different map extent
 or affected destination needs an explicit revised experiment before traffic;
 no efficacy inference follows from this graph check.
+
+## Map change (pre-traffic)
+
+The user authorizes one west/east expansion from longitude **−122.410 to −122.400** to **−122.425 to −122.385**; latitude stays **37.738 to 37.762**. The reason is to include a surface-grid connection from the last southbound exit to a southbound US-101 on-ramp past the unchanged tree. The tree point, closure and Caltrans volume stay fixed. This declaration precedes traffic. No second widening is authorized. The expanded-map gate is pending; no traffic runs have begun. The exact declaration and fixed-input hashes are in `experiments/phase16/map-change/plan.json`.

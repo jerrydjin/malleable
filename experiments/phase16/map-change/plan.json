@@ -1,0 +1,51 @@
+{
+  "phase": "16",
+  "stage": "one authorized pre-traffic map fix",
+  "declared_at_utc": "2026-11-03T11:37:41.228933+00:00",
+  "previous_stop_commit": "a7337c25fe41565f184b5799731a301988e1e3e7",
+  "old_bbox_west_south_east_north": [
+    -122.41,
+    37.738,
+    -122.4,
+    37.762
+  ],
+  "new_bbox_west_south_east_north": [
+    -122.425,
+    37.738,
+    -122.385,
+    37.762
+  ],
+  "reason": "Widen west and east only so the surface grid can connect the last southbound exit to a US-101 southbound on-ramp beyond the unchanged tree; verify the connection rather than assume it exists.",
+  "allowed_bbox_expansions": 1,
+  "further_expansion_allowed": false,
+  "retained_tree": {
+    "distance_from_exit_retained_m": 1508.3524600475923,
+    "duration_s": 900,
+    "footprint_length_m": 8,
+    "host_edge": 1611,
+    "projected_center_station_m": 11.442181421491796,
+    "projection_distance_m": 0.0066429979956870045,
+    "source_center_lon_lat": [
+      -122.40814970805161,
+      37.73936974950687
+    ],
+    "source_way": 1343758309,
+    "start_s": 240,
+    "sumo_edge": "1343758309",
+    "sumo_edge_lanes": 5,
+    "sumo_edge_length_m": 37.06
+  },
+  "fixed_input_sha256": {
+    "assets/phase15e/placement.json": "2c20b765666d7f679e50783035b1b57099ecba37c1d1e58222972454a16016ab",
+    "assets/phase15e/traffic-inputs.json": "cc75f4eb281c2ad0223705295cc191b4d703025d0abf829dd6516b1b484c0379",
+    "assets/phase15e/volume.json": "09af4d93bc3ffbfefdd7ed641b59d135857ac49a468309ec6203e49f161c4e30",
+    "experiments/phase15e/traffic.rs": "20d20c9f10a74cc9fe2c998621f58c4dcabe6e1d3dd8dfb5baca92c9717db750",
+    "maps/us101.json": "554e5a2a62d166374ff97e320b1b1daa6317f991b44edaaa142254d2b4e06b35",
+    "maps/us101.osm": "4ad388ade425c54fd536ffab2440970531845a7b445864ac3d4bc79ba9e7e8d4"
+  },
+  "mainline_vph_each_direction": 7600,
+  "required_gate": "Drivable route from last southbound exit to every affected destination avoiding all closed edges; report route edges, length and free-flow time. If absent, STOP and identify missing on-ramp/link.",
+  "traffic_runs_before_declaration": 0,
+  "record_runs_before_declaration": 0,
+  "scope_after_passing_map_gate": "Continue Phase16 brief unchanged: demand, see-only validity, committed preregistration before record arm, spoof, a-d at300m and60/150m secondary; 15s gain >=7/10seeds."
+}
