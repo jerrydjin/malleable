@@ -1,0 +1,124 @@
+{
+  "task": "Write only a hazard label and a reach. Do not decide merge and do not move a vehicle.",
+  "sam_model_id": "facebook/sam2.1-hiera-tiny",
+  "threshold_lane_pixels": 10000,
+  "consecutive_required": 3,
+  "frame_stride": 10,
+  "viewpoint_note": "B is the SAME SOURCE, DIFFERENT VIEWPOINT. It is not a second vehicle and not an independent camera.",
+  "clips": [
+    {
+      "id": "A",
+      "role": "proposal",
+      "source_window_s": [
+        11.0,
+        14.0
+      ],
+      "prompt_point_xy": [
+        910,
+        560
+      ],
+      "lane_polygon_xy": [
+        [
+          780,
+          520
+        ],
+        [
+          1180,
+          520
+        ],
+        [
+          1680,
+          860
+        ],
+        [
+          280,
+          860
+        ]
+      ],
+      "positive_frames": 2,
+      "longest_consecutive_positive": 1,
+      "detected": false,
+      "since_s": null,
+      "confirm_at_s": null,
+      "max_lane_pixels": 16450,
+      "median_lane_pixels": 8332,
+      "sampled_frames": 9
+    },
+    {
+      "id": "B",
+      "role": "SAME SOURCE, DIFFERENT VIEWPOINT",
+      "source_window_s": [
+        14.5,
+        17.5
+      ],
+      "prompt_point_xy": [
+        880,
+        530
+      ],
+      "lane_polygon_xy": [
+        [
+          780,
+          520
+        ],
+        [
+          1180,
+          520
+        ],
+        [
+          1680,
+          860
+        ],
+        [
+          280,
+          860
+        ]
+      ],
+      "positive_frames": 9,
+      "longest_consecutive_positive": 9,
+      "detected": true,
+      "since_s": 14.5,
+      "confirm_at_s": 15.166666666666666,
+      "max_lane_pixels": 13090,
+      "median_lane_pixels": 12137,
+      "sampled_frames": 9
+    },
+    {
+      "id": "C",
+      "role": "negative_control",
+      "source_window_s": [
+        0.0,
+        5.0
+      ],
+      "prompt_point_xy": [
+        980,
+        620
+      ],
+      "lane_polygon_xy": [
+        [
+          780,
+          520
+        ],
+        [
+          1180,
+          520
+        ],
+        [
+          1680,
+          860
+        ],
+        [
+          280,
+          860
+        ]
+      ],
+      "positive_frames": 0,
+      "longest_consecutive_positive": 0,
+      "detected": false,
+      "since_s": null,
+      "confirm_at_s": null,
+      "max_lane_pixels": 2225,
+      "median_lane_pixels": 1786,
+      "sampled_frames": 15
+    }
+  ]
+}

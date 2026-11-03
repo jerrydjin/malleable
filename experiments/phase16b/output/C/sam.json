@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "model_id": "facebook/sam2.1-hiera-tiny",
+  "hf_revision": "de431c4043854a71d8101e17995dfe596bf101a5",
+  "torch_version": "2.15.0+cpu",
+  "transformers_version": "5.22.1",
+  "device": "cpu",
+  "dtype": "float32",
+  "seed": 0,
+  "torch_threads": 1,
+  "prompt_points": [
+    [
+      980,
+      620
+    ]
+  ],
+  "prompt_labels": [
+    1
+  ],
+  "multimask_output": false,
+  "mask_threshold": 0.0,
+  "iou_scores": [
+    0.7245978116989136
+  ],
+  "bbox_xyxy_inclusive": [
+    907,
+    591,
+    1016,
+    626
+  ],
+  "area_fraction": 0.0010730131172839506,
+  "image_size_wh": [
+    1920,
+    1080
+  ],
+  "source_url": "https://commons.wikimedia.org/wiki/File:400_SB_Crash.webm",
+  "image_path": "experiments/phase16b/output/C/evidence.png",
+  "mask_path": "experiments/phase16b/output/C/evidence-mask.png",
+  "image_sha256": "36348b25462c294c046dd8edd1c1bfd5af43d5e82bdd3270d3fe97bdaa13bb93",
+  "mask_sha256": "6b90b8820f8e5e3a0ff2b644ad6217a12cdf6cae7ae73e9fdcbf9fab27eff015",
+  "clip": "C",
+  "viewpoint": "negative_control",
+  "evidence_index": 10,
+  "evidence_source_s": 0.3333333333333333,
+  "evidence_lane_pixels": 2225
+}
