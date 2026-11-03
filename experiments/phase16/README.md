@@ -1,4 +1,18 @@
-# Phase 16: citation-fix rerun stops at missing bypass
+# Phase 16: single authorized expansion stops at missing SB re-entry
+
+The one authorized west/east bbox expansion has now been built and checked.
+Original map checks pass; the required surface-to-southbound re-entry beyond
+the fixed tree is absent within the unchanged latitude bounds. No second
+widening, traffic, validity, record or spoof run followed the failed gate.
+
+Current evidence and commands are in [the summary](../../docs/gates/phase-16-summary.md)
+and [map-change/map-gate.json](map-change/map-gate.json). Use `map_gate.py --expanded`
+for the expanded audit (expected exit 2), `verify_map_change.py` for offline
+preservation/reproduction (expected exit 0), and `report_map_change.py` to
+regenerate the current report. Default `map_gate.py` and `report.py` refer to
+the historical narrow-map result below. Earlier STOP artifacts remain intact.
+
+## Historical narrow-map result
 
 The updated request corrects the prior gain citation to 15 s on at least 7/10
 seeds and authorizes a rerun on this branch. SUMO 1.28.0 installs successfully.

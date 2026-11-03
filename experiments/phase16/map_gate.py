@@ -5,6 +5,7 @@ import collections
 import copy
 import gzip
 import hashlib
+import heapq
 import importlib.util
 import json
 from pathlib import Path
@@ -16,6 +17,8 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "experiments/phase16/rerun"
 BOX = (-122.410, 37.738, -122.400, 37.762)
+SOURCE = ROOT / "maps/us101.osm"
+EXPANDED = False
 STOP_COMMIT = "cafad04f4635a8d8113874555425d525768a8e0d"
 
 
@@ -38,7 +41,8 @@ def clip_osm():
         "retained_boundary", ROOT / "experiments/phase15e/import_boundary.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    source = ET.parse(ROOT / "maps/us101.osm").getroot()
+    with (gzip.open(SOURCE, "rb") if SOURCE.suffix == ".gz" else SOURCE.open("rb")) as stream:
+        source = ET.parse(stream).getroot()
     nodes = {int(n.get("id")): n for n in source.findall("node")}
     points = {key: (float(n.get("lon")), float(n.get("lat"))) for key, n in nodes.items()}
     next_node = max(nodes) + 1
@@ -133,7 +137,7 @@ def clip_osm():
     with gzip.GzipFile(filename=str(path), mode="wb", mtime=0) as destination:
         destination.write(ET.tostring(result, encoding="utf-8", xml_declaration=True))
     write_json(OUT / "network/clipping.json", {
-        "source": "maps/us101.osm", "source_sha256": sha(ROOT / "maps/us101.osm"),
+        "source": str(SOURCE.relative_to(ROOT)), "source_sha256": sha(SOURCE),
         "bbox_west_south_east_north": BOX, "nodes": len(used), "ways": len(ways),
         "synthetic_boundary_nodes": len(new_nodes), "preserved_restrictions": kept_relations,
         "source_ways": source_ways, "clipped_sha256": sha(path)})
@@ -155,7 +159,7 @@ def audit():
     import sumolib
     from sumolib import geomhelper
     net_path = OUT / "network/us101.net.xml.gz"
-    net = sumolib.net.readNet(str(net_path))
+    net = sumolib.net.readNet(str(net_path), withInternal=EXPANDED)
     clipping = json.loads((OUT / "network/clipping.json").read_text())
     placement = json.loads((ROOT / "assets/phase15e/placement.json").read_text())
     manifest = json.loads((ROOT / "assets/phase15e/import-manifest.json").read_text())
@@ -192,6 +196,52 @@ def audit():
             result.append(target)
             target = previous[target]
         return result[::-1]
+
+    def fastest_route(starts, target, closed):
+        """Static passenger Dijkstra, including SUMO internal connector costs.
+
+        Length and time belong to the fastest free-flow path, including the
+        complete first and last edges. No traffic or signal waiting is modeled.
+        """
+        best, previous, queue = {}, {}, []
+        for edge in starts:
+            if edge.getID() in closed or not edge.allows("passenger"):
+                continue
+            cost = edge.getLength() / edge.getSpeed()
+            best[edge.getID()] = (cost, edge.getLength())
+            previous[edge.getID()] = None
+            heapq.heappush(queue, (cost, edge.getID()))
+        while queue:
+            cost, ident = heapq.heappop(queue)
+            if cost != best[ident][0]:
+                continue
+            if ident == target:
+                return {"exists": True, "edges": path(previous, target),
+                        "length_m": best[ident][1], "free_flow_time_s": cost}
+            edge = net.getEdge(ident)
+            for nxt in sorted(outgoing(edge), key=lambda e: e.getID()):
+                if nxt.getID() in closed:
+                    continue
+                options = []
+                for connection in edge.getOutgoing()[nxt]:
+                    if not (connection.getFromLane().allows("passenger")
+                            and connection.getToLane().allows("passenger")):
+                        continue
+                    via, seconds, length = connection.getViaLaneID(), 0., 0.
+                    while via:
+                        lane = net.getLane(via)
+                        length += lane.getLength()
+                        seconds += lane.getLength() / lane.getSpeed()
+                        links = lane.getOutgoing()
+                        via = links[0].getViaLaneID() if links else ""
+                    options.append((seconds, length))
+                seconds, length = min(options)
+                candidate = cost + seconds + nxt.getLength() / nxt.getSpeed()
+                if nxt.getID() not in best or candidate < best[nxt.getID()][0]:
+                    best[nxt.getID()] = (candidate, best[ident][1] + length + nxt.getLength())
+                    previous[nxt.getID()] = ident
+                    heapq.heappush(queue, (candidate, nxt.getID()))
+        return {"exists": False, "edges": None, "length_m": None, "free_flow_time_s": None}
 
     chains = []
     for chain in placement["chains"]:
@@ -238,6 +288,10 @@ def audit():
         destinations.append({"edge": target, "path_via_ramp_before_closure": path(unblocked, target),
                              "path_avoiding_tree": path(blocked, target),
                              "valid_alternative": target in blocked})
+        if EXPANDED:
+            destinations[-1]["bypass_route"] = fastest_route(ramps, target, {e.getID() for e in tree_edges})
+            destinations[-1]["open_tree_control_route"] = fastest_route(ramps, target, set())
+            assert destinations[-1]["bypass_route"]["exists"] == (target in blocked)
     post_tree = [e.getID() for e in net.getEdges() if original(e) in {
         by_host[i]["osm_way"] for i in (1583, 443, 442)}]
     map_passed = all(c["continuous"] for c in chains) and bool(surface) and bool(ramps) and (
@@ -280,7 +334,7 @@ def audit():
         "phase": "16 citation-fix rerun", "decision": "CONTINUE" if stop is None else "STOP", "stop": stop,
         "map_gate_passed": map_passed, "affected_destination_alternative_gate_passed": alternative_passed,
         "sumo_version": subprocess.check_output(["sumo", "--version"], text=True).splitlines()[0],
-        "bbox_west_south_east_north": BOX, "source_osm_sha256": sha(ROOT / "maps/us101.osm"),
+        "bbox_west_south_east_north": BOX, "source_osm_sha256": sha(SOURCE),
         "clipped_osm_sha256": sha(OUT / "network/clipped.osm.xml.gz"), "sumo_net_sha256": sha(net_path),
         "network_edges": len(net.getEdges()), "network_nodes": len(net.getNodes()), "mainline_chains": chains,
         "last_exit_osm_node": upstream, "exit_ramp_edges": [e.getID() for e in ramps],
@@ -301,6 +355,45 @@ def audit():
                   "The blocked-way removal is only a topological test: an 8 m all-lane cut on that way has the same reachability effect. "
                   "Edge-level reachability permits lane changes, making a no-path finding conservative.",
         "caveat": "No SUMO time-step was run. Traffic validity and efficacy remain unmeasured."}
+    if EXPANDED:
+        post_ids = set(post_tree) | {tree_edge.getID()}
+        incoming = []
+        for ident in sorted(post_tree):
+            edge = net.getEdge(ident)
+            node = edge.getFromNode()
+            sources = [e for e in node.getIncoming() if not e.isSpecial() and e.allows("passenger")]
+            incoming.append({"downstream_edge": ident, "join_node": node.getID(),
+                             "incoming_edges": sorted(e.getID() for e in sources),
+                             "non_mainline_incoming_edges": sorted(e.getID() for e in sources if e.getID() not in post_ids),
+                             "outgoing_ramps": sorted(e.getID() for e in node.getOutgoing()
+                                                      if "motorway_link" in e.getType())})
+        if not map_passed:
+            stop = ("STOP: the single authorized east-west expansion failed an original structural map check. "
+                    "No further widening or traffic, validity, record or spoof run was performed.")
+        elif not alternative_passed:
+            missing_reentry = not any(item["non_mainline_incoming_edges"] for item in incoming)
+            outbound = any("1164067021" in item["outgoing_ramps"] for item in incoming)
+            stop = ("STOP: the single authorized east-west expansion still has no drivable bypass from exit ramp "
+                    "8915060 to affected destination 28326941 while avoiding tree edge 1343758309. ")
+            if missing_reentry:
+                stop += "No southbound on-ramp joins the post-tree mainline inside latitude 37.738 to 37.762; "
+            if outbound:
+                stop += "ramp 1164067021 leaves US-101 for I-280 South and is not a re-entry. "
+            stop += "No further widening or traffic, validity, record or spoof run was performed."
+        result.update({"phase": "16 single pre-traffic map expansion",
+                       "stop": stop, "decision": "CONTINUE" if stop is None else "STOP",
+                       "network_edges": len(net.getEdges(withInternal=False)),
+                       "network_internal_edges": len(net.getEdges(withInternal=True)) - len(net.getEdges(withInternal=False)),
+                       "network_loaded_edges": len(net.getEdges(withInternal=True)),
+                       "source_osm_path": str(SOURCE.relative_to(ROOT)),
+                       "old_bbox_west_south_east_north": (-122.410, 37.738, -122.400, 37.762),
+                       "bbox_expansions_used": 1, "further_expansion_allowed": False,
+                       "closed_edges": sorted(e.getID() for e in tree_edges),
+                       "post_tree_incoming_connections": incoming,
+                       "affected_destinations_definition": "Unchanged southbound through destination from retained 15e mainline chain; all affected through trips share this destination.",
+                       "route_cost_definition": "Fastest free-flow passenger route from start of last exit ramp through end of affected destination; includes internal connector lengths/times, excludes signal/traffic waiting.",
+                       "independent_retained_graph_confirmation": {
+                           **relaxed, "scope": "Historical narrow bbox only; not evidence of expanded-map reachability"}})
     write_json(OUT / "map-gate.json", result)
     print(json.dumps({k: result[k] for k in ("decision", "map_gate_passed", "affected_destination_alternative_gate_passed", "stop")}))
     return 0 if stop is None else 2
@@ -309,7 +402,18 @@ def audit():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--build", action="store_true")
+    parser.add_argument("--expanded", action="store_true", help="Use only the one authorized west/east expansion")
     args = parser.parse_args()
+    if args.expanded:
+        EXPANDED = True
+        BOX = (-122.425, 37.738, -122.385, 37.762)
+        OUT = ROOT / "experiments/phase16/map-change"
+        SOURCE = OUT / "us101-expanded.osm.gz"
+        plan = json.loads((OUT / "plan.json").read_text())
+        acquisition = json.loads((OUT / "acquisition.json").read_text())
+        assert tuple(plan["new_bbox_west_south_east_north"]) == BOX
+        assert plan["allowed_bbox_expansions"] == 1 and not plan["further_expansion_allowed"]
+        assert sha(SOURCE) == acquisition["merged_compressed_sha256"], "acquired source hash mismatch"
     if args.build:
         build()
     sys.exit(audit())

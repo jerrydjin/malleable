@@ -1,0 +1,145 @@
+{
+  "any_post_tree_node_reachable": false,
+  "bbox_west_south_east_north": [
+    -122.425,
+    37.738,
+    -122.385,
+    37.762
+  ],
+  "blocked_source_way": 1343758309,
+  "incoming_non_mainline_way_ids": [],
+  "last_exit_lon_lat": [
+    -122.4030484,
+    37.7521683
+  ],
+  "last_exit_source_node": 729040229,
+  "method": "Independent raw OSM node adjacency restricted to exact authorized bbox; all highway classes, private/access-restricted ways, and all turn/lane transitions permitted as a conservative upper bound; explicit oneway tags respected. Boundary cuts cannot connect routes through outside geometry.",
+  "post_tree_node_inventory": [
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081556,
+        37.7392654
+      ],
+      "node": 10824617369,
+      "outgoing_non_mainline": [
+        {
+          "destination": "Daly City",
+          "destination_ref": "I 280 South",
+          "highway": "motorway_link",
+          "neighbor_lon_lat": [
+            -122.408265,
+            37.7390172
+          ],
+          "neighbor_node": 10826193886,
+          "oneway": "yes",
+          "ref": null,
+          "way": 1164067021
+        }
+      ],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081592,
+        37.739134
+      ],
+      "node": 14118151358,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081595,
+        37.7390018
+      ],
+      "node": 14118151344,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081562,
+        37.738869
+      ],
+      "node": 311082863,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081509,
+        37.7387357
+      ],
+      "node": 65284885,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081423,
+        37.7386038
+      ],
+      "node": 14118152021,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081312,
+        37.7384715
+      ],
+      "node": 766948075,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4081154,
+        37.7383406
+      ],
+      "node": 10826193895,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4080966,
+        37.7382092
+      ],
+      "node": 65371273,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    },
+    {
+      "incoming_non_mainline": [],
+      "lon_lat": [
+        -122.4080753,
+        37.7380755
+      ],
+      "node": 10826219714,
+      "outgoing_non_mainline": [],
+      "reachable_avoiding_tree": false
+    }
+  ],
+  "post_tree_source_ways": [
+    1164076368,
+    28326944,
+    28326941
+  ],
+  "reached_nodes_avoiding_tree": 15732,
+  "source": "/workspace/phase-16-sumo/experiments/phase16/map-change/us101-expanded.osm.gz",
+  "source_compressed_sha256": "3fedccfbb86a8e2be47e85da0034d383937c1b42708f427a893f0312492c3481",
+  "source_nodes": 161454,
+  "source_raw_sha256": "350371c1aceb279c329caec1d2290528b37c8650098ddeeb893c99a7c0681e75",
+  "source_ways": 20950,
+  "traffic_runs": 0
+}
