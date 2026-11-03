@@ -1,0 +1,11 @@
+test_default_mode_remains_direct_and_invalid_mode_is_rejected (test_composition.ComposedImageMotion.test_default_mode_remains_direct_and_invalid_mode_is_rejected) ... ok
+test_real_optical_flow_chain_recovers_known_lag_translation (test_composition.ComposedImageMotion.test_real_optical_flow_chain_recovers_known_lag_translation) ... ok
+test_column_vector_transform_order_and_scale_normalization (test_composition.HomographyComposition.test_column_vector_transform_order_and_scale_normalization) ... ok
+test_empty_nonfinite_and_singular_transforms_fail_closed (test_composition.HomographyComposition.test_empty_nonfinite_and_singular_transforms_fail_closed) ... ok
+test_missing_or_rejected_middle_fit_cannot_be_bridged (test_composition.HomographyComposition.test_missing_or_rejected_middle_fit_cannot_be_bridged) ... ok
+test_quality_never_exceeds_weakest_component_and_errors_are_explicit (test_composition.HomographyComposition.test_quality_never_exceeds_weakest_component_and_errors_are_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.179s
+
+OK

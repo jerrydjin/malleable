@@ -1,0 +1,124 @@
+{
+  "apply_postprocessing": false,
+  "artifact_manifest": [
+    {
+      "bytes": 24342,
+      "path": "evaluation.json",
+      "sha256": "80885d3b4f8b7fcbf75045b96e52322bd0dc8cd399178adb3c79b451f597275a"
+    },
+    {
+      "bytes": 1083695,
+      "path": "masks.npz",
+      "sha256": "9ca592c082d670e2a8d448fb409ef2592c57e7acb4e2ad5c6486bca0c921f05f"
+    },
+    {
+      "bytes": 10654,
+      "path": "probe.py",
+      "sha256": "ceaa50e7e83438a1dba69c0a0b5f965f22c37f2879cc65a7cbcdd9ef252b3fc7"
+    },
+    {
+      "bytes": 400230,
+      "path": "proposals.json",
+      "sha256": "1bee550e2c75015e8cd2d1e649ec705a448ccdd40aceb5b89bab12b225993576"
+    }
+  ],
+  "boxes_supplied_to_sam": false,
+  "checkpoint_bytes": 898083611,
+  "checkpoint_inference_attempts": 1,
+  "checkpoint_path": "experiments/phase16d/checkpoints/sam2.1_hiera_large.pt",
+  "checkpoint_sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+  "device": "cpu",
+  "dtype": "float32",
+  "elapsed_s": 98.689212279,
+  "estimated_incremental_peak_bytes": 3435973836,
+  "estimated_working_set_peak_bytes": 7023348940,
+  "generation_elapsed_s": 91.40986790599982,
+  "git_commit": "b87c8e46c44a7849f99ab82570af43e349d15b11",
+  "heldout_opened": false,
+  "image_size_wh": [
+    640,
+    360
+  ],
+  "input_jpeg_path": "/workspace/.cache/phase16d/tracking/.A.tracking-4w5ilxno/frames/00020.jpg",
+  "input_jpeg_sha256": "f3914ef0c859f8864602e89bab4350423ead586940a2dffb8caf859a9182684d",
+  "input_rgb_sha256": "0ef90bc94bb1f1647d2f5492a0ad0c3846180a40ced9748f3cf2195490272af2",
+  "memory_preflight": {
+    "anon": 1978232832,
+    "current": 4722905088,
+    "file": 2591723520,
+    "file_dirty": 45056,
+    "inactive_file": 1135529984,
+    "limit": 8589934592
+  },
+  "memory_sampled_peaks": {
+    "anon": 4014510080,
+    "current": 6763847680,
+    "working_set": 5628309504
+  },
+  "model_config": "configs/sam2.1/sam2.1_hiera_l.yaml",
+  "model_id": "facebook/sam2.1-hiera-large",
+  "model_parameter_count": 224446642,
+  "model_source": {
+    "revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "verified_package_files": [
+      {
+        "path": "sam2/build_sam.py",
+        "sha256": "856d64d71e44407401297b551884fb4cd1aba8082de0ff5fc60fac3dd42f094d"
+      },
+      {
+        "path": "sam2/automatic_mask_generator.py",
+        "sha256": "66df266dbe14412305ae3398f0ec1bb21b303a93216b102d767e6c4ee5d4c3d7"
+      },
+      {
+        "path": "sam2/sam2_video_predictor.py",
+        "sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2"
+      },
+      {
+        "path": "sam2/sam2_image_predictor.py",
+        "sha256": "f13e5f9d94e5c8d9d2c3622dab20c8f334c089ef2ee5ea8e199da7d332b029ba"
+      },
+      {
+        "path": "sam2/configs/sam2.1/sam2.1_hiera_t.yaml",
+        "sha256": "f932eac1c6241e910031b2f000a81cd9f8a8d4896e2277ab5ffb721f378b188d"
+      },
+      {
+        "path": "sam2/configs/sam2.1/sam2.1_hiera_l.yaml",
+        "sha256": "1dbd6cb6dfebeaf588c7006ee222c6efbfa9049a7ad472a3cdfb2f5d919e8107"
+      }
+    ]
+  },
+  "not_a_scored_video_run": true,
+  "parameters": {
+    "box_nms_thresh": 1.0,
+    "crop_n_layers": 0,
+    "mask_threshold": 0.0,
+    "min_mask_region_area": 0,
+    "multimask_output": true,
+    "output_mode": "binary_mask",
+    "points_per_batch": 8,
+    "points_per_side": 16,
+    "pred_iou_thresh": 0.0,
+    "stability_score_thresh": 0.0
+  },
+  "phase": "development_proposal_probe",
+  "process_peak_rss_bytes": 2198597632,
+  "raw_mask_count": 768,
+  "sampled_frame_index": 20,
+  "seed": 0,
+  "source_clip": "experiments/phase16b/footage/clip_A.mp4",
+  "source_clip_sha256": "cbc0678241cfed684f0bb41d7e6df4587bdf8af09cb75a8cdb260abd524c8b0c",
+  "source_frame_index": 60,
+  "source_s": 13.0,
+  "started_at_utc": "2026-11-03T22:18:40.869005+00:00",
+  "state": "complete",
+  "threads": 1,
+  "versions": {
+    "numpy": "1.26.4",
+    "opencv": "4.11.0",
+    "python": "3.12.14",
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu"
+  },
+  "vos_optimized": false,
+  "watchdog_working_set_limit_bytes": 8053063680
+}

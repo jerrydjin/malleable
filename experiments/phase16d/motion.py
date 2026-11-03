@@ -165,6 +165,64 @@ def estimate_ego(prev_rgb, curr_rgb, foreground_prev_bool, foreground_curr_bool,
             "reason": "ok", "median_forward_backward_error": float(np.median(fb)), **quality}
 
 
+def compose_ego(steps, start_frame=0):
+    """Compose consecutive, quality-passing previous→current road transforms.
+
+    The caller estimates each adjacent pair once. No failed pair is bridged,
+    and composition does not promote the individual fits' quality. The summed
+    component median pixel errors are a conservative diagnostic, not a new
+    reprojection fit on the lagged pair.
+    """
+    if not steps:
+        return _ego_failure("empty_ego_composition", mode="composed_adjacent",
+                            component_count=0, components=[])
+    components = []
+    for offset, step in enumerate(steps):
+        component = {"from_frame": int(start_frame) + offset,
+                     "to_frame": int(start_frame) + offset + 1, **step}
+        # Keep provenance independent of an input list the caller may reuse.
+        if step.get("H") is not None:
+            matrix = np.asarray(step["H"], dtype=np.float64)
+            component["H"] = matrix.tolist() if matrix.shape == (3, 3) and np.isfinite(matrix).all() else None
+        components.append(component)
+    provenance = {"mode": "composed_adjacent", "component_count": len(components),
+                  "from_frame": int(start_frame), "to_frame": int(start_frame) + len(components),
+                  "components": components,
+                  "quality_aggregation": "minimum_component_matches_inliers_ratio_coverage_and_cells",
+                  "reprojection_error_kind": "sum_of_component_median_pixel_errors_not_a_lagged_fit"}
+    for offset, component in enumerate(components):
+        if not component.get("valid") or component.get("H") is None:
+            return _ego_failure("invalid_ego_component:" + str(offset) + ":"
+                                + str(component.get("reason", "missing_homography")), **provenance)
+    matrix = np.eye(3, dtype=np.float64)
+    for offset, component in enumerate(components):
+        step_matrix = np.asarray(component["H"], dtype=np.float64)
+        if np.linalg.matrix_rank(step_matrix) < 3:
+            return _ego_failure("singular_ego_component:" + str(offset), **provenance)
+        # Column-vector convention: latest transform multiplies on the left.
+        matrix = step_matrix @ matrix
+        scale = matrix[2, 2]
+        if not np.isfinite(matrix).all() or abs(scale) <= np.finfo(float).eps:
+            return _ego_failure("invalid_composed_homography", **provenance)
+        matrix = matrix / scale
+    error_sum = float(sum(float(step["reprojection_error"]) for step in components))
+    if not np.isfinite(error_sum):
+        return _ego_failure("nonfinite_component_reprojection_error", **provenance)
+    return {"H": matrix.tolist(), "valid": True,
+            "reason": "composed_pairwise_road_homographies",
+            "matches": min(int(step["matches"]) for step in components),
+            "inliers": min(int(step["inliers"]) for step in components),
+            "ratio": min(float(step["ratio"]) for step in components),
+            "coverage_fraction": min(float(step["coverage_fraction"]) for step in components),
+            "occupied_cells": min(int(step["occupied_cells"]) for step in components),
+            "reprojection_error": error_sum,
+            "component_reprojection_error_sum_px": error_sum,
+            "median_forward_backward_error": max(float(step.get("median_forward_backward_error", 0.))
+                                                   for step in components),
+            "forward_backward_error_kind": "maximum_component_median_pixel_error",
+            **provenance}
+
+
 def classify_residual(observed_flow_xy, ego_flow_xy, cfg, quality=1.0):
     """Classify two contact-anchor flow vectors; all thresholds come from config."""
     params = cfg["motion"]
@@ -231,34 +289,54 @@ def classify_track(prev_rgb, curr_rgb, prev_mask, curr_mask, ego, cfg):
         return _track_failure("empty_object_mask", current_anchor)
     if not ego.get("valid") or ego.get("H") is None:
         return _track_failure("invalid_ego:" + str(ego.get("reason", "missing")), current_anchor)
-    feature_support = _morph(previous_mask, params["mask_erode_px"], False)
+    fallback_mode = params.get("low_texture_fallback", "disabled")
+    if fallback_mode not in ("disabled", "whole_mask_moving_only"):
+        raise ValueError("Unsupported low-texture motion fallback")
+    full_support = _morph(previous_mask, params["mask_erode_px"], False)
+    feature_support = full_support.copy()
     ys, _ = np.nonzero(previous_mask)
     cutoff = float(ys.max()) - float(params["lower_band_fraction"]) * (float(ys.max()) - float(ys.min()) + 1.)
     feature_support[np.arange(prev.shape[0]) < cutoff, :] = 0
     p0, p1, fb, reason = _feature_flow(prev, curr, feature_support, current_mask, cfg["ego"])
+    support = {"flow_support": "lower_band", "flow_support_fallback_reason": None,
+               "lower_band_featurecount": len(p0), "lower_band_flow_reason": reason,
+               "whole_mask_featurecount": None, "flow_support_area_px": int(np.count_nonzero(feature_support)),
+               "lower_band_cutoff_y_px": cutoff}
+    if len(p0) < int(params["min_features"]) and fallback_mode == "whole_mask_moving_only":
+        p0, p1, fb, reason = _feature_flow(prev, curr, full_support, current_mask, cfg["ego"])
+        support.update({"flow_support": "whole_mask_fallback",
+                        "flow_support_fallback_reason": "lower_band_features_below_minimum",
+                        "whole_mask_featurecount": len(p0),
+                        "flow_support_area_px": int(np.count_nonzero(full_support))})
     if len(p0) < int(params["min_features"]):
-        return _track_failure("too_few_object_features:" + reason, current_anchor, len(p0))
+        return _track_failure("too_few_object_features:" + reason, current_anchor, len(p0), **support)
     cv2.setRNGSeed(int(cfg["ego"]["rng_seed"]))
     affine, inlier_mask = cv2.estimateAffinePartial2D(
         p0, p1, method=cv2.RANSAC,
         ransacReprojThreshold=float(params["affine_reprojection_px"]),
         maxIters=int(params["affine_max_iterations"]), confidence=float(params["affine_confidence"]))
     if affine is None or inlier_mask is None or not np.isfinite(affine).all():
-        return _track_failure("object_affine_fit_failed", current_anchor, len(p0))
+        return _track_failure("object_affine_fit_failed", current_anchor, len(p0), **support)
     inliers = inlier_mask.reshape(-1).astype(bool)
     count, ratio = int(inliers.sum()), float(inliers.sum()) / len(p0)
     if count < int(params["min_features"]) or ratio < float(params["min_affine_inlier_ratio"]):
-        return _track_failure("insufficient_object_affine_inliers", current_anchor, len(p0), inliers=count)
+        return _track_failure("insufficient_object_affine_inliers", current_anchor, len(p0), inliers=count, **support)
     fitted = np.column_stack((p0[inliers], np.ones(count))) @ affine.T
     affine_error = float(np.median(np.linalg.norm(fitted - p1[inliers], axis=1)))
     observed_anchor = affine @ np.array([anchor[0], anchor[1], 1.])
     try:
         expected_anchor = _project(ego["H"], anchor)[0]
     except ValueError:
-        return _track_failure("invalid_contact_projection", current_anchor, len(p0), inliers=count)
+        return _track_failure("invalid_contact_projection", current_anchor, len(p0), inliers=count, **support)
     fit_quality = max(0., 1. - affine_error / float(params["affine_reprojection_px"]))
     quality = min(float(ego.get("ratio", 0.0)), ratio) * fit_quality
     result = classify_residual(observed_anchor - anchor, expected_anchor - anchor, cfg, quality)
+    result.update(support)
+    result["residual_motion_class"] = result["class"]
+    if support["flow_support"] == "whole_mask_fallback" and result["class"] == "STATIONARY":
+        # Upper-body features do not establish a physical road-contact fit.
+        # Their agreement with H cannot accumulate a stationary emission run.
+        result.update({"class": "UNKNOWN", "reason": "whole_mask_fallback_cannot_establish_contact_stationarity"})
     result.update({"contact_xy": observed_anchor.tolist(), "previous_contact_xy": anchor.tolist(),
                    "mask_contact_xy": current_anchor.tolist(), "featurecount": len(p0), "inliers": count,
                    "affine_inlier_ratio": ratio, "affine_reprojection_error": affine_error,

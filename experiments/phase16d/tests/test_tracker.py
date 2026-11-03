@@ -149,6 +149,19 @@ class CacheTests(unittest.TestCase):
 
 
 class BoundedMemoryTests(unittest.TestCase):
+    @staticmethod
+    def history_state(cond_indices, noncond_indices):
+        indices = sorted(set(cond_indices) | set(noncond_indices))
+        return {
+            "output_dict_per_obj": {0: {
+                "cond_frame_outputs": {index: index for index in cond_indices},
+                "non_cond_frame_outputs": {index: index for index in noncond_indices}}},
+            "point_inputs_per_obj": {0: {index: index for index in indices}},
+            "mask_inputs_per_obj": {0: {index: index for index in indices}},
+            "frames_tracked_per_obj": {0: {index: index for index in indices}},
+            "temp_output_dict_per_obj": {0: {"cond_frame_outputs": {}, "non_cond_frame_outputs": {}}},
+        }
+
     def test_read_through_masks_stream_the_same_fingerprint_with_bounded_cache(self):
         with tempfile.TemporaryDirectory() as directory:
             paths, original = [], []
@@ -222,6 +235,64 @@ class BoundedMemoryTests(unittest.TestCase):
                 actual = current["non_cond_frame_outputs"].get(previous, actual_unselected.get(previous))
                 self.assertEqual(expected, actual)
 
+    def test_explicit_history_cap_retains_boundary_and_native_conditioning_selection(self):
+        from sam2.modeling.sam2_utils import select_closest_cond_frames
+        state = self.history_state(range(0, 101, 10), [index for index in range(101) if index % 10])
+        reference_cond = dict(state["output_dict_per_obj"][0]["cond_frame_outputs"])
+        tracker.prune_native_history(state, 100, num_maskmem=7, memory_stride=1,
+                                     max_obj_ptrs=16, max_cond_frames=2,
+                                     nonconditioning_history_frames=2)
+        current = state["output_dict_per_obj"][0]
+        self.assertEqual(sorted(current["cond_frame_outputs"]), [90, 100])
+        self.assertEqual(sorted(current["non_cond_frame_outputs"]), [98, 99])
+        self.assertEqual(list(state["mask_inputs_per_obj"][0]), [100])
+        self.assertIn(100, state["frames_tracked_per_obj"][0])
+        for frame in (100, 101):
+            expected, _ = select_closest_cond_frames(frame, reference_cond, 2)
+            selected, _ = select_closest_cond_frames(frame, current["cond_frame_outputs"], 2)
+            self.assertEqual(expected, selected)
+        # The current boundary can become conditioning at the next AMG refresh;
+        # its prior nonconditioning output and tracked-frame entry survive too.
+        state = self.history_state(range(0, 100, 10), [index for index in range(100) if index % 10])
+        tracker.prune_native_history(state, 99, num_maskmem=7, memory_stride=1,
+                                     max_obj_ptrs=16, max_cond_frames=2,
+                                     nonconditioning_history_frames=2)
+        self.assertEqual(sorted(state["output_dict_per_obj"][0]["non_cond_frame_outputs"]), [98, 99])
+        self.assertIn(99, state["frames_tracked_per_obj"][0])
+
+    def test_explicit_history_cap_bounds_records_and_exposes_missing_history(self):
+        state = self.history_state([0], [])
+        outputs = state["output_dict_per_obj"][0]
+        for frame in range(1, 1001):
+            storage = outputs["cond_frame_outputs"] if frame % 10 == 0 else outputs["non_cond_frame_outputs"]
+            storage[frame] = frame
+            state["frames_tracked_per_obj"][0][frame] = frame
+            tracker.prune_native_history(state, frame, num_maskmem=7, memory_stride=1,
+                                         max_obj_ptrs=16, max_cond_frames=2,
+                                         nonconditioning_history_frames=2)
+            self.assertLessEqual(len(outputs["cond_frame_outputs"]), 2)
+            self.assertLessEqual(len(outputs["non_cond_frame_outputs"]), 2)
+            self.assertIn(frame, outputs["cond_frame_outputs"] | outputs["non_cond_frame_outputs"])
+        self.assertIsNone(outputs["non_cond_frame_outputs"].get(997))
+        self.assertIsNone(outputs["cond_frame_outputs"].get(980))
+        self.assertEqual(outputs["non_cond_frame_outputs"].get(999), 999)
+
+    def test_explicit_history_cap_rejects_noncausal_or_invalid_context(self):
+        arguments = dict(num_maskmem=7, memory_stride=1, max_obj_ptrs=16, max_cond_frames=2)
+        for value in (0, -1, True, 1.5, "2"):
+            with self.assertRaisesRegex(ValueError, "positive integer"):
+                tracker.prune_native_history(self.history_state([0], [1]), 1,
+                                             nonconditioning_history_frames=value, **arguments)
+        with self.assertRaisesRegex(ValueError, "causal forward"):
+            tracker.prune_native_history(self.history_state([0, 2], [1]), 1,
+                                         nonconditioning_history_frames=2, **arguments)
+        with self.assertRaisesRegex(RuntimeError, "conditioning anchor"):
+            tracker.prune_native_history(self.history_state([], [1]), 1,
+                                         nonconditioning_history_frames=2, **arguments)
+        with self.assertRaisesRegex(RuntimeError, "current propagation boundary"):
+            tracker.prune_native_history(self.history_state([0], [1]), 2,
+                                         nonconditioning_history_frames=2, **arguments)
+
 
 class ActualTrackingDeterminism(unittest.TestCase):
     def test_fixed_development_clip_first_three_sampled_frames_repeat(self):
@@ -248,6 +319,12 @@ class ActualTrackingDeterminism(unittest.TestCase):
             self.assertTrue(first["backend_parameters"]["add_all_frames_to_correct_as_cond"])
             self.assertEqual(first["backend_parameters"]["max_cond_frames_in_attn"],
                              int(cfg["sam"].get("max_cond_frames_in_attn", 2)))
+            self.assertEqual(first["backend_parameters"]["nonconditioning_history_frames"],
+                             cfg["sam"].get("nonconditioning_history_frames"))
+            if cfg["sam"].get("nonconditioning_history_frames") is not None:
+                self.assertLessEqual(first["maximum_native_history_records_per_object"],
+                                     cfg["sam"]["nonconditioning_history_frames"]
+                                     + cfg["sam"].get("max_cond_frames_in_attn", 2))
             self.assertIsInstance(loaded["frames"], tracker.ReadThroughSequence)
             self.assertIsInstance(loaded["masks"], tracker.ReadThroughSequence)
             self.assertGreater(sum(frame["matched_existing"] for frame in first["keyframes"][1:]), 0)

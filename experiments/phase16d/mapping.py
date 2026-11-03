@@ -6,7 +6,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from motion import assign_lane, classify_track, estimate_ego
+from motion import assign_lane, classify_track, compose_ego, estimate_ego
 from tracker import role_at
 
 
@@ -73,6 +73,9 @@ def analyze(bundle, config, clip, source_start_s, evidence_dir):
     lag = int(config["motion_lag_frames"])
     if lag <= 0:
         raise ValueError("motion lag must be positive")
+    ego_mode = config["ego"].get("mode", "direct")
+    if ego_mode not in ("direct", "composed_adjacent"):
+        raise ValueError("Unsupported ego-motion mode")
     foreground = []
     for index, (frame, objects) in enumerate(zip(frames, masks)):
         admitted = np.zeros(frame.shape[:2], dtype=bool)
@@ -82,11 +85,20 @@ def analyze(bundle, config, clip, source_start_s, evidence_dir):
         foreground.append(admitted)
     gate = EmissionGate(config)
     observations, ego_rows, candidates = [], [], []
+    adjacent_egos = []
     viewpoint = config["clips"][clip]["viewpoint_note"] if clip in config["clips"] else "held-out clip"
     for index, (frame, objects) in enumerate(zip(frames, masks)):
         source_s = float(source_start_s) + float(bundle["timestamps_s"][index])
+        if ego_mode == "composed_adjacent" and index > 0:
+            # Compute each causal adjacent fit once, even across overlapping
+            # lag windows. Failed component fits remain explicit history.
+            adjacent_egos.append(estimate_ego(frames[index-1], frame,
+                                              foreground[index-1], foreground[index], config))
         if index >= lag:
-            ego = estimate_ego(frames[index-lag], frame, foreground[index-lag], foreground[index], config)
+            if ego_mode == "composed_adjacent":
+                ego = compose_ego(adjacent_egos[index-lag:index], start_frame=index-lag)
+            else:
+                ego = estimate_ego(frames[index-lag], frame, foreground[index-lag], foreground[index], config)
         else:
             ego = {"H": None, "valid": False, "reason": "insufficient_history", "inliers": 0,
                    "ratio": 0., "reprojection_error": None}

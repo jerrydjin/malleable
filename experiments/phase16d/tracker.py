@@ -140,7 +140,8 @@ def prepare_proposals(raw: list[dict], shape: tuple[int, int], sam: dict) -> tup
         candidates.append({"mask": mask, "area_px": area, "bbox_xyxy": box,
                            "predicted_iou": score, "stability_score": stability,
                            "point_coords": np.asarray(item.get("point_coords", []), dtype=float).tolist(),
-                           "mask_sha256": hashlib.sha256(np.packbits(mask, bitorder="little").tobytes()).hexdigest()})
+                           "mask_sha256": hashlib.sha256(np.packbits(mask, bitorder="little").tobytes()).hexdigest(),
+                           "proposal_provenance": copy.deepcopy(item.get("proposal_provenance", {"kind": "automatic_grid"}))})
     # Quality decides duplicate retention; a second geometry ordering makes IDs
     # stable when the external AMG list is returned in a different order.
     candidates.sort(key=lambda p: (-p["predicted_iou"], -p["stability_score"],
@@ -343,26 +344,53 @@ def _bounded_native_state(predictor, paths, cache_size):
 
 
 def prune_native_history(state, frame_index, *, num_maskmem, memory_stride,
-                         max_obj_ptrs, max_cond_frames):
-    """Drop outputs that forward native SAM can never attend again.
+                         max_obj_ptrs, max_cond_frames,
+                         nonconditioning_history_frames=None):
+    """Bound forward native state, with an optional explicit context limit.
 
-    The current boundary frame may be corrected/repropagated, so retain its
-    entire backwards lookup radius as well as every later frame. The two most
-    recent older conditioning frames survive even outside this radius. Inputs
-    and tracked-frame bookkeeping have the same bounded lifetime.
+    The default retains every output reachable by the native forward lookups.
+    An explicit cap instead retains the newest N nonconditioning output records
+    and the newest ``max_cond_frames`` conditioning anchors. Missing records are
+    skipped by the native memory and object-pointer lookups. This intentionally
+    changes temporal context and does not preserve full-history equivalence.
+
+    This tracker propagates forwards and only corrects the current boundary.
+    Its output and tracked-frame entry remain available for that correction.
     """
     if min(num_maskmem, memory_stride, max_obj_ptrs) <= 0 or max_cond_frames < 2:
         raise ValueError("Bounded history requires positive radii and 2+ conditioning frames")
+    if (nonconditioning_history_frames is not None
+            and (type(nonconditioning_history_frames) is not int
+                 or nonconditioning_history_frames <= 0)):
+        raise ValueError("Nonconditioning history cap must be a positive integer or None")
     radius = max(num_maskmem * memory_stride + 2, max_obj_ptrs + 1)
     keep_from = int(frame_index) - radius
     for obj_idx, outputs in state["output_dict_per_obj"].items():
         cond = outputs["cond_frame_outputs"]
-        older = sorted((index for index in cond if index < keep_from), reverse=True)
-        keep_old_cond = set(older[:max_cond_frames])
-        for storage in (cond, outputs["non_cond_frame_outputs"]):
-            for index in list(storage):
-                if index < keep_from and not (storage is cond and index in keep_old_cond):
-                    del storage[index]
+        noncond = outputs["non_cond_frame_outputs"]
+        if nonconditioning_history_frames is None:
+            older = sorted((index for index in cond if index < keep_from), reverse=True)
+            keep_old_cond = set(older[:max_cond_frames])
+            for storage in (cond, noncond):
+                for index in list(storage):
+                    if index < keep_from and not (storage is cond and index in keep_old_cond):
+                        del storage[index]
+        else:
+            if any(index > frame_index for storage in (cond, noncond) for index in storage):
+                raise ValueError("Capped native history requires causal forward outputs")
+            if not cond:
+                raise RuntimeError("Native propagation requires a consolidated conditioning anchor")
+            # Native forward selection chooses the newest past conditioning
+            # anchors. Keep records rather than an age window: the current
+            # conditioning frame can create a gap in nonconditioning indices.
+            for storage, count in ((cond, max_cond_frames),
+                                   (noncond, nonconditioning_history_frames)):
+                retained = set(sorted(storage, reverse=True)[:count])
+                for index in list(storage):
+                    if index not in retained:
+                        del storage[index]
+            if frame_index not in cond and frame_index not in noncond:
+                raise RuntimeError("Capped native history lost the current propagation boundary")
         # Prompt tensors are not read once their output has been consolidated.
         # Only the current boundary can receive a correction again; keeping old
         # 1024-square FP32 prompt masks would defeat the history bound.
@@ -473,6 +501,7 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
     import sam2
     from sam2.automatic_mask_generator import SAM2AutomaticMaskGenerator
     from sam2.build_sam import HF_MODEL_ID_TO_FILENAMES, build_sam2_video_predictor
+    from proposals import automatic_iou_floor, automatic_stability_floor, refine_keyframe
 
     sam = config["sam"]
     device = str(sam["device"])
@@ -496,9 +525,14 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
     decoded_cache_size = int(sam.get("decoded_frame_cache_size", 8))
     video_cache_size = int(sam.get("video_frame_cache_size", 2))
     max_cond_frames = int(sam.get("max_cond_frames_in_attn", 2))
+    nonconditioning_history_frames = sam.get("nonconditioning_history_frames")
     retire_after = int(sam.get("retire_after_empty_frames", 20))
     if max_cond_frames < 2 or retire_after <= 0:
         raise ValueError("Bounded tracking requires 2+ conditioning frames and positive empty-frame retirement")
+    if (nonconditioning_history_frames is not None
+            and (type(nonconditioning_history_frames) is not int
+                 or nonconditioning_history_frames <= 0)):
+        raise ValueError("Nonconditioning history cap must be a positive integer or None")
     frames = ReadThroughSequence(paths, _read_rgb, decoded_cache_size)
     height, width = frames[0].shape[:2]
     started = time.perf_counter()
@@ -511,7 +545,7 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
         raise RuntimeError("AMG keyframe refreshes must remain conditioning frames during propagation")
     generator = SAM2AutomaticMaskGenerator(
         predictor, points_per_side=int(sam["points_per_side"]), points_per_batch=int(sam["points_per_batch"]),
-        pred_iou_thresh=float(sam["pred_iou_threshold"]), stability_score_thresh=float(sam["stability_threshold"]),
+        pred_iou_thresh=automatic_iou_floor(sam), stability_score_thresh=automatic_stability_floor(sam),
         mask_threshold=float(sam["mask_threshold"]), box_nms_thresh=float(sam["box_nms_threshold"]),
         crop_n_layers=0, min_mask_region_area=0, output_mode="binary_mask", multimask_output=True)
     model_load_seconds = time.perf_counter() - started
@@ -522,7 +556,8 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
     maximum_active_tracks, maximum_native_records = 0, 0
     history_radius = None
     calls = {"automatic_mask_generation": 0, "add_new_mask": 0,
-             "propagate_chunks": 0, "propagated_frame_outputs": 0}
+             "propagate_chunks": 0, "propagated_frame_outputs": 0,
+             "automatic_part_refinement": 0, "accepted_refined_masks": 0}
     interval = int(sam["keyframe_interval_frames"])
     if interval <= 0:
         raise ValueError("keyframe_interval_frames must be positive")
@@ -535,7 +570,13 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
             raw = generator.generate(frames[keyframe])
             amg_seconds = time.perf_counter() - generated
             calls["automatic_mask_generation"] += 1
-            proposals, counts = prepare_proposals(raw, (height, width), sam)
+            eligible = [index for index, item in enumerate(raw)
+                        if np.asarray(item["segmentation"]).any()
+                        and mask_role(np.asarray(item["segmentation"], dtype=bool), sam)[0] == "foreground"]
+            admitted, refinement = refine_keyframe(raw, frames[keyframe], generator.predictor, sam, eligible)
+            calls["automatic_part_refinement"] += refinement["native_predict_calls"]
+            calls["accepted_refined_masks"] += refinement["accepted_masks"]
+            proposals, counts = prepare_proposals(admitted, (height, width), sam)
             associations = associate_proposals(proposals, boundary_masks, sam)
             new_count = len(proposals) - len(associations)
             require_capacity(len(state["obj_ids"]), new_count, int(sam["maximum_tracks"]))
@@ -558,9 +599,14 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
                                           "seed_stability_score": proposal["stability_score"],
                                           "seed_point_coords": proposal["point_coords"],
                                           "keyframe_observations": [keyframe],
-                                          "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask"}
+                                          "mask_source": (
+                                              "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask"
+                                              if proposal["proposal_provenance"]["kind"] == "automatic_grid" else
+                                              "SAM2AutomaticMaskGenerator parts -> SAM2ImagePredictor automatic prompts -> SAM2VideoPredictor.add_new_mask")}
                     _record_role(tracks[str(ident)], keyframe, role, role_detail)
                     update = {"proposal_index": index, "track_id": ident, "new_track": True}
+                tracks[str(ident)].setdefault("proposal_observations", []).append(
+                    {"frame_index": keyframe, **proposal["proposal_provenance"]})
                 predictor.add_new_mask(state, frame_idx=keyframe, obj_id=ident, mask=proposal["mask"])
                 calls["add_new_mask"] += 1
                 last_visible.setdefault(ident, keyframe)
@@ -586,7 +632,8 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
                     history_radius = prune_native_history(
                         state, int(frame_index), num_maskmem=int(predictor.num_maskmem),
                         memory_stride=int(predictor.memory_temporal_stride_for_eval),
-                        max_obj_ptrs=int(predictor.max_obj_ptrs_in_encoder), max_cond_frames=max_cond_frames)
+                        max_obj_ptrs=int(predictor.max_obj_ptrs_in_encoder), max_cond_frames=max_cond_frames,
+                        nonconditioning_history_frames=nonconditioning_history_frames)
                     maximum_native_records = max(maximum_native_records, max(
                         (sum(len(records) for records in storage.values())
                          for storage in state["output_dict_per_obj"].values()), default=0))
@@ -606,8 +653,16 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
                     written_frames.add(frame_index)
             keyframes.append({"frame_index": keyframe, "source_frame_index": decoded["source_frame_indices"][keyframe],
                               "timestamp_s": decoded["timestamps_s"][keyframe], **counts,
+                              "raw_AMG_proposals": len(raw),
+                              "primary_AMG_proposals": refinement["primary_mask_count"],
+                              "secondary_AMG_proposals": refinement["secondary_mask_count"],
+                              "secondary_count_includes_qualifying_primary": True,
+                              "post_refinement_candidates": len(admitted),
+                              "raw_proposals_scope": "post-refinement input to host area/duplicate filtering",
+                              "final_retained_proposals": len(proposals),
                               "matched_existing": len(associations), "new_tracks": new_count,
                               "total_tracks": len(tracks), "associations": updates,
+                              "automatic_part_refinement": refinement,
                               "automatic_generation_s": amg_seconds, "mask_seeding_s": seed_seconds,
                               "propagation_s": time.perf_counter() - propagation_started,
                               "propagation_start": keyframe, "propagation_end_inclusive": end})
@@ -654,6 +709,14 @@ def _run(input_path: Path, config: dict, output: Path, checkpoint: Path,
                                    "video_frame_cache_size": video_cache_size,
                                    "decoded_frame_cache_size": decoded_cache_size,
                                    "native_history_radius_frames": history_radius,
+                                   "native_history_radius_scope": "native forward lookup radius; explicit record cap overrides retained context",
+                                   "nonconditioning_history_frames": nonconditioning_history_frames,
+                                   "nonconditioning_history_frames_scope": "maximum consolidated nonconditioning output records, not a frame-age window",
+                                   "history_retention_policy": (
+                                       "preserve every reachable forward memory/object-pointer output"
+                                       if nonconditioning_history_frames is None else
+                                       "newest N nonconditioning output records plus newest conditioning anchors; older temporal context intentionally removed"),
+                                   "history_direction": "forward propagation and current-boundary corrections only",
                                    "retire_after_empty_frames": retire_after,
                                    "maximum_tracks_scope": "simultaneously active native objects; IDs never reused",
                                    "native_initialization": "official init_state on first source JPEG; exact eager-equivalent lazy FP32 image Sequence",
@@ -691,7 +754,9 @@ def track_clip(input_path: str | Path, config: dict, cache_dir: str | Path,
         raise CacheMismatch("Input video and checkpoint must be outside the replaceable tracker cache")
     identity = {"source_sha256": _sha(input_path), "checkpoint_sha256": _sha(checkpoint),
                 "tracking_config_sha256": _json_hash(tracking_config(config)),
-                "tracker_code_sha256": _sha(Path(__file__)), "limit_frames": limit_frames}
+                "tracker_code_sha256": _sha(Path(__file__)),
+                "proposal_code_sha256": _sha(Path(__file__).with_name("proposals.py")),
+                "limit_frames": limit_frames}
     with _cache_lock(cache_dir):
         before = _directory_signature(cache_dir)
         metadata_path = cache_dir / "metadata.json"

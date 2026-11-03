@@ -14,12 +14,23 @@ Official SAM 2.1 Hiera Large automatic masks cover a grid over each keyframe. Th
 video predictor propagates retained masks with deterministic track IDs. Grid
 proposals are not a guarantee that every physical object is found; proposal,
 filtering, identity-association and tracking counts must be reported.
+Geometrically adjacent body/lower-part proposals can supply an automatic box
+and two interior positive points to the official image predictor. Secondary
+parts use a 0.65 proposal floor and never become independent tracks. A refined
+whole mask must pass the original 0.8 IoU / 0.9 stability gates, retain both
+parts and their lower extent, and remain within the automatic prompt region.
+All prompt geometry comes from SAM masks; evaluation boxes never enter it.
 
 Ego-motion uses road/background features outside foreground-instance masks.
+The configured mode fits quality-gated homographies on adjacent processed
+frames, then composes them across the motion lag. Every component must pass;
+the composed record preserves component evidence and conservative quality.
 Large road/sky/background masks remain visible in overlays but do not erase
 the road from ego-motion estimation or become lane-blockage proposals.
 Motion is measured at object road-contact anchors: mask-centroid motion on
 tall trailers has parallax and is not a road-plane stationary test.
+If lower-object texture is insufficient, a whole-mask fit can establish MOVING
+evidence. It cannot establish STATIONARY or accumulate an emission run.
 
 Configuration is in `config.json`. Initial engineering thresholds are open to
 development tuning; they are not held-out results. Frame stride and N refer to
@@ -68,8 +79,10 @@ configuration uses two Torch threads, a full-frame 16 by 16 point grid and promp
 batches of eight. Reducing the prompt batch size retains every grid point.
 The tracker keeps one official native video-predictor session, backed by an
 on-demand JPEG sequence with a two-image cache and the native FP32 normalization.
-Past predictor records are pruned beyond the configured mask-memory and
-object-pointer horizon; attention retains at most two conditioning frames.
+The configured temporal cap retains the newest two nonconditioning output
+records and two conditioning anchors. Missing older records are skipped by the
+official predictor; this deliberately limits temporal context. With the cap
+unset, pruning preserves the full native mask-memory/object-pointer horizon.
 Packed per-frame masks are written to disk, and loaded RGB/mask sequences cache
 eight records each. Tracks are retired through the official `remove_object`
 method after twenty consecutive empty processed frames; IDs are never reused.
@@ -97,8 +110,12 @@ For Cargo in this workspace, use the installed toolchain and offline cache:
 export PATH=/workspace/.toolchains/rust/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH
 export CARGO_HOME=/workspace/.toolchains/rust/cargo
 export CARGO_TARGET_DIR=/workspace/.cache/phase16d-cargo
-/workspace/.venvs/phase16d/bin/python experiments/phase16d/run_mapping.py dev --run-id dev-001
+/workspace/.venvs/phase16d/bin/python experiments/phase16d/launch.py --job-id dev-001 dev --run-id dev-001
 ```
+
+Long runs write both output streams to a durable file. A closed tool terminal
+must not break native SAM progress output. Detached job receipts under
+`runs/_jobs/` record process IDs and commands without storing environment values.
 
 The Muse key stays in the environment and is never displayed. `--defer-labels`
 is available for early development, records an explicit fallback and cannot

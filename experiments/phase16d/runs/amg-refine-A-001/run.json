@@ -1,0 +1,152 @@
+{
+  "artifact_manifest": [
+    {
+      "bytes": 5387,
+      "path": "evaluation.json",
+      "sha256": "d0e220e4a81ede1025a374af239d06108c8e213cdd15a6367f39d61ae88f957f"
+    },
+    {
+      "bytes": 73855,
+      "path": "input.jpg",
+      "sha256": "f3914ef0c859f8864602e89bab4350423ead586940a2dffb8caf859a9182684d"
+    },
+    {
+      "bytes": 1031,
+      "path": "masks.npz",
+      "sha256": "1a323d8154fb1d3b69814aa8e93018beda467b6a898f030eb58dc42905fca01c"
+    },
+    {
+      "bytes": 9758,
+      "path": "probe.py",
+      "sha256": "8df8a502e4e395829a370673252edd20bac1ae0191d82ff7360d3e749dab3059"
+    },
+    {
+      "bytes": 1586,
+      "path": "proposals.json",
+      "sha256": "130b8b2907ce2b9c21d07a20d3a97cd4a908f9bb5c7a37686b145bfb5ed4ffd4"
+    }
+  ],
+  "automatic_mask_generation_calls": 0,
+  "automatic_prompts": [
+    {
+      "body_predicted_iou": 0.8770208358764648,
+      "body_probe_mask_id": 151,
+      "body_stability": 0.9356651902198792,
+      "box_xyxy": [
+        283,
+        155,
+        326,
+        221
+      ],
+      "horizontal_overlap_fraction": 1.0,
+      "lower_predicted_iou": 0.6977137923240662,
+      "lower_probe_mask_id": 241,
+      "lower_stability": 0.9213483333587646,
+      "positive_points_xy": [
+        [
+          306,
+          173
+        ],
+        [
+          308,
+          210
+        ]
+      ],
+      "vertical_gap_px": 2
+    }
+  ],
+  "checkpoint_bytes": 898083611,
+  "checkpoint_sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+  "device": "cpu",
+  "dtype": "float32",
+  "elapsed_s": 14.93946179500017,
+  "evaluation_boxes_supplied_to_sam": false,
+  "git_commit": "b87c8e46c44a7849f99ab82570af43e349d15b11",
+  "heldout_opened": false,
+  "input_frame_index": 60,
+  "input_jpeg_sha256": "f3914ef0c859f8864602e89bab4350423ead586940a2dffb8caf859a9182684d",
+  "input_rgb_sha256": "0ef90bc94bb1f1647d2f5492a0ad0c3846180a40ced9748f3cf2195490272af2",
+  "model_config": "configs/sam2.1/sam2.1_hiera_l.yaml",
+  "model_id": "facebook/sam2.1-hiera-large",
+  "model_source": {
+    "revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "verified_package_files": [
+      {
+        "path": "sam2/build_sam.py",
+        "sha256": "856d64d71e44407401297b551884fb4cd1aba8082de0ff5fc60fac3dd42f094d"
+      },
+      {
+        "path": "sam2/automatic_mask_generator.py",
+        "sha256": "66df266dbe14412305ae3398f0ec1bb21b303a93216b102d767e6c4ee5d4c3d7"
+      },
+      {
+        "path": "sam2/sam2_video_predictor.py",
+        "sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2"
+      },
+      {
+        "path": "sam2/sam2_image_predictor.py",
+        "sha256": "f13e5f9d94e5c8d9d2c3622dab20c8f334c089ef2ee5ea8e199da7d332b029ba"
+      },
+      {
+        "path": "sam2/configs/sam2.1/sam2.1_hiera_t.yaml",
+        "sha256": "f932eac1c6241e910031b2f000a81cd9f8a8d4896e2277ab5ffb721f378b188d"
+      },
+      {
+        "path": "sam2/configs/sam2.1/sam2.1_hiera_l.yaml",
+        "sha256": "1dbd6cb6dfebeaf588c7006ee222c6efbfa9049a7ad472a3cdfb2f5d919e8107"
+      }
+    ]
+  },
+  "not_a_scored_video_run": true,
+  "pair_policy": {
+    "body_height_width_ratio": [
+      0.4,
+      3.0
+    ],
+    "final_min_iou": 0.8,
+    "final_min_stability": 0.9,
+    "lower_area_body_area_ratio": [
+      0.1,
+      0.8
+    ],
+    "lower_height_body_height_ratio": [
+      0.1,
+      0.8
+    ],
+    "lower_width_body_width_ratio": [
+      0.5,
+      1.5
+    ],
+    "maximum_center_offset_body_width_fraction": 0.2,
+    "maximum_vertical_gap_body_height_fraction": 0.12,
+    "maximum_vertical_gap_px": 4,
+    "minimum_area_px": 96,
+    "minimum_horizontal_overlap_fraction": 0.7,
+    "minimum_stability": 0.9,
+    "nms_iou": 0.7,
+    "primary_min_iou": 0.8,
+    "secondary_min_iou": 0.65,
+    "stability_score_offset": 1.0
+  },
+  "phase": "development_automatic_refinement_probe",
+  "primary_count": 11,
+  "process_peak_rss_bytes": 2283806720,
+  "prompt_count": 1,
+  "refined_mask_count": 3,
+  "refinement_predict_calls": 1,
+  "secondary_count": 13,
+  "source_clip": "experiments/phase16b/footage/clip_A.mp4",
+  "source_clip_sha256": "cbc0678241cfed684f0bb41d7e6df4587bdf8af09cb75a8cdb260abd524c8b0c",
+  "source_probe_run_sha256": "83eff54ae57c38b953d565f52adb87c4be02b73741e3718c6ff666471560a204",
+  "source_proposals_sha256": "1bee550e2c75015e8cd2d1e649ec705a448ccdd40aceb5b89bab12b225993576",
+  "source_s": 13.0,
+  "started_at_utc": "2026-11-03T22:27:24.141330+00:00",
+  "state": "complete",
+  "threads": 2,
+  "versions": {
+    "numpy": "1.26.4",
+    "opencv": "4.11.0",
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu"
+  }
+}

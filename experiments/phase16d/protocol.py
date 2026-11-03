@@ -20,7 +20,7 @@ _EXCLUDED_DIRS = {"heldout", "overlays", "runs", "evidence", "cache", ".cache", 
 _SUFFIXES = {".py", ".rs", ".json", ".sh", ".toml", ".txt", ".yaml", ".yml", ".md"}
 _REQUIRED = {
     "tracker.py", "motion.py", "mapping.py", "outputs.py", "evaluate.py",
-    "run_mapping.py", "protocol.py", "record_adapter.rs", "config.json",
+    "run_mapping.py", "launch.py", "proposals.py", "protocol.py", "record_adapter.rs", "config.json",
     "dev-targets.json", "runtime/requirements.lock.txt", "runtime/sam2-source.json",
     "base-preservation.json", "tests/test_protocol.py",
 }

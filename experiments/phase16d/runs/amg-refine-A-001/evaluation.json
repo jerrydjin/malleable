@@ -1,0 +1,183 @@
+{
+  "boxes_opened_after_generation": true,
+  "dev_targets_sha256": "eb5ec4e698647ea03ebd622b2050d8a393ff0453f00aa78588212058a93bc760",
+  "evaluation_only": true,
+  "targets": {
+    "A_red_stationary": {
+      "masks": [
+        {
+          "area_px": 2236,
+          "bbox_iou": 0.0,
+          "bbox_xyxy": [
+            283,
+            155,
+            325,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 5,
+          "box_coverage": 0.0,
+          "mask_inside_box_fraction": 0.0,
+          "mask_sha256": "dca5126b7ae00d53395f9b28e23b0c3902281e6c78b2d5899015b37613846db9",
+          "multimask_index": 0,
+          "positive_points_inside": [
+            true,
+            true
+          ],
+          "predict_elapsed_s": 0.08660796899994239,
+          "predicted_iou": 0.7953305840492249,
+          "prompt_index": 0,
+          "quality_pass": false,
+          "refined_mask_id": 1,
+          "source_parts_coverage": 0.8881664499349805,
+          "stability_score": 0.6269841194152832
+        },
+        {
+          "area_px": 2690,
+          "bbox_iou": 0.0,
+          "bbox_xyxy": [
+            282,
+            155,
+            325,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 5,
+          "box_coverage": 0.0,
+          "mask_inside_box_fraction": 0.0,
+          "mask_sha256": "ce0bde2bafc918ecc6e8612c02ea85ee9941121e14996c290d7f2240d4a887aa",
+          "multimask_index": 1,
+          "positive_points_inside": [
+            true,
+            true
+          ],
+          "predict_elapsed_s": 0.08744469099974594,
+          "predicted_iou": 0.8969591856002808,
+          "prompt_index": 0,
+          "quality_pass": true,
+          "refined_mask_id": 2,
+          "source_parts_coverage": 0.9926311226701344,
+          "stability_score": 0.9264548420906067
+        },
+        {
+          "area_px": 2601,
+          "bbox_iou": 0.0,
+          "bbox_xyxy": [
+            283,
+            155,
+            325,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 5,
+          "box_coverage": 0.0,
+          "mask_inside_box_fraction": 0.0,
+          "mask_sha256": "e455dfef4bccc835cf5960101cc35f1965dd5da208c367eb1d51d00b5625dd2f",
+          "multimask_index": 2,
+          "positive_points_inside": [
+            true,
+            true
+          ],
+          "predict_elapsed_s": 0.08828157299967643,
+          "predicted_iou": 0.9003738760948181,
+          "prompt_index": 0,
+          "quality_pass": false,
+          "refined_mask_id": 3,
+          "source_parts_coverage": 0.9809276116168184,
+          "stability_score": 0.8967310786247253
+        }
+      ],
+      "working_box_xyxy": [
+        336,
+        160,
+        397,
+        226
+      ]
+    },
+    "A_white_moving": {
+      "masks": [
+        {
+          "area_px": 2236,
+          "bbox_iou": 0.8626139817629179,
+          "bbox_xyxy": [
+            283,
+            155,
+            325,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 2,
+          "box_coverage": 0.6796352583586626,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "dca5126b7ae00d53395f9b28e23b0c3902281e6c78b2d5899015b37613846db9",
+          "multimask_index": 0,
+          "positive_points_inside": [
+            true,
+            true
+          ],
+          "predict_elapsed_s": 0.08660796899994239,
+          "predicted_iou": 0.7953305840492249,
+          "prompt_index": 0,
+          "quality_pass": false,
+          "refined_mask_id": 1,
+          "source_parts_coverage": 0.8881664499349805,
+          "stability_score": 0.6269841194152832
+        },
+        {
+          "area_px": 2690,
+          "bbox_iou": 0.8826747720364742,
+          "bbox_xyxy": [
+            282,
+            155,
+            325,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 2,
+          "box_coverage": 0.817629179331307,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "ce0bde2bafc918ecc6e8612c02ea85ee9941121e14996c290d7f2240d4a887aa",
+          "multimask_index": 1,
+          "positive_points_inside": [
+            true,
+            true
+          ],
+          "predict_elapsed_s": 0.08744469099974594,
+          "predicted_iou": 0.8969591856002808,
+          "prompt_index": 0,
+          "quality_pass": true,
+          "refined_mask_id": 2,
+          "source_parts_coverage": 0.9926311226701344,
+          "stability_score": 0.9264548420906067
+        },
+        {
+          "area_px": 2601,
+          "bbox_iou": 0.8626139817629179,
+          "bbox_xyxy": [
+            283,
+            155,
+            325,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 2,
+          "box_coverage": 0.7905775075987842,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "e455dfef4bccc835cf5960101cc35f1965dd5da208c367eb1d51d00b5625dd2f",
+          "multimask_index": 2,
+          "positive_points_inside": [
+            true,
+            true
+          ],
+          "predict_elapsed_s": 0.08828157299967643,
+          "predicted_iou": 0.9003738760948181,
+          "prompt_index": 0,
+          "quality_pass": false,
+          "refined_mask_id": 3,
+          "source_parts_coverage": 0.9809276116168184,
+          "stability_score": 0.8967310786247253
+        }
+      ],
+      "working_box_xyxy": [
+        280,
+        153,
+        327,
+        223
+      ]
+    }
+  }
+}

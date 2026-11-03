@@ -1,7 +1,10 @@
 # Phase 16d: whole-frame mapping
 
 Status: **UNFROZEN**. Official SAM 2.1 Hiera Large weights are acquired and verified.
-Development inference and held-out scoring are **NOT RUN** in this resumed session.
+The first development attempt **FAILED** with `BrokenPipeError` after
+**1,881.475 seconds**, before completing A. Target scores and held-out scoring
+are **NOT RUN**. Its actual failure is retained in
+[`runs/dev-001-large/run.json`](../../experiments/phase16d/runs/dev-001-large/run.json).
 The existing runner is continued from `609412b` on `phase-16d-mapping`; PR #51 stays draft.
 
 ## Checkpoint and runtime
@@ -25,6 +28,15 @@ OpenCV **4.11.0**, numpy **1.26.4**, official SAM revision
 The enforced cgroup limit is **8 GiB**, with **2 CPUs** and no GPU.
 The full **16 × 16** point grid is retained with point batches of **8**.
 Native video state and disk-backed frame/mask access are bounded before inference.
+
+Two genuine development-only proposal probes are complete. Broad grid generation
+retained **768** native proposals for inspection. Automatic body/chassis pairing
+and native box/point refinement produced a complete white-vehicle mask with
+**0.896959** predicted IoU, **0.926455** stability and **99.263%** support coverage.
+The final **0.8 / 0.9** gates remain unchanged. These are proposal diagnostics,
+not scored video results. Prompts were derived from SAM parts before evaluation
+annotations were read. Evidence is in
+[`runs/amg-refine-A-001/`](../../experiments/phase16d/runs/amg-refine-A-001/).
 
 ## Development gates
 
@@ -50,7 +62,10 @@ motion, lanes and proposal eligibility. Records remain **Proposed**;
 
 Focused checks in this session: acquisition routing/log hygiene **3 passed**;
 freeze protocol **11 passed**; road-record Rust adapter **7 passed**.
-Full current Python/Cargo validation and actual SAM repeat: **NOT RUN**.
+Current fast Python verification: **87 passed, 0 failed, 0 skipped** in
+[`milestone-4-unit-tests.log`](../../experiments/phase16d/runtime/milestone-4-unit-tests.log).
+The checkpoint-dependent SAM repeat was explicitly excluded from this fast run;
+it remains **NOT RUN**. Full current Python/Cargo validation remains pending.
 The previous milestone's complete validation logs are retained as history and
 are not current inference results.
 
