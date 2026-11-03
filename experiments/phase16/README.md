@@ -1,4 +1,37 @@
-# Phase 16: required prior-bar STOP
+# Phase 16: citation-fix rerun stops at missing bypass
+
+The updated request corrects the prior gain citation to 15 s on at least 7/10
+seeds and authorizes a rerun on this branch. SUMO 1.28.0 installs successfully.
+The fixed-box SUMO network passes the stated map gate, but has no route from
+the last southbound exit to the retained destination beyond the tree while
+avoiding the blocked road. The required affected-trip alternative fails.
+
+No traffic, validity, record or spoof arm was run. No scored result or efficacy
+preregistration follows this structural STOP. See the current
+[summary](../../docs/gates/phase-16-summary.md) and
+[machine-readable gate](rerun/map-gate.json).
+
+All new code stays here. The fixed 15e inputs and every `src/` file remain
+unchanged. The original STOP commit, audit, snapshots and setup log are kept;
+the exact original [summary](rerun/original-summary.md) and
+[README](rerun/original-README.md) are archived.
+
+Install the pinned dependencies into a writable virtual environment:
+
+```sh
+python -m venv /tmp/phase16-verify
+/tmp/phase16-verify/bin/pip install -r experiments/phase16/rerun/requirements.txt
+PATH=/tmp/phase16-verify/bin:$PATH python experiments/phase16/map_gate.py
+# Expected exit 2. Add --build to regenerate clipped OSM and the SUMO network.
+PATH=/tmp/phase16-verify/bin:$PATH python experiments/phase16/verify_rerun.py
+# Expected exit 0; verifies the STOP and preservation, without traffic.
+```
+
+The verification command also needs the original pinned 15c evidence commit
+in the local Git object database; fetch it with the command below if absent.
+`report.py` regenerates only the JSON/Markdown report from the retained gate.
+
+## Original citation STOP (historical)
 
 The requested branch starts at Phase 15e PR #46 head
 `e9db1c51eb67b5e5470df82ebdbe6ba7267677e3`. Its setup, placement and closure

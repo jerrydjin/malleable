@@ -1,0 +1,46 @@
+{
+  "recorded_at_utc": "2026-11-03T10:16:03.539808+00:00",
+  "stop_commit_preserved": "cafad04f4635a8d8113874555425d525768a8e0d",
+  "request_file": "experiments/phase16/rerun/rerun-request.txt",
+  "request_sha256": "ec0e7ee780ff29ae2ea62c38fd90bb16df4d60db816ae8cae03f3a8f82d6b1bd",
+  "prior_gain_bar_s": 15,
+  "prior_gain_required_seeds": 7,
+  "prior_gain_total_seeds": 10,
+  "reason_for_bar_a": "15 s on at least 7 of 10 seeds is the phase 15c gain bar (experiments/phase15c/README.md, PR #45), reused unchanged so the freeway is not judged by a looser standard.",
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "sensor_ranges_m": [
+    60,
+    150,
+    300
+  ],
+  "judged_range_m": 300,
+  "southbound_mainline_vph": 7600,
+  "northbound_mainline_vph": 7600,
+  "arrival_window_s": 3600,
+  "demand_status": "not materialized: required same-destination alternative failed before traffic",
+  "gain_test_status": "not run",
+  "sumo_version": "Eclipse SUMO sumo 1.28.0",
+  "dependencies": [
+    "certifi==2026.10.23",
+    "eclipse-sumo==1.28.0",
+    "pyproj==3.8.0",
+    "sumo-data==1.28.0",
+    "sumolib==1.28.0",
+    "traci==1.28.0"
+  ],
+  "original_prior_bar_audit_reproduced": true,
+  "original_audit_expected_exit": 2,
+  "original_audit_output_byte_identical": true,
+  "phase16b_worktree": "/workspace/malleable; untouched by this rerun; no inference"
+}

@@ -1,0 +1,13 @@
+[
+  "/tmp/phase16-sumo-venv/bin/netconvert",
+  "--osm-files",
+  "/workspace/phase-16-sumo/experiments/phase16/rerun/network/clipped.osm.xml.gz",
+  "--keep-edges.by-vclass",
+  "passenger",
+  "--output.original-names",
+  "true",
+  "--osm.all-attributes",
+  "true",
+  "--output-file",
+  "/workspace/phase-16-sumo/experiments/phase16/rerun/network/us101.net.xml.gz"
+]

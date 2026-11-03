@@ -1,0 +1,44 @@
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.primary_link' (first occurrence for edge '8915027').
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.secondary' (first occurrence for edge '8917043').
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|highway.residential' (first occurrence for edge '24547840').
+Warning: Discarding unknown compound 'cycleway.lane' in type 'cycleway.lane|cycleway.track|highway.tertiary' (first occurrence for edge '26378121').
+Warning: Discarding unknown compound 'cycleway.track' in type 'cycleway.lane|cycleway.track|highway.tertiary' (first occurrence for edge '26378121').
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '3762552'.
+Warning: to-edge '133781824' of restriction relation could not be determined
+Warning: Ignoring restriction relation '4007777'.
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '6187046'.
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '6187047'.
+Warning: Ignoring restriction relation '6189787' with unknown type.
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '6189953'.
+Warning: direction of restriction relation could not be determined
+Warning: Ignoring restriction relation '7461693' with unknown type.
+Warning: Ignoring restriction relation '7461694' with unknown type.
+Warning: Found sharp turn with radius 5.98 at the end of edge '-8918032#0'.
+Warning: Found sharp turn with radius 8.17 at the start of edge '-8920888'.
+Warning: Found sharp turn with radius 7.84 at the start of edge '25655734#4'.
+Warning: Found sharp turn with radius 5.98 at the start of edge '8918032#0'.
+Warning: Found sharp turn with radius 8.17 at the end of edge '8920888'.
+Warning: Shape for junction '65284677' has distance 52.97 to its given position.
+Warning: Shape for junction '65322266' has distance 34.84 to its given position.
+Warning: Shape for junction '65348923' has distance 27.31 to its given position.
+Warning: Shape for junction '766946830' has distance 25.83 to its given position.
+Warning: Minor green from edge '-254758113' to edge '254758118#0' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '417387191#1' to edge '417387199#0' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '32395584' to edge '514611457' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '-254759910#4' to edge '283535239#5' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Minor green from edge '254759910#3' to edge '-283535239#4' exceeds 19.44m/s. Maybe a left-turn lane is missing.
+Warning: Speed of straight connection '1164067021_0->1164067225_0' reduced by 11.69 due to turning radius of 20.64 (length=1.67, angle=19.81).
+Warning: Speed of straight connection '-24444482#0_0->8919319#0_0' reduced by 6.39 due to turning radius of 10.22 (length=3.44, angle=35.93).
+Warning: Speed of straight connection '-254758113_0->417387199#0_0' reduced by 6.50 due to turning radius of 44.91 (length=10.25, angle=28.32).
+Warning: Speed of straight connection '-28327004_0->-8916199#1_0' reduced by 6.56 due to turning radius of 9.76 (length=2.77, angle=32.70).
+Warning: Speed of straight connection '-25655734#1_0->-25655734#0_0' reduced by 5.00 due to turning radius of 14.37 (length=3.18, angle=28.41).
+Warning: 11 total messages of type: Discarding unknown compound '%' in type '%' (first occurrence for edge '%').
+Warning: 11 total messages of type: Ignoring restriction relation '%'.
+Warning: 16 total messages of type: Minor green from edge '%' to edge '%' exceeds %m/s. Maybe a left-turn lane is missing.
+Warning: 17 total messages of type: Speed of % connection '%' reduced by % due to turning radius of % (length=%, angle=%).
+Warning: 10 total messages of type: direction of restriction relation could not be determined%
+Success.

@@ -1,0 +1,49 @@
+Phase 16: US-101 freeway in SUMO, record vs see-only (rerun after citation fix)
+
+GOAL
+Show whether cars warned by the shared road record take the last exit before a blocked freeway section, and arrive sooner than cars that rely only on their own sensors. Use SUMO for all vehicle physics. Our code only decides what each car knows and when.
+
+BASE
+Continue on branch phase-16-sumo (PR #48) and push to it so #48 updates. The previous run stopped before traffic because this brief cited a 30 s bar for 15c; 15c's actual gain bar is >=15 s on >=7/10 seeds (experiments/phase15c/README.md line 50 on the 15c branch, PR #45). Nothing was scored, so this is a citation fix, not tuning. Keep the STOP commit in history. Reuse 15e's OSM extract and bounds (37.738,-122.410 to 37.762,-122.400), the tree placement (southbound, 1,508 m after the last exit) and the closure definition in experiments/phase15e/. Read those files first. Don't redefine any of them.
+
+HARD RULES
+- Don't modify src/judge.rs, src/schema.rs, src/make_way.rs or any other Rust file in src/. All new code goes in experiments/phase16/.
+- No model or record code moves vehicles. SUMO moves every car. Our layer may only change a car's route through TraCI when that car knows about the closure.
+- Never print API keys. This phase needs none.
+- Preregister before any scored run. Never tune after seeing scores. Report zeros and STOPs plainly. Every number in the writeup must trace to a committed output file.
+
+STEP 1: SETUP
+pip install eclipse-sumo traci. Record the exact SUMO version in the writeup. Build the network with netconvert from the same OSM extract. Map gate: the 101 mainline must be continuous both ways through the bbox, the last southbound exit before the tree must exist with its ramp connected to surface streets, and the tree point must map to a mainline edge. If any of those fail, STOP and commit the reason.
+
+STEP 2: DEMAND
+Southbound mainline 7,600 veh/h for the peak hour, cited to Caltrans 2016 AADT (https://dot.ca.gov/-/media/dot-media/programs/traffic-operations/documents/census/aadt/tc-2016-aadt-volumes-a11y.pdf, page 118, postmile 2.92 at Army St, ahead peak hour 15,200 split 7,600 each way). Northbound gets the same 7,600 veh/h. Destinations past the tree make up the "affected" trips. Each affected trip must have a valid surface-street alternative from the last exit. 10 seeds (1 to 10).
+
+STEP 3: VALIDITY GATE (see-only arm only, before any record arm is run)
+See-only rule: a car learns of the closure only when it is within its sensor range of the tree (preregistered ranges 60, 150 and 300 m, judged at 300 m), then reroutes with traci.vehicle.rerouteTraveltime with the closed lanes made unusable for it.
+The gate passes only if all of these hold on at least 8 of 10 seeds:
+(a) 0 collisions (SUMO collision output)
+(b) teleports at most 1% of departed vehicles
+(c) at least 90% of departed trips arrive within the horizon
+(d) the queue from the tree spills back past the last exit (the scenario only matters if see-only cars get trapped)
+Commit the gate results. If the gate fails, you may make one documented, physics-neutral fix (for example demand insertion settings or horizon length, never the closure or the volume), rerun once, and STOP if it still fails.
+
+STEP 4: PREREGISTRATION
+Commit docs/gates/phase-16-prereg.md before the record arm is run. It must contain the bars below, the seeds, the arms and the sensor ranges, plus this reason for bar a: "15 s on at least 7 of 10 seeds is the phase 15c gain bar (experiments/phase15c/README.md, PR #45), reused unchanged so the freeway is not judged by a looser standard."
+
+STEP 5: RECORD ARM
+Implement the record in Python (experiments/phase16/record.py), mirroring the semantics in docs/SPEC.md: the first car whose sensor range covers the tree authors a hazard edit; a second, distinct car must confirm it from its own sensing before it merges; the merged edit is delivered to cars on the same corridor with the same latency used in the existing record runs (read it from the code or the 15a output, and cite where it came from). A car that receives the merged edit reroutes the same way a see-only car does. Edits must use the JSON shape of the SPEC examples.
+Spoof arm: one car authors a fake hazard elsewhere with no second confirmation. It must never merge.
+
+BARS (judged across seeds 1 to 10, sensor range 300 m)
+a. Affected trips in the record arm have a mean travel time at least 15 s lower than see-only, on at least 7 of 10 seeds, with a 95% bootstrap CI on the pooled difference that excludes 0.
+b. 0 collisions in every arm.
+c. Spoof merges 0 of 10.
+d. Unaffected trips' mean travel time no more than 5% worse than see-only.
+Report every bar as PASS or FAIL with its number, including the 60 and 150 m ranges as secondary rows.
+
+OUTPUTS
+- docs/gates/phase-16-scores.jsonl, with one row per seed, arm and range
+- docs/gates/phase-16-summary.md, with a bar table, the SUMO version, the citations and the limits
+- for seed 1, SUMO fcd-output for both arms, plus a short script that turns it into the board's replay format if one is documented in the repo (otherwise leave the fcd files and say so)
+- tests for the record merge and spoof rules
+Update PR #48's title and body with every bar result and any STOP verbatim.
