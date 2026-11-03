@@ -6,11 +6,11 @@
   "torch_version": "2.15.0+cpu",
   "transformers_version": "5.22.1",
   "llm_requested": "meta-models/muse-spark-open-1026",
-  "llm_source": "fallback",
-  "llm_fallback_reason": "no_key",
-  "llm_provider": null,
-  "llm_model_id": null,
-  "llm_latency_ms": null,
+  "llm_source": "model",
+  "llm_fallback_reason": null,
+  "llm_provider": "baseten",
+  "llm_model_id": "meta-models/muse-spark-open-1026",
+  "llm_latency_ms": 4720.182471,
   "clips": [
     {
       "clip": "A",
@@ -65,15 +65,15 @@
     "b_merged_at_s": null,
     "b_review_applied": false,
     "b_status": "Proposed",
-    "blocks_from_reply_ignored": "road",
+    "blocks_from_reply_ignored": "lane",
     "blocks_on_edit": "road",
     "c_detected": false,
     "c_only_merged": false,
     "c_only_status": "Proposed",
     "c_review_applied": true,
     "c_review_saw_blockage": false,
-    "fallback_reason": "no_key",
-    "label_source": "fallback",
+    "fallback_reason": null,
+    "label_source": "model",
     "link_note": "link 0 and an empty route are placeholders. This recording is not localized onto the Potrero graph.",
     "since_s_measured": null,
     "since_s_note": "A produced no qualifying run. RoadEdit requires a since_s, so the edit keeps the test fixture value 12.0. That number is not a measured detection time.",
@@ -110,8 +110,8 @@
     },
     {
       "bar": "f",
-      "result": "FAIL",
-      "detail": "source fallback, fallback_reason no_key, provider None, model_id None, latency_ms None"
+      "result": "PASS",
+      "detail": "source model, fallback_reason None, provider baseten, model_id meta-models/muse-spark-open-1026, latency_ms 4720.182471"
     }
   ]
 }

@@ -1,17 +1,17 @@
 {
-  "fallback_reason": "no_key",
-  "latency_ms": null,
-  "model_id": null,
-  "provider": null,
-  "raw_reply": null,
+  "fallback_reason": null,
+  "latency_ms": 4720.182471,
+  "model_id": "meta-models/muse-spark-open-1026",
+  "provider": "baseten",
+  "raw_reply": "{\"label\":\"potential lane hazard - SAM single-source detection\",\"blocks\":\"lane\",\"reach\":{\"scope\":\"nearby\",\"radius_m\":300},\"rationale\":\"B shows sustained SAM detection (9/9 frames, 9 consecutive, median 12137px > 10000 threshold) but per viewpoint_note B is SAME SOURCE as A, not independent corroboration. A (same source earlier window) failed consecutive requirement (1<3) and C negative control is clean (0 positives). Single-source evidence only supports lane-level potential hazard, not calibrated road closure; limit to nearby reach, no merge/motion decision.\"}",
   "reply": {
-    "blocks": "road",
-    "label": "fallen tree",
-    "rationale": "Mock: fixed positive SAM footprint is labelled fallen tree; warn affected routes.",
+    "blocks": "lane",
+    "label": "potential lane hazard - SAM single-source detection",
+    "rationale": "B shows sustained SAM detection (9/9 frames, 9 consecutive, median 12137px > 10000 threshold) but per viewpoint_note B is SAME SOURCE as A, not independent corroboration. A (same source earlier window) failed consecutive requirement (1<3) and C negative control is clean (0 positives). Single-source evidence only supports lane-level potential hazard, not calibrated road closure; limit to nearby reach, no merge/motion decision.",
     "reach": {
       "radius_m": 300.0,
-      "scope": "route"
+      "scope": "nearby"
     }
   },
-  "source": "fallback"
+  "source": "model"
 }
