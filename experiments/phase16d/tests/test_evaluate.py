@@ -51,6 +51,7 @@ def fixture():
                     "clip": clip, "viewpoint_note": spec["viewpoint_note"], "track_id": ident,
                     "frame": frame, "source_s": spec["source_start_s"] + times[frame],
                     "role": "foreground", "class": target["expected_class"] if frame >= 3 else "UNKNOWN",
+                    "flow_support": "lower_band",
                     "lane": "lane_1" if ident == 1 else "lane_0"})
         if spec["targets"]:
             add_edit(clip, 1, analyses, records, plan)
@@ -111,14 +112,15 @@ class DevelopmentEvaluationTests(unittest.TestCase):
 
     def test_missing_masks_reset_runs_without_becoming_sampling_gaps(self):
         data = fixture()
-        missing = {5, 11, 17, 23, 29}
+        moving_required = data[3].get("required_moving_consecutive_frames", data[3]["required_consecutive_frames"])
+        missing = set(range(3, data[3]["clips"]["A"]["sampled_frames"], moving_required))
         for frame in missing:
             del data[1]["A"]["masks"][frame][2]
         data[0]["A"]["observations"] = [r for r in data[0]["A"]["observations"]
                                                  if not (r["track_id"] == 2 and r["frame"] in missing)]
         output = self.evaluate(data)
         self.assertTrue(output["clip_checks"]["A"]["pass"])
-        self.assertEqual(self.row(output, "A_white_moving")["longest_moving_run"], 5)
+        self.assertEqual(self.row(output, "A_white_moving")["longest_moving_run"], moving_required - 1)
         self.assertFalse(output["all_pass"])
 
     def test_two_strong_incompatible_runs_are_mixed(self):

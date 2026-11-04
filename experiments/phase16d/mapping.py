@@ -6,7 +6,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from motion import assign_lane, classify_track, compose_ego, estimate_ego
+from motion import assign_lane, classify_motion_history, classify_track, compose_ego, estimate_ego
 from tracker import role_at
 
 
@@ -151,22 +151,12 @@ def analyze(bundle, config, clip, source_start_s, evidence_dir):
     summaries = []
     for ident, rows in sorted(grouped.items()):
         counts = Counter(row["class"] for row in rows)
-        longest = {}
-        for kind in ("STATIONARY", "MOVING"):
-            run = best = 0
-            previous = None
-            for row in rows:
-                if row["class"] == kind:
-                    run = run + 1 if previous == row["frame"] - 1 else 1
-                else:
-                    run = 0
-                best = max(best, run)
-                previous = row["frame"]
-            longest[kind] = best
-        best = longest["STATIONARY"]
-        final_class = ("STATIONARY" if best >= int(config["emission"]["consecutive_frames"])
-                       else "MOVING" if longest["MOVING"] >= int(config["emission"]["consecutive_frames"])
-                       else "UNKNOWN")
+        history = classify_motion_history(
+            rows, int(config["emission"]["consecutive_frames"]),
+            config["motion"].get("moving_consecutive_frames", config["emission"]["consecutive_frames"]),
+            config["motion"].get("moving_require_lower_band_support", False))
+        longest = {"STATIONARY": history["longest_stationary_run"], "MOVING": history["longest_moving_run"]}
+        best, final_class = longest["STATIONARY"], history["class"]
         residuals = [row["residual_px"] for row in rows if row.get("residual_px") is not None]
         relative = [row["relative_residual"] for row in rows if row.get("relative_residual") is not None]
         lane_counts = Counter(row["lane"] for row in rows if row["lane"] != "unknown")
@@ -179,6 +169,11 @@ def analyze(bundle, config, clip, source_start_s, evidence_dir):
             "moving_frames": counts["MOVING"], "unknown_frames": counts["UNKNOWN"],
             "longest_stationary_run": best,
             "longest_moving_run": longest["MOVING"],
+            "longest_supported_moving_run": history["longest_supported_moving_run"],
+            "required_stationary_motion_frames": history["required_stationary_motion_frames"],
+            "moving_require_lower_band_support": history["moving_require_lower_band_support"],
+            "required_moving_motion_frames": history["required_moving_motion_frames"],
+            "motion_confirmation_policy": history["motion_confirmation_policy"],
             "residual_flow_median_px": float(np.median(residuals)) if residuals else None,
             "relative_residual_median": float(np.median(relative)) if relative else None,
             "lane": lane, "class": final_class,

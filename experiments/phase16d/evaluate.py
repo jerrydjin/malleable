@@ -13,6 +13,8 @@ import re
 
 import numpy as np
 
+from motion import classify_motion_history
+
 
 B_VIEWPOINT = "same source, different viewpoint"
 _HASH = re.compile(r"[0-9a-fA-F]{64}\Z")
@@ -25,24 +27,9 @@ def _close(left, right):
         return False
 
 
-def _runs(rows, required):
-    """Missing observations, UNKNOWN, role changes and class changes reset runs."""
-    longest = {"STATIONARY": 0, "MOVING": 0}
-    previous_frame, previous_kind, run = None, None, 0
-    for row in sorted(rows, key=lambda value: value["frame"]):
-        kind = row["class"] if row.get("role") == "foreground" else "UNKNOWN"
-        if kind in longest:
-            run = run + 1 if (previous_frame == row["frame"] - 1 and previous_kind == kind) else 1
-            longest[kind] = max(longest[kind], run)
-        else:
-            run = 0
-        previous_frame, previous_kind = row["frame"], kind
-    stationary = longest["STATIONARY"] >= required
-    moving = longest["MOVING"] >= required
-    observed = ("MIXED" if stationary and moving else "STATIONARY" if stationary
-                else "MOVING" if moving else "UNKNOWN")
-    return {"class": observed, "longest_stationary_run": longest["STATIONARY"],
-            "longest_moving_run": longest["MOVING"]}
+def _runs(rows, required, moving_required=None, moving_require_lower_band_support=False):
+    """Recompute the same global confirmation rule from per-frame evidence."""
+    return classify_motion_history(rows, required, moving_required, moving_require_lower_band_support)
 
 
 def _role_at(track, frame):
@@ -229,6 +216,12 @@ def evaluate_development(analyses, bundles, records, plan):
             or type(plan.get("required_consecutive_frames")) is not int or plan["required_consecutive_frames"] <= 0):
         raise ValueError("a supported evaluation-only A/B/C development plan is required")
     required = plan["required_consecutive_frames"]
+    moving_required = plan.get("required_moving_consecutive_frames", required)
+    if type(moving_required) is not int or moving_required <= 0:
+        raise ValueError("A positive MOVING confirmation window is required")
+    moving_support = plan.get("moving_require_lower_band_support", False)
+    if type(moving_support) is not bool:
+        raise ValueError("MOVING lower-band support requirement must be boolean")
     input_errors = []
     if set(analyses) != {"A", "B", "C"} or set(bundles) != {"A", "B", "C"}:
         input_errors.append("exactly_three_complete_development_clips_required")
@@ -273,7 +266,7 @@ def evaluate_development(analyses, bundles, records, plan):
             ident, related = match["track_id"], set(match["related_track_ids"])
             related_all |= related
             observations = [r for r in analysis.get("observations", []) if r.get("track_id") == ident] if ident is not None else []
-            runs = _runs(observations, required)
+            runs = _runs(observations, required, moving_required, moving_support)
             if runs["class"] != target["expected_class"]:
                 reasons.append("target_motion_class_mismatch")
             target_candidates = [c for c in candidates if c.get("evidence", {}).get("track_id") in related]
@@ -300,6 +293,8 @@ def evaluate_development(analyses, bundles, records, plan):
     return {"version": 1, "scope": "development_only",
             "evaluation_plan_sha256": hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).hexdigest(),
             "required_consecutive_frames": required,
+            "required_moving_consecutive_frames": moving_required,
+            "moving_require_lower_band_support": moving_support,
             "labels_deferred": records.get("labels_deferred"),
             "model_calls": records.get("model_calls"),
             "input_errors": input_errors, "clip_checks": clip_checks,

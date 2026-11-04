@@ -377,3 +377,52 @@ def assign_lane(contact_xy, size_wh, cfg):
         if left < x < right:
             return f"lane_{index}"
     return "unknown"
+
+
+def classify_motion_history(rows, stationary_required, moving_required=None,
+                            moving_require_lower_band_support=False):
+    """Confirm track history with explicit asymmetric consecutive windows.
+
+    UNKNOWN, missing frames and nonforeground observations reset either raw
+    run. Supported MOVING additionally requires explicit lower-band flow in
+    every frame; missing support metadata never establishes that support.
+    MOVING confirmation never authorizes an edit. Both confirmed states are
+    MIXED. Raw observations and runs remain visible, not calibrated confidence.
+    """
+    moving_required = stationary_required if moving_required is None else moving_required
+    if any(type(value) is not int or value <= 0 for value in (stationary_required, moving_required)):
+        raise ValueError("Motion confirmation windows must be positive integers")
+    if type(moving_require_lower_band_support) is not bool:
+        raise ValueError("Moving support requirement must be boolean")
+    longest = {"STATIONARY": 0, "MOVING": 0}
+    allowed = {"STATIONARY", "MOVING", "UNKNOWN"}
+    previous_frame, previous_kind, run = None, None, 0
+    supported_run = longest_supported = 0
+    for row in sorted(rows, key=lambda value: value["frame"]):
+        kind = row["class"] if row.get("role") == "foreground" else "UNKNOWN"
+        if kind not in allowed:
+            raise ValueError("Unknown per-frame motion class")
+        consecutive = previous_frame == row["frame"] - 1
+        if kind in longest:
+            run = run + 1 if consecutive and previous_kind == kind else 1
+            longest[kind] = max(longest[kind], run)
+        else:
+            run = 0
+        if kind == "MOVING" and row.get("flow_support") == "lower_band":
+            supported_run = supported_run + 1 if consecutive else 1
+            longest_supported = max(longest_supported, supported_run)
+        else:
+            supported_run = 0
+        previous_frame, previous_kind = row["frame"], kind
+    stationary = longest["STATIONARY"] >= stationary_required
+    confirming_moving_run = longest_supported if moving_require_lower_band_support else longest["MOVING"]
+    moving = confirming_moving_run >= moving_required
+    observed = ("MIXED" if stationary and moving else "STATIONARY" if stationary
+                else "MOVING" if moving else "UNKNOWN")
+    return {"class": observed, "longest_stationary_run": longest["STATIONARY"],
+            "longest_moving_run": longest["MOVING"],
+            "longest_supported_moving_run": longest_supported,
+            "required_stationary_motion_frames": stationary_required,
+            "required_moving_motion_frames": moving_required,
+            "moving_require_lower_band_support": moving_require_lower_band_support,
+            "motion_confirmation_policy": "asymmetric_consecutive_windows"}

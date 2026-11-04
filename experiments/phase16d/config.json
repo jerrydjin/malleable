@@ -106,6 +106,8 @@
   },
   "motion": {
     "low_texture_fallback": "whole_mask_moving_only",
+    "moving_consecutive_frames": 3,
+    "moving_require_lower_band_support": true,
     "mask_erode_px": 1,
     "lower_band_fraction": 0.35,
     "contact_quantile": 0.98,
@@ -116,7 +118,7 @@
     "min_affine_inlier_ratio": 0.5,
     "min_ego_motion_px": 1.0,
     "stationary_max_residual_px": 2.0,
-    "stationary_max_relative_residual": 0.35,
+    "stationary_max_relative_residual": 0.38,
     "moving_min_relative_residual": 0.6,
     "min_confidence": 0.35
   },

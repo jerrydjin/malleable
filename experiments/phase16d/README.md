@@ -35,6 +35,12 @@ evidence. It cannot establish STATIONARY or accumulate an emission run.
 Configuration is in `config.json`. Initial engineering thresholds are open to
 development tuning; they are not held-out results. Frame stride and N refer to
 processed frames. Failed ego-motion/feature quality yields UNKNOWN and no edit.
+Track motion uses separate confirmation windows: MOVING needs three consecutive
+lower-band-supported observations; stationary edits need six consecutive
+STATIONARY observations. Fallback-only movement stays provisional. Raw classes,
+raw moving runs and supported moving runs remain in the exports. A track with
+both confirmed states reports MIXED. These overlapping windows are an engineering
+confirmation rule, not independent trials or calibrated probabilities.
 Lane IDs are image-based camera-relative hypotheses, not surveyed lane numbers.
 Positions state their reference image and pixels; metric/geographic position
 is unknown without calibration. The adapter's link 0 is an explicitly

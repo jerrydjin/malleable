@@ -176,6 +176,10 @@ def _freeze_markdown(manifest, config, results, records):
         f"N: **{config['emission']['consecutive_frames']} consecutive processed frames**. "
         f"Native frame stride: `{cell(config.get('frame_stride'))}`; exact cadence "
         "is recorded from each source clip's FPS.", "",
+        f"MOVING confirmation: **{config.get('motion', {}).get('moving_consecutive_frames', config['emission']['consecutive_frames'])} consecutive processed frames**. "
+        "This separate confirmation window never authorizes a stationary edit.", "",
+        f"MOVING lower-band support required: **{config.get('motion', {}).get('moving_require_lower_band_support', False)}**. "
+        "When required, fallback-only MOVING stays provisional; raw frame classes and runs remain recorded.", "",
         f"Development run: `{manifest['development_run']}`. Actual SAM repeat, "
         "complete Python suite and Cargo validation passed. "
         "See `freeze.json` for committed evidence hashes.", "",
@@ -259,6 +263,17 @@ def freeze(root, run_dir, validation_path):
             or results.get("required_consecutive_frames") != required
             or results.get("evaluation_plan_sha256") != _digest(plan)):
         raise ProtocolError("Development evaluation must use the current plan and configured N")
+    moving_required = config.get("motion", {}).get("moving_consecutive_frames", required)
+    if (type(moving_required) is not int or moving_required <= 0
+            or plan.get("required_moving_consecutive_frames", required) != moving_required
+            or results.get("required_moving_consecutive_frames", required) != moving_required):
+        raise ProtocolError("Development evaluation must use the configured MOVING confirmation window")
+    moving_support = config.get("motion", {}).get("moving_require_lower_band_support", False)
+    plan_support = plan.get("moving_require_lower_band_support", False)
+    result_support = results.get("moving_require_lower_band_support", False)
+    if (any(type(value) is not bool for value in (moving_support, plan_support, result_support))
+            or plan_support != moving_support or result_support != moving_support):
+        raise ProtocolError("Development evaluation must use the configured MOVING support policy")
     rows = results.get("rows", [])
     target_ids = {"A_red_stationary", "A_white_moving", "B_red_stationary", "B_white_moving", "C_clear_road"}
     if (results.get("all_pass") is not True or len(rows) != 5

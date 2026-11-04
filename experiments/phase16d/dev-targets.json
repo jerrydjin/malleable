@@ -5,6 +5,8 @@
   "annotation_policy": "Manual boxes identify development targets only. Never supply this file, its boxes, or target identities to proposal generation, tracking, motion, lane assignment, emission, or the label model.",
   "box_convention": "Original source-image pixels, [left, top, right, bottom), scaled to the verified working frame only during evaluation.",
   "required_consecutive_frames": 6,
+  "required_moving_consecutive_frames": 3,
+  "moving_require_lower_band_support": true,
   "matching": {
     "minimum_mask_inside_box_fraction": 0.5,
     "minimum_box_coverage": 0.04,

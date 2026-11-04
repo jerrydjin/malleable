@@ -110,6 +110,84 @@ class FreezeProtocolTests(unittest.TestCase):
         self.commit("freeze committed before held-out access")
         return manifest
 
+    def test_moving_confirmation_plan_must_match_inference_config(self):
+        write_json(self.experiment / "config.json", {
+            "emission": {"consecutive_frames": 6}, "motion": {"moving_consecutive_frames": 3}})
+        write_json(self.experiment / "dev-targets.json", {
+            "required_consecutive_frames": 6, "required_moving_consecutive_frames": 4})
+        self.make_complete_evidence()
+        self.commit("mismatched moving confirmation plan")
+        with self.assertRaisesRegex(protocol.ProtocolError, "MOVING confirmation window"):
+            self.freeze()
+
+    def test_scored_moving_confirmation_window_must_be_recorded(self):
+        write_json(self.experiment / "config.json", {
+            "emission": {"consecutive_frames": 6}, "motion": {"moving_consecutive_frames": 3}})
+        write_json(self.experiment / "dev-targets.json", {
+            "required_consecutive_frames": 6, "required_moving_consecutive_frames": 3})
+        self.make_complete_evidence()
+        self.commit("missing moving confirmation result")
+        with self.assertRaisesRegex(protocol.ProtocolError, "MOVING confirmation window"):
+            self.freeze()
+
+    def test_explicit_asymmetric_windows_are_bound_in_freeze(self):
+        write_json(self.experiment / "config.json", {
+            "emission": {"consecutive_frames": 6}, "motion": {"moving_consecutive_frames": 3}})
+        write_json(self.experiment / "dev-targets.json", {
+            "required_consecutive_frames": 6, "required_moving_consecutive_frames": 3})
+        self.make_complete_evidence()
+        results = json.loads((self.run / "dev-results.json").read_text())
+        results["required_moving_consecutive_frames"] = 3
+        write_json(self.run / "dev-results.json", results)
+        self.commit("asymmetric moving confirmation evidence")
+        self.freeze()
+        marker = (self.experiment / "FROZEN.md").read_text()
+        self.assertIn("MOVING confirmation: **3 consecutive processed frames**", marker)
+        self.assertIn("N: **6 consecutive processed frames**", marker)
+
+    def set_supported_moving_evidence(self, config_support, plan_support, result_support):
+        write_json(self.experiment / "config.json", {
+            "emission": {"consecutive_frames": 6}, "motion": {
+                "moving_consecutive_frames": 3, "moving_require_lower_band_support": config_support}})
+        write_json(self.experiment / "dev-targets.json", {
+            "required_consecutive_frames": 6, "required_moving_consecutive_frames": 3,
+            "moving_require_lower_band_support": plan_support})
+        self.make_complete_evidence()
+        results = json.loads((self.run / "dev-results.json").read_text())
+        results["required_moving_consecutive_frames"] = 3
+        if result_support is not None:
+            results["moving_require_lower_band_support"] = result_support
+        write_json(self.run / "dev-results.json", results)
+        self.commit("explicit lower-band moving evidence")
+
+    def test_moving_support_plan_must_match_inference_config(self):
+        self.set_supported_moving_evidence(True, False, True)
+        with self.assertRaisesRegex(protocol.ProtocolError, "MOVING support policy"):
+            self.freeze()
+
+    def test_moving_support_result_must_match_inference_config(self):
+        self.set_supported_moving_evidence(True, True, False)
+        with self.assertRaisesRegex(protocol.ProtocolError, "MOVING support policy"):
+            self.freeze()
+
+    def test_missing_scored_moving_support_cannot_claim_lower_band(self):
+        self.set_supported_moving_evidence(True, True, None)
+        with self.assertRaisesRegex(protocol.ProtocolError, "MOVING support policy"):
+            self.freeze()
+
+    def test_moving_support_flags_are_strict_booleans(self):
+        self.set_supported_moving_evidence(True, 1, True)
+        with self.assertRaisesRegex(protocol.ProtocolError, "MOVING support policy"):
+            self.freeze()
+
+    def test_required_lower_band_support_is_recorded_in_freeze(self):
+        self.set_supported_moving_evidence(True, True, True)
+        self.freeze()
+        marker = (self.experiment / "FROZEN.md").read_text()
+        self.assertIn("MOVING lower-band support required: **True**", marker)
+        self.assertIn("MOVING confirmation: **3 consecutive processed frames**", marker)
+        self.assertIn("N: **6 consecutive processed frames**", marker)
+
     def test_retained_stop_change_prevents_freeze(self):
         (self.root / "STOP.md").write_text("changed old outcome\n")
         with self.assertRaisesRegex(protocol.ProtocolError, "Retained parent evidence changed"):
