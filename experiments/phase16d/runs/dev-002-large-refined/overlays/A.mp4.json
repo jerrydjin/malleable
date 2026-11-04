@@ -1,0 +1,4326 @@
+{
+  "analysis_sha256": "295ed2c6db0394916d2ace7bb73e69cf29a611b89c421edbfd0169315d6934c5",
+  "canvas_dimensions": [
+    640,
+    726
+  ],
+  "clip": "A",
+  "codec": "h264",
+  "confidence_kind": "heuristic",
+  "config_sha256": "e4cf47f21dacd3b322f8e69923b2d72ea6e5be388495367c000f0269eb819876",
+  "duration_s": 3.0,
+  "elapsed_s": 1.8762313850002101,
+  "first_timestamp_s": 0.0,
+  "frame_count": 30,
+  "frame_spacing_s": 0.1,
+  "frames": [
+    {
+      "frame": 0,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 112102,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 738,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 918,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "unknown",
+          "mask_area_px": 1119,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1204,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1226,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4149,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1888,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1760,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1353,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1187,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.0,
+      "timestamp_s": 0.0,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 1,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 112126,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 772,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 930,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "unknown",
+          "mask_area_px": 1205,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1229,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1178,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4227,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 2001,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1410,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1286,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1240,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.1,
+      "timestamp_s": 0.1,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 2,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 112252,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 809,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 959,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "unknown",
+          "mask_area_px": 1271,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1246,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1105,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4237,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 2127,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1154,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1147,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1207,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.2,
+      "timestamp_s": 0.2,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 3,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 112176,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4098717013736962,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 848,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4715813212555988,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 977,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.47722953059016654,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1335,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5162459522944001,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1279,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1021,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4315881644219946,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4331,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3424905942337658,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2224,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.45353742378979,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 960,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.40149067407119926,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 1056,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.422783198628947,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1136,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.3,
+      "timestamp_s": 0.3,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 4,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 112235,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4049326290383104,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 885,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 957,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.47173681330790773,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1387,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5087444274326512,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1275,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 916,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.360213220631227,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4230,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.48239981277453076,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2242,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.42932263179620106,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 764,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.37113519018862906,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 987,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.44977944514763635,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1169,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.4,
+      "timestamp_s": 0.4,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 5,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 111508,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3573885991241726,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 927,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.33812507066547404,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 848,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4502549662760302,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1456,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5038098008905701,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1297,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 920,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4451631720175781,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4262,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4789148477359967,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2164,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 611,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.35636509083737605,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 902,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4142625688309989,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1145,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.5,
+      "timestamp_s": 0.5,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 6,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 111382,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 954,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 697,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4684179139630426,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1548,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4983087683479466,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1332,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 861,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4301262359783058,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4304,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4968035708545958,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2177,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 504,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.3879781191864414,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 829,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3570144885853753,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1173,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.6,
+      "timestamp_s": 0.6,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 7,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 111342,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1008,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 493,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5039118232489116,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1616,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5145269080188469,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1289,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 705,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4895538286747315,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4238,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5087475648996415,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2198,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 475,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 766,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5115349383179242,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1176,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.7,
+      "timestamp_s": 0.7,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 8,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110923,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5405738286298112,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1023,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 337,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5589580509983203,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1670,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6206434073884188,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1198,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 529,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4249417886553984,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4089,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5893746725938389,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2135,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 423,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3089310967728407,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 747,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5909699173404367,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1145,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.8,
+      "timestamp_s": 0.8,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 9,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110559,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.47236984774816915,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1109,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 211,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5825287465943645,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1774,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5824951975744624,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1201,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 372,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4143,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5979981650387686,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2026,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 359,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 721,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5493551795039199,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1132,
+          "role": "foreground",
+          "track_id": 11
+        }
+      ],
+      "source_s": 11.9,
+      "timestamp_s": 0.9,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 10,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110447,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5187682944331437,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1238,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 580,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6154694176988079,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1841,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6424915246869259,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1160,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 315,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5731065549132942,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 3921,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5976838367759156,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1979,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 293,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4666749423990264,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 649,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5562558338401179,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1194,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 864,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 2161,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 492,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 177,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 509,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.0,
+      "timestamp_s": 1.0,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 11,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110504,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.40682123464901915,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1222,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 895,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.612903555212053,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 1916,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.45200566835143774,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1152,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 365,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 3974,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6622752259689703,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1957,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5093972328152389,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 628,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5492486312638655,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1163,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 922,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1426,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 498,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 214,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 494,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.1,
+      "timestamp_s": 1.1,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 12,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110710,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6738338737753807,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1254,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1096,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6080365122566904,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2009,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5553925345391605,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1111,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 509,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6627034865644622,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 3960,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5949119565956495,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2035,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.43999539969676316,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 569,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5016128685917026,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1220,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 959,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 491,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 481,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 247,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 479,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.2,
+      "timestamp_s": 1.2,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 13,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110611,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5508198691598154,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1322,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1099,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5067363302866614,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2083,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5162852737826793,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1039,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 552,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.49526980488376665,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4004,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5412373813767908,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2011,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.364555021853182,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 539,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3563861822058081,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1354,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5346343742621232,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 934,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5360386391570537,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 493,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 236,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.574606012875846,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 492,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.3,
+      "timestamp_s": 1.3,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 14,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110439,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.477916827703551,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1360,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 626,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5243297575782789,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2148,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5080664008043604,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1042,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 588,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4537900861599492,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 3931,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.549404417180486,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2010,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5280575228061066,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 518,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3998900108699841,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1434,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5483028348467172,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 950,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5641636882162582,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 493,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 220,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5748394897975697,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 496,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.4,
+      "timestamp_s": 1.4,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 15,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 110159,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4106334251764639,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1410,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 599,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.47123862149503115,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2251,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3198451985709293,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1041,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 702,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.40692775177666063,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 3979,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.46934302715663906,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1992,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 477,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.39065434932701293,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1270,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4754644032627414,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1005,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4671927846173276,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 481,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 403,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4998326681204958,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 486,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.5,
+      "timestamp_s": 1.5,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 16,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 109823,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.37990693413107957,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1476,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 554,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4111172253180204,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2349,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3684894987165506,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1056,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 796,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.2952464647528364,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4005,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4532834118174019,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1992,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4416189922566135,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 444,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4470951688815344,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1291,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.49842185722555077,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1022,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.47690442958959045,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 485,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 344,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.49241370298156767,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 481,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.6,
+      "timestamp_s": 1.6,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 17,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 109708,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4330085914507023,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1513,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 759,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.45704768809631,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2457,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.2727797134321629,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1152,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 940,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4022,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4484655185297606,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1933,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4216064183020845,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 414,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.40871859565267454,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1385,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.46924409445620896,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1057,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4958784356623553,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 485,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 366,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4969580194465656,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 482,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.7,
+      "timestamp_s": 1.7,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 18,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 109737,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4346769423800926,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1531,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 886,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4849660931881437,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2547,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4867307335764318,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1188,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1105,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4801656499416476,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4046,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.49271246443883776,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1888,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5327033293335286,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 367,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.48610040386305553,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1373,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.49859585004970314,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1050,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5542747784923461,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 492,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 341,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5730305549279014,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 501,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.8,
+      "timestamp_s": 1.8,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 19,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 109492,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5852169383085268,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1647,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1085,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.532779000940414,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2640,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6302716674682268,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 1177,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1278,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4048,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5918095773319951,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1805,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.46042546216691443,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 276,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5809376647573692,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1367,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6316082087709514,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1030,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6087262574685423,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 490,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 362,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.633789483246523,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 493,
+          "role": "foreground",
+          "track_id": 16
+        }
+      ],
+      "source_s": 12.9,
+      "timestamp_s": 1.9,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 20,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 108386,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6049173378339598,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 2688,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1026,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5705072543291592,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2751,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6373214924245924,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 996,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1167,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.3758267956052384,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4117,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.593880001168695,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1790,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 219,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5973657450302688,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1392,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6550427079950122,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1043,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6843424943668258,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 523,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 341,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6815801233181268,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 525,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 683,
+          "role": "foreground",
+          "track_id": 17
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 471,
+          "role": "foreground",
+          "track_id": 18
+        }
+      ],
+      "source_s": 13.0,
+      "timestamp_s": 2.0,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 21,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 109095,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.43335754564017054,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 2702,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1073,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4065141397442342,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2879,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4868405529731506,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 981,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1133,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4109,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.46913479394369395,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1678,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 185,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4796177778894146,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1365,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1058,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.47922497732008246,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 531,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 328,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5175893309791129,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 509,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 705,
+          "role": "foreground",
+          "track_id": 17
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 529,
+          "role": "foreground",
+          "track_id": 18
+        }
+      ],
+      "source_s": 13.1,
+      "timestamp_s": 2.1,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 22,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 108905,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4887624958274511,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 2784,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.36795389688352875,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1024,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4296662188278531,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 2990,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4534883609833279,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 910,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1065,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.44218144755413763,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4032,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4754126977161231,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1654,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4687784263950267,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_3",
+          "mask_area_px": 178,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5036134836608936,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1118,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5071408245348528,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1054,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5034071102790991,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 519,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4394665660781556,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 327,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5106023291152536,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 494,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 671,
+          "role": "foreground",
+          "track_id": 17
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 628,
+          "role": "foreground",
+          "track_id": 18
+        }
+      ],
+      "source_s": 13.2,
+      "timestamp_s": 2.2,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 23,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 108668,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4840034063347513,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 2825,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 849,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4145071531273866,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 3122,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.49243150359754223,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 835,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 958,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.38562704489877925,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4082,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4998771849427736,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1661,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4279366479728037,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1320,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.508029664233302,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1057,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.47819096191589233,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 528,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.41579649309613276,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 368,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5133549031634383,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 479,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 647,
+          "role": "foreground",
+          "track_id": 17
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 732,
+          "role": "foreground",
+          "track_id": 18
+        }
+      ],
+      "source_s": 13.3,
+      "timestamp_s": 2.3,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 24,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 108624,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5289648694407331,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 2920,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 623,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4574625541904803,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 3220,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4690087659101572,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 775,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 912,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3304578998394081,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4037,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5412931029293104,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1570,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4079858880831383,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1312,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5668809699364366,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1125,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5408287153237407,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 538,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 379,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5716611164326934,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 495,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 613,
+          "role": "foreground",
+          "track_id": 17
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 862,
+          "role": "foreground",
+          "track_id": 18
+        }
+      ],
+      "source_s": 13.4,
+      "timestamp_s": 2.4,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 25,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 108260,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5401162135833656,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3002,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 503,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4728162460772304,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 3377,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.41700889572503547,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 696,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 869,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.3822507325726211,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4056,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5463101275868997,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1555,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.38956124356831406,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1298,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.508586033577224,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1210,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5657440727200457,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 518,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5314545200453803,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 372,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5723271403207026,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 481,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 618,
+          "role": "foreground",
+          "track_id": 17
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 918,
+          "role": "foreground",
+          "track_id": 18
+        }
+      ],
+      "source_s": 13.5,
+      "timestamp_s": 2.5,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 26,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 108019,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.533270034558614,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3063,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 591,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.46443698188146326,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 3478,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3509380683735939,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 679,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1058,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4680674537048617,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4078,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5621393407942936,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1522,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4605679736250879,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1283,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1166,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5610992584391421,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 528,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5691582772601343,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 375,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5687782328164682,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 485,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 613,
+          "role": "foreground",
+          "track_id": 17
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 541,
+          "role": "foreground",
+          "track_id": 18
+        }
+      ],
+      "source_s": 13.6,
+      "timestamp_s": 2.6,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 27,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107902,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5624544354172905,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3079,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 815,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.49949451279911367,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 3619,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 579,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1271,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4825404589112348,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4126,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5469952940715356,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1384,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.567376201446876,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1205,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5870398018073336,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1213,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5987260412616464,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 534,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.586605197385783,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 420,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5914090025631412,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 499,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 581,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 13.7,
+      "timestamp_s": 2.7,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 28,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107849,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5871871028340788,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3110,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4870119819572864,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 3851,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.41866953522852524,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 503,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1240,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4214,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5893612282485124,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1351,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.485661711034942,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1221,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5761678935651311,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1206,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5708852015916579,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 507,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6052589062427299,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 428,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6205176872141833,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 491,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 566,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 13.8,
+      "timestamp_s": 2.8,
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "frame": 29,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 108082,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5198140824058379,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3183,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4273505116028177,
+          "label": "unconfirmed_stationary_object",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 3942,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 440,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1186,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 4186,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4736641194710989,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1285,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.35692139063629696,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 1183,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5382553861605383,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 1222,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4845055233620261,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 505,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5290755989309446,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 409,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5442622427616789,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 503,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 577,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 13.9,
+      "timestamp_s": 2.9,
+      "viewpoint_note": "development approach view"
+    }
+  ],
+  "frames_per_second": "10",
+  "labels_used_for_motion": false,
+  "last_timestamp_s": 2.9,
+  "legend_rgb": {
+    "MOVING": [
+      35,
+      165,
+      255
+    ],
+    "STATIONARY": [
+      255,
+      75,
+      70
+    ],
+    "UNKNOWN": [
+      245,
+      205,
+      60
+    ]
+  },
+  "mask_alpha": 0.35,
+  "mask_draw_count": 402,
+  "output_bytes": 672072,
+  "output_sha256": "fd231d9d169baa3f370b60a63aefafb1a4dfa9700895c0423fce4544a46794b5",
+  "outputs_code_sha256": "ff77d5c2af5683d36904e48aeec16349d83dac55fc2bea06c480b5c805869fea",
+  "pixel_format": "yuv420p",
+  "source_dimensions": [
+    640,
+    360
+  ],
+  "source_sha256": "cbc0678241cfed684f0bb41d7e6df4587bdf8af09cb75a8cdb260abd524c8b0c",
+  "tracking_identity": {
+    "checkpoint_sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+    "limit_frames": null,
+    "proposal_code_sha256": "fc3c2e3a7cd20439c3ef2baee2e5c40e7daa3580742e0d642d4e3183e6d533ad",
+    "source_sha256": "cbc0678241cfed684f0bb41d7e6df4587bdf8af09cb75a8cdb260abd524c8b0c",
+    "tracker_code_sha256": "e41ce3502abedc83f526c7305dfdb1916be6e1883b229532da4e7a5bf1f37f38",
+    "tracking_config_sha256": "453aad50dafb060c1ca18fb0bddfb523fda48e21b85d17f979d0a69455688567"
+  },
+  "tracking_model_id": "facebook/sam2.1-hiera-large",
+  "tracking_result_fingerprint": "d5b611d7c69089397fb463582330b75c32c847fe221345a11e87d77f08bbded0",
+  "tracking_timings_s": {
+    "decode": 0.4064648590001525,
+    "model_load": 1.5921913699999095,
+    "video_state_init": 10.831040122000104
+  },
+  "version": 1,
+  "viewpoint_note": "development approach view"
+}

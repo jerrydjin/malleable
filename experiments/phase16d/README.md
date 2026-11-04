@@ -42,6 +42,9 @@ raw moving runs and supported moving runs remain in the exports. A track with
 both confirmed states reports MIXED. These overlapping windows are an engineering
 confirmation rule, not independent trials or calibrated probabilities.
 Lane IDs are image-based camera-relative hypotheses, not surveyed lane numbers.
+Shoulders extend half an adjacent lane width outside the travel-lane boundaries;
+farther valid image points are labelled off-road. Ambiguous boundaries and
+unobservable contacts remain unknown.
 Positions state their reference image and pixels; metric/geographic position
 is unknown without calibration. The adapter's link 0 is an explicitly
 unlocalized scene-local road, not a Potrero or city-map location.
@@ -136,6 +139,10 @@ Each attempt has its own `runs/<id>/run.json`, including failures and code/input
 hashes. A full successful A/B/C run publishes `overlays/{A,B,C}.mp4`, `tracks.csv`
 and `edits.jsonl`, with provenance sidecars. Every retained visible mask is drawn;
 UNKNOWN is shown separately from MOVING/STATIONARY. Only actual edits are written.
+An orange PROPOSED EDIT badge begins at each record's emission frame and follows
+its visible track. A cross and diamond show the exact stored image position only
+on the emission frame. Overlay sidecars preserve edit IDs, positions and draw
+counts; finite positions outside the image remain explicit and are never clamped.
 `dev-targets.json` contains separate, manually inspected development annotations;
 the perception and label inputs never consume them. Extra A/B edits outside those
 nonexhaustive boxes are reported for review. C must have no candidate or edit.

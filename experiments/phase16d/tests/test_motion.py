@@ -41,6 +41,24 @@ def forward_road_homography(cx=320., cy=150., focal=500., height=1.5, travel=1.5
     return np.array([[1., -cx*k, cx*k*cy], [0., 1.-cy*k, k*cy*cy], [0., -k, 1.+k*cy]])
 
 
+class OffRoadAssignmentTests(unittest.TestCase):
+    def setUp(self):
+        self.cfg = config()
+        self.cfg["lanes"]["boundaries"] = [[[x, .4], [x, .9]] for x in (.3, .5, .7)]
+        self.cfg["lanes"]["shoulder_width_in_lane_widths"] = .5
+
+    def test_travel_lanes_bounded_shoulders_and_offroad_on_both_sides(self):
+        for x, expected in ((40, "lane_0"), (60, "lane_1"), (25, "shoulder"),
+                            (75, "shoulder"), (15, "off-road"), (85, "off-road")):
+            self.assertEqual(motion.assign_lane((x, 70), (100, 100), self.cfg), expected)
+
+    def test_unobservable_or_ambiguous_contact_stays_unknown(self):
+        for point in (None, (-1, 70), (101, 70), (30, 70), (40, 20), (np.nan, 70)):
+            self.assertEqual(motion.assign_lane(point, (100, 100), self.cfg), "unknown")
+        self.cfg["lanes"]["shoulder_width_in_lane_widths"] = -1
+        self.assertEqual(motion.assign_lane((25, 70), (100, 100), self.cfg), "unknown")
+
+
 class ResidualTests(unittest.TestCase):
     def setUp(self):
         self.cfg = config()

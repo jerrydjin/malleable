@@ -23,6 +23,7 @@ from PIL import Image, ImageDraw, ImageFont
 VIEWPOINT_B = "same source, different viewpoint"
 COLOURS = {"MOVING": (35, 165, 255), "STATIONARY": (255, 75, 70),
            "UNKNOWN": (245, 205, 60)}
+PROPOSED_EDIT_COLOUR = (255, 135, 15)
 CSV_FIELDS = ["clip", "viewpoint_note", "track_id", "role", "first_frame", "last_frame",
               "source_start_s", "source_end_s", "observed_span_s", "observations",
               "stationary_frames", "moving_frames", "unknown_frames",
@@ -167,6 +168,34 @@ def _wrap(text, font, width):
     return lines + [line]
 
 
+def _proposed_edit_marker(edit, frame, frame_count, shape):
+    """Keep recorded proposal geometry distinct from a later tracking badge."""
+    if edit is None or edit.get("status") != "Proposed":
+        return None
+    position = edit.get("position", {})
+    reference = position.get("reference_frame")
+    if not isinstance(edit.get("id"), str) or not edit["id"]:
+        raise ValueError("Proposed edit marker requires the actual edit ID")
+    if (type(reference) is not int or not 0 <= reference < frame_count
+            or position.get("coordinate_system") != "road_reference_image"):
+        raise ValueError("Proposed edit marker requires a valid reference image frame")
+    try:
+        point = [float(position["x_px"]), float(position["y_px"])]
+    except (KeyError, TypeError, ValueError) as error:
+        raise ValueError("Proposed edit marker requires finite reference image coordinates") from error
+    if not np.isfinite(point).all():
+        raise ValueError("Proposed edit marker requires finite reference image coordinates")
+    if frame < reference:
+        return None
+    h, w = shape[:2]
+    visible = bool(0 <= point[0] < w and 0 <= point[1] < h)
+    return {"edit_id": edit["id"], "status": "Proposed", "reference_frame": reference,
+            "reference_position_xy": point, "coordinate_system": "road_reference_image",
+            "reference_position_visible": visible,
+            "draw_reference_position": frame == reference and visible,
+            "badge_position_source": "current_visible_mask_bounds"}
+
+
 def _observations(bundle, analysis, clip, cfg, labels, edits):
     frames, masks = bundle["frames"], bundle["masks"]
     if not len(frames) or len(frames) != len(masks) or len(frames) != len(bundle["timestamps_s"]):
@@ -214,11 +243,15 @@ def _observations(bundle, analysis, clip, cfg, labels, edits):
             if row.get("source_s") is not None:
                 source_times.append(float(row["source_s"]))
             text, source = _label(clip, ident, summaries.get(ident, {}), labels, edit_lookup)
-            items.append({"track_id": ident, "class": kind,
-                          "role": row.get("role", summaries.get(ident, {}).get("role", "unknown")),
-                          "lane": row.get("lane", "unknown"),
-                          "label": text, "label_source": source,
-                          "confidence": row.get("confidence"), "mask_area_px": int(mask.sum())})
+            item = {"track_id": ident, "class": kind,
+                    "role": row.get("role", summaries.get(ident, {}).get("role", "unknown")),
+                    "lane": row.get("lane", "unknown"),
+                    "label": text, "label_source": source,
+                    "confidence": row.get("confidence"), "mask_area_px": int(mask.sum())}
+            marker = _proposed_edit_marker(edit_lookup.get((str(clip), ident)), index, len(frames), shape)
+            if marker is not None:
+                item["proposed_edit"] = marker
+            items.append(item)
         if source_times and not np.allclose(source_times, source_times[0], atol=1e-7, rtol=0):
             raise ValueError("Observations disagree on source timestamp")
         source_s = source_times[0] if source_times else source_start + float(bundle["timestamps_s"][index])
@@ -254,6 +287,7 @@ def _render_frame(rgb, objects, record, font, width, height, banner_lines, foote
     draw.text((6, 3+len(banner_lines)*18),
               f'frame {record["frame"]} | source {record["source_s"]:.3f} s',
               fill=(255, 255, 255), font=font)
+    label_positions = {}
     for item in record["objects"]:
         mask = np.asarray(objects.get(item["track_id"], objects.get(str(item["track_id"]))), dtype=bool)
         y, x = np.nonzero(mask)
@@ -262,9 +296,42 @@ def _render_frame(rgb, objects, record, font, width, height, banner_lines, foote
         box = draw.textbbox(position, text, font=font)
         draw.rectangle(box, fill=(0, 0, 0))
         draw.text(position, text, fill=COLOURS[item["class"]], font=font)
+        label_positions[item["track_id"]] = (position, box)
+    # Proposal badges follow the track label and are painted after all ordinary
+    # labels so a neighbouring track cannot cover the proposal status.
+    for item in record["objects"]:
+        if item.get("proposed_edit") is not None:
+            badge = "PROPOSED EDIT"
+            # This badge follows the visible track; it is not a new edit pose.
+            position, label_box = label_positions[item["track_id"]]
+            badge_x = label_box[2] + 5
+            if badge_x + font.getlength(badge) + 3 <= w:
+                badge_position = (badge_x, position[1])
+            else:
+                badge_position = (min(position[0], max(0, w-int(font.getlength(badge))-4)),
+                                  min(position[1]+17, top+h-17))
+            badge_box = draw.textbbox(badge_position, badge, font=font)
+            draw.rectangle((badge_box[0]-2, badge_box[1]-1, badge_box[2]+2, badge_box[3]+1),
+                           fill=(0, 0, 0), outline=PROPOSED_EDIT_COLOUR, width=1)
+            draw.text(badge_position, badge, fill=PROPOSED_EDIT_COLOUR, font=font)
+    # Draw recorded reference positions last, at the actual emission frame only.
+    # Reusing this fixed point in later camera views would imply a false pose.
+    for item in record["objects"]:
+        marker = item.get("proposed_edit")
+        if marker is None or not marker["draw_reference_position"]:
+            continue
+        px, py = marker["reference_position_xy"]
+        py += top
+        diamond = [(px, py-7), (px+7, py), (px, py+7), (px-7, py), (px, py-7)]
+        draw.line(diamond, fill=(0, 0, 0), width=4)
+        draw.line(diamond, fill=PROPOSED_EDIT_COLOUR, width=2)
+        for line in (((px-9, py), (px+9, py)), ((px, py-9), (px, py+9))):
+            draw.line(line, fill=(0, 0, 0), width=4)
+            draw.line(line, fill=PROPOSED_EDIT_COLOUR, width=2)
     footer_y = top+h+3
     for kind, text in footer_lines:
-        draw.text((6, footer_y), text, fill=COLOURS.get(kind, (230, 230, 230)), font=font)
+        colour = PROPOSED_EDIT_COLOUR if kind == "PROPOSED_EDIT" else COLOURS.get(kind, (230, 230, 230))
+        draw.text((6, footer_y), text, fill=colour, font=font)
         footer_y += 18
     return np.asarray(pil)
 
@@ -296,6 +363,10 @@ def render_overlay(bundle, analysis, path, clip, cfg, labels=None, edits=None):
         for item in record["objects"]:
             text = f'#{item["track_id"]} {item["class"]} | {item["lane"]} | {item["label"]} [{item["label_source"]}]'
             lines.extend((item["class"], line) for line in _wrap(text, font, width-12))
+            marker = item.get("proposed_edit")
+            if marker is not None:
+                text = f'PROPOSED EDIT {marker["edit_id"]} | emitted frame {marker["reference_frame"]}'
+                lines.extend(("PROPOSED_EDIT", line) for line in _wrap(text, font, width-12))
         footers.append(lines)
     height = h + (len(banner)+1)*18 + max(map(len, footers))*18 + 6
     height += height % 2
@@ -348,6 +419,11 @@ def render_overlay(bundle, analysis, path, clip, cfg, labels=None, edits=None):
                 "source_dimensions": [w, h], "canvas_dimensions": [width, height],
                 "codec": stream["codec_name"], "pixel_format": stream["pix_fmt"],
                 "mask_draw_count": sum(len(row["objects"]) for row in records),
+                "proposed_edit_badge_draw_count": sum("proposed_edit" in item for row in records for item in row["objects"]),
+                "proposed_edit_reference_point_draw_count": sum(item.get("proposed_edit", {}).get("draw_reference_position", False)
+                                                                 for row in records for item in row["objects"]),
+                "proposed_edit_marker_rgb": list(PROPOSED_EDIT_COLOUR),
+                "proposed_edit_marker_policy": "actual Proposed records only; badge from emission frame, recorded position on emission frame only",
                 "confidence_kind": "heuristic", "labels_used_for_motion": False,
                 "legend_rgb": {kind: list(colour) for kind, colour in COLOURS.items()},
                 "mask_alpha": alpha, "frames": records,

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/.venvs/phase16d/bin/python",
+    "/workspace/malleable/experiments/phase16d/run_mapping.py",
+    "dev",
+    "--run-id",
+    "dev-003-confirmed"
+  ],
+  "job_id": "dev-003-confirmed",
+  "log_path": "experiments/phase16d/runtime/dev-003-confirmed-console.log",
+  "note": "Final status is recorded by the existing runner or validation command.",
+  "pid": 11216,
+  "started_at_utc": "2026-11-04T09:15:28.127677+00:00",
+  "state": "launched"
+}

@@ -10,6 +10,7 @@ import unittest
 from unittest.mock import patch
 
 import numpy as np
+import cv2
 
 SPEC = importlib.util.spec_from_file_location("phase16d_outputs", Path(__file__).resolve().parents[1] / "outputs.py")
 outputs = importlib.util.module_from_spec(SPEC)
@@ -53,6 +54,14 @@ def fixture():
                 "tracks": summaries, "observations": observations}
     config = {"clips": {"B": {"source_start_s": 14.5, "viewpoint_note": outputs.VIEWPOINT_B}}}
     return bundle, analysis, config
+
+
+def proposed_edit():
+    return {"id": "phase16d:B:1", "clip": "B", "track_id": 1, "status": "Proposed",
+            "position": {"coordinate_system": "road_reference_image", "reference_frame": 1,
+                         "x_px": 60.0, "y_px": 60.0},
+            "evidence": {"label": "stationary lane object"},
+            "label_provenance": {"source": "model"}}
 
 
 class OverlayTests(unittest.TestCase):
@@ -115,6 +124,102 @@ class OverlayTests(unittest.TestCase):
         bundle["metadata"] = {}
         with self.assertRaisesRegex(ValueError, "single-frame"):
             outputs._cadence(bundle)
+
+
+class ProposalMarkerTests(unittest.TestCase):
+    def test_markers_begin_at_emission_and_preserve_actual_record_and_motion(self):
+        bundle, analysis, config = fixture()
+        edit = proposed_edit()
+        records = outputs._observations(bundle, analysis, "B", config, None, [edit])
+        self.assertNotIn("proposed_edit", records[0]["objects"][0])
+        markers = [record["objects"][0]["proposed_edit"] for record in records[1:]]
+        self.assertTrue(all(marker["edit_id"] == edit["id"] and marker["status"] == "Proposed"
+                            for marker in markers))
+        self.assertEqual([marker["draw_reference_position"] for marker in markers], [True, False, False])
+        self.assertTrue(all(marker["reference_frame"] == 1 and marker["reference_position_xy"] == [60., 60.]
+                            for marker in markers))
+        self.assertEqual([record["objects"][0]["class"] for record in records],
+                         ["UNKNOWN", "STATIONARY", "MOVING", "MOVING"])
+
+    def test_recorded_cross_is_not_reused_as_later_pose_and_badge_follows_mask(self):
+        bundle, analysis, config = fixture()
+        analysis["observations"] = [row for row in analysis["observations"] if row["track_id"] == 1]
+        for index in range(4):
+            bundle["frames"][index] = np.full((80, 640, 3), 70 + index*10, dtype=np.uint8)
+            mask = np.zeros((80, 640), dtype=bool)
+            left = 50 if index < 2 else 300
+            mask[40:65, left:left+20] = True
+            bundle["masks"][index] = {1: mask, 2: np.zeros_like(mask)}
+            # Zero-visible surface is intentionally absent from this rendering fixture.
+        records = outputs._observations(bundle, analysis, "B", config, None, [proposed_edit()])
+        banner = ["Clip B"]
+        top = 36
+        rendered = [outputs._render_frame(bundle["frames"][i], bundle["masks"][i], records[i],
+                                          outputs._font(13), 640, 180, banner, [], .35)
+                    for i in range(3)]
+        colour = np.asarray(outputs.PROPOSED_EDIT_COLOUR)
+        self.assertFalse(np.all(rendered[0] == colour, axis=2).any())
+        np.testing.assert_array_equal(rendered[1][top+60, 60], colour)
+        self.assertFalse(np.array_equal(rendered[2][top+60, 60], colour))
+        _, later_x = np.nonzero(np.all(rendered[2] == colour, axis=2))
+        self.assertGreater(len(later_x), 0)
+        self.assertGreaterEqual(int(later_x.min()), 298)
+
+    def test_no_edit_and_nonproposed_records_do_not_create_markers(self):
+        bundle, analysis, config = fixture()
+        for edits in ([], [{**proposed_edit(), "status": "Merged"}]):
+            records = outputs._observations(bundle, analysis, "B", config, None, edits)
+            self.assertTrue(all("proposed_edit" not in item for record in records for item in record["objects"]))
+
+    def test_invalid_proposed_reference_does_not_publish_an_overlay(self):
+        bundle, analysis, config = fixture()
+        invalid = []
+        for reference in (-1, 4, True, "1"):
+            edit = proposed_edit(); edit["position"]["reference_frame"] = reference; invalid.append(edit)
+        for key, value in (("x_px", float("nan")), ("y_px", float("inf")),
+                           ("coordinate_system", "metric_world")):
+            edit = proposed_edit(); edit["position"][key] = value; invalid.append(edit)
+        edit = proposed_edit(); del edit["id"]; invalid.append(edit)
+        edit = proposed_edit(); del edit["position"]["x_px"]; invalid.append(edit)
+        with tempfile.TemporaryDirectory() as directory:
+            for index, edit in enumerate(invalid):
+                path = Path(directory) / f"invalid-{index}.mp4"
+                with self.subTest(edit=edit), self.assertRaises(ValueError):
+                    outputs.render_overlay(bundle, analysis, path, "B", config, edits=[edit])
+                self.assertFalse(path.exists())
+
+    def test_outside_reference_position_is_recorded_without_clamping(self):
+        bundle, analysis, config = fixture()
+        edit = proposed_edit(); edit["position"]["x_px"] = -2.5
+        records = outputs._observations(bundle, analysis, "B", config, None, [edit])
+        marker = records[1]["objects"][0]["proposed_edit"]
+        self.assertEqual(marker["reference_position_xy"], [-2.5, 60.])
+        self.assertFalse(marker["reference_position_visible"])
+        self.assertFalse(marker["draw_reference_position"])
+        self.assertEqual(marker["badge_position_source"], "current_visible_mask_bounds")
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "ffmpeg/ffprobe required")
+    def test_actual_h264_contains_reference_marker_and_provenance_counts(self):
+        bundle, analysis, config = fixture()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "B.mp4"
+            metadata = outputs.render_overlay(bundle, analysis, path, "B", config, edits=[proposed_edit()])
+            self.assertEqual(metadata["proposed_edit_badge_draw_count"], 3)
+            self.assertEqual(metadata["proposed_edit_reference_point_draw_count"], 1)
+            capture = cv2.VideoCapture(str(path))
+            decoded = []
+            for _ in range(2):
+                ok, frame = capture.read(); self.assertTrue(ok)
+                decoded.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+            capture.release()
+            # Lossy H264 changes exact RGB values; the bright-orange reference
+            # marker must remain visible around its real image point plus banner.
+            top = (len(outputs._wrap(f"Clip B | {outputs.VIEWPOINT_B}", outputs._font(13), 468))+1)*18
+            orange = lambda im: ((im[..., 0] > 205) & (im[..., 1] > 70)
+                                  & (im[..., 1] < 190) & (im[..., 2] < 70))
+            self.assertEqual(int(orange(decoded[0][top+49:top+71, 49:71]).sum()), 0)
+            self.assertGreater(int(orange(decoded[1][top+49:top+71, 49:71]).sum()), 15)
+            self.assertEqual(json.loads(path.with_suffix(".mp4.json").read_text()), metadata)
 
 
 class TableTests(unittest.TestCase):

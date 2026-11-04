@@ -348,8 +348,10 @@ def assign_lane(contact_xy, size_wh, cfg):
     """Assign a camera-relative lane using configured perspective boundaries.
 
     Boundaries are normalized endpoint pairs, ordered from left to right.
-    Regions outside the outer boundaries are shoulders. A point too close to a
-    boundary or outside the configured vertical validity range is unknown.
+    Bounded shoulders extend outside the outer boundaries; farther points are
+    off-road. A point too close to a boundary or outside the configured vertical
+    validity range is unknown. Without a configured shoulder width, legacy
+    shoulder-only assignment is preserved.
     """
     if contact_xy is None:
         return "unknown"
@@ -372,6 +374,19 @@ def assign_lane(contact_xy, size_wh, cfg):
     if any(abs(x - boundary) <= float(params["boundary_margin_px"]) for boundary in boundaries):
         return "unknown"
     if x < boundaries[0] or x > boundaries[-1]:
+        shoulder_width = params.get("shoulder_width_in_lane_widths")
+        if shoulder_width is not None:
+            shoulder_width = float(shoulder_width)
+            if not np.isfinite(shoulder_width) or shoulder_width < 0:
+                return "unknown"
+            if x < boundaries[0]:
+                distance = boundaries[0] - x
+                lane_width = boundaries[1] - boundaries[0]
+            else:
+                distance = x - boundaries[-1]
+                lane_width = boundaries[-1] - boundaries[-2]
+            if distance > shoulder_width * lane_width:
+                return "off-road"
         return "shoulder"
     for index, (left, right) in enumerate(zip(boundaries, boundaries[1:])):
         if left < x < right:

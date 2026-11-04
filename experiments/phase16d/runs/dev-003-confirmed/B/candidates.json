@@ -1,0 +1,22 @@
+[
+  {
+    "evidence": {
+      "clip": "B",
+      "confidence": 0.6507105237797679,
+      "image_sha256": "e0c6349967334f1cc5c525fda2dd3318d8a4a23390a800cf50e4309375234b33",
+      "lane": "lane_2",
+      "mask_sha256": "a9e8dc18787f38cd874c4bbd890e3d52225358668dcaaa01414d1f24f7a026a7",
+      "position": {
+        "coordinate_system": "road_reference_image",
+        "metric_position_m": null,
+        "reference_frame": 8,
+        "x_px": 401.1831350835709,
+        "y_px": 224.80592598599145
+      },
+      "required_stationary_frames": 6,
+      "since_s": 14.8,
+      "stationary_frames": 6,
+      "track_id": 4
+    }
+  }
+]

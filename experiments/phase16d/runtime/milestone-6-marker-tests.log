@@ -1,0 +1,20 @@
+test_empty_bundle_does_not_create_placeholder (test_outputs.OverlayTests.test_empty_bundle_does_not_create_placeholder) ... ok
+test_h264_actual_cadence_all_masks_and_every_b_frame (test_outputs.OverlayTests.test_h264_actual_cadence_all_masks_and_every_b_frame) ... ok
+test_irregular_timestamps_are_not_resampled (test_outputs.OverlayTests.test_irregular_timestamps_are_not_resampled) ... ok
+test_missing_measurement_does_not_publish_video (test_outputs.OverlayTests.test_missing_measurement_does_not_publish_video) ... ok
+test_single_frame_requires_real_cadence_metadata (test_outputs.OverlayTests.test_single_frame_requires_real_cadence_metadata) ... ok
+test_actual_h264_contains_reference_marker_and_provenance_counts (test_outputs.ProposalMarkerTests.test_actual_h264_contains_reference_marker_and_provenance_counts) ... ok
+test_invalid_proposed_reference_does_not_publish_an_overlay (test_outputs.ProposalMarkerTests.test_invalid_proposed_reference_does_not_publish_an_overlay) ... ok
+test_markers_begin_at_emission_and_preserve_actual_record_and_motion (test_outputs.ProposalMarkerTests.test_markers_begin_at_emission_and_preserve_actual_record_and_motion) ... ok
+test_no_edit_and_nonproposed_records_do_not_create_markers (test_outputs.ProposalMarkerTests.test_no_edit_and_nonproposed_records_do_not_create_markers) ... ok
+test_outside_reference_position_is_recorded_without_clamping (test_outputs.ProposalMarkerTests.test_outside_reference_position_is_recorded_without_clamping) ... ok
+test_recorded_cross_is_not_reused_as_later_pose_and_badge_follows_mask (test_outputs.ProposalMarkerTests.test_recorded_cross_is_not_reused_as_later_pose_and_badge_follows_mask) ... ok
+test_annotation_cannot_claim_model_provenance (test_outputs.TableTests.test_annotation_cannot_claim_model_provenance) ... ok
+test_csv_preserves_scores_and_provenance_and_zero_visible_track (test_outputs.TableTests.test_csv_preserves_scores_and_provenance_and_zero_visible_track) ... ok
+test_jsonl_empty_is_zero_edits_and_wrong_viewpoint_fails (test_outputs.TableTests.test_jsonl_empty_is_zero_edits_and_wrong_viewpoint_fails) ... ok
+test_jsonl_retains_actual_edit_and_rejects_duplicate (test_outputs.TableTests.test_jsonl_retains_actual_edit_and_rejects_duplicate) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.322s
+
+OK

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/workspace/.venvs/phase16d/bin/python",
+    "/workspace/malleable/experiments/phase16d/validate.py",
+    "--prefix",
+    "final-dev"
+  ],
+  "job_id": "final-checks-001",
+  "log_path": "experiments/phase16d/runtime/final-checks-001-console.log",
+  "note": "Final status is recorded by the existing runner or validation command.",
+  "pid": 11309,
+  "reason": "Explicit Proposed edit markers are required in final overlays; validation will run on the completed output implementation.",
+  "started_at_utc": "2026-11-04T09:16:20.523277+00:00",
+  "state": "stopped_before_freeze",
+  "stopped_at_utc": "2026-11-04T09:24:14.014638+00:00"
+}

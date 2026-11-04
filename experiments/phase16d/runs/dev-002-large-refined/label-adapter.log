@@ -1,0 +1,16 @@
+   Compiling malleable v0.1.0 (/workspace/malleable)
+warning: method `review` is never used
+   --> examples/../experiments/phase16d/record_adapter.rs:269:12
+    |
+265 | impl MappedEdit {
+    | --------------- method in this implementation
+...
+269 |     pub fn review(&mut self, reviewer: u32, at_s: f64, saw_blockage: bool, independent_sensor: bool) {
+    |            ^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `malleable` (example "phase16d_record") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.64s
+     Running `/workspace/.cache/phase16d-cargo/debug/examples/phase16d_record --input=/workspace/malleable/experiments/phase16d/runs/dev-002-large-refined/candidates.json --output=/workspace/malleable/experiments/phase16d/runs/dev-002-large-refined/records.json`
+curl-timing elapsed_s=3.559 budget_s=45.000 exit=Some(0) http_status=Some(200) stderr=""
