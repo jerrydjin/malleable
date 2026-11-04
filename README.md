@@ -1,5 +1,7 @@
 # Malleable
 
+[Shared road record protocol](docs/SPEC.md) · [Preregistered claims and results](docs/SCOREBOARD.md)
+
 The project was formerly called backtothefuture / muse.
 
 ```bash
