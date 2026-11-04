@@ -1,0 +1,17 @@
+{
+  "attempt": 1,
+  "cgroup_memory_bytes": 7960244224,
+  "checked_at_utc": "2026-11-04T10:56:10.001581+00:00",
+  "completed_clips": null,
+  "expected_sampled_frames": 300,
+  "job": "heldout-frozen",
+  "mask_frames_written": {
+    "heldout": 50
+  },
+  "note": "Progress snapshot only; the exclusive frozen inference process continues. This is not a scored result.",
+  "pid": 18089,
+  "preregistered_score": "NOT RUN",
+  "process_rss_bytes": 2011029504,
+  "process_state": "R (running)",
+  "run_state": "attempt_reserved"
+}
