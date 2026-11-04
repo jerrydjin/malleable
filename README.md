@@ -1,207 +1,72 @@
 # Malleable
 
-[Shared road record protocol](docs/SPEC.md) · [Preregistered claims and results](docs/SCOREBOARD.md)
+Our goal: an ambulance gets a clear road ahead of it because cars share a live road record, with robotaxi fleets as the first buyers. Today we measure a simulated propose → confirm → merge loop, not that outcome: [the PR #50 replay's seed 1 gate records an edit merge, 0.0 s affected median gain, and a 300 m bar not met](docs/gates/phase-15a-scores.jsonl#L10).
 
-The project was formerly called backtothefuture / muse.
+AVs read and write the road record the way coding agents commit to a codebase. Edits are commits, a second car's confirmation is review, and conflicting claims are merge conflicts. This is the protocol analogy; fleet deployment and general conflict resolution are not built. See the [implemented protocol](docs/SPEC.md).
 
-```bash
-cargo run -- --demo
-```
+## What the evidence shows
 
-One continuous white road network: normal flow, two drivers agree who goes first,
-a typed “I'm late for the hospital” request clears a path, then hospital and
-meeting priorities compete. The demo ends on the hospital decision and its
-one-line reason, in under two minutes. `BASETEN_API_KEY` uses the live model;
-without it the same story uses the scripted fallback.
+- **Propose, confirm, merge with a set reach.** [PR #50](https://github.com/jerrydjin/malleable/pull/50) plays the original [seed 1 RECORD gate row](docs/gates/phase-15a-scores.jsonl#L10): a car proposes, a second car confirms from its simulated sensor, then the edit merges. The cached model reply sets [route reach, radius 1500 m](docs/gates/phase-15-model-replies.json). Play the [committed replay](recordings/phase15a-seed1.json); do not regenerate it.
+- **A spoofed edit does not merge in the scored matrix.** [`spoof_merged: false` and `spoof_caused_reroutes: 0` hold for seeds 1–10 in the original Phase 15a gate](docs/gates/phase-15a-scores.jsonl). This does not establish trust for real fleets or independent cameras.
+- **The Meta LLM picks label, reach and who gets priority; it never touches physics.** [Recorded label/reach](docs/gates/phase-15-model-replies.json), [live grant/deny evidence](docs/gates/phase-c-reasons.jsonl), and the [policy adapter](src/reason.rs) show that boundary. [`RoadEdit::review`](src/record.rs) is the hazard merge authority; the [host](src/record_host.rs) and [physical executor](src/make_way.rs) retain movement control. The scored Phase 15 priority grants use Mock, not live LLM decisions.
 
-Play the saved live rush hour, first grant, caught liar and denial without credentials:
-`python3 scripts/play-recording.py`. Use `--legacy` for the original demo → grant → denial.
+## Where Meta models sit
 
-## Information outruns traffic
+**SAM 2.1 is the eyes:** its committed masks provide visual evidence. **The Meta LLM (Muse, via Baseten) writes label and reach and decides grant/deny.** Muse is Meta's LLM; the project is Malleable. The [Phase 16b gate](docs/gates/phase-16b-summary.md) records live SAM and a live Baseten label/reach reply from a numerical SAM summary, not from images. Reach is reply metadata; the model cannot merge an edit or move a car.
 
-```sh
-cargo run -- --board --rush-hour --policy live --seed 1 --save-replay /tmp/rush-session.json
-./target/debug/malleable --rush-hour --headless --policy mock --seed 1 --score /tmp/score.json
-./target/debug/malleable --rush-hour --headless --policy live --seed 1 --require-live --score /tmp/live.json --decision-log /tmp/decisions.json
-python3 scripts/play-recording.py
-```
+In Phase 16b, **B is same source, different viewpoint**. It is not independent corroboration. The label sits on the white trailer, not the crash; the trust rule was not tested because A failed detection and B review was never applied. See [bars and caveats](docs/gates/phase-16b-summary.md), [merge check](experiments/phase16b/output/merge-check.json), and [retained overlay](experiments/phase16b/overlays/B.mp4).
 
-The same white network now carries 240 fixed trips. A grant sends a thin route pulse ahead; current clearing/yielding cars are marked from the simulator's actual state. The corner shows paired seconds saved versus local-only, liars caught so far and collisions. Type “My passenger has chest pain”: the new rider's first acute claim gets priority. This demo rider's actual route ends at the gym; the next claim sees that completed outcome, and the third sees both. A denial blocks that rider's broadcast. Completed history is session-local; restarting the process resets it.
+## Quickstart and recording order
 
-[Five live seeds, timing, costs and limits](docs/phase-4-live-at-scale.md) · [Board, recording and browser evidence](docs/phase-5-rush-board-recording.md).
-The model decides precedence and words once; route messages and every movement use deterministic host rules. `--local-only` disables spreading; `--no-history` hides completed history. A labelled fallback never counts as live and grants plausible acute medical claims, including seizures.
-
-
-## Rider reasons (draft phase 2)
-
-`cargo run -- --board` opens the same white network with one small reason input.
-Press Enter to ask for priority. Baseten grants or denies the request and writes
-two short driver lines; only the grant flag reaches the existing safe simulation.
-Each submission starts a fresh trip for car 177. Missing credentials or a failed
-reply use the conservative scripted fallback.
+Requires Rust/Cargo, Bash and a browser. From the repository root:
 
 ```bash
-cargo run -- --reason "My passenger has severe chest pain" --board
-./target/debug/malleable --reason "I am late for a routine meeting" \
-  --headless --require-live --gate-log /tmp/reasons.jsonl
-```
-
-Reasons are capped at 240 characters. Invalid instructions and markup are
-rejected; driver lines and the explanation are capped at eight words. A live
-gate requires `provider=baseten, source=model` and a collision-free trip.
-[Measured ten-reason evidence and limits](docs/phase-2-reason-input.md).
-
-`cargo run -- --demo --headless` drives the same HTTP session without a browser,
-including `POST /negotiate` and `GET /result`. Add `--require-live` to require
-Baseten replies and `--gate-log runs.jsonl` to retain the run report. Driver
-lines are capped at eight words; numbers, units, and telemetry language trigger
-a short fallback that preserves who waits and who goes.
-
-Run the real-time release gate (about seventeen minutes per batch):
-
-```bash
-cargo test && cargo build
-python3 scripts/demo-gate.py --output basic.jsonl
-# Only a passing basic ten-run log unlocks the expanded batch.
-python3 scripts/demo-gate.py --expanded --basic-log basic.jsonl --output expanded.jsonl
-```
-
-Each batch runs five genuine Baseten sessions, then five sessions with its key
-unset. Every session uses the browser's HTTP endpoints and wall clock, checks
-all replies resolve, checks zero collisions, and records length, reply time,
-provider, and exact lines. The expanded batch also checks the first weak-request
-grant and both repeated-request refusals through the same HTTP playback. The
-public demo continues to end on hospital versus meeting. Missing credentials
-stop the live gate explicitly. `--fallback-only` records just five no-key runs;
-it cannot unlock the expanded gate. Never count those as a complete ten-run gate.
-
-The optional PR workflow runs these two batches only when the head commit
-contains `[run-demo-gate]` and a repository `BASETEN_API_KEY` secret is available.
-
-
-You say what matters in plain English — the traffic bends. The model plans the merge; the cars just drive. Dumb equal stays jammed; the scoreboard goes green.
-
-Traffic here is a closed ramp merge in meters, not a renderer. Mainline and a ramp accel lane meet at one gore. A fixed priority queue cannot write the fair order before the run, because the order comes from the English (or a small structured stub) plus the jam. The model emits that order once. Local cars only execute it, under length, speed, and gap limits. The judge scores the trajectories.
-
-ChemStation is not this product.
-
-## Demo
-
-```bash
+cargo build --release
 cargo test
-cargo run -- --board
-BASETEN_API_KEY=... cargo run -- --board
-GEMINI_API_KEY=... cargo run -- --board --priority
-cargo run -- --cars 6 --jam symmetric --prefs "Zipper fairly so both approaches get home."
-cargo run -- --cars 8 --jam ramp-surge --prefs "Zipper fairly so both approaches get home." --show
-cargo run -- --cars 6 --jam symmetric --prefs "Main has priority. Main first."
+bash scripts/demo.sh --dry-run
+bash scripts/demo.sh
 ```
 
-`cargo run -- --board` opens the live birds-eye window: the dinner merge in one block of a small town, one yield or merge cue, and three tiny RED / RED / GREEN pills. Around it, background cars drive routes through a motorway, ramps, and streets, and queue at the merges in a rush hour. That town is its own local sim and never touches the score. `--show` prints that same dinner path in the terminal.
+The player prints a browser URL. In the script, press Enter in the terminal after each shot; it closes that viewer and pauses before the next. A failed command exits non-zero. Standalone viewer commands stay open until Ctrl-C.
 
-The legacy `--board --priority` and `--board --story KIND` modes retain their forecasted merge dialogue. Positions, speeds, gaps, and short English preferences produce two short lines and an agreed yield through local physics. These modes send the forecast ahead of playback and keep provider keys in Rust. They retain the 45-second negotiation timeout and may hold a late encounter with “negotiating…”. The finite `--demo` instead has a 28-second deadline and fails its live gate for any late poll. Ctrl-C ends a board session. Use `--board --no-open` on a host without a display and open the printed URL.
+Shot A — play the saved trust loop:
 
 ```bash
-BASETEN_API_KEY=... cargo run -- --board --priority
-GEMINI_API_KEY=... cargo run -- --board --priority
+cargo run --release -- --replay recordings/phase15a-seed1.json
 ```
 
-`BASETEN_API_KEY` selects the hackathon host and model, with `provider=baseten`. `MODEL_API_MODEL` can override that model. Legacy priority/story boards also support `GEMINI_API_KEY` or generic `MERGE_API_KEY` / `MODEL_API_BASE`; the interactive reason board and finite demo use Baseten or scripted fallback. Failures retain a short token such as `no_key`, `timeout`, `http_400`, or `parse`. The key is never logged. Sticky stays selfish `RED`, dumb-equal `RED`, scripted `GREEN`. The judge does not read dialogue, and tests need no key.
-
-Fair prefs: selfish and dumb-equal print `RED`, the scripted plan prints `GREEN`, process exits 0.
-
-```text
-selfish     RED time_home=inf collisions=1 fairness=1.00 home=0/6 (collision, not all home)
-dumb-equal  RED time_home=inf collisions=0 fairness=1.00 home=0/6 (not all home)
-scripted    GREEN time_home=69 collisions=0 fairness=0.00 home=6/6
-```
-
-That path is N=6, symmetric, scripted, no API key.
-`Main has priority` still clears the cars and stays `RED` on fairness. The baseline stays red either way.
-A fair run that fails to go green exits 1.
-
-## Priority request
-
-`cargo run -- --board --priority` symbolically requests priority for the blue car.
-Cars ahead relay it through two junction agreements, yield, and clear its route.
-The home label compares 126.5 simulated seconds from the request with 141.0
-without it: 14.5 seconds sooner, zero collisions. `--priority-baseline` plays
-the same trip without the request; `cargo run -- --priority` prints the comparison.
-No API key is needed. Baseten uses the same 25-second prefetch and 45-second
-request timeout for each exchange. See [the priority proof](docs/priority-request.md).
-
-## Negotiation stories and replay
-
-`cargo run -- --board --story competing` shows hospital vs meeting requests and
-why the hospital wins. Other stories are `abuse` (repeated weak requests get no),
-`emergency` (sustained symbolic distress, no rider request), `chain` (three real
-cars acknowledge), and `counter-offer` (an accepted crossing before priority).
-Rerouting stays cut. Every story works without a key.
+Shot B — the existing live grant/deny board, when `BASETEN_API_KEY` is set:
 
 ```bash
-cargo run -- --board --story counter-offer --save-replay /tmp/traffic-replay.json
-cargo run -- --replay /tmp/traffic-replay.json
+cargo run --release -- --board
 ```
 
-The saved snapshot updates with actual model words as replies arrive. Replay
-uses the saved motion and decisions with zero model calls. Press R or the small
-replay button to watch again. Add `--no-open` for a headless host.
-[Commands, measured outcomes, and proof](docs/negotiation-stories.md).
+Submit `My passenger has severe chest pain`, then `I want coffee before it gets cold`. Inspect the source/provider and the actual grant/deny; report a fallback or unexpected decision plainly. This is a demo, not new scored evidence. Keep the key in the environment; never print it.
 
-## Loop
+Without the key, the script prints a notice and plays these saved shots in order, pausing between them:
 
-1. Spawn one merge jam (`--cars`, `--jam`).
-2. Roll the selfish baseline and the dumb-equal baseline. Both are red.
-3. Render prefs + symbolic state into a prompt. The model client completes that prompt into one string.
-4. Parse one `ZonePlan`. Broadcast it on the local stub mailbox.
-5. Cars execute. A cooperative claim waits for a physical gap; two claims at once overlap in the gore. A mid-run rewrite is another `complete` (`--rewrite-every`).
-6. Judge the trajectories.
+```bash
+cargo run --release -- --replay recordings/grant.json
+cargo run --release -- --replay recordings/deny.json
+```
 
-The model is not in the tick. A claim is "I want the gore", not a brake.
+The [demo runbook](docs/DEMO-RUNBOOK.md) has narration, stopping instructions and evidence boundaries. Do not run experiment runners, regenerate recordings, or rescore gates for this presentation.
 
-## Schemas
+## Scoreboard
 
-- `WorldState` — road in meters, agents (front bumper, lane, speed, length), occupied sketch, neighbor views inside a 16 m fog.
-- `ZonePlan` — ranked `through` / `hold_approach` intents. Brake, throttle, and velocity keys are rejected.
-- `Score` — `time_home`, `collisions`, `fairness`. Green needs all three: nobody collided, every car home inside budget, fairness ≤ 0.15.
+The [full scoreboard](docs/SCOREBOARD.md) retains the earlier zeros, negative outcomes, FAILs and STOPs.
 
-Fairness is the share of contested gate passages that repeated the same approach. A zipper is 0. Sending one approach through first is unfair.
-
-## Knobs
-
-| Flag | Meaning |
+| Evidence | Result |
 | --- | --- |
-| `--cars` | N, from 2 to 64. Default 6. |
-| `--jam` | `symmetric`, `ramp-surge`, or `mainline-plug`. |
-| `--prefs` | Plain English. "Zipper fairly…" balances. "Main has priority. Main first." does not. |
-| `--rewrite-every` | New plan every N ticks. |
-| `--show` | Terminal trace. Dinner path: wreck stays, jam stays, fair road clears. |
-| `--board` | Open the live birds-eye SVG network and keep its local session running. |
-| `--no-open` | With `--board`, print the local URL without launching a browser. |
-| `--priority` | Request priority for car 177 and compare its trip with no request. |
-| `--priority-baseline` | Play the same trip without requesting priority. |
-| `--story` | `competing`, `abuse`, `emergency`, `chain`, or `counter-offer`. |
-| `--save-replay` | Save the board's actual motion, dialogue, reasons, and reply times. |
-| `--replay` | Replay that file offline with zero model calls. |
+| Phase 15a replay — [PR #50](https://github.com/jerrydjin/malleable/pull/50), [seed 1 original gate](docs/gates/phase-15a-scores.jsonl#L10) | Edit merged after second-car confirmation; **0.0 s** affected median gain; **300 m bar not met — FAIL**. |
+| Phase 16b — [committed gate](docs/gates/phase-16b-summary.md) | **b/c/f PASS; a/d/e FAIL.** Label sits on the white trailer, not the crash. B is same source, different viewpoint. No B review or merge; trust rule not tested. |
+| Phase 16d: pending held-out score | |
 
-Structured prefs are a `Bias` on `Prefs` (`balanced`, `favor_main`, `favor_ramp`). The prompt carries them. When set, they win over the sentence. The executor never reads prefs itself.
+## Limits — what is not proven
 
-## Client
-
-`MODEL_API_KEY` selects an HTTP completion through `curl` (`MODEL_API_BASE`, `MODEL_API_MODEL`). With a key, the client label is `model`.
-
-No key: `scripted`, the ALLOW_CHEAT stub. It reads the state inside the prompt and writes a queue-feasible plan. It does not drive. The board uses this path and does not need a key.
-
-`ALLOW_CHEAT=0` with no key fails closed.
-
-## Hard cuts
-
-- No photoreal, CARLA, or Earth twin.
-- No V2X radio race. Peer pings are an instant stub and do not affect the gate.
-- No lights or pedestrians.
-- The model does not sit in a brake loop or any continuous controller.
-- No ChemStation leftover as the product.
-
-## Layout
-
-`src/world.rs` meters, gore, and fog, `src/agents.rs` executors, `src/muse.rs` client, `src/judge.rs` score, `src/episode.rs` the loop, `src/network.rs` the background town, `src/board.rs` the window. `STATUS.md` is the day-1 board.
+- **No faster-arrival claim from the replay.** [Seed 1](docs/gates/phase-15a-scores.jsonl#L10) has **0.0 s** gain and **0 reroutes** before or after sighting. Its **0 collisions, 0 overlaps and 0 leaks** describe that simulation only. The [original matrix](docs/gates/phase-15a-scores.jsonl#L121) is **FAIL**, with **0 winning seeds** at its declared range.
+- **Priority is not demonstrated arrival benefit.** Both [original labour](docs/gates/phase-15b-scores.jsonl) and [corrected labour](docs/gates/phase-15b-v2-scores.jsonl) **FAIL**: **0 s** gain; denied gym controls have **0 gain and cost**. Grants in those matrices are Mock. The [corrected NEAR control](docs/gates/phase-15a-v2-scores.jsonl) is a separate control PASS, not the replay or an efficacy win.
+- **Phase 16b FAILs a/d/e.** [The gate](docs/gates/phase-16b-summary.md) records A's failed detection, no B review, no merge, **0 confirmations**, and status `Proposed`. C has **0/15** positive frames. A spoof not merging here does not test the trust rule. The label targets the white trailer rather than the crash; localization and detection time remain unmeasured.
+- **Historical STOPs remain visible.** [SAM acquisition](docs/phase-15a-blocked.md) and [footage acquisition](experiments/phase16b/STOP.md) stopped on unavailable inputs/access; supplied evidence later allowed continuation. [FAR geometry](docs/phase-15-v2-feasibility.md) still **STOPPED**: no qualifying FAR tree on the unchanged map.
+- **Earlier failures still count.** [Full scoreboard](docs/SCOREBOARD.md): queue-yield cost passes with **[0 s gain](docs/gates/phase-13f-summary.json)** do not prove benefit; envelope and universal-exclusion claims **FAIL**; diversion and bypass controls **FAIL** on safety; guarded broadcast/envelope arms **FAIL** on costs; signal arms **FAIL** on completion/costs. The labour follow-up and freeway baseline **STOPPED** on validity and overflow/incompletion/overlaps, respectively; no record efficacy score followed.
+- Real fleet integration, authenticated independent observations, general merge-conflict resolution, clinical outcomes, and a held-out Phase 16d result are not proven.
