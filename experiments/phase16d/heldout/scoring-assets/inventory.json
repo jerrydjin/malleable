@@ -1,0 +1,10 @@
+{
+  "attempt": 1,
+  "clear_window_edits": 0,
+  "edit_count": 0,
+  "edits": [],
+  "purpose": "Presentation of actual outputs for visual preregistered scoring; no model calls or automatic score",
+  "records_sha256": "16b071990dad9fb6260754971cea0548147af8a1acfcb2d4041af89a140d5cc7",
+  "run_sha256": "c54c07bdbd10769df13c72e50cfd5ae39e198375cf069ae7c7b76f96f3542616",
+  "sampled_frames": 300
+}

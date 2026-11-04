@@ -1,6 +1,6 @@
 # Phase 16d: whole-frame mapping
 
-Status: **A/B/C 5 of 5 PASS; FROZEN; held-out attempt 1 RUNNING**. Final marked exports and full tests passed before the committed freeze. The exclusive held-out attempt started at **2026-11-04 10:00:47 UTC**; its score remains **NOT RUN** while inference is running.
+Status: **A/B/C 5 of 5 PASS; FROZEN; held-out FAIL, exactly 1 attempt**. The complete frozen run processed **300 sampled frames / 115 tracks** and emitted **0 candidates / 0 edits**. It missed the required truck-body hit. No post-freeze inference change or rerun occurred.
 
 ## Measured development gates
 
@@ -46,8 +46,25 @@ All **543 parent files** remain unchanged. The diff against parent `874c0c8` for
 
 Frozen evidence/code SHA: **`0cc372b2907d7e574d87855718ec5b3aa806cb52`**. Freeze commit SHA: **`d0fcc110e5b5b03b127016270a87c483ee561d77`**. [`FROZEN.md`](../../experiments/phase16d/FROZEN.md) binds the measured gates, checkpoint, parameters, model provenance and green full checks. Frozen inference manifest SHA-256: `15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd`.
 
-Held-out: **RUNNING**, **1 reserved attempt**, **score NOT RUN**. The held-out branch was merged only after the freeze commit. The original preregistration was verified at the required SHA-256 `22410c75b5d1aee3b6eaa7d164b870c2044df365e7d23aa8dd56d623c9f4fd8d` and preserved as [`prereg.original.md`](../../experiments/phase16d/heldout/prereg.original.md). Filling only the required frozen-commit placeholder produced the bound SHA-256 `7ae67341017f51557a39cda14824534f564ce57ccc7297f4973db3812e4e41bf`; [`prereg-provenance.json`](../../experiments/phase16d/heldout/prereg-provenance.json) records both hashes and the emission timestamp convention before inference. [`ATTEMPTED.json`](../../experiments/phase16d/heldout/ATTEMPTED.json) exclusively reserves attempt 1. No rerun or post-freeze inference change is allowed.
+## Held-out score: FAIL, attempt 1
+
+The single frozen process started at **2026-11-04 10:00:47 UTC** and was observed complete at **18:18:59 UTC**. [`score.json`](../../experiments/phase16d/heldout/score.json) records the assessment against the committed preregistration, with hashes of the actual inputs and outputs.
+
+| Preregistered requirement | Actual evidence | Result |
+| --- | --- | --- |
+| At least one truck-body edit in clip 10.0–28.5 s | **0 hits; 0 candidates; 0 edits** | **FAIL** |
+| No edit for a moving vehicle anywhere | **0 moving-vehicle edits** | PASS |
+| No edit in clip 0.0–3.0 s | **0 edits** | PASS |
+| Paul amendment: no stopped off-travel object labelled blocked travel lane | **0 such edits**, because no edits were emitted | PASS |
+
+The empty emitted set establishes the missed hit directly; no new detector, visual-overlap threshold, or scoring rule was introduced. Evidence: [`records.json`](../../experiments/phase16d/runs/heldout/records.json), [`candidates.json`](../../experiments/phase16d/runs/heldout/candidates.json), and the **0-byte** [`held-out edits.jsonl`](../../experiments/phase16d/runs/heldout/edits.jsonl). Other correct stopped-lane edits: **0**. The earlier Phase 16b clip-1 FAIL remains unchanged.
+
+Native SAM produced **115 tracks**: **93 foreground / 22 background**, with **44 maximum active / 76 retired**. There were **30 AMG calls**, **3 automatic refinement calls / 3 accepted masks**, **506 mask additions**, and **30 video chunks / 329 returned frame outputs**, including boundary repeats across **300 unique sampled frames**. The analysis contains **8,436 observations** and reports **19 MOVING / 96 UNKNOWN / 0 STATIONARY** aggregate tracks. The maximum measured consecutive stationary run was **5**, below frozen **N = 6**; no track qualified for emission. These are algorithm outputs, not a claim that the ground-truth truck moved.
+
+Held-out Muse calls: **0**, because the host produced no eligible candidates; no label or fallback label was produced. The two development live-label attempts above remain **source:model**. Held-out merge reviews and physics actions: **0 / 0**.
+
+The held-out branch was merged only after freeze commit `d0fcc110e5b5b03b127016270a87c483ee561d77`. The original preregistration matches required SHA-256 `22410c75b5d1aee3b6eaa7d164b870c2044df365e7d23aa8dd56d623c9f4fd8d` and is preserved as [`prereg.original.md`](../../experiments/phase16d/heldout/prereg.original.md). Filling only the required frozen-commit placeholder produced bound SHA-256 `7ae67341017f51557a39cda14824534f564ce57ccc7297f4973db3812e4e41bf`; [`prereg-provenance.json`](../../experiments/phase16d/heldout/prereg-provenance.json) records both hashes and the reference-frame timestamp convention before inference. [`ATTEMPTED.json`](../../experiments/phase16d/heldout/ATTEMPTED.json) records the exclusive reservation of **attempt 1**. The frozen inference manifest still matches; no inference code/config changed after freeze.
 
 Held-out footage credit: **BloknotVrn36, CC BY 3.0, via Wikimedia Commons**, as specified in the preregistration.
 
-Outputs: [`overlays/`](../../experiments/phase16d/overlays/), [`tracks.csv`](../../experiments/phase16d/tracks.csv), [`edits.jsonl`](../../experiments/phase16d/edits.jsonl). These are actual development artifacts; the held-out overlay is pending.
+Outputs: [`overlays/`](../../experiments/phase16d/overlays/) contains all four real H.264 exports: A **30 frames / 3 s**, B **30 / 3 s**, C **50 / 5 s**, held-out **300 / 30 s**. Held-out overlay SHA-256: `45a461664ad4dfa39be46bad8550c0200a44118aedb1417d5f7b49b3c5b06810`; it contains **8,436 actual object drawings / 0 Proposed badges / 0 reference markers**. Combined [`tracks.csv`](../../experiments/phase16d/tracks.csv) contains **169 rows**. Combined [`edits.jsonl`](../../experiments/phase16d/edits.jsonl) contains **2 development records only**, with **0 held-out edits**. All four overlay hashes and the run artifact manifest were independently verified.

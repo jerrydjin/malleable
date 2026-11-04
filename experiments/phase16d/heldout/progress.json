@@ -1,17 +1,18 @@
 {
   "attempt": 1,
   "cgroup_memory_bytes": 8059170816,
-  "checked_at_utc": "2026-11-04T16:41:54.078957+00:00",
+  "checked_at_utc": "2026-11-04T18:21:34.938308+00:00",
   "completed_clips": null,
   "expected_sampled_frames": 300,
   "job": "heldout-frozen",
   "mask_frames_written": {
-    "heldout": 250
+    "heldout": 300
   },
-  "note": "Progress snapshot only; the exclusive frozen inference process continues. This is not a scored result.",
+  "note": "The exclusive frozen inference completed. Attempt 1 was scored FAIL: zero candidates, zero edits, zero truck-body hits. No rerun or inference changes.",
   "pid": 18089,
-  "preregistered_score": "NOT RUN",
+  "preregistered_score": "FAIL",
   "process_rss_bytes": 2104602624,
-  "process_state": "R (running)",
-  "run_state": "attempt_reserved"
+  "process_state": "Z (zombie; completed)",
+  "run_state": "complete",
+  "score_path": "experiments/phase16d/heldout/score.json"
 }

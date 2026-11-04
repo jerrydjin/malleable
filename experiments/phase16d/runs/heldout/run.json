@@ -1,4 +1,66 @@
 {
+  "artifact_manifest": [
+    {
+      "bytes": 3,
+      "path": "candidates.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "bytes": 0,
+      "path": "edits.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 406,
+      "path": "edits.jsonl.json",
+      "sha256": "8598b8cbd67745fa684608244b6a6e9cf4252bbe294b829afb4e316c2f9a4d7f"
+    },
+    {
+      "bytes": 6255278,
+      "path": "heldout/analysis.json",
+      "sha256": "a204c8e62be60714e4dff872e7e3868de7b20320002caf107e4f7d04c6ceb315"
+    },
+    {
+      "bytes": 458034,
+      "path": "heldout/track-identities.json",
+      "sha256": "85261bf5df7fe703cbfc231266e3302ad0bd85f74bb472b0ace22df3c46b5d5d"
+    },
+    {
+      "bytes": 288939,
+      "path": "heldout/tracking.json",
+      "sha256": "6ac6930dca9e31f56637bf42bbb809cbf144ffc8eb62dd14c5fc5d51cf5fb3d5"
+    },
+    {
+      "bytes": 781,
+      "path": "label-adapter.log",
+      "sha256": "f45a21e3454b2f59c5166a1850f20cfca4b671c120fa2524e9499d091c07e602"
+    },
+    {
+      "bytes": 6844679,
+      "path": "overlays/heldout.mp4",
+      "sha256": "45a461664ad4dfa39be46bad8550c0200a44118aedb1417d5f7b49b3c5b06810"
+    },
+    {
+      "bytes": 2425250,
+      "path": "overlays/heldout.mp4.json",
+      "sha256": "b62af12a349d78759d986cda766cfd75b80ac3aa737b17b1b0cbb22c50387d9a"
+    },
+    {
+      "bytes": 201,
+      "path": "records.json",
+      "sha256": "16b071990dad9fb6260754971cea0548147af8a1acfcb2d4041af89a140d5cc7"
+    },
+    {
+      "bytes": 40664,
+      "path": "tracks.csv",
+      "sha256": "50c42af2a3f19a4579d9f4e6575fc4e09ecb7224b998db0c61c8f761c2de4f28"
+    },
+    {
+      "bytes": 403,
+      "path": "tracks.csv.json",
+      "sha256": "562d01d1ef03a0646984a10be772c55c79256d2e4975d34bc11991a960685473"
+    }
+  ],
   "attempt": 1,
   "code_manifest": {
     "files": [
@@ -129,8 +191,10 @@
     ],
     "sha256": "15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd"
   },
+  "edit_count": 0,
   "freeze_code_commit": "0cc372b2907d7e574d87855718ec5b3aa806cb52",
   "merge_reviews_applied": 0,
+  "model_calls": 0,
   "phase": "heldout",
   "preregistered_score": "PENDING_PREREG_EVALUATION",
   "receipt": {
@@ -145,7 +209,9 @@
     "reserved_at_utc": "2026-11-04T10:00:47.636495+00:00",
     "state": "ATTEMPT_RESERVED"
   },
-  "state": "attempt_reserved",
+  "sampled_frames": 300,
+  "state": "complete",
+  "track_count": 115,
   "vehicle_motion_actions": 0,
   "version": 1
 }

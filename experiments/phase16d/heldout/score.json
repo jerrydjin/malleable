@@ -1,0 +1,133 @@
+{
+  "assessment_method": "All emitted edits are enumerated from the actual frozen records. The emitted set is empty, so the body-hit count is zero without a mask/box visual judgement; no new detection model, threshold or scoring rule was used.",
+  "attempt_count": 1,
+  "bound_prereg_sha256": "7ae67341017f51557a39cda14824534f564ce57ccc7297f4973db3812e4e41bf",
+  "checkpoint_sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+  "clip_sha256": "13b0533b7c39f3aafe9c8a49b5fce5c4b5c0a8d57eb0aa274a0c138d8c093704",
+  "criteria": [
+    {
+      "id": "truck_body_hit",
+      "required_minimum": 1,
+      "result": "FAIL",
+      "truck_body_hit_edits": 0,
+      "window_clip_s_inclusive": [
+        10.0,
+        28.5
+      ]
+    },
+    {
+      "id": "no_moving_vehicle_edits",
+      "moving_vehicle_edits": 0,
+      "result": "PASS"
+    },
+    {
+      "edits": 0,
+      "id": "clear_stretch_quiet",
+      "result": "PASS",
+      "window_clip_s_inclusive": [
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "id": "paul_off_travel_label_amendment",
+      "note": "Vacuous pass: no emitted edits.",
+      "result": "PASS",
+      "stopped_off_travel_edits_labelled_blocked_travel_lane": 0
+    }
+  ],
+  "evidence": [
+    {
+      "bytes": 7991,
+      "path": "experiments/phase16d/runs/heldout/run.json",
+      "sha256": "c54c07bdbd10769df13c72e50cfd5ae39e198375cf069ae7c7b76f96f3542616"
+    },
+    {
+      "bytes": 201,
+      "path": "experiments/phase16d/runs/heldout/records.json",
+      "sha256": "16b071990dad9fb6260754971cea0548147af8a1acfcb2d4041af89a140d5cc7"
+    },
+    {
+      "bytes": 3,
+      "path": "experiments/phase16d/runs/heldout/candidates.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "bytes": 0,
+      "path": "experiments/phase16d/runs/heldout/edits.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 6255278,
+      "path": "experiments/phase16d/runs/heldout/heldout/analysis.json",
+      "sha256": "a204c8e62be60714e4dff872e7e3868de7b20320002caf107e4f7d04c6ceb315"
+    },
+    {
+      "bytes": 288939,
+      "path": "experiments/phase16d/runs/heldout/heldout/tracking.json",
+      "sha256": "6ac6930dca9e31f56637bf42bbb809cbf144ffc8eb62dd14c5fc5d51cf5fb3d5"
+    },
+    {
+      "bytes": 6844679,
+      "path": "experiments/phase16d/overlays/heldout.mp4",
+      "sha256": "45a461664ad4dfa39be46bad8550c0200a44118aedb1417d5f7b49b3c5b06810"
+    },
+    {
+      "bytes": 60638,
+      "path": "experiments/phase16d/tracks.csv",
+      "sha256": "9c3c9ca2ce3c66404f48ba08f2c3065860366154a3569178bbbcb662a336f423"
+    },
+    {
+      "bytes": 2895,
+      "path": "experiments/phase16d/edits.jsonl",
+      "sha256": "c47575a9478c3b59272181e46d265e935a0011a9098929796c10fa84316eeaef"
+    }
+  ],
+  "failure_reason": "No truck-body edit or flag was emitted within the preregistered 10.0\u201328.5 s window: zero candidates and zero edits in the complete run.",
+  "footage_credit": "BloknotVrn36, CC BY 3.0, via Wikimedia Commons",
+  "freeze_commit": "d0fcc110e5b5b03b127016270a87c483ee561d77",
+  "frozen_code_commit": "0cc372b2907d7e574d87855718ec5b3aa806cb52",
+  "frozen_code_manifest_sha256": "15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd",
+  "inference_completion_observed_at_utc": "2026-11-04T18:18:59.044595+00:00",
+  "other_correct_stopped_lane_edits": 0,
+  "per_edit_assessments": [],
+  "phase": "16d",
+  "post_freeze_inference_changes": false,
+  "registered_prereg_sha256": "22410c75b5d1aee3b6eaa7d164b870c2044df365e7d23aa8dd56d623c9f4fd8d",
+  "reruns": 0,
+  "result": "FAIL",
+  "run": {
+    "aggregate_track_classes": {
+      "MOVING": 19,
+      "UNKNOWN": 96
+    },
+    "background_surface_tracks": 22,
+    "candidate_count": 0,
+    "edit_count": 0,
+    "foreground_tracks": 93,
+    "frozen_required_stationary_frames": 6,
+    "label_attempt_note": "Muse was not called because the frozen host emitted zero eligible candidates; no labels or fallback labels were produced.",
+    "maximum_active_tracks": 44,
+    "maximum_measured_consecutive_stationary_run": 5,
+    "merge_reviews_applied": 0,
+    "model_calls": 0,
+    "native_calls": {
+      "accepted_refined_masks": 3,
+      "add_new_mask": 506,
+      "automatic_mask_generation": 30,
+      "automatic_part_refinement": 3,
+      "propagate_chunks": 30,
+      "propagated_frame_outputs": 329
+    },
+    "observations": 8436,
+    "retired_track_count": 76,
+    "sampled_frames": 300,
+    "state": "complete",
+    "track_count": 115,
+    "tracking_result_fingerprint": "a650b0a040aca8d89fa104b97f1cd36b1635320ea86d49d1fda12cb3571d6a63",
+    "vehicle_motion_actions": 0
+  },
+  "scored_at_utc": "2026-11-04T18:21:34.938308+00:00",
+  "timestamp_convention": "decoded.timestamps_s[edit.position.reference_frame], the frame the edit refers to",
+  "version": 1
+}
