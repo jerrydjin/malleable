@@ -1,0 +1,10 @@
+{
+  "adapter_edits_sha256": "d79e2702b7577ee680683f6ab25f5c5be11e5220acf38a9a224ed932ea5a44e2",
+  "elapsed_s": 0.00029362300119828433,
+  "merge_reviews_applied": 0,
+  "output_sha256": "c47575a9478c3b59272181e46d265e935a0011a9098929796c10fa84316eeaef",
+  "outputs_code_sha256": "da058a77c35ae952bd108ddcb8003f608a005906c925e5254bf60529d2dd9094",
+  "rows": 2,
+  "vehicle_motion_actions": 0,
+  "version": 1
+}

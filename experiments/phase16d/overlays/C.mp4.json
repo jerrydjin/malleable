@@ -1,5 +1,5 @@
 {
-  "analysis_sha256": "d8848b4e59f4127e28510468e975db6ccb36f027467ffb0a4d2030182af5a7e3",
+  "analysis_sha256": "1756e15a98adb56338dad5b102dee08f47f967a6a878515071e61757570d2032",
   "canvas_dimensions": [
     640,
     672
@@ -7,9 +7,9 @@
   "clip": "C",
   "codec": "h264",
   "confidence_kind": "heuristic",
-  "config_sha256": "2cba5a5c84e531f409a8b8ca39f8d030ed5d34b7e48c9a2ae0f5942ec294b0b7",
+  "config_sha256": "7695dff34a042299950ed01c79fdc57703b41f9e7a4fc649acdfa7f72f45a5b2",
   "duration_s": 5.0,
-  "elapsed_s": 2.4098984640004346,
+  "elapsed_s": 3.8007641669973964,
   "first_timestamp_s": 0.0,
   "frame_count": 50,
   "frame_spacing_s": 0.1,
@@ -296,7 +296,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1791,
           "role": "foreground",
           "track_id": 2
@@ -316,7 +316,7 @@
           "confidence": 0.4992301445940313,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1120,
           "role": "foreground",
           "track_id": 4
@@ -326,7 +326,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 558,
           "role": "foreground",
           "track_id": 5
@@ -336,7 +336,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3211,
           "role": "foreground",
           "track_id": 6
@@ -384,7 +384,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1779,
           "role": "foreground",
           "track_id": 2
@@ -414,7 +414,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 321,
           "role": "foreground",
           "track_id": 5
@@ -424,7 +424,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3236,
           "role": "foreground",
           "track_id": 6
@@ -472,7 +472,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1872,
           "role": "foreground",
           "track_id": 2
@@ -492,7 +492,7 @@
           "confidence": 0.4103908176776431,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1142,
           "role": "foreground",
           "track_id": 4
@@ -502,7 +502,7 @@
           "confidence": 0.42275720797301836,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3269,
           "role": "foreground",
           "track_id": 6
@@ -550,7 +550,7 @@
           "confidence": 0.4977023427091743,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1854,
           "role": "foreground",
           "track_id": 2
@@ -570,7 +570,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1130,
           "role": "foreground",
           "track_id": 4
@@ -580,7 +580,7 @@
           "confidence": 0.37167646917161457,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3215,
           "role": "foreground",
           "track_id": 6
@@ -628,7 +628,7 @@
           "confidence": 0.4647150036056485,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1761,
           "role": "foreground",
           "track_id": 2
@@ -648,7 +648,7 @@
           "confidence": 0.46235274695972906,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1037,
           "role": "foreground",
           "track_id": 4
@@ -658,7 +658,7 @@
           "confidence": 0.3677038828496793,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3233,
           "role": "foreground",
           "track_id": 6
@@ -726,7 +726,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1150,
           "role": "foreground",
           "track_id": 4
@@ -736,7 +736,7 @@
           "confidence": 0.3284613724413374,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3381,
           "role": "foreground",
           "track_id": 6
@@ -804,7 +804,7 @@
           "confidence": 0.47924917138917783,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1200,
           "role": "foreground",
           "track_id": 4
@@ -814,7 +814,7 @@
           "confidence": 0.4019795126789782,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3371,
           "role": "foreground",
           "track_id": 6
@@ -862,7 +862,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1660,
           "role": "foreground",
           "track_id": 2
@@ -882,7 +882,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 803,
           "role": "foreground",
           "track_id": 4
@@ -892,7 +892,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3391,
           "role": "foreground",
           "track_id": 6
@@ -980,7 +980,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1592,
           "role": "foreground",
           "track_id": 2
@@ -1000,7 +1000,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1129,
           "role": "foreground",
           "track_id": 4
@@ -1010,7 +1010,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3387,
           "role": "foreground",
           "track_id": 6
@@ -1098,7 +1098,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1487,
           "role": "foreground",
           "track_id": 2
@@ -1118,7 +1118,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1052,
           "role": "foreground",
           "track_id": 4
@@ -1128,7 +1128,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3379,
           "role": "foreground",
           "track_id": 6
@@ -1216,7 +1216,7 @@
           "confidence": 0.5222018282344956,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1415,
           "role": "foreground",
           "track_id": 2
@@ -1236,7 +1236,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1049,
           "role": "foreground",
           "track_id": 4
@@ -1246,7 +1246,7 @@
           "confidence": 0.3882687341614712,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3484,
           "role": "foreground",
           "track_id": 6
@@ -1276,7 +1276,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2261,
           "role": "foreground",
           "track_id": 9
@@ -1286,7 +1286,7 @@
           "confidence": 0.4726561233188514,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 739,
           "role": "foreground",
           "track_id": 10
@@ -1296,7 +1296,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1151,
           "role": "foreground",
           "track_id": 11
@@ -1334,7 +1334,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1254,
           "role": "foreground",
           "track_id": 2
@@ -1354,7 +1354,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1247,
           "role": "foreground",
           "track_id": 4
@@ -1364,7 +1364,7 @@
           "confidence": 0.35191671174418526,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3356,
           "role": "foreground",
           "track_id": 6
@@ -1394,7 +1394,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2406,
           "role": "foreground",
           "track_id": 9
@@ -1404,7 +1404,7 @@
           "confidence": 0.38791914710795966,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 776,
           "role": "foreground",
           "track_id": 10
@@ -1414,7 +1414,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1048,
           "role": "foreground",
           "track_id": 11
@@ -1452,7 +1452,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 685,
           "role": "foreground",
           "track_id": 2
@@ -1462,7 +1462,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 5393,
           "role": "foreground",
           "track_id": 3
@@ -1472,7 +1472,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1244,
           "role": "foreground",
           "track_id": 4
@@ -1482,7 +1482,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3359,
           "role": "foreground",
           "track_id": 6
@@ -1512,7 +1512,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2589,
           "role": "foreground",
           "track_id": 9
@@ -1522,7 +1522,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1012,
           "role": "foreground",
           "track_id": 10
@@ -1532,7 +1532,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 964,
           "role": "foreground",
           "track_id": 11
@@ -1570,7 +1570,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 985,
           "role": "foreground",
           "track_id": 2
@@ -1590,7 +1590,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1175,
           "role": "foreground",
           "track_id": 4
@@ -1600,7 +1600,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3079,
           "role": "foreground",
           "track_id": 6
@@ -1640,7 +1640,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1173,
           "role": "foreground",
           "track_id": 10
@@ -1650,7 +1650,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1038,
           "role": "foreground",
           "track_id": 11
@@ -1688,7 +1688,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 856,
           "role": "foreground",
           "track_id": 2
@@ -1698,7 +1698,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 5086,
           "role": "foreground",
           "track_id": 3
@@ -1708,7 +1708,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1099,
           "role": "foreground",
           "track_id": 4
@@ -1718,7 +1718,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3124,
           "role": "foreground",
           "track_id": 6
@@ -1748,7 +1748,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1340,
           "role": "foreground",
           "track_id": 10
@@ -1758,7 +1758,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 980,
           "role": "foreground",
           "track_id": 11
@@ -1796,7 +1796,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 664,
           "role": "foreground",
           "track_id": 2
@@ -1806,7 +1806,7 @@
           "confidence": 0.5098974964108315,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 7054,
           "role": "foreground",
           "track_id": 3
@@ -1816,7 +1816,7 @@
           "confidence": 0.45280073651564445,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 953,
           "role": "foreground",
           "track_id": 4
@@ -1826,7 +1826,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3068,
           "role": "foreground",
           "track_id": 6
@@ -1856,7 +1856,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1619,
           "role": "foreground",
           "track_id": 10
@@ -1866,7 +1866,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 873,
           "role": "foreground",
           "track_id": 11
@@ -1904,7 +1904,7 @@
           "confidence": 0.44079181875966555,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 417,
           "role": "foreground",
           "track_id": 2
@@ -1924,7 +1924,7 @@
           "confidence": 0.5871222641262899,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 770,
           "role": "foreground",
           "track_id": 4
@@ -1964,7 +1964,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1936,
           "role": "foreground",
           "track_id": 10
@@ -1974,7 +1974,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 777,
           "role": "foreground",
           "track_id": 11
@@ -2032,7 +2032,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 498,
           "role": "foreground",
           "track_id": 4
@@ -2042,7 +2042,7 @@
           "confidence": 0.4216149227834633,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3139,
           "role": "foreground",
           "track_id": 6
@@ -2072,7 +2072,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2398,
           "role": "foreground",
           "track_id": 10
@@ -2082,7 +2082,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 563,
           "role": "foreground",
           "track_id": 11
@@ -2150,7 +2150,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 7259,
           "role": "foreground",
           "track_id": 3
@@ -2160,7 +2160,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 210,
           "role": "foreground",
           "track_id": 4
@@ -2170,7 +2170,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3272,
           "role": "foreground",
           "track_id": 6
@@ -2200,7 +2200,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2963,
           "role": "foreground",
           "track_id": 10
@@ -2210,7 +2210,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 365,
           "role": "foreground",
           "track_id": 11
@@ -2268,7 +2268,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 7305,
           "role": "foreground",
           "track_id": 3
@@ -2278,7 +2278,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3258,
           "role": "foreground",
           "track_id": 6
@@ -2308,7 +2308,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3707,
           "role": "foreground",
           "track_id": 10
@@ -2318,7 +2318,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 141,
           "role": "foreground",
           "track_id": 11
@@ -2376,7 +2376,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 8057,
           "role": "foreground",
           "track_id": 3
@@ -2386,7 +2386,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 539,
           "role": "foreground",
           "track_id": 4
@@ -2396,7 +2396,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3265,
           "role": "foreground",
           "track_id": 6
@@ -2426,7 +2426,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 4342,
           "role": "foreground",
           "track_id": 10
@@ -2436,7 +2436,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 302,
           "role": "foreground",
           "track_id": 11
@@ -2456,7 +2456,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2750,
           "role": "foreground",
           "track_id": 13
@@ -2494,7 +2494,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 7165,
           "role": "foreground",
           "track_id": 3
@@ -2504,7 +2504,7 @@
           "confidence": 0.36585491774472984,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3205,
           "role": "foreground",
           "track_id": 6
@@ -2534,7 +2534,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 4010,
           "role": "foreground",
           "track_id": 10
@@ -2544,7 +2544,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 358,
           "role": "foreground",
           "track_id": 11
@@ -2564,7 +2564,7 @@
           "confidence": 0.3251164601376666,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2999,
           "role": "foreground",
           "track_id": 13
@@ -2602,7 +2602,7 @@
           "confidence": 0.21316548004386762,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 5903,
           "role": "foreground",
           "track_id": 3
@@ -2612,7 +2612,7 @@
           "confidence": 0.335977321901436,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3275,
           "role": "foreground",
           "track_id": 6
@@ -2642,7 +2642,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3133,
           "role": "foreground",
           "track_id": 10
@@ -2652,7 +2652,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 519,
           "role": "foreground",
           "track_id": 11
@@ -2710,7 +2710,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 6398,
           "role": "foreground",
           "track_id": 3
@@ -2720,7 +2720,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3170,
           "role": "foreground",
           "track_id": 6
@@ -2750,7 +2750,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2160,
           "role": "foreground",
           "track_id": 10
@@ -2760,7 +2760,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 386,
           "role": "foreground",
           "track_id": 11
@@ -2780,7 +2780,7 @@
           "confidence": 0.3329310097376175,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3641,
           "role": "foreground",
           "track_id": 13
@@ -2818,7 +2818,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 6291,
           "role": "foreground",
           "track_id": 3
@@ -2828,7 +2828,7 @@
           "confidence": 0.47167435697130683,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3224,
           "role": "foreground",
           "track_id": 6
@@ -2868,7 +2868,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 496,
           "role": "foreground",
           "track_id": 11
@@ -2926,7 +2926,7 @@
           "confidence": 0.6113996618767653,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3258,
           "role": "foreground",
           "track_id": 6
@@ -2956,7 +2956,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 604,
           "role": "foreground",
           "track_id": 11
@@ -2976,7 +2976,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 4471,
           "role": "foreground",
           "track_id": 13
@@ -3014,7 +3014,7 @@
           "confidence": 0.48606845861905495,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3284,
           "role": "foreground",
           "track_id": 6
@@ -3044,7 +3044,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 746,
           "role": "foreground",
           "track_id": 11
@@ -3102,7 +3102,7 @@
           "confidence": 0.5491028494041863,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3295,
           "role": "foreground",
           "track_id": 6
@@ -3132,7 +3132,7 @@
           "confidence": 0.6920244545980314,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 743,
           "role": "foreground",
           "track_id": 11
@@ -3200,7 +3200,7 @@
           "confidence": 0.6029252160850249,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3198,
           "role": "foreground",
           "track_id": 6
@@ -3230,7 +3230,7 @@
           "confidence": 0.6102114111154312,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 690,
           "role": "foreground",
           "track_id": 11
@@ -3298,7 +3298,7 @@
           "confidence": 0.4931426485764543,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3268,
           "role": "foreground",
           "track_id": 6
@@ -3328,7 +3328,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 643,
           "role": "foreground",
           "track_id": 11
@@ -3396,7 +3396,7 @@
           "confidence": 0.432194272375905,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3122,
           "role": "foreground",
           "track_id": 6
@@ -3426,7 +3426,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 598,
           "role": "foreground",
           "track_id": 11
@@ -3466,7 +3466,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2266,
           "role": "foreground",
           "track_id": 15
@@ -3494,7 +3494,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3169,
           "role": "foreground",
           "track_id": 6
@@ -3524,7 +3524,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 488,
           "role": "foreground",
           "track_id": 11
@@ -3564,7 +3564,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2128,
           "role": "foreground",
           "track_id": 15
@@ -3592,7 +3592,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3171,
           "role": "foreground",
           "track_id": 6
@@ -3622,7 +3622,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 426,
           "role": "foreground",
           "track_id": 11
@@ -3662,7 +3662,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1882,
           "role": "foreground",
           "track_id": 15
@@ -3690,7 +3690,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3329,
           "role": "foreground",
           "track_id": 6
@@ -3720,7 +3720,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 415,
           "role": "foreground",
           "track_id": 11
@@ -3760,7 +3760,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1799,
           "role": "foreground",
           "track_id": 15
@@ -3788,7 +3788,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3375,
           "role": "foreground",
           "track_id": 6
@@ -3818,7 +3818,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 565,
           "role": "foreground",
           "track_id": 11
@@ -3858,7 +3858,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2150,
           "role": "foreground",
           "track_id": 15
@@ -3886,7 +3886,7 @@
           "confidence": 0.42657317378138304,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3513,
           "role": "foreground",
           "track_id": 6
@@ -3956,7 +3956,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2331,
           "role": "foreground",
           "track_id": 15
@@ -3984,7 +3984,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3523,
           "role": "foreground",
           "track_id": 6
@@ -4054,7 +4054,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2137,
           "role": "foreground",
           "track_id": 15
@@ -4082,7 +4082,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3444,
           "role": "foreground",
           "track_id": 6
@@ -4152,7 +4152,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2221,
           "role": "foreground",
           "track_id": 15
@@ -4220,7 +4220,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3426,
           "role": "foreground",
           "track_id": 6
@@ -4250,7 +4250,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 819,
           "role": "foreground",
           "track_id": 11
@@ -4280,7 +4280,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2027,
           "role": "foreground",
           "track_id": 15
@@ -4338,7 +4338,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3393,
           "role": "foreground",
           "track_id": 6
@@ -4368,7 +4368,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 757,
           "role": "foreground",
           "track_id": 11
@@ -4388,7 +4388,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1814,
           "role": "foreground",
           "track_id": 15
@@ -4446,7 +4446,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3352,
           "role": "foreground",
           "track_id": 6
@@ -4496,7 +4496,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1840,
           "role": "foreground",
           "track_id": 15
@@ -4506,7 +4506,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3992,
           "role": "foreground",
           "track_id": 17
@@ -4516,7 +4516,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 835,
           "role": "foreground",
           "track_id": 18
@@ -4554,7 +4554,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3311,
           "role": "foreground",
           "track_id": 6
@@ -4584,7 +4584,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1040,
           "role": "foreground",
           "track_id": 11
@@ -4604,7 +4604,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2261,
           "role": "foreground",
           "track_id": 15
@@ -4614,7 +4614,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3534,
           "role": "foreground",
           "track_id": 17
@@ -4624,7 +4624,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 129,
           "role": "foreground",
           "track_id": 18
@@ -4662,7 +4662,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3311,
           "role": "foreground",
           "track_id": 6
@@ -4692,7 +4692,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1123,
           "role": "foreground",
           "track_id": 11
@@ -4712,7 +4712,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2344,
           "role": "foreground",
           "track_id": 15
@@ -4722,7 +4722,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2811,
           "role": "foreground",
           "track_id": 17
@@ -4760,7 +4760,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3253,
           "role": "foreground",
           "track_id": 6
@@ -4790,7 +4790,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1127,
           "role": "foreground",
           "track_id": 11
@@ -4810,7 +4810,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2285,
           "role": "foreground",
           "track_id": 15
@@ -4820,7 +4820,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1983,
           "role": "foreground",
           "track_id": 17
@@ -4858,7 +4858,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3252,
           "role": "foreground",
           "track_id": 6
@@ -4888,7 +4888,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1237,
           "role": "foreground",
           "track_id": 11
@@ -4908,7 +4908,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2297,
           "role": "foreground",
           "track_id": 15
@@ -4918,7 +4918,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1540,
           "role": "foreground",
           "track_id": 17
@@ -4956,7 +4956,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3209,
           "role": "foreground",
           "track_id": 6
@@ -4986,7 +4986,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1146,
           "role": "foreground",
           "track_id": 11
@@ -5006,7 +5006,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2115,
           "role": "foreground",
           "track_id": 15
@@ -5016,7 +5016,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1136,
           "role": "foreground",
           "track_id": 17
@@ -5054,7 +5054,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 3244,
           "role": "foreground",
           "track_id": 6
@@ -5084,7 +5084,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 1142,
           "role": "foreground",
           "track_id": 11
@@ -5104,7 +5104,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 2103,
           "role": "foreground",
           "track_id": 15
@@ -5114,7 +5114,7 @@
           "confidence": 0.0,
           "label": "unlabelled object",
           "label_source": "unlabelled",
-          "lane": "shoulder",
+          "lane": "off-road",
           "mask_area_px": 494,
           "role": "foreground",
           "track_id": 17
@@ -5157,10 +5157,18 @@
   },
   "mask_alpha": 0.35,
   "mask_draw_count": 472,
-  "output_bytes": 1081470,
-  "output_sha256": "08341b1aabeac98d1c8c55543e39930cc9dc13e7cccab101fb27e78d8ec83b0c",
-  "outputs_code_sha256": "0e27fc792bbd1f7c596880bd343af74bb2f39e7116efd0d4850fe6d0ca776a88",
+  "output_bytes": 1099477,
+  "output_sha256": "3040b4924d66740a67dfcd953cec91d4867c6c433d640dcc3d337e5996da7280",
+  "outputs_code_sha256": "da058a77c35ae952bd108ddcb8003f608a005906c925e5254bf60529d2dd9094",
   "pixel_format": "yuv420p",
+  "proposed_edit_badge_draw_count": 0,
+  "proposed_edit_marker_policy": "actual Proposed records only; badge from emission frame, recorded position on emission frame only",
+  "proposed_edit_marker_rgb": [
+    255,
+    135,
+    15
+  ],
+  "proposed_edit_reference_point_draw_count": 0,
   "source_dimensions": [
     640,
     360

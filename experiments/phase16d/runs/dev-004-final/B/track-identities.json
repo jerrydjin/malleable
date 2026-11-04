@@ -1,0 +1,2000 @@
+{
+  "1": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 107611,
+    "minimum_area_px": 104420,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "background_surface",
+    "role_detail": {
+      "area_fraction": 0.45881944444444445,
+      "bbox_xyxy": [
+        0,
+        0,
+        639,
+        198
+      ],
+      "border_count": 3,
+      "reason": "large_mask_touching_multiple_image_borders"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.46089409722222224,
+          "bbox_xyxy": [
+            0,
+            0,
+            639,
+            196
+          ],
+          "border_count": 3,
+          "reason": "large_mask_touching_multiple_image_borders"
+        },
+        "frame_index": 0,
+        "observed_role": "background_surface",
+        "role": "background_surface"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.4668315972222222,
+          "bbox_xyxy": [
+            0,
+            0,
+            639,
+            197
+          ],
+          "border_count": 3,
+          "reason": "large_mask_touching_multiple_image_borders"
+        },
+        "frame_index": 10,
+        "observed_role": "background_surface",
+        "role": "background_surface"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.45881944444444445,
+          "bbox_xyxy": [
+            0,
+            0,
+            639,
+            198
+          ],
+          "border_count": 3,
+          "reason": "large_mask_touching_multiple_image_borders"
+        },
+        "frame_index": 20,
+        "observed_role": "background_surface",
+        "role": "background_surface"
+      }
+    ],
+    "seed_area_px": 106190,
+    "seed_bbox_xyxy": [
+      0,
+      0,
+      639,
+      196
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        420.0,
+        123.75
+      ]
+    ],
+    "seed_predicted_iou": 0.9890150427818298,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9643604755401611,
+    "track_id": 1,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "10": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0
+    ],
+    "last_frame": 21,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 455,
+    "minimum_area_px": 57,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0018793402777777777,
+      "bbox_xyxy": [
+        418,
+        204,
+        446,
+        223
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0018793402777777777,
+          "bbox_xyxy": [
+            418,
+            204,
+            446,
+            223
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 433,
+    "seed_bbox_xyxy": [
+      418,
+      204,
+      446,
+      223
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        420.0,
+        213.75
+      ]
+    ],
+    "seed_predicted_iou": 0.930868923664093,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9486607313156128,
+    "track_id": 10,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "visible_frames": 22
+  },
+  "11": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 239,
+    "minimum_area_px": 179,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0007986111111111112,
+      "bbox_xyxy": [
+        535,
+        206,
+        555,
+        215
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0007986111111111112,
+          "bbox_xyxy": [
+            535,
+            206,
+            555,
+            215
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 184,
+    "seed_bbox_xyxy": [
+      535,
+      206,
+      555,
+      215
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        540.0,
+        213.75
+      ]
+    ],
+    "seed_predicted_iou": 0.8612774610519409,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9518716335296631,
+    "track_id": 11,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "12": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 529,
+    "minimum_area_px": 496,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0021961805555555554,
+      "bbox_xyxy": [
+        561,
+        314,
+        595,
+        331
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0023046875,
+          "bbox_xyxy": [
+            561,
+            314,
+            596,
+            332
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0023046875,
+          "bbox_xyxy": [
+            561,
+            314,
+            595,
+            332
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0021961805555555554,
+          "bbox_xyxy": [
+            561,
+            314,
+            595,
+            331
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 531,
+    "seed_bbox_xyxy": [
+      561,
+      314,
+      596,
+      332
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        580.0,
+        326.25
+      ]
+    ],
+    "seed_predicted_iou": 0.8454727530479431,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9326047301292419,
+    "track_id": 12,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "13": {
+    "first_frame": 10,
+    "keyframe_observations": [
+      10
+    ],
+    "last_frame": 25,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 223,
+    "minimum_area_px": 15,
+    "proposal_observations": [
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0009375,
+      "bbox_xyxy": [
+        18,
+        122,
+        28,
+        179
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0009375,
+          "bbox_xyxy": [
+            18,
+            122,
+            28,
+            179
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 216,
+    "seed_bbox_xyxy": [
+      18,
+      122,
+      28,
+      179
+    ],
+    "seed_frame": 10,
+    "seed_point_coords": [
+      [
+        20.0,
+        123.75
+      ]
+    ],
+    "seed_predicted_iou": 0.8216167688369751,
+    "seed_source_frame": 30,
+    "seed_stability_score": 0.9360730648040771,
+    "track_id": 13,
+    "visible_frame_indices": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "visible_frames": 16
+  },
+  "14": {
+    "first_frame": 10,
+    "keyframe_observations": [
+      10
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 1148,
+    "minimum_area_px": 638,
+    "proposal_observations": [
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.004991319444444444,
+      "bbox_xyxy": [
+        0,
+        187,
+        186,
+        201
+      ],
+      "border_count": 1,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.004991319444444444,
+          "bbox_xyxy": [
+            0,
+            187,
+            186,
+            201
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 1150,
+    "seed_bbox_xyxy": [
+      0,
+      187,
+      186,
+      201
+    ],
+    "seed_frame": 10,
+    "seed_point_coords": [
+      [
+        20.0,
+        191.25
+      ]
+    ],
+    "seed_predicted_iou": 0.9067952632904053,
+    "seed_source_frame": 30,
+    "seed_stability_score": 0.9356725215911865,
+    "track_id": 14,
+    "visible_frame_indices": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 20
+  },
+  "15": {
+    "first_frame": 10,
+    "keyframe_observations": [
+      10
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 2855,
+    "minimum_area_px": 2789,
+    "proposal_observations": [
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0121484375,
+      "bbox_xyxy": [
+        449,
+        214,
+        639,
+        240
+      ],
+      "border_count": 1,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0121484375,
+          "bbox_xyxy": [
+            449,
+            214,
+            639,
+            240
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 2799,
+    "seed_bbox_xyxy": [
+      449,
+      214,
+      639,
+      240
+    ],
+    "seed_frame": 10,
+    "seed_point_coords": [
+      [
+        620.0,
+        236.25
+      ]
+    ],
+    "seed_predicted_iou": 0.9023467302322388,
+    "seed_source_frame": 30,
+    "seed_stability_score": 0.9114353656768799,
+    "track_id": 15,
+    "visible_frame_indices": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 20
+  },
+  "16": {
+    "first_frame": 20,
+    "keyframe_observations": [
+      20
+    ],
+    "last_frame": 22,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 407,
+    "minimum_area_px": 49,
+    "proposal_observations": [
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0017838541666666667,
+      "bbox_xyxy": [
+        0,
+        181,
+        28,
+        196
+      ],
+      "border_count": 1,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0017838541666666667,
+          "bbox_xyxy": [
+            0,
+            181,
+            28,
+            196
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 411,
+    "seed_bbox_xyxy": [
+      0,
+      181,
+      28,
+      196
+    ],
+    "seed_frame": 20,
+    "seed_point_coords": [
+      [
+        20.0,
+        191.25
+      ]
+    ],
+    "seed_predicted_iou": 0.9205369353294373,
+    "seed_source_frame": 60,
+    "seed_stability_score": 0.948235273361206,
+    "track_id": 16,
+    "visible_frame_indices": [
+      20,
+      21,
+      22
+    ],
+    "visible_frames": 3
+  },
+  "17": {
+    "first_frame": 20,
+    "keyframe_observations": [
+      20
+    ],
+    "last_frame": 26,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 543,
+    "minimum_area_px": 145,
+    "proposal_observations": [
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.001623263888888889,
+      "bbox_xyxy": [
+        38,
+        186,
+        71,
+        199
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.001623263888888889,
+          "bbox_xyxy": [
+            38,
+            186,
+            71,
+            199
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 374,
+    "seed_bbox_xyxy": [
+      38,
+      186,
+      71,
+      199
+    ],
+    "seed_frame": 20,
+    "seed_point_coords": [
+      [
+        60.0,
+        191.25
+      ]
+    ],
+    "seed_predicted_iou": 0.8988772034645081,
+    "seed_source_frame": 60,
+    "seed_stability_score": 0.9557291865348816,
+    "track_id": 17,
+    "visible_frame_indices": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "visible_frames": 7
+  },
+  "2": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 1567,
+    "minimum_area_px": 1264,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.006462673611111111,
+      "bbox_xyxy": [
+        25,
+        117,
+        59,
+        187
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.005759548611111111,
+          "bbox_xyxy": [
+            43,
+            121,
+            75,
+            187
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0061328125,
+          "bbox_xyxy": [
+            35,
+            119,
+            69,
+            188
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.006462673611111111,
+          "bbox_xyxy": [
+            25,
+            117,
+            59,
+            187
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 1327,
+    "seed_bbox_xyxy": [
+      43,
+      121,
+      75,
+      187
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        60.0,
+        168.75
+      ]
+    ],
+    "seed_predicted_iou": 0.9315913319587708,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9472527503967285,
+    "track_id": 2,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "3": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator parts -> SAM2ImagePredictor automatic prompts -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 4139,
+    "minimum_area_px": 3260,
+    "proposal_observations": [
+      {
+        "body_index": 5,
+        "box_convention": "half_open_pixels",
+        "box_xyxy": [
+          283,
+          150,
+          330,
+          223
+        ],
+        "frame_index": 0,
+        "horizontal_overlap_fraction": 1.0,
+        "kind": "automatic_part_prompt_native_SAM2ImagePredictor",
+        "lower_box_xyxy": [
+          283,
+          201,
+          329,
+          223
+        ],
+        "lower_index": 13,
+        "multimask_candidates": [
+          {
+            "accepted": false,
+            "area_px": 2188,
+            "bbox_xyxy_half_open": [
+              281,
+              150,
+              330,
+              221
+            ],
+            "mask_sha256": "adc7cdbb78e31977c5fe86b2e5dba3d7e98eae3c8ddc087a20d886125386d49c",
+            "positive_points_inside": [
+              true,
+              true
+            ],
+            "predicted_iou": 0.772737443447113,
+            "reasons": [
+              "native_quality_below_primary_gate",
+              "insufficient_source_parts_coverage"
+            ],
+            "source_parts_coverage": 0.690297171500179,
+            "stability_score": 0.6203976273536682
+          },
+          {
+            "accepted": true,
+            "area_px": 3267,
+            "bbox_xyxy_half_open": [
+              282,
+              150,
+              330,
+              223
+            ],
+            "mask_sha256": "1190e355cf9baa748184a4adbbd215d2b6e16b6e4fac48eb70193328629d2ec0",
+            "positive_points_inside": [
+              true,
+              true
+            ],
+            "predicted_iou": 0.8886401057243347,
+            "reasons": [],
+            "source_parts_coverage": 0.9960615825277479,
+            "stability_score": 0.9057607054710388
+          },
+          {
+            "accepted": false,
+            "area_px": 3146,
+            "bbox_xyxy_half_open": [
+              282,
+              150,
+              330,
+              222
+            ],
+            "mask_sha256": "ff22f106b54b81155926b0bf86a34deebf066635c068e9db7bc3d06cc32b6da6",
+            "positive_points_inside": [
+              true,
+              true
+            ],
+            "predicted_iou": 0.9011789560317993,
+            "reasons": [
+              "native_quality_below_primary_gate"
+            ],
+            "source_parts_coverage": 0.9752953813104189,
+            "stability_score": 0.8418506383895874
+          }
+        ],
+        "positive_points_xy": [
+          [
+            309,
+            169
+          ],
+          [
+            293,
+            211
+          ]
+        ],
+        "selected_multimask_index": 1,
+        "source_part_mask_sha256": [
+          "bc1c08c57fe02439316eaf6847773dc951e62e17da6ceef0f8c35e20e96192cf",
+          "9eed220734d73899a5309a7ea3f52f7039456c5cfaafd0f820f4d1c43c1799a6"
+        ],
+        "source_parts": [
+          {
+            "bbox_xyxy_half_open": [
+              283,
+              150,
+              330,
+              199
+            ],
+            "mask_sha256": "bc1c08c57fe02439316eaf6847773dc951e62e17da6ceef0f8c35e20e96192cf",
+            "predicted_iou": 0.8943877816200256,
+            "raw_index": 5,
+            "stability_score": 0.9153730869293213
+          },
+          {
+            "bbox_xyxy_half_open": [
+              283,
+              201,
+              329,
+              223
+            ],
+            "mask_sha256": "9eed220734d73899a5309a7ea3f52f7039456c5cfaafd0f820f4d1c43c1799a6",
+            "predicted_iou": 0.7956840395927429,
+            "raw_index": 13,
+            "stability_score": 0.9267759323120117
+          }
+        ],
+        "vertical_gap_px": 2
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.01615451388888889,
+      "bbox_xyxy": [
+        285,
+        149,
+        335,
+        226
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0141796875,
+          "bbox_xyxy": [
+            282,
+            150,
+            329,
+            222
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.014830729166666667,
+          "bbox_xyxy": [
+            285,
+            151,
+            333,
+            224
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.01615451388888889,
+          "bbox_xyxy": [
+            285,
+            149,
+            335,
+            226
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 3267,
+    "seed_bbox_xyxy": [
+      282,
+      150,
+      329,
+      222
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        309.0,
+        169.0
+      ],
+      [
+        293.0,
+        211.0
+      ]
+    ],
+    "seed_predicted_iou": 0.8886401057243347,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9057607054710388,
+    "track_id": 3,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "4": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 9353,
+    "minimum_area_px": 4580,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.03173177083333333,
+      "bbox_xyxy": [
+        348,
+        144,
+        449,
+        233
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.019895833333333335,
+          "bbox_xyxy": [
+            344,
+            153,
+            420,
+            225
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0250390625,
+          "bbox_xyxy": [
+            346,
+            150,
+            435,
+            229
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.03173177083333333,
+          "bbox_xyxy": [
+            348,
+            144,
+            449,
+            233
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 4584,
+    "seed_bbox_xyxy": [
+      344,
+      153,
+      420,
+      225
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        420.0,
+        168.75
+      ]
+    ],
+    "seed_predicted_iou": 0.9339255690574646,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9475806355476379,
+    "track_id": 4,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "5": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 595,
+    "minimum_area_px": 371,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0018619791666666667,
+      "bbox_xyxy": [
+        335,
+        184,
+        351,
+        213
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0016189236111111111,
+          "bbox_xyxy": [
+            329,
+            183,
+            345,
+            210
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0017144097222222222,
+          "bbox_xyxy": [
+            334,
+            184,
+            350,
+            212
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0018619791666666667,
+          "bbox_xyxy": [
+            335,
+            184,
+            351,
+            213
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 373,
+    "seed_bbox_xyxy": [
+      329,
+      183,
+      345,
+      210
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        340.0,
+        191.25
+      ]
+    ],
+    "seed_predicted_iou": 0.8551783561706543,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.909547746181488,
+    "track_id": 5,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "6": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0
+    ],
+    "last_frame": 6,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 671,
+    "minimum_area_px": 205,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      }
+    ],
+    "retired_frame": 29,
+    "retirement_reason": "consecutive_empty_native_masks",
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0029123263888888888,
+      "bbox_xyxy": [
+        0,
+        186,
+        148,
+        198
+      ],
+      "border_count": 1,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0029123263888888888,
+          "bbox_xyxy": [
+            0,
+            186,
+            148,
+            198
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 671,
+    "seed_bbox_xyxy": [
+      0,
+      186,
+      148,
+      198
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        20.0,
+        191.25
+      ]
+    ],
+    "seed_predicted_iou": 0.8861488699913025,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9356223344802856,
+    "track_id": 6,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "visible_frames": 7
+  },
+  "7": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 460,
+    "minimum_area_px": 139,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0006119791666666667,
+      "bbox_xyxy": [
+        255,
+        190,
+        269,
+        200
+      ],
+      "border_count": 0,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0006119791666666667,
+          "bbox_xyxy": [
+            255,
+            190,
+            269,
+            200
+          ],
+          "border_count": 0,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 141,
+    "seed_bbox_xyxy": [
+      255,
+      190,
+      269,
+      200
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        260.0,
+        191.25
+      ]
+    ],
+    "seed_predicted_iou": 0.8722729682922363,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9387755393981934,
+    "track_id": 7,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "8": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 4265,
+    "minimum_area_px": 3947,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.01769965277777778,
+      "bbox_xyxy": [
+        0,
+        197,
+        273,
+        225
+      ],
+      "border_count": 1,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.018346354166666665,
+          "bbox_xyxy": [
+            0,
+            196,
+            268,
+            224
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.018033854166666665,
+          "bbox_xyxy": [
+            0,
+            197,
+            266,
+            225
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.01769965277777778,
+          "bbox_xyxy": [
+            0,
+            197,
+            273,
+            225
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 4227,
+    "seed_bbox_xyxy": [
+      0,
+      196,
+      268,
+      224
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        140.0,
+        213.75
+      ]
+    ],
+    "seed_predicted_iou": 0.9687985777854919,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9660149216651917,
+    "track_id": 8,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  },
+  "9": {
+    "first_frame": 0,
+    "keyframe_observations": [
+      0,
+      10,
+      20
+    ],
+    "last_frame": 29,
+    "mask_source": "SAM2AutomaticMaskGenerator -> SAM2VideoPredictor.add_new_mask",
+    "maximum_area_px": 871,
+    "minimum_area_px": 638,
+    "proposal_observations": [
+      {
+        "frame_index": 0,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 10,
+        "kind": "automatic_grid"
+      },
+      {
+        "frame_index": 20,
+        "kind": "automatic_grid"
+      }
+    ],
+    "role": "foreground",
+    "role_detail": {
+      "area_fraction": 0.0031987847222222222,
+      "bbox_xyxy": [
+        580,
+        203,
+        639,
+        219
+      ],
+      "border_count": 1,
+      "reason": "compact_instance_hypothesis"
+    },
+    "role_history": [
+      {
+        "detail": {
+          "area_fraction": 0.0037847222222222223,
+          "bbox_xyxy": [
+            572,
+            201,
+            639,
+            216
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 0,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0033854166666666668,
+          "bbox_xyxy": [
+            575,
+            201,
+            639,
+            218
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 10,
+        "observed_role": "foreground",
+        "role": "foreground"
+      },
+      {
+        "detail": {
+          "area_fraction": 0.0031987847222222222,
+          "bbox_xyxy": [
+            580,
+            203,
+            639,
+            219
+          ],
+          "border_count": 1,
+          "reason": "compact_instance_hypothesis"
+        },
+        "frame_index": 20,
+        "observed_role": "foreground",
+        "role": "foreground"
+      }
+    ],
+    "seed_area_px": 872,
+    "seed_bbox_xyxy": [
+      572,
+      201,
+      639,
+      216
+    ],
+    "seed_frame": 0,
+    "seed_point_coords": [
+      [
+        620.0,
+        213.75
+      ]
+    ],
+    "seed_predicted_iou": 0.8876103162765503,
+    "seed_source_frame": 0,
+    "seed_stability_score": 0.9154775142669678,
+    "track_id": 9,
+    "visible_frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "visible_frames": 30
+  }
+}

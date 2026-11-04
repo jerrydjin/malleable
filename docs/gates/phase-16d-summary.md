@@ -1,6 +1,6 @@
 # Phase 16d: whole-frame mapping
 
-Status: **A/B/C 5 of 5 PASS; UNFROZEN**. Full final validation and the single held-out run remain pending. Explicit on-frame Proposed edit markers are being added before final export validation.
+Status: **A/B/C 5 of 5 PASS; UNFROZEN**. Final marked exports and full tests pass. The committed freeze and single held-out run follow next.
 
 ## Measured development gates
 
@@ -14,11 +14,11 @@ Status: **A/B/C 5 of 5 PASS; UNFROZEN**. Full final validation and the single he
 
 B is **same source, different viewpoint**. There are **0 extra A/B edits**. Lane assignments are camera-relative hypotheses; positions are reference-image pixels.
 
-The passing run is [`dev-003-confirmed`](../../experiments/phase16d/runs/dev-003-confirmed/run.json). It reuses hash-verified native SAM outputs from `dev-002-large-refined`. The latter completed 110 sampled frames in 5,007.675 seconds and scored 2/5 under the previous confirmation/threshold settings. No held-out data was used for calibration.
+The passing run is [`dev-004-final`](../../experiments/phase16d/runs/dev-004-final/run.json). It reuses hash-verified native SAM outputs from `dev-002-large-refined`. The latter completed 110 sampled frames in 5,007.675 seconds and scored 2/5 under the previous confirmation/threshold settings. No held-out data was used for calibration.
 
 The host requires **6 consecutive STATIONARY frames** for an edit, with absolute residual at most **2 px**, relative residual at most **0.38**, observed ego magnitude at least **1 px** and heuristic confidence at least **0.35**. MOVING track confirmation requires **3 consecutive lower-band-supported observations**. Raw frame classes and both raw/supported moving runs are retained; fallback-only movement remains provisional. Both confirmed states report MIXED. The overlapping windows are not independent statistical trials.
 
-A source-time edit: **13.1 s**, track **4**, lane **2**. B source-time edit: **15.3 s**, track **4**, lane **2**. Both remain **Proposed**, with empty confirmations. Both label attempts returned **source:model**, no fallback, via `meta-models/muse-spark-open-1026`. Muse is Meta's LLM and writes only label and reach. `RoadEdit::review` remains the merge authority; **0 merge reviews** and **0 physics actions** occurred.
+A source-time edit: **13.1 s**, track **4**, `lane_2`. B source-time edit: **15.3 s**, track **4**, `lane_2`. Both remain **Proposed**, with empty confirmations. Both label attempts returned **source:model**, no fallback, via `meta-models/muse-spark-open-1026`. Muse is Meta's LLM and writes only label and reach. `RoadEdit::review` remains the merge authority; **0 merge reviews** and **0 physics actions** occurred.
 
 ## Native checkpoint and inference evidence
 
@@ -40,7 +40,7 @@ Chunk-boundary outputs are counted when returned by SAM; unique sampled-frame co
 
 ## Validation and freeze
 
-Fast current Python verification: **109 passed, 0 failed, 0 skipped**; the actual SAM repeat was explicitly excluded from that fast run. Full final validation is pending on the completed overlay implementation. An earlier validation job was stopped before freeze to add explicit edit markers; its partial logs do not establish a passing validation.
+Final Python verification: **118 passed, 0 failed, 0 skipped**, including the real checkpoint-dependent fixed-clip SAM repeat. Cargo: **218 passed, 0 failed, 3 ignored**, exit **0**. See `runtime/validation.json`, `runtime/final-dev-002-python.log` and `runtime/final-dev-002-cargo.log`. An earlier validation was stopped before freeze for explicit edit markers; its partial logs are historical. The final overlays contain A **9 badges / 1 reference point**, B **22 / 1**, C **0 / 0**, derived from real Proposed records.
 
 All **543 parent files** remain unchanged. The diff against parent `874c0c8` for `src/judge.rs`, `src/schema.rs`, and `src/make_way.rs` is empty.
 

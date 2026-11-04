@@ -1,0 +1,10 @@
+frame loading (JPEG):   0%|          | 0/1 [00:00<?, ?it/s]frame loading (JPEG): 100%|██████████| 1/1 [00:00<00:00, 59.28it/s]
+propagate in video:   0%|          | 0/2 [00:00<?, ?it/s]propagate in video: 100%|██████████| 2/2 [00:24<00:00, 12.41s/it]propagate in video: 100%|██████████| 2/2 [00:24<00:00, 12.41s/it]
+propagate in video:   0%|          | 0/2 [00:00<?, ?it/s]propagate in video:  50%|█████     | 1/2 [00:02<00:02,  2.48s/it]propagate in video: 100%|██████████| 2/2 [00:33<00:00, 19.10s/it]propagate in video: 100%|██████████| 2/2 [00:33<00:00, 16.61s/it]
+propagate in video:   0%|          | 0/1 [00:00<?, ?it/s]propagate in video: 100%|██████████| 1/1 [00:01<00:00,  1.67s/it]propagate in video: 100%|██████████| 1/1 [00:01<00:00,  1.67s/it]
+frame loading (JPEG):   0%|          | 0/1 [00:00<?, ?it/s]frame loading (JPEG): 100%|██████████| 1/1 [00:00<00:00, 52.91it/s]
+propagate in video:   0%|          | 0/2 [00:00<?, ?it/s]propagate in video: 100%|██████████| 2/2 [00:25<00:00, 12.87s/it]propagate in video: 100%|██████████| 2/2 [00:25<00:00, 12.87s/it]
+propagate in video:   0%|          | 0/2 [00:00<?, ?it/s]propagate in video:  50%|█████     | 1/2 [00:02<00:02,  2.44s/it]propagate in video: 100%|██████████| 2/2 [00:33<00:00, 19.28s/it]propagate in video: 100%|██████████| 2/2 [00:33<00:00, 16.75s/it]
+propagate in video:   0%|          | 0/1 [00:00<?, ?it/s]propagate in video: 100%|██████████| 1/1 [00:01<00:00,  1.64s/it]propagate in video: 100%|██████████| 1/1 [00:01<00:00,  1.64s/it]
+frame loading (JPEG):   0%|          | 0/7 [00:00<?, ?it/s]frame loading (JPEG): 100%|██████████| 7/7 [00:00<00:00, 5480.70it/s]
+{"code_manifest_sha256": "15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd", "sam_determinism": {"status": "PASS", "test": "test_tracker.ActualTrackingDeterminism.test_fixed_development_clip_first_three_sampled_frames_repeat", "skipped": 0, "log": "runtime/final-dev-002-python.log"}, "cargo": {"status": "PASS", "exit_code": 0, "passed": 218, "failed": 0, "ignored": 3, "log": "runtime/final-dev-002-cargo.log"}}
