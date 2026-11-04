@@ -1,6 +1,6 @@
 # Malleable
 
-Our goal: an ambulance gets a clear road ahead of it because cars share a live road record, with robotaxi fleets as the first buyers. Today we measure a simulated propose → confirm → merge loop, not that outcome: [the PR #50 replay's seed 1 gate records an edit merge, 0.0 s affected median gain, and a 300 m bar not met](docs/gates/phase-15a-scores.jsonl#L10).
+Our goal: an ambulance gets a clear road ahead of it because cars share a live road record, with robotaxi fleets as the first buyers. In simulation, a road edit merges only after [a second car confirms it](docs/gates/phase-15a-scores.jsonl#L10), and a spoofed edit never merged in any of the [10 scored seeds of the Phase 15a gate](docs/gates/phase-15a-scores.jsonl). We have not shown that any vehicle arrives faster; see Limits.
 
 AVs read and write the road record the way coding agents commit to a codebase. Edits are commits, a second car's confirmation is review, and conflicting claims are merge conflicts. This is the protocol analogy; fleet deployment and general conflict resolution are not built. See the [implemented protocol](docs/SPEC.md).
 
@@ -60,7 +60,7 @@ The [full scoreboard](docs/SCOREBOARD.md) retains the earlier zeros, negative ou
 | --- | --- |
 | Phase 15a replay — [PR #50](https://github.com/jerrydjin/malleable/pull/50), [seed 1 original gate](docs/gates/phase-15a-scores.jsonl#L10) | Edit merged after second-car confirmation; **0.0 s** affected median gain; **300 m bar not met — FAIL**. |
 | Phase 16b — [committed gate](docs/gates/phase-16b-summary.md) | **b/c/f PASS; a/d/e FAIL.** Label sits on the white trailer, not the crash. B is same source, different viewpoint. No B review or merge; trust rule not tested. |
-| Phase 16d: pending held-out score | |
+| Phase 16d held-out — [PR #51](https://github.com/jerrydjin/malleable/pull/51) | Preregistered, frozen before the held-out run, single attempt on 300 frames: **0 edits**, no truck-body hit — **FAIL**. Dev 5/5 passed; the held-out result did not transfer. |
 
 ## Limits — what is not proven
 
@@ -69,4 +69,4 @@ The [full scoreboard](docs/SCOREBOARD.md) retains the earlier zeros, negative ou
 - **Phase 16b FAILs a/d/e.** [The gate](docs/gates/phase-16b-summary.md) records A's failed detection, no B review, no merge, **0 confirmations**, and status `Proposed`. C has **0/15** positive frames. A spoof not merging here does not test the trust rule. The label targets the white trailer rather than the crash; localization and detection time remain unmeasured.
 - **Historical STOPs remain visible.** [SAM acquisition](docs/phase-15a-blocked.md) and [footage acquisition](experiments/phase16b/STOP.md) stopped on unavailable inputs/access; supplied evidence later allowed continuation. [FAR geometry](docs/phase-15-v2-feasibility.md) still **STOPPED**: no qualifying FAR tree on the unchanged map.
 - **Earlier failures still count.** [Full scoreboard](docs/SCOREBOARD.md): queue-yield cost passes with **[0 s gain](docs/gates/phase-13f-summary.json)** do not prove benefit; envelope and universal-exclusion claims **FAIL**; diversion and bypass controls **FAIL** on safety; guarded broadcast/envelope arms **FAIL** on costs; signal arms **FAIL** on completion/costs. The labour follow-up and freeway baseline **STOPPED** on validity and overflow/incompletion/overlaps, respectively; no record efficacy score followed.
-- Real fleet integration, authenticated independent observations, general merge-conflict resolution, clinical outcomes, and a held-out Phase 16d result are not proven.
+- Real fleet integration, authenticated independent observations, general merge-conflict resolution, and clinical outcomes are not proven. The [Phase 16d held-out run](https://github.com/jerrydjin/malleable/pull/51) **FAILED (0 edits)**, so perception of a stopped hazard on unseen footage is not shown.

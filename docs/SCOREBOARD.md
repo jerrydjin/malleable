@@ -45,7 +45,7 @@ not the corrected NEAR control above.
 |---|---|---|
 | **Phase 15a replay — PR #50, seed 1.** A proposed edit merges after a second car confirms from its simulated sensor, with reach from the cached model reply. | **Edit merged; 0.0 s affected median gain; 300 m bar not met — FAIL.** | [Original gate, seed 1 RECORD row](gates/phase-15a-scores.jsonl#L10); [cached label/reach](gates/phase-15-model-replies.json); [PR #50](https://github.com/jerrydjin/malleable/pull/50); [committed replay](../recordings/phase15a-seed1.json). |
 | **Phase 16b — footage and label/reach check.** B is **same source, different viewpoint**. | **b/c/f PASS; a/d/e FAIL.** The label sits on the white trailer, not the crash. A failed detection; no B review was applied; no edit merged; the trust rule was not tested. | [Committed gate](gates/phase-16b-summary.md); [merge check](../experiments/phase16b/output/merge-check.json); [retained overlay](../experiments/phase16b/overlays/B.mp4). |
-| **Phase 16d: pending held-out score** | | |
+| Phase 16d held-out — [PR #51](https://github.com/jerrydjin/malleable/pull/51) | Preregistered, frozen before the held-out run, single attempt on 300 frames: **0 edits**, no truck-body hit — **FAIL**. Dev 5/5 passed; the held-out result did not transfer. |
 
 ## What we learned
 
