@@ -35,6 +35,18 @@ trust loop described in [SPEC.md](SPEC.md).
 | **15c — Test priority only when she is queued on-map.** | Declared validity gate: at 300 m, approach excess ≥30 s on ≥8/10 seeds; most baseline delay must not be off-map. Conditional efficacy bars were a plan, not a completed preregistration. | Only **5/10** qualify. Majority-off-map check does not fail, but on-map delay gate does. No RECORD comparison or efficacy scoring followed. | **STOP, baseline validity.** | [experiments/phase15c/README.md @ 26d619b](https://github.com/jerrydjin/malleable/blob/26d619b/experiments/phase15c/README.md); [assets/phase15c/validity.json @ 6d8b38c](https://github.com/jerrydjin/malleable/blob/6d8b38c/assets/phase15c/validity.json); [docs/phase-15c-results.md @ 6d8b38c](https://github.com/jerrydjin/malleable/blob/6d8b38c/docs/phase-15c-results.md); [PR #45](https://github.com/jerrydjin/malleable/pull/45). |
 | **15e — On the freeway, a warning before the last exit could beat eyesight.** | Declared validity gate before efficacy preregistration: last exit >300 m upstream; affected median on-map excess ≥30 s on ≥8/10 seeds, queue on-map. Conditional benefit/cost bars were not scored. | Map gate **PASS**. Baseline spillback **10/10**, complete qualifying affected medians **0/10**. Seed **1**: **9,804/13,034** trips and **72/1,394** affected trips finish; **1,938 overlaps**, **0 collisions**. No RECORD or spoof scores. | **STOP, baseline overflow, incompletion and overlaps.** | [experiments/phase15e/see-only-validity-plan.md @ 20efca7](https://github.com/jerrydjin/malleable/blob/20efca7/experiments/phase15e/see-only-validity-plan.md); [assets/phase15e/map-validity.json @ e9db1c5](https://github.com/jerrydjin/malleable/blob/e9db1c5/assets/phase15e/map-validity.json); [assets/phase15e/validity-summary.json @ e9db1c5](https://github.com/jerrydjin/malleable/blob/e9db1c5/assets/phase15e/validity-summary.json); [experiments/phase15e/STOP-r2.md @ e9db1c5](https://github.com/jerrydjin/malleable/blob/e9db1c5/experiments/phase15e/STOP-r2.md); [PR #46](https://github.com/jerrydjin/malleable/pull/46). |
 
+## Judge demo and held-out status
+
+These rows distinguish playback of an existing score from the footage check.
+They add no runs or rescoring. The replay uses the original Phase 15a matrix,
+not the corrected NEAR control above.
+
+| Claim / artifact | Result | Evidence |
+|---|---|---|
+| **Phase 15a replay — PR #50, seed 1.** A proposed edit merges after a second car confirms from its simulated sensor, with reach from the cached model reply. | **Edit merged; 0.0 s affected median gain; 300 m bar not met — FAIL.** | [Original gate, seed 1 RECORD row](gates/phase-15a-scores.jsonl#L10); [cached label/reach](gates/phase-15-model-replies.json); [PR #50](https://github.com/jerrydjin/malleable/pull/50); [committed replay](../recordings/phase15a-seed1.json). |
+| **Phase 16b — footage and label/reach check.** B is **same source, different viewpoint**. | **b/c/f PASS; a/d/e FAIL.** The label sits on the white trailer, not the crash. A failed detection; no B review was applied; no edit merged; the trust rule was not tested. | [Committed gate](gates/phase-16b-summary.md); [merge check](../experiments/phase16b/output/merge-check.json); [retained overlay](../experiments/phase16b/overlays/B.mp4). |
+| Phase 16d held-out — [PR #51](https://github.com/jerrydjin/malleable/pull/51) | Preregistered, frozen before the held-out run, single attempt on 300 frames: **0 edits**, no truck-body hit — **FAIL**. Dev 5/5 passed; the held-out result did not transfer. |
+
 ## What we learned
 
 Zero benefit can pass a cost-only bar: the Potrero queue-yield experiment's
