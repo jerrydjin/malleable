@@ -1,0 +1,12 @@
+{
+  "change": "Only the 16d commit placeholder was filled; original bytes are preserved in prereg.original.md.",
+  "clip_sha256": "13b0533b7c39f3aafe9c8a49b5fce5c4b5c0a8d57eb0aa274a0c138d8c093704",
+  "filled_prereg_sha256": "7ae67341017f51557a39cda14824534f564ce57ccc7297f4973db3812e4e41bf",
+  "freeze_commit": "d0fcc110e5b5b03b127016270a87c483ee561d77",
+  "frozen_code_commit": "0cc372b2907d7e574d87855718ec5b3aa806cb52",
+  "frozen_code_manifest_sha256": "15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd",
+  "hit_assessment": "mask or box mostly on the truck body, judged by eye at its reference frame; no invented IoU cutoff",
+  "registered_prereg_sha256": "22410c75b5d1aee3b6eaa7d164b870c2044df365e7d23aa8dd56d623c9f4fd8d",
+  "scoring_timestamp": "decoded.timestamps_s[edit.position.reference_frame], the frame the edit refers to",
+  "since_s_meaning": "start of the consecutive stationary evidence, distinct from emission time"
+}

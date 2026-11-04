@@ -29,7 +29,7 @@ Written 2026-11-03, before SAM or any other detector or model has been run on th
 - Moving traffic: the other vehicles moving relative to the road, including a damaged car that moves through the scene in front of the camera before and early in the truck window, plus oncoming and same-direction traffic.
 
 ## PASS rule (one run, frozen code)
-The frozen 16d code is run exactly once on clip_T.mp4. Pin the commit SHA and config here before running: `16d commit = ________`. All three conditions must hold:
+The frozen 16d code is run exactly once on clip_T.mp4. Pin the commit SHA and config here before running: `16d commit = d0fcc110e5b5b03b127016270a87c483ee561d77`. All three conditions must hold:
 1. **Hit:** at least one emitted edit or flag is for the overturned truck body, with a timestamp in clip 10.0 s to 28.5 s. "For" means its mask or box is mostly on the truck body, judged by eye on the frame it refers to.
 2. **No moving-traffic false positives:** no edit anywhere in the clip is for a vehicle that is moving relative to the road.
 3. **Clear stretch quiet:** no edit has a timestamp in clip 0.0 s to 3.0 s.
