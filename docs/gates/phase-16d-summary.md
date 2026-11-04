@@ -1,6 +1,6 @@
 # Phase 16d: whole-frame mapping
 
-Status: **A/B/C 5 of 5 PASS; UNFROZEN**. Final marked exports and full tests pass. The committed freeze and single held-out run follow next.
+Status: **A/B/C 5 of 5 PASS; FROZEN; held-out attempt 1 RUNNING**. Final marked exports and full tests passed before the committed freeze. The exclusive held-out attempt started at **2026-11-04 10:00:47 UTC**; its score remains **NOT RUN** while inference is running.
 
 ## Measured development gates
 
@@ -44,8 +44,10 @@ Final Python verification: **118 passed, 0 failed, 0 skipped**, including the re
 
 All **543 parent files** remain unchanged. The diff against parent `874c0c8` for `src/judge.rs`, `src/schema.rs`, and `src/make_way.rs` is empty.
 
-Frozen code SHA: **none**. Freeze commit SHA: **none**. `FROZEN.md` will bind the measured gates, checkpoint, parameters, model/fallback provenance and green full checks.
+Frozen evidence/code SHA: **`0cc372b2907d7e574d87855718ec5b3aa806cb52`**. Freeze commit SHA: **`d0fcc110e5b5b03b127016270a87c483ee561d77`**. [`FROZEN.md`](../../experiments/phase16d/FROZEN.md) binds the measured gates, checkpoint, parameters, model provenance and green full checks. Frozen inference manifest SHA-256: `15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd`.
 
-Held-out: **NOT RUN**, **0 attempts**. Its branch, preregistration and clip remain unopened. The required source preregistration SHA-256 is `22410c75b5d1aee3b6eaa7d164b870c2044df365e7d23aa8dd56d623c9f4fd8d`; it will be verified after committing the freeze.
+Held-out: **RUNNING**, **1 reserved attempt**, **score NOT RUN**. The held-out branch was merged only after the freeze commit. The original preregistration was verified at the required SHA-256 `22410c75b5d1aee3b6eaa7d164b870c2044df365e7d23aa8dd56d623c9f4fd8d` and preserved as [`prereg.original.md`](../../experiments/phase16d/heldout/prereg.original.md). Filling only the required frozen-commit placeholder produced the bound SHA-256 `7ae67341017f51557a39cda14824534f564ce57ccc7297f4973db3812e4e41bf`; [`prereg-provenance.json`](../../experiments/phase16d/heldout/prereg-provenance.json) records both hashes and the emission timestamp convention before inference. [`ATTEMPTED.json`](../../experiments/phase16d/heldout/ATTEMPTED.json) exclusively reserves attempt 1. No rerun or post-freeze inference change is allowed.
+
+Held-out footage credit: **BloknotVrn36, CC BY 3.0, via Wikimedia Commons**, as specified in the preregistration.
 
 Outputs: [`overlays/`](../../experiments/phase16d/overlays/), [`tracks.csv`](../../experiments/phase16d/tracks.csv), [`edits.jsonl`](../../experiments/phase16d/edits.jsonl). These are actual development artifacts; the held-out overlay is pending.
