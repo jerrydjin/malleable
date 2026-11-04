@@ -73,7 +73,7 @@ fn mock_reason_table_changes_only_existing_safe_precedence() {
         assert_eq!(report.decision.granted, granted, "{text}");
         assert_eq!(report.decision.source, "model");
         assert_eq!(report.decision.provider, "mock");
-        assert_eq!(report.time_home_s, if granted { 126.5 } else { 141.0 });
+        assert_eq!(report.time_home_s, if granted { 70.25 } else { 141.0 });
         assert_eq!(report.baseline_time_home_s, 141.0);
         assert!(report.same_route && report.passed);
         assert_eq!((report.overlaps, report.crossing_conflicts), (0, 0));
@@ -175,7 +175,7 @@ fn seizure_parse_failure_grants_safe_priority_and_never_claims_to_be_live() {
     assert_eq!(report.decision.source, "fallback");
     assert_eq!(report.decision.fallback_reason, "parse");
     assert!(report.decision.granted);
-    assert_eq!(report.time_home_s, 126.5);
+    assert_eq!(report.time_home_s, 70.25);
     assert!(report.same_route && report.passed);
     assert_eq!((town.stats.overlaps, town.stats.crossing_conflicts), (0, 0));
 }
@@ -416,7 +416,7 @@ fn real_http_input_reaches_the_policy_and_safe_trip_and_rejects_cross_origin_inj
     let result: Value = serde_json::from_str(&result).unwrap();
     assert_eq!(result["report"]["decision"]["source"], "model");
     assert_eq!(result["town"]["priority"]["enabled"], true);
-    assert_eq!(result["report"]["time_home_s"], 126.5);
+    assert_eq!(result["report"]["time_home_s"], 70.25);
     assert_eq!(result["town"]["stats"]["overlaps"], 0);
     assert_eq!(calls.load(Ordering::Relaxed), 1);
     let (_, saved_page) = http(server.address, "GET", "", None);

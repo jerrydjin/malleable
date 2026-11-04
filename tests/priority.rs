@@ -13,8 +13,12 @@ fn priority_board_keeps_the_sticky_scores_and_reports_the_paired_baseline() {
         malleable::JamType::Symmetric,
         "Zipper fairly so both approaches get home.",
     );
-    let dinner =
-        malleable::run_dinner(&scenario, &malleable::FakeEcho, &malleable::EpisodeOpts::default()).unwrap();
+    let dinner = malleable::run_dinner(
+        &scenario,
+        &malleable::FakeEcho,
+        &malleable::EpisodeOpts::default(),
+    )
+    .unwrap();
     for enabled in [false, true] {
         let board = malleable::board::priority_board_from_run(&dinner, "scripted", enabled);
         assert_eq!(
@@ -65,7 +69,7 @@ fn two_relayed_agreements_get_the_same_car_home_sooner_without_collisions() {
         after.time_home_s.unwrap() + 10.0 < before.time_home_s.unwrap(),
         "{before:?} -> {after:?}"
     );
-    assert_eq!(after.time_home_s, Some(126.5));
+    assert_eq!(after.time_home_s, Some(70.25));
     assert_eq!(before.time_home_s, Some(141.0));
     let mut junctions = Vec::new();
     for ex in &cleared.exchanges {

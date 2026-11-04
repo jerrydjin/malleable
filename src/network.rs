@@ -1079,6 +1079,8 @@ struct PriorityTrip {
     route: Option<usize>,
     home_at: Option<f64>,
     served: Vec<usize>,
+    /// Route-indexed receipt times, independent of the dialogue at any one node.
+    deliveries: Vec<(usize, f64)>,
 }
 
 /// Who yields at the one negotiated merge, and when the merger cleared the line.
@@ -3487,6 +3489,7 @@ impl TownSim {
                     .map(|c| c.route);
             }
         }
+        self.propagate_priority();
         self.release_claims();
         if self.moving_slot() {
             self.tick_moving_slot();
@@ -3525,6 +3528,7 @@ impl TownSim {
                 route: None,
                 home_at: None,
                 served: Vec::new(),
+                deliveries: Vec::new(),
             });
             self.story = Some(StoryRun::new(StoryKind::Priority).at(at_s));
             self.demo.as_mut().unwrap().phase = 1;
@@ -3532,6 +3536,93 @@ impl TownSim {
             self.story = Some(StoryRun::new(StoryKind::Competing).at(self.time - WARMUP_S));
             self.demo.as_mut().unwrap().phase = 2;
         }
+    }
+
+    /// Publish the whole remaining route when the grant becomes active. Waiting
+    /// for a contested merge (or for the beneficiary to be within 110 m) leaves
+    /// downstream queues unaware while the beneficiary is already catching them.
+    fn propagate_priority(&mut self) {
+        let Some(p) = &self.priority else { return };
+        // A weak claim buys one short local slot, not a route-wide trip pass.
+        if !p.enabled
+            || !p.deliveries.is_empty()
+            || self
+                .story
+                .as_ref()
+                .is_some_and(|s| s.priority_until_s.is_some())
+        {
+            return;
+        }
+        let Some(route_id) = p.route else { return };
+        let Some(car) = self.cars.iter().find(|c| c.id == p.request.car_id) else {
+            return;
+        };
+        let route = &self.routes[route_id];
+        let relays: Vec<_> = route
+            .links
+            .iter()
+            .enumerate()
+            .filter(|(k, link)| self.net.links[**link].is_connector() && route.start[*k] > car.d)
+            .map(|(k, &link)| {
+                (
+                    k,
+                    RelayHop {
+                        distance_m: route.start[k],
+                        recipient: format!("junction:{link}"),
+                        recipient_car: None,
+                        connector: Some(link),
+                    },
+                )
+            })
+            .collect();
+        let config = BroadcastConfig::default();
+        let hops = make_way::time_relays(
+            car.d,
+            self.time,
+            &format!("car:{}", car.id),
+            &relays
+                .iter()
+                .map(|(_, hop)| hop.clone())
+                .collect::<Vec<_>>(),
+            V_MAX_MPS * config.speed_multiple,
+            config.hop_delay_s,
+        );
+        self.priority.as_mut().unwrap().deliveries = relays
+            .iter()
+            .zip(hops)
+            .map(|((k, _), hop)| (*k, hop.at_s))
+            .collect();
+    }
+
+    /// The incoming stream that has received a live route message at this node.
+    /// This is precedence only: occupied crossings and exit-room checks still
+    /// decide whether any car may enter.
+    fn priority_movement(&self, node: usize) -> Option<(usize, usize)> {
+        let p = self.priority.as_ref()?;
+        if !p.enabled
+            || self
+                .story
+                .as_ref()
+                .and_then(|s| s.priority_until_s)
+                .is_some_and(|until| self.time >= WARMUP_S + until)
+        {
+            return None;
+        }
+        let urgent = self.cars.iter().find(|c| c.id == p.request.car_id)?;
+        let route = &self.routes[p.route?];
+        p.deliveries.iter().find_map(|&(k, received)| {
+            let connector = &self.net.links[route.links[k]];
+            (received <= self.time
+                && connector.from == node
+                && urgent.d - CAR_LENGTH_M <= route.start[k + 1]
+                && self.route_eta(route, urgent.d, route.start[k])
+                    <= BroadcastConfig::default().lookahead_s)
+                .then_some((route.links[k - 1], route.links[k]))
+        })
+    }
+
+    fn priority_stream(&self, node: usize) -> Option<usize> {
+        self.priority_movement(node).map(|(stream, _)| stream)
     }
 
     fn release_claims(&mut self) {
@@ -3613,7 +3704,9 @@ impl TownSim {
                 }
                 let last = self.last_served[node];
                 let merging = |ci: usize| {
-                    self.hold.as_ref().is_some_and(|hold| {
+                    self.priority_stream(node).is_some_and(|stream| {
+                        self.routes[self.cars[ci].route].links[self.cars[ci].idx] == stream
+                    }) || self.hold.as_ref().is_some_and(|hold| {
                         hold.cleared_at.is_none()
                             && hold.deferred.is_none()
                             && (hold.merges == self.cars[ci].id
@@ -3727,8 +3820,15 @@ impl TownSim {
                 && h.beneficiary.is_some()
                 && h.node == self.net.links[link].to
         });
-        let clearing_path =
-            reservation.is_some_and(|h| h.stream == link) || self.experiment.is_some();
+        let signalled = self.priority_movement(self.net.links[link].to);
+        let clearing_path = signalled.is_some_and(|(stream, _)| stream == link)
+            || reservation.is_some_and(|h| h.stream == link)
+            || self.experiment.is_some();
+        if let Some((stream, connector)) = signalled {
+            if stream != link && self.net.conflicts_of(connector).contains(&want) {
+                return false;
+            }
+        }
         if let Some(h) = reservation {
             if !clearing_path {
                 let first = self
@@ -4578,7 +4678,32 @@ impl TownSim {
                         )
                         .collect()
                 })
-                .unwrap_or_default(),
+                .unwrap_or_else(|| {
+                    let Some(p) = &self.priority else {
+                        return Vec::new();
+                    };
+                    let Some(route_id) = p.route else {
+                        return Vec::new();
+                    };
+                    let Some(urgent) = self.cars.iter().find(|c| c.id == p.request.car_id) else {
+                        return Vec::new();
+                    };
+                    let path = &self.routes[route_id];
+                    self.cars
+                        .iter()
+                        .filter_map(|car| {
+                            if car.id == urgent.id {
+                                return None;
+                            }
+                            let own = &self.routes[car.route];
+                            let link = own.links[car.idx];
+                            let k = path.links.iter().position(|&l| l == link)?;
+                            (path.start[k] + car.d - own.start[car.idx] > urgent.d
+                                && self.priority_stream(self.net.links[link].to) == Some(link))
+                            .then_some((car.id, urgent.id, "clear".into()))
+                        })
+                        .collect()
+                }),
             t,
             cars: self
                 .cars
@@ -4629,6 +4754,7 @@ fn priority_sim(
         route: None,
         home_at: None,
         served: Vec::new(),
+        deliveries: Vec::new(),
     });
     sim
 }
@@ -5148,3 +5274,67 @@ mod fleet_release_tests {
 
 #[path = "record_host.rs"]
 mod record_host;
+
+#[cfg(test)]
+mod priority_propagation_tests {
+    use super::*;
+
+    #[test]
+    fn future_route_receipts_are_causal_and_independent_of_local_dialogue() {
+        let mut sim = priority_sim(7, PRIORITY_DEMO, true, Box::new(ScriptedTalk));
+        while sim.priority.as_ref().unwrap().route.is_none() {
+            sim.step();
+        }
+        assert!(sim.history.is_empty() && sim.hold.is_none());
+        let p = sim.priority.as_ref().unwrap();
+        let route = &sim.routes[p.route.unwrap()];
+        let urgent = sim
+            .cars
+            .iter()
+            .find(|c| c.id == PRIORITY_DEMO.car_id)
+            .unwrap();
+        let origin = urgent.d;
+        let config = BroadcastConfig::default();
+        assert!(!p.deliveries.is_empty());
+        for (hop, &(k, received_at)) in p.deliveries.iter().enumerate() {
+            let expected = WARMUP_S
+                + PRIORITY_DEMO.at_s
+                + (route.start[k] - origin) / (V_MAX_MPS * config.speed_multiple)
+                + (hop + 1) as f64 * config.hop_delay_s;
+            assert!((received_at - expected).abs() < 1e-9);
+        }
+        let &(k, received_at) = p.deliveries.last().unwrap();
+        assert!(
+            route.start[k] - origin > 110.0,
+            "must reach beyond the old radius"
+        );
+        let stream = route.links[k - 1];
+        let connector = route.links[k];
+        let node = sim.net.links[connector].from;
+        let clear_at = route.start[k + 1] + CAR_LENGTH_M;
+        assert_eq!(
+            sim.priority_movement(node),
+            None,
+            "no instantaneous delivery"
+        );
+        sim.time = received_at;
+        assert_eq!(sim.priority_movement(node), Some((stream, connector)));
+        sim.priority.as_mut().unwrap().enabled = false;
+        assert_eq!(
+            sim.priority_movement(node),
+            None,
+            "revocation releases the node"
+        );
+        sim.priority.as_mut().unwrap().enabled = true;
+        sim.cars
+            .iter_mut()
+            .find(|c| c.id == PRIORITY_DEMO.car_id)
+            .unwrap()
+            .d = clear_at + 0.1;
+        assert_eq!(
+            sim.priority_movement(node),
+            None,
+            "passed nodes release the signal"
+        );
+    }
+}

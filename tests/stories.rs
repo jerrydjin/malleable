@@ -43,7 +43,7 @@ fn detected_emergency_clears_the_route_without_a_rider_request() {
         PriorityReason::DetectedEmergency
     );
     assert_eq!(run.exchanges.len(), 2);
-    assert_eq!(run.priority.as_ref().unwrap().time_home_s, Some(126.5));
+    assert_eq!(run.priority.as_ref().unwrap().time_home_s, Some(70.25));
     assert_eq!(run.stats.overlaps + run.stats.crossing_conflicts, 0);
 }
 
@@ -70,7 +70,7 @@ fn a_chain_contains_three_real_cars_and_relays_the_same_detected_emergency() {
             .iter()
             .all(|l| l.say.split_whitespace().count() <= 8));
     }
-    assert_eq!(run.priority.as_ref().unwrap().time_home_s, Some(126.5));
+    assert_eq!(run.priority.as_ref().unwrap().time_home_s, Some(70.25));
     assert_eq!(run.stats.overlaps + run.stats.crossing_conflicts, 0);
 }
 
@@ -284,9 +284,9 @@ fn hospital_decision_is_carried_into_the_physical_yields() {
         .iter()
         .all(|claim| run.frames[200].cars.iter().any(|c| c.0 == claim.car_id)));
     assert_eq!(run.exchanges.len(), 2);
-    assert_eq!(
-        run.exchanges[0].yields, 200,
-        "the meeting car yields at the first contested junction"
+    assert!(
+        run.exchanges.iter().any(|ex| ex.yields == 200),
+        "the denied meeting car yields when the priority stream reaches it"
     );
     for ex in &run.exchanges {
         assert_eq!(ex.priority_id, Some(hospital.car_id));
@@ -296,6 +296,6 @@ fn hospital_decision_is_carried_into_the_physical_yields() {
             .iter()
             .all(|c| c.pref.contains(story.explanation())));
     }
-    assert_eq!(run.priority.as_ref().unwrap().time_home_s, Some(126.5));
+    assert_eq!(run.priority.as_ref().unwrap().time_home_s, Some(70.25));
     assert_eq!(run.stats.overlaps + run.stats.crossing_conflicts, 0);
 }

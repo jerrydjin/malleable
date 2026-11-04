@@ -312,10 +312,10 @@ mod tests {
     #[test]
     fn successive_priority_calls_keep_both_agreements_when_replies_overlap() {
         use crate::network::PRIORITY_DEMO;
-        struct Live;
+        struct Live(u32);
         impl MergeTalk for Live {
             fn agree(&self, snap: &MergeSnap) -> MergeChoice {
-                if snap.cars[0].id == 118 {
+                if snap.cars[0].id == self.0 {
                     std::thread::sleep(Duration::from_millis(50));
                 }
                 let mut choice = ScriptedTalk.agree(snap);
@@ -324,7 +324,8 @@ mod tests {
             }
         }
         let initial = run_priority_town(TOWN_SEED, PRIORITY_DEMO, true, Box::new(ScriptedTalk));
-        let mut reply = Reply::new(&initial, Box::new(Live));
+        let slow = initial.exchanges[0].forecast.cars[0].id;
+        let mut reply = Reply::new(&initial, Box::new(Live(slow)));
         reply.start(0);
         reply.start(1);
         reply.start(1);
@@ -343,7 +344,7 @@ mod tests {
         for ex in value["town"]["exchanges"].as_array().unwrap() {
             assert_eq!(ex["source"], "model");
         }
-        assert_eq!(value["town"]["priority"]["time_home_s"], 126.5);
+        assert_eq!(value["town"]["priority"]["time_home_s"], 70.25);
         assert_eq!(value["town"]["stats"]["overlaps"], 0);
         assert_eq!(value["town"]["stats"]["crossing_conflicts"], 0);
     }
