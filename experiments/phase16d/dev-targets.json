@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "scope": "development_only",
+  "evaluation_only": true,
+  "annotation_policy": "Manual boxes identify development targets only. Never supply this file, its boxes, or target identities to proposal generation, tracking, motion, lane assignment, emission, or the label model.",
+  "box_convention": "Original source-image pixels, [left, top, right, bottom), scaled to the verified working frame only during evaluation.",
+  "required_consecutive_frames": 6,
+  "required_moving_consecutive_frames": 3,
+  "moving_require_lower_band_support": true,
+  "matching": {
+    "minimum_mask_inside_box_fraction": 0.5,
+    "minimum_box_coverage": 0.04,
+    "minimum_primary_bbox_iou": 0.2,
+    "minimum_primary_score_margin": 0.05
+  },
+  "clips": {
+    "A": {
+      "source_sha256": "cbc0678241cfed684f0bb41d7e6df4587bdf8af09cb75a8cdb260abd524c8b0c",
+      "source_start_s": 11.0,
+      "source_size_wh": [1920, 1080],
+      "source_fps": 30,
+      "source_frames": 90,
+      "frame_stride": 3,
+      "sampled_frames": 30,
+      "anchor_frame": 20,
+      "anchor_source_s": 13.0,
+      "viewpoint_note": "development approach view",
+      "targets": [
+        {"id": "A_red_stationary", "name": "red stationary trailer", "box_xyxy": [1008, 482, 1191, 676], "expected_class": "STATIONARY", "expected_edits": 1},
+        {"id": "A_white_moving", "name": "white moving truck", "box_xyxy": [840, 460, 980, 669], "expected_class": "MOVING", "expected_edits": 0}
+      ]
+    },
+    "B": {
+      "source_sha256": "69aacfa02ba73de9d2f5c63fcf7155bb5dc71fbf8c71eda731677669bf08a44a",
+      "source_start_s": 14.5,
+      "source_size_wh": [1920, 1080],
+      "source_fps": 30,
+      "source_frames": 90,
+      "frame_stride": 3,
+      "sampled_frames": 30,
+      "anchor_frame": 15,
+      "anchor_source_s": 16.0,
+      "viewpoint_note": "same source, different viewpoint",
+      "targets": [
+        {"id": "B_red_stationary", "name": "red stationary trailer", "box_xyxy": [1035, 441, 1331, 704], "expected_class": "STATIONARY", "expected_edits": 1},
+        {"id": "B_white_moving", "name": "white moving truck", "box_xyxy": [840, 444, 1009, 681], "expected_class": "MOVING", "expected_edits": 0}
+      ]
+    },
+    "C": {
+      "source_sha256": "f2a0694c5b131541d31d275689a8d53210217df4647763fb5063edf6a6647a99",
+      "source_start_s": 0.0,
+      "source_size_wh": [1920, 1080],
+      "source_fps": 30,
+      "source_frames": 150,
+      "frame_stride": 3,
+      "sampled_frames": 50,
+      "viewpoint_note": "clear-road development control",
+      "targets": []
+    }
+  },
+  "limitations": [
+    "The two anchor frames are manually inspected development annotations, not exhaustive object labels or independent footage.",
+    "A/B edit checks cover masks geometrically associated at the declared anchor only; extra unmatched edits are reported for review rather than asserted correct.",
+    "Track identity across occlusion is a tracker limitation. A fragmented or ambiguous target fails evaluation rather than selecting a track by its classification or edit outcome.",
+    "Confidence remains a heuristic. This evaluation establishes neither metric road localization nor a calibrated confidence probability."
+  ]
+}

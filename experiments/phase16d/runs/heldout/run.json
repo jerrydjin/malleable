@@ -1,0 +1,217 @@
+{
+  "artifact_manifest": [
+    {
+      "bytes": 3,
+      "path": "candidates.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "bytes": 0,
+      "path": "edits.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 406,
+      "path": "edits.jsonl.json",
+      "sha256": "8598b8cbd67745fa684608244b6a6e9cf4252bbe294b829afb4e316c2f9a4d7f"
+    },
+    {
+      "bytes": 6255278,
+      "path": "heldout/analysis.json",
+      "sha256": "a204c8e62be60714e4dff872e7e3868de7b20320002caf107e4f7d04c6ceb315"
+    },
+    {
+      "bytes": 458034,
+      "path": "heldout/track-identities.json",
+      "sha256": "85261bf5df7fe703cbfc231266e3302ad0bd85f74bb472b0ace22df3c46b5d5d"
+    },
+    {
+      "bytes": 288939,
+      "path": "heldout/tracking.json",
+      "sha256": "6ac6930dca9e31f56637bf42bbb809cbf144ffc8eb62dd14c5fc5d51cf5fb3d5"
+    },
+    {
+      "bytes": 781,
+      "path": "label-adapter.log",
+      "sha256": "f45a21e3454b2f59c5166a1850f20cfca4b671c120fa2524e9499d091c07e602"
+    },
+    {
+      "bytes": 6844679,
+      "path": "overlays/heldout.mp4",
+      "sha256": "45a461664ad4dfa39be46bad8550c0200a44118aedb1417d5f7b49b3c5b06810"
+    },
+    {
+      "bytes": 2425250,
+      "path": "overlays/heldout.mp4.json",
+      "sha256": "b62af12a349d78759d986cda766cfd75b80ac3aa737b17b1b0cbb22c50387d9a"
+    },
+    {
+      "bytes": 201,
+      "path": "records.json",
+      "sha256": "16b071990dad9fb6260754971cea0548147af8a1acfcb2d4041af89a140d5cc7"
+    },
+    {
+      "bytes": 40664,
+      "path": "tracks.csv",
+      "sha256": "50c42af2a3f19a4579d9f4e6575fc4e09ecb7224b998db0c61c8f761c2de4f28"
+    },
+    {
+      "bytes": 403,
+      "path": "tracks.csv.json",
+      "sha256": "562d01d1ef03a0646984a10be772c55c79256d2e4975d34bc11991a960685473"
+    }
+  ],
+  "attempt": 1,
+  "code_manifest": {
+    "files": [
+      {
+        "path": "examples/phase16d_record.rs",
+        "sha256": "499d1ef28f1672b624e50376b00b8220d4e5182e73ecd74f984026da2dbe1d9c"
+      },
+      {
+        "path": "experiments/phase16d/README.md",
+        "sha256": "5b4c54caf9180cc3d8f1448bccfe465595fe8c394de42b196293c27805bf4192"
+      },
+      {
+        "path": "experiments/phase16d/acquire_checkpoint.py",
+        "sha256": "17cd47daef16ff3b2d7d9d92f73f757314e8084b47f43c4ed54eabd4b28d0ea5"
+      },
+      {
+        "path": "experiments/phase16d/base-preservation.json",
+        "sha256": "19959497984b63e86aeb2f2ed270d6b0d855e7d5b243fba8bac10b7e86c121f6"
+      },
+      {
+        "path": "experiments/phase16d/config.json",
+        "sha256": "3b5133ed761051e6e9b2123229d3fff981232fcdc9bf96939e9d78d201a6cc64"
+      },
+      {
+        "path": "experiments/phase16d/dev-targets.json",
+        "sha256": "4d946085c864dc6d93fdeb9bdb5665d6855f44c74570fcc2a4cb8af6b51586d8"
+      },
+      {
+        "path": "experiments/phase16d/evaluate.py",
+        "sha256": "e3b555c24a44a0f8500accea8c119d8ad235c1387c71522d0daa6ddb4440599f"
+      },
+      {
+        "path": "experiments/phase16d/launch.py",
+        "sha256": "488325b75caebd1b83d1d4be86a67a1ea55b2d3ae8f1a734251318f601fdd8b8"
+      },
+      {
+        "path": "experiments/phase16d/mapping.py",
+        "sha256": "7d7ee33bd102aeb8253d80e97efa3c80b265a5cdb5f4366610cfdfba8ab5397d"
+      },
+      {
+        "path": "experiments/phase16d/motion.py",
+        "sha256": "29ecd7469ba120e827799c04e9f3c5e6a2783776e041b1d5bf903be9b68c4143"
+      },
+      {
+        "path": "experiments/phase16d/outputs.py",
+        "sha256": "da058a77c35ae952bd108ddcb8003f608a005906c925e5254bf60529d2dd9094"
+      },
+      {
+        "path": "experiments/phase16d/proposals.py",
+        "sha256": "fc3c2e3a7cd20439c3ef2baee2e5c40e7daa3580742e0d642d4e3183e6d533ad"
+      },
+      {
+        "path": "experiments/phase16d/protocol.py",
+        "sha256": "b5ae53a426085bd1f0f5a3855016c05899b7b64571e67a73140729cd6dd51534"
+      },
+      {
+        "path": "experiments/phase16d/record_adapter.rs",
+        "sha256": "93ce257d1610a53ac5e7ad06b7f33b21ff9bdbeb156207593915c9361bfeb939"
+      },
+      {
+        "path": "experiments/phase16d/run_mapping.py",
+        "sha256": "d530c231438e75d07d24b2830163ff1f41a28b106456d6f8d768ea3b575cbd37"
+      },
+      {
+        "path": "experiments/phase16d/runtime/checkpoint-acquisition-20261103.json",
+        "sha256": "3828d7707da3a08b9ffd7908d41238d208585d7d6e2b96d79996500e83ecd0ad"
+      },
+      {
+        "path": "experiments/phase16d/runtime/requirements.lock.txt",
+        "sha256": "d9660a6c49ca768360d8246aa0b94e8717e50f00be2e3c77251a9feb3463c637"
+      },
+      {
+        "path": "experiments/phase16d/runtime/sam2-source.json",
+        "sha256": "add68819a07982e6006deb724010cbc1aec40e8e5be6f4f2f21bb9e11d3cea52"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_acquire_checkpoint.py",
+        "sha256": "f5cad5727ad6ff45a4d915579676188104aa358beaa1ed7ea002aaf6cac7ef66"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_composition.py",
+        "sha256": "cfa3bb42f8ffa0b612de726f131d16cc4b625795b0c01adc9042efb0119b9ffd"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_emission.py",
+        "sha256": "12302695e962b96bb884d8e6c7c1231fd766e2c2c4fb4bc527db27636d0bb621"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_evaluate.py",
+        "sha256": "99108407088a99972f269b69d7324b38d91668a5aba391526f3cff3a38350b26"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_motion.py",
+        "sha256": "7da825be571b38990829fc2c5a08d5b3dcb264f3c12678a54a591eba3f9529d6"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_motion_history.py",
+        "sha256": "14c0e1213545ca82b7e876bdae50ebc92f3504a0f2646c7fc073745163bfd894"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_outputs.py",
+        "sha256": "f2cd378cf0d1a6f5fc32e8a5af46e831330c3f34fa29ac7fbada20b3f78cdf66"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_proposals.py",
+        "sha256": "7ff92011c9dd22cf8c7530fc04e47d3b1ed5b671a8a78f3b61804ef22c881389"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_protocol.py",
+        "sha256": "29aa659a19f26ea3f803e668f647759e280238a35504f407922bb8219c89c9a9"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_tracker.py",
+        "sha256": "212305d4fb64447bf58c785a283362fbee59219e26c69586cc526cf8c722b1d7"
+      },
+      {
+        "path": "experiments/phase16d/tracker.py",
+        "sha256": "e41ce3502abedc83f526c7305dfdb1916be6e1883b229532da4e7a5bf1f37f38"
+      },
+      {
+        "path": "experiments/phase16d/validate.py",
+        "sha256": "fff79676ad057e25ca5193bc586c1e9a82e166fb1aeb8e5d360af56903c0a61a"
+      },
+      {
+        "path": "tests/phase16d.rs",
+        "sha256": "a0ca88127f37b0eb6ff52399d3fc282b6c6d45a24f3fd4577c55b9b97eb76ea1"
+      }
+    ],
+    "sha256": "15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd"
+  },
+  "edit_count": 0,
+  "freeze_code_commit": "0cc372b2907d7e574d87855718ec5b3aa806cb52",
+  "merge_reviews_applied": 0,
+  "model_calls": 0,
+  "phase": "heldout",
+  "preregistered_score": "PENDING_PREREG_EVALUATION",
+  "receipt": {
+    "attempt": 1,
+    "checkpoint_sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+    "clip_path": "experiments/phase16d/heldout/clip_T.mp4",
+    "clip_sha256": "13b0533b7c39f3aafe9c8a49b5fce5c4b5c0a8d57eb0aa274a0c138d8c093704",
+    "code_commit": "0cc372b2907d7e574d87855718ec5b3aa806cb52",
+    "code_manifest_sha256": "15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd",
+    "prereg_path": "experiments/phase16d/heldout/prereg.md",
+    "prereg_sha256": "7ae67341017f51557a39cda14824534f564ce57ccc7297f4973db3812e4e41bf",
+    "reserved_at_utc": "2026-11-04T10:00:47.636495+00:00",
+    "state": "ATTEMPT_RESERVED"
+  },
+  "sampled_frames": 300,
+  "state": "complete",
+  "track_count": 115,
+  "vehicle_motion_actions": 0,
+  "version": 1
+}

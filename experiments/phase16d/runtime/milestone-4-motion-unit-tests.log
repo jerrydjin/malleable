@@ -1,0 +1,21 @@
+test_background_homography_recovers_known_translation_deterministically (test_motion.ImageMotionTests.test_background_homography_recovers_known_translation_deterministically) ... ok
+test_contact_feature_motion_matches_static_road (test_motion.ImageMotionTests.test_contact_feature_motion_matches_static_road) ... ok
+test_missing_background_support_is_not_zero_motion (test_motion.ImageMotionTests.test_missing_background_support_is_not_zero_motion) ... ok
+test_same_image_object_against_observable_ego_is_moving (test_motion.ImageMotionTests.test_same_image_object_against_observable_ego_is_moving) ... ok
+test_lane_shoulder_and_uncertainty (test_motion.LaneTests.test_lane_shoulder_and_uncertainty) ... ok
+test_disabled_fallback_preserves_lower_band_abstention (test_motion.LowTextureFallbackTests.test_disabled_fallback_preserves_lower_band_abstention) ... ok
+test_primary_lower_band_can_still_establish_stationarity (test_motion.LowTextureFallbackTests.test_primary_lower_band_can_still_establish_stationarity) ... ok
+test_untextured_whole_mask_does_not_invent_zero_motion (test_motion.LowTextureFallbackTests.test_untextured_whole_mask_does_not_invent_zero_motion) ... ok
+test_whole_mask_agreement_does_not_establish_contact_stationarity (test_motion.LowTextureFallbackTests.test_whole_mask_agreement_does_not_establish_contact_stationarity) ... ok
+test_whole_mask_can_identify_comoving_vehicle_as_moving (test_motion.LowTextureFallbackTests.test_whole_mask_can_identify_comoving_vehicle_as_moving) ... ok
+test_whole_mask_fallback_preserves_motion_quality_gate (test_motion.LowTextureFallbackTests.test_whole_mask_fallback_preserves_motion_quality_gate) ... ok
+test_comoving_vehicle_with_zero_image_flow_is_moving (test_motion.ResidualTests.test_comoving_vehicle_with_zero_image_flow_is_moving) ... ok
+test_low_quality_cannot_be_stationary (test_motion.ResidualTests.test_low_quality_cannot_be_stationary) ... ok
+test_stationary_ground_contact (test_motion.ResidualTests.test_stationary_ground_contact) ... ok
+test_stationary_measurement_noise (test_motion.ResidualTests.test_stationary_measurement_noise) ... ok
+test_unobservable_zero_ego_motion_is_unknown (test_motion.ResidualTests.test_unobservable_zero_ego_motion_is_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.060s
+
+OK

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/.venvs/phase16d/bin/python",
+    "/workspace/malleable/experiments/phase16d/validate.py",
+    "--prefix",
+    "final-dev-002"
+  ],
+  "job_id": "final-checks-002",
+  "log_path": "experiments/phase16d/runtime/final-checks-002-console.log",
+  "note": "Final status is recorded by the existing runner or validation command.",
+  "pid": 16610,
+  "started_at_utc": "2026-11-04T09:40:29.993413+00:00",
+  "state": "launched"
+}

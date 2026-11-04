@@ -1,0 +1,207 @@
+{
+  "all_pass": true,
+  "clip_checks": {
+    "A": {
+      "errors": [],
+      "pass": true
+    },
+    "B": {
+      "errors": [],
+      "pass": true
+    },
+    "C": {
+      "errors": [],
+      "pass": true
+    }
+  },
+  "evaluation_plan_sha256": "f70fbac5a09a84d8165d2f70e6f54824e7451cf73d198c1ae22ac7007e541c62",
+  "input_errors": [],
+  "labels_deferred": false,
+  "model_calls": 2,
+  "moving_require_lower_band_support": true,
+  "required_consecutive_frames": 6,
+  "required_moving_consecutive_frames": 3,
+  "rows": [
+    {
+      "candidate_count": 1,
+      "class": "STATIONARY",
+      "clip": "A",
+      "edit_count": 1,
+      "expected_class": "STATIONARY",
+      "expected_edits": 1,
+      "id": "A_red_stationary",
+      "longest_moving_run": 2,
+      "longest_stationary_run": 8,
+      "longest_supported_moving_run": 2,
+      "matching": {
+        "error": null,
+        "matches": [
+          {
+            "bbox_iou": 0.7928464977645305,
+            "box_coverage": 0.6833084947839047,
+            "mask_inside_box_fraction": 1.0,
+            "track_id": 4
+          }
+        ],
+        "related_track_ids": [
+          4
+        ],
+        "track_id": 4,
+        "working_box_xyxy": [
+          336,
+          160,
+          397,
+          226
+        ]
+      },
+      "motion_confirmation_policy": "asymmetric_consecutive_windows",
+      "moving_require_lower_band_support": true,
+      "pass": true,
+      "reasons": [],
+      "required_moving_motion_frames": 3,
+      "required_stationary_motion_frames": 6,
+      "target": "red stationary trailer",
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "candidate_count": 0,
+      "class": "MOVING",
+      "clip": "A",
+      "edit_count": 0,
+      "expected_class": "MOVING",
+      "expected_edits": 0,
+      "id": "A_white_moving",
+      "longest_moving_run": 3,
+      "longest_stationary_run": 2,
+      "longest_supported_moving_run": 3,
+      "matching": {
+        "error": null,
+        "matches": [
+          {
+            "bbox_iou": 0.8626139817629179,
+            "box_coverage": 0.8170212765957446,
+            "mask_inside_box_fraction": 1.0,
+            "track_id": 2
+          }
+        ],
+        "related_track_ids": [
+          2
+        ],
+        "track_id": 2,
+        "working_box_xyxy": [
+          280,
+          153,
+          327,
+          223
+        ]
+      },
+      "motion_confirmation_policy": "asymmetric_consecutive_windows",
+      "moving_require_lower_band_support": true,
+      "pass": true,
+      "reasons": [],
+      "required_moving_motion_frames": 3,
+      "required_stationary_motion_frames": 6,
+      "target": "white moving truck",
+      "viewpoint_note": "development approach view"
+    },
+    {
+      "candidate_count": 1,
+      "class": "STATIONARY",
+      "clip": "B",
+      "edit_count": 1,
+      "expected_class": "STATIONARY",
+      "expected_edits": 1,
+      "id": "B_red_stationary",
+      "longest_moving_run": 0,
+      "longest_stationary_run": 9,
+      "longest_supported_moving_run": 0,
+      "matching": {
+        "error": null,
+        "matches": [
+          {
+            "bbox_iou": 0.8860192837465565,
+            "box_coverage": 0.731404958677686,
+            "mask_inside_box_fraction": 1.0,
+            "track_id": 4
+          }
+        ],
+        "related_track_ids": [
+          4
+        ],
+        "track_id": 4,
+        "working_box_xyxy": [
+          345,
+          147,
+          444,
+          235
+        ]
+      },
+      "motion_confirmation_policy": "asymmetric_consecutive_windows",
+      "moving_require_lower_band_support": true,
+      "pass": true,
+      "reasons": [],
+      "required_moving_motion_frames": 3,
+      "required_stationary_motion_frames": 6,
+      "target": "red stationary trailer",
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "candidate_count": 0,
+      "class": "MOVING",
+      "clip": "B",
+      "edit_count": 0,
+      "expected_class": "MOVING",
+      "expected_edits": 0,
+      "id": "B_white_moving",
+      "longest_moving_run": 3,
+      "longest_stationary_run": 1,
+      "longest_supported_moving_run": 3,
+      "matching": {
+        "error": null,
+        "matches": [
+          {
+            "bbox_iou": 0.8494337108594271,
+            "box_coverage": 0.7845880524095048,
+            "mask_inside_box_fraction": 1.0,
+            "track_id": 3
+          }
+        ],
+        "related_track_ids": [
+          3
+        ],
+        "track_id": 3,
+        "working_box_xyxy": [
+          280,
+          148,
+          337,
+          227
+        ]
+      },
+      "motion_confirmation_policy": "asymmetric_consecutive_windows",
+      "moving_require_lower_band_support": true,
+      "pass": true,
+      "reasons": [],
+      "required_moving_motion_frames": 3,
+      "required_stationary_motion_frames": 6,
+      "target": "white moving truck",
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "candidate_count": 0,
+      "clip": "C",
+      "edit_count": 0,
+      "id": "C_clear_road",
+      "pass": true,
+      "reasons": [],
+      "target": "clear-road control",
+      "viewpoint_note": "clear-road development control"
+    }
+  ],
+  "safety_checks": {
+    "errors": [],
+    "pass": true
+  },
+  "scope": "development_only",
+  "unmatched_edits_for_review": [],
+  "version": 1
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/.venvs/phase16d/bin/python",
+    "/workspace/malleable/experiments/phase16d/run_mapping.py",
+    "heldout",
+    "--prereg-sha256",
+    "7ae67341017f51557a39cda14824534f564ce57ccc7297f4973db3812e4e41bf"
+  ],
+  "job_id": "heldout-frozen",
+  "log_path": "experiments/phase16d/runtime/heldout-frozen-console.log",
+  "note": "Final status is recorded by the existing runner or validation command.",
+  "pid": 18089,
+  "started_at_utc": "2026-11-04T10:00:46.436179+00:00",
+  "state": "launched"
+}

@@ -1,0 +1,383 @@
+{
+  "cargo": {
+    "exit_code": 0,
+    "failed": 0,
+    "ignored": 3,
+    "log": "runtime/final-dev-002-cargo.log",
+    "passed": 218,
+    "status": "PASS"
+  },
+  "checked_at_utc": "2026-11-04T09:50:38.395712+00:00",
+  "code_manifest_sha256": "15eec52c89c162e3bca6d7421c64a6a9baeacd440786ac5fc5bae1dc78d3c2cd",
+  "python": {
+    "failed": 0,
+    "log": "runtime/final-dev-002-python.log",
+    "outcomes": {
+      "test_acquire_checkpoint.OfficialCheckpointDestinations.test_official_hugging_face_redirects_and_fallback_are_allowed": {
+        "status": "PASS"
+      },
+      "test_acquire_checkpoint.OfficialCheckpointDestinations.test_signed_query_and_fragment_are_not_recorded": {
+        "status": "PASS"
+      },
+      "test_acquire_checkpoint.OfficialCheckpointDestinations.test_unrelated_hosts_and_credential_bearing_or_plaintext_urls_are_rejected": {
+        "status": "PASS"
+      },
+      "test_composition.ComposedImageMotion.test_default_mode_remains_direct_and_invalid_mode_is_rejected": {
+        "status": "PASS"
+      },
+      "test_composition.ComposedImageMotion.test_real_optical_flow_chain_recovers_known_lag_translation": {
+        "status": "PASS"
+      },
+      "test_composition.HomographyComposition.test_column_vector_transform_order_and_scale_normalization": {
+        "status": "PASS"
+      },
+      "test_composition.HomographyComposition.test_empty_nonfinite_and_singular_transforms_fail_closed": {
+        "status": "PASS"
+      },
+      "test_composition.HomographyComposition.test_missing_or_rejected_middle_fit_cannot_be_bridged": {
+        "status": "PASS"
+      },
+      "test_composition.HomographyComposition.test_quality_never_exceeds_weakest_component_and_errors_are_explicit": {
+        "status": "PASS"
+      },
+      "test_emission.EmissionTests.test_missing_frame_or_lane_change_resets_run": {
+        "status": "PASS"
+      },
+      "test_emission.EmissionTests.test_moving_unknown_shoulder_and_background_never_emit": {
+        "status": "PASS"
+      },
+      "test_emission.EmissionTests.test_n_frames_emit_once_and_later_frames_do_not_duplicate": {
+        "status": "PASS"
+      },
+      "test_emission.EmissionTests.test_nested_duplicate_track_does_not_emit_a_second_edit": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_ambiguous_geometry_cannot_select_by_desired_class": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_analysis_cannot_override_causal_background_role": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_clear_control_candidate_is_failure_even_when_adapter_abstains": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_complete_five_targets_with_scaled_geometry_and_source_offsets": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_empty_or_partial_clear_control_cannot_pass": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_false_edit_on_white_fragment_cannot_hide_behind_moving_whole_mask": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_invalid_shared_pixel_position_cannot_pass_host_evidence_match": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_label_cannot_merge_or_rewrite_host_mapping": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_missing_development_clip_returns_failed_five_rows": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_missing_masks_reset_runs_without_becoming_sampling_gaps": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_one_moving_frame_cannot_pass_moving_target": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_stationary_edit_requires_actual_support_not_only_claimed_count": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_two_strong_incompatible_runs_are_mixed": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_unmatched_target_fails_even_with_correct_track_class": {
+        "status": "PASS"
+      },
+      "test_evaluate.DevelopmentEvaluationTests.test_wrong_source_offset_or_duplicate_observation_fails": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_background_homography_recovers_known_translation_deterministically": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_contact_feature_motion_matches_static_road": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_missing_background_support_is_not_zero_motion": {
+        "status": "PASS"
+      },
+      "test_motion.ImageMotionTests.test_same_image_object_against_observable_ego_is_moving": {
+        "status": "PASS"
+      },
+      "test_motion.LaneTests.test_lane_shoulder_and_uncertainty": {
+        "status": "PASS"
+      },
+      "test_motion.LowTextureFallbackTests.test_disabled_fallback_preserves_lower_band_abstention": {
+        "status": "PASS"
+      },
+      "test_motion.LowTextureFallbackTests.test_primary_lower_band_can_still_establish_stationarity": {
+        "status": "PASS"
+      },
+      "test_motion.LowTextureFallbackTests.test_untextured_whole_mask_does_not_invent_zero_motion": {
+        "status": "PASS"
+      },
+      "test_motion.LowTextureFallbackTests.test_whole_mask_agreement_does_not_establish_contact_stationarity": {
+        "status": "PASS"
+      },
+      "test_motion.LowTextureFallbackTests.test_whole_mask_can_identify_comoving_vehicle_as_moving": {
+        "status": "PASS"
+      },
+      "test_motion.LowTextureFallbackTests.test_whole_mask_fallback_preserves_motion_quality_gate": {
+        "status": "PASS"
+      },
+      "test_motion.OffRoadAssignmentTests.test_travel_lanes_bounded_shoulders_and_offroad_on_both_sides": {
+        "status": "PASS"
+      },
+      "test_motion.OffRoadAssignmentTests.test_unobservable_or_ambiguous_contact_stays_unknown": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_comoving_vehicle_with_zero_image_flow_is_moving": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_low_quality_cannot_be_stationary": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_stationary_ground_contact": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_stationary_measurement_noise": {
+        "status": "PASS"
+      },
+      "test_motion.ResidualTests.test_unobservable_zero_ego_motion_is_unknown": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_both_confirmations_are_mixed_and_do_not_hide_movement": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_confirmation_windows_must_be_positive_integer_counts": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_csv_carries_the_actual_confirmation_policy": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_frame_measurements_are_preserved": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_missing_frames_and_background_roles_interrupt_moving_confirmation": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_missing_support_is_not_assumed_to_be_lower_band": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_moving_confirmation_never_emits": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_six_fallback_moving_rows_remain_provisional": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_support_gap_resets_confirmation_without_hiding_raw_run": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_support_requirement_must_be_boolean": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_three_moving_observations_confirm_only_when_explicitly_configured": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_three_stationary_observations_do_not_confirm_or_emit": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_unconfirmed_fallback_run_does_not_replace_stationary_confirmation": {
+        "status": "PASS"
+      },
+      "test_motion_history.MotionHistoryTests.test_unknown_interrupts_moving_confirmation": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_empty_bundle_does_not_create_placeholder": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_h264_actual_cadence_all_masks_and_every_b_frame": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_irregular_timestamps_are_not_resampled": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_missing_measurement_does_not_publish_video": {
+        "status": "PASS"
+      },
+      "test_outputs.OverlayTests.test_single_frame_requires_real_cadence_metadata": {
+        "status": "PASS"
+      },
+      "test_outputs.ProposalMarkerTests.test_actual_h264_contains_reference_marker_and_provenance_counts": {
+        "status": "PASS"
+      },
+      "test_outputs.ProposalMarkerTests.test_invalid_proposed_reference_does_not_publish_an_overlay": {
+        "status": "PASS"
+      },
+      "test_outputs.ProposalMarkerTests.test_markers_begin_at_emission_and_preserve_actual_record_and_motion": {
+        "status": "PASS"
+      },
+      "test_outputs.ProposalMarkerTests.test_no_edit_and_nonproposed_records_do_not_create_markers": {
+        "status": "PASS"
+      },
+      "test_outputs.ProposalMarkerTests.test_outside_reference_position_is_recorded_without_clamping": {
+        "status": "PASS"
+      },
+      "test_outputs.ProposalMarkerTests.test_recorded_cross_is_not_reused_as_later_pose_and_badge_follows_mask": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_annotation_cannot_claim_model_provenance": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_csv_preserves_scores_and_provenance_and_zero_visible_track": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_jsonl_empty_is_zero_edits_and_wrong_viewpoint_fails": {
+        "status": "PASS"
+      },
+      "test_outputs.TableTests.test_jsonl_retains_actual_edit_and_rejects_duplicate": {
+        "status": "PASS"
+      },
+      "test_proposals.AutomaticParts.test_adjacent_parts_generate_interior_prompts_without_promoting_low_quality_part": {
+        "status": "PASS"
+      },
+      "test_proposals.AutomaticParts.test_background_body_and_wide_road_patch_cannot_form_refinement": {
+        "status": "PASS"
+      },
+      "test_proposals.AutomaticParts.test_high_quality_background_spill_is_rejected": {
+        "status": "PASS"
+      },
+      "test_proposals.AutomaticParts.test_one_lower_part_compatible_with_two_bodies_is_rejected": {
+        "status": "PASS"
+      },
+      "test_proposals.AutomaticParts.test_pair_selection_is_stable_under_input_order": {
+        "status": "PASS"
+      },
+      "test_proposals.AutomaticParts.test_refined_contact_requires_both_parts_and_original_quality_gates": {
+        "status": "PASS"
+      },
+      "test_proposals.AutomaticParts.test_secondary_part_must_still_have_minimum_quality_and_stability": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_canonical_export_sidecars_do_not_change_frozen_code_manifest": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_changed_or_new_code_after_freeze_refuses_heldout": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_deferred_label_snapshot_cannot_freeze": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_explicit_asymmetric_windows_are_bound_in_freeze": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_freeze_marker_must_be_committed_before_heldout_access": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_freeze_report_copies_parameters_measurements_and_label_provenance": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_heldout_reservation_is_single_shot_and_binds_input_bytes": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_manifest_does_not_enumerate_heldout_and_includes_added_code": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_missing_freeze_refuses_before_heldout_directory_enumeration": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_missing_scored_moving_support_cannot_claim_lower_band": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_moving_confirmation_plan_must_match_inference_config": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_moving_support_flags_are_strict_booleans": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_moving_support_plan_must_match_inference_config": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_moving_support_result_must_match_inference_config": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_required_lower_band_support_is_recorded_in_freeze": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_retained_stop_change_prevents_freeze": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_scored_moving_confirmation_window_must_be_recorded": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_skipped_actual_tracker_repeat_cannot_be_presented_as_a_pass": {
+        "status": "PASS"
+      },
+      "test_protocol.FreezeProtocolTests.test_uncommitted_config_cannot_freeze_even_if_validation_is_updated": {
+        "status": "PASS"
+      },
+      "test_tracker.ActualTrackingDeterminism.test_fixed_development_clip_first_three_sampled_frames_repeat": {
+        "status": "PASS"
+      },
+      "test_tracker.BoundedMemoryTests.test_explicit_history_cap_bounds_records_and_exposes_missing_history": {
+        "status": "PASS"
+      },
+      "test_tracker.BoundedMemoryTests.test_explicit_history_cap_rejects_noncausal_or_invalid_context": {
+        "status": "PASS"
+      },
+      "test_tracker.BoundedMemoryTests.test_explicit_history_cap_retains_boundary_and_native_conditioning_selection": {
+        "status": "PASS"
+      },
+      "test_tracker.BoundedMemoryTests.test_history_pruning_preserves_all_native_forward_conditioning_and_pointer_lookups": {
+        "status": "PASS"
+      },
+      "test_tracker.BoundedMemoryTests.test_lazy_native_jpegs_match_actual_official_eager_preprocessing_exactly": {
+        "status": "PASS"
+      },
+      "test_tracker.BoundedMemoryTests.test_read_through_masks_stream_the_same_fingerprint_with_bounded_cache": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_cache_lock_rejects_a_second_writer": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_destination_signature_detects_unrelated_writes": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_missing_checkpoint_refuses_before_decode_or_cache_creation": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_packed_masks_round_trip_and_stable_fingerprint": {
+        "status": "PASS"
+      },
+      "test_tracker.CacheTests.test_tracking_cache_key_changes_for_sampling_but_not_motion_thresholds": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_association_is_one_to_one_and_preserves_video_ids": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_large_background_containment_does_not_delete_a_small_object": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_later_background_role_does_not_rewrite_earlier_foreground": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_proposal_order_and_duplicate_retention_are_deterministic": {
+        "status": "PASS"
+      },
+      "test_tracker.ProposalTests.test_track_cap_raises_instead_of_truncating_proposals": {
+        "status": "PASS"
+      }
+    },
+    "passed": 118,
+    "skipped": 0,
+    "status": "PASS",
+    "tests": 118
+  },
+  "sam_determinism": {
+    "log": "runtime/final-dev-002-python.log",
+    "skipped": 0,
+    "status": "PASS",
+    "test": "test_tracker.ActualTrackingDeterminism.test_fixed_development_clip_first_three_sampled_frames_repeat"
+  },
+  "version": 1
+}

@@ -1,0 +1,878 @@
+{
+  "boxes_opened_after_generation": true,
+  "dev_targets_sha256": "eb5ec4e698647ea03ebd622b2050d8a393ff0453f00aa78588212058a93bc760",
+  "evaluation_only": true,
+  "largest_after_same_native_nms_count": 11,
+  "largest_before_native_nms_count": 11,
+  "native_nms_passing_count": 11,
+  "original_config_sha256": "27a2c1616ec266401f852b9d5ba989255e560d11db93707e38762cd5c944f6ff",
+  "original_retention_counts": {
+    "duplicate_proposals": 0,
+    "empty_or_small": 0,
+    "raw_proposals": 11,
+    "retained_proposals": 11
+  },
+  "quality_passing_count": 146,
+  "targets": {
+    "A_red_stationary": {
+      "raw_matching_proposals": [
+        {
+          "area_px": 2846,
+          "bbox_iou": 0.8636363636363636,
+          "bbox_xyxy": [
+            336,
+            164,
+            396,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 5,
+          "box_coverage": 0.7069051167411823,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "cd7b3f50242ded7dbe5c81182e29c1daa8f8ad425540e1c8481967e46b67f5f0",
+          "native_bbox_xywh": [
+            336.0,
+            164.0,
+            60.0,
+            56.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              380.0,
+              213.75
+            ]
+          ],
+          "predicted_iou": 0.8905373215675354,
+          "probe_mask_id": 147,
+          "quality_passing": true,
+          "stability_score": 0.9461118578910828
+        },
+        {
+          "area_px": 2810,
+          "bbox_iou": 0.8484848484848485,
+          "bbox_xyxy": [
+            336,
+            164,
+            396,
+            219
+          ],
+          "bottom_gap_to_annotation_px": 6,
+          "box_coverage": 0.6979632389468455,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "f9a96a463da0961806056b140e6a136e64079bab5fca022df833cd93142adc8d",
+          "native_bbox_xywh": [
+            336.0,
+            164.0,
+            60.0,
+            55.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              340.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.9075676798820496,
+          "probe_mask_id": 140,
+          "quality_passing": true,
+          "stability_score": 0.9539749026298523
+        },
+        {
+          "area_px": 2768,
+          "bbox_iou": 0.8206656731246895,
+          "bbox_xyxy": [
+            337,
+            164,
+            395,
+            219
+          ],
+          "bottom_gap_to_annotation_px": 6,
+          "box_coverage": 0.6875310481867859,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "c1a10945e6efa8a95e964ce6beb6ec87319aed06d14cd980199d8e71ff0f5d4d",
+          "native_bbox_xywh": [
+            337.0,
+            164.0,
+            58.0,
+            55.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              380.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.9169156551361084,
+          "probe_mask_id": 138,
+          "quality_passing": true,
+          "stability_score": 0.9582300782203674
+        },
+        {
+          "area_px": 2767,
+          "bbox_iou": 0.8067560854446101,
+          "bbox_xyxy": [
+            337,
+            164,
+            394,
+            219
+          ],
+          "bottom_gap_to_annotation_px": 6,
+          "box_coverage": 0.6872826626924987,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "55047c4d2770d7438d2b40eafdea40b9652fe9a44a0dc0c90dd03963b5654c3b",
+          "native_bbox_xywh": [
+            337.0,
+            164.0,
+            57.0,
+            55.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              380.0,
+              168.75
+            ]
+          ],
+          "predicted_iou": 0.9393171072006226,
+          "probe_mask_id": 131,
+          "quality_passing": true,
+          "stability_score": 0.9606940746307373
+        },
+        {
+          "area_px": 2753,
+          "bbox_iou": 0.8067560854446101,
+          "bbox_xyxy": [
+            338,
+            164,
+            395,
+            219
+          ],
+          "bottom_gap_to_annotation_px": 6,
+          "box_coverage": 0.6838052657724789,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": true,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "93331693ad20a51c1da18580c597c57514230883555a163e231f91d9afb6a157",
+          "native_bbox_xywh": [
+            338.0,
+            164.0,
+            57.0,
+            55.0
+          ],
+          "native_nms_retained": true,
+          "original_quality_first_retained": true,
+          "point_coords": [
+            [
+              380.0,
+              213.75
+            ]
+          ],
+          "predicted_iou": 0.9480745196342468,
+          "probe_mask_id": 129,
+          "quality_passing": true,
+          "stability_score": 0.9639800190925598
+        },
+        {
+          "area_px": 2909,
+          "bbox_iou": 0.7651715039577837,
+          "bbox_xyxy": [
+            327,
+            164,
+            395,
+            221
+          ],
+          "bottom_gap_to_annotation_px": 4,
+          "box_coverage": 0.7198211624441133,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": true,
+          "mask_inside_box_fraction": 0.9962186318322448,
+          "mask_sha256": "c26eec4bdeb9812d5b06f74c8add92c488bac9ea53627c43d15afe0a48fd0a61",
+          "native_bbox_xywh": [
+            327.0,
+            164.0,
+            68.0,
+            57.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              380.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.843520998954773,
+          "probe_mask_id": 169,
+          "quality_passing": true,
+          "stability_score": 0.9237565398216248
+        },
+        {
+          "area_px": 2889,
+          "bbox_iou": 0.7382165605095541,
+          "bbox_xyxy": [
+            336,
+            164,
+            408,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 5,
+          "box_coverage": 0.7151018380526577,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 0.9965385946694358,
+          "mask_sha256": "19106646f3ae999ffefd9be46b8883afc08c73786badb7247a4d6ab3e154fa58",
+          "native_bbox_xywh": [
+            336.0,
+            164.0,
+            72.0,
+            56.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              340.0,
+              213.75
+            ]
+          ],
+          "predicted_iou": 0.4841861426830292,
+          "probe_mask_id": 403,
+          "quality_passing": false,
+          "stability_score": 0.8071761727333069
+        },
+        {
+          "area_px": 1047,
+          "bbox_iou": 0.6713859910581222,
+          "bbox_xyxy": [
+            336,
+            165,
+            388,
+            215
+          ],
+          "bottom_gap_to_annotation_px": 10,
+          "box_coverage": 0.2600596125186289,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "093e4151ad33b1361dc414537095ada3c0bc06fe09bb1e7bfc28ef88ca3e6f42",
+          "native_bbox_xywh": [
+            336.0,
+            165.0,
+            52.0,
+            50.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              340.0,
+              213.75
+            ]
+          ],
+          "predicted_iou": 0.1646404266357422,
+          "probe_mask_id": 601,
+          "quality_passing": false,
+          "stability_score": 0.4662044942378998
+        },
+        {
+          "area_px": 3928,
+          "bbox_iou": 0.5871433482296322,
+          "bbox_xyxy": [
+            331,
+            164,
+            423,
+            219
+          ],
+          "bottom_gap_to_annotation_px": 6,
+          "box_coverage": 0.7431693989071039,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 0.7617107942973523,
+          "mask_sha256": "9845194442285a184d1a3a329a444211094ae3564d2cdc3248a5b373cd76035c",
+          "native_bbox_xywh": [
+            331.0,
+            164.0,
+            92.0,
+            55.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              420.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.18803833425045013,
+          "probe_mask_id": 587,
+          "quality_passing": false,
+          "stability_score": 0.9148678183555603
+        },
+        {
+          "area_px": 936,
+          "bbox_iou": 0.546448087431694,
+          "bbox_xyxy": [
+            337,
+            165,
+            380,
+            214
+          ],
+          "bottom_gap_to_annotation_px": 11,
+          "box_coverage": 0.23248882265275708,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "6df31ec76067ea53dd708755f36c1d9986d92cf4aa10573c64301b9d32aada98",
+          "native_bbox_xywh": [
+            337.0,
+            165.0,
+            43.0,
+            49.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              340.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.4694511294364929,
+          "probe_mask_id": 422,
+          "quality_passing": false,
+          "stability_score": 0.6605809330940247
+        },
+        {
+          "area_px": 1421,
+          "bbox_iou": 0.5233482364629906,
+          "bbox_xyxy": [
+            346,
+            164,
+            394,
+            206
+          ],
+          "bottom_gap_to_annotation_px": 19,
+          "box_coverage": 0.3529557873820169,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "77bf326d17e369f83ad1979b98ca64823fd65069615ed2f4a33f0a5063c6bcc2",
+          "native_bbox_xywh": [
+            346.0,
+            164.0,
+            48.0,
+            42.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              380.0,
+              168.75
+            ]
+          ],
+          "predicted_iou": 0.543559193611145,
+          "probe_mask_id": 314,
+          "quality_passing": false,
+          "stability_score": 0.8774834275245667
+        },
+        {
+          "area_px": 1451,
+          "bbox_iou": 0.4485842026825633,
+          "bbox_xyxy": [
+            353,
+            164,
+            394,
+            206
+          ],
+          "bottom_gap_to_annotation_px": 19,
+          "box_coverage": 0.3604073522106309,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "c0f86a0bc4cffbf41c6a4afa3fe707949ae8fc647cef78095e476001c5114465",
+          "native_bbox_xywh": [
+            353.0,
+            164.0,
+            41.0,
+            42.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              380.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.5532724857330322,
+          "probe_mask_id": 301,
+          "quality_passing": false,
+          "stability_score": 0.9357190132141113
+        },
+        {
+          "area_px": 4215,
+          "bbox_iou": 0.4313582053157766,
+          "bbox_xyxy": [
+            301,
+            164,
+            433,
+            221
+          ],
+          "bottom_gap_to_annotation_px": 4,
+          "box_coverage": 0.7585692995529061,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 0.7245551601423488,
+          "mask_sha256": "60ad96d5c66e7b23ce91b9e00868aa912459f7677e7e511a2e3503a945042b9b",
+          "native_bbox_xywh": [
+            301.0,
+            164.0,
+            132.0,
+            57.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              380.0,
+              168.75
+            ]
+          ],
+          "predicted_iou": 0.751955509185791,
+          "probe_mask_id": 213,
+          "quality_passing": false,
+          "stability_score": 0.5601805448532104
+        }
+      ],
+      "working_box_xyxy": [
+        336,
+        160,
+        397,
+        226
+      ]
+    },
+    "A_white_moving": {
+      "raw_matching_proposals": [
+        {
+          "area_px": 2394,
+          "bbox_iou": 0.8826747720364742,
+          "bbox_xyxy": [
+            281,
+            155,
+            324,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 2,
+          "box_coverage": 0.7276595744680852,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "c75339e9acdcf3d134593eea4566f64768bfa738ed4164ebb934ac3b0ae71998",
+          "native_bbox_xywh": [
+            281.0,
+            155.0,
+            43.0,
+            65.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              300.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.43113937973976135,
+          "probe_mask_id": 452,
+          "quality_passing": false,
+          "stability_score": 0.6715246438980103
+        },
+        {
+          "area_px": 1629,
+          "bbox_iou": 0.5884498480243161,
+          "bbox_xyxy": [
+            283,
+            155,
+            326,
+            198
+          ],
+          "bottom_gap_to_annotation_px": 24,
+          "box_coverage": 0.4951367781155015,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "0071100ba2084f7299254730b675e9bcebb467b93fbcc9308a47fa9ce824c491",
+          "native_bbox_xywh": [
+            283.0,
+            155.0,
+            43.0,
+            43.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              300.0,
+              191.25
+            ]
+          ],
+          "predicted_iou": 0.6027793884277344,
+          "probe_mask_id": 265,
+          "quality_passing": false,
+          "stability_score": 0.9029462933540344
+        },
+        {
+          "area_px": 1539,
+          "bbox_iou": 0.5750759878419452,
+          "bbox_xyxy": [
+            283,
+            155,
+            325,
+            198
+          ],
+          "bottom_gap_to_annotation_px": 24,
+          "box_coverage": 0.46778115501519757,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": true,
+          "largest_before_nms_retained": true,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "9329b432d1cca98726789a82c281c46cc0082d409f30cabdd0fe2126b22dc5e2",
+          "native_bbox_xywh": [
+            283.0,
+            155.0,
+            42.0,
+            43.0
+          ],
+          "native_nms_retained": true,
+          "original_quality_first_retained": true,
+          "point_coords": [
+            [
+              300.0,
+              168.75
+            ]
+          ],
+          "predicted_iou": 0.8770208358764648,
+          "probe_mask_id": 151,
+          "quality_passing": true,
+          "stability_score": 0.9356651902198792
+        },
+        {
+          "area_px": 2899,
+          "bbox_iou": 0.4057023280146482,
+          "bbox_xyxy": [
+            279,
+            155,
+            391,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 2,
+          "box_coverage": 0.8723404255319149,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 0.9899965505346672,
+          "mask_sha256": "2544dddbbaa93eda8e3c5b3159c191fa836cc59fffe2c9dc015533cc250d76fd",
+          "native_bbox_xywh": [
+            279.0,
+            155.0,
+            112.0,
+            65.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              300.0,
+              168.75
+            ]
+          ],
+          "predicted_iou": 0.4983581304550171,
+          "probe_mask_id": 386,
+          "quality_passing": false,
+          "stability_score": 0.7356635928153992
+        },
+        {
+          "area_px": 768,
+          "bbox_iou": 0.2553191489361702,
+          "bbox_xyxy": [
+            283,
+            201,
+            324,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 2,
+          "box_coverage": 0.23343465045592704,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "c0271de25c348fcaad1bd5cb8ba99ba7a3d6b57a0eb0875774837700adf2e812",
+          "native_bbox_xywh": [
+            283.0,
+            201.0,
+            41.0,
+            19.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              300.0,
+              213.75
+            ]
+          ],
+          "predicted_iou": 0.6977137923240662,
+          "probe_mask_id": 241,
+          "quality_passing": false,
+          "stability_score": 0.9213483333587646
+        },
+        {
+          "area_px": 412,
+          "bbox_iou": 0.2297872340425532,
+          "bbox_xyxy": [
+            282,
+            155,
+            302,
+            190
+          ],
+          "bottom_gap_to_annotation_px": 32,
+          "box_coverage": 0.12522796352583587,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "b8824f3980bb82576cc1619533ec19bb9148e242d8458c8d7c0c69a87d5221a5",
+          "native_bbox_xywh": [
+            282.0,
+            155.0,
+            20.0,
+            35.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              300.0,
+              168.75
+            ]
+          ],
+          "predicted_iou": 0.13152354955673218,
+          "probe_mask_id": 622,
+          "quality_passing": false,
+          "stability_score": 0.5341130495071411
+        },
+        {
+          "area_px": 519,
+          "bbox_iou": 0.18480243161094226,
+          "bbox_xyxy": [
+            293,
+            202,
+            324,
+            220
+          ],
+          "bottom_gap_to_annotation_px": 2,
+          "box_coverage": 0.15775075987841947,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "9a9687b9c4169796ecc4ac9648fe0830587f88c6ca985d1d04796b695d724c5d",
+          "native_bbox_xywh": [
+            293.0,
+            202.0,
+            31.0,
+            18.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              300.0,
+              213.75
+            ]
+          ],
+          "predicted_iou": 0.6683624386787415,
+          "probe_mask_id": 250,
+          "quality_passing": false,
+          "stability_score": 0.918968677520752
+        },
+        {
+          "area_px": 178,
+          "bbox_iou": 0.06018237082066869,
+          "bbox_xyxy": [
+            294,
+            205,
+            311,
+            215
+          ],
+          "bottom_gap_to_annotation_px": 7,
+          "box_coverage": 0.05410334346504559,
+          "crop_box": [
+            0.0,
+            0.0,
+            640.0,
+            360.0
+          ],
+          "largest_after_same_nms_retained": false,
+          "largest_before_nms_retained": false,
+          "mask_inside_box_fraction": 1.0,
+          "mask_sha256": "b8b0f49e1dcccc79cabd38dbff5bac6b3a3e735f36e7423f0675571eef843ec2",
+          "native_bbox_xywh": [
+            294.0,
+            205.0,
+            17.0,
+            10.0
+          ],
+          "native_nms_retained": false,
+          "original_quality_first_retained": false,
+          "point_coords": [
+            [
+              300.0,
+              213.75
+            ]
+          ],
+          "predicted_iou": 0.3017241656780243,
+          "probe_mask_id": 526,
+          "quality_passing": false,
+          "stability_score": 0.8069307208061218
+        }
+      ],
+      "working_box_xyxy": [
+        280,
+        153,
+        327,
+        223
+      ]
+    }
+  }
+}

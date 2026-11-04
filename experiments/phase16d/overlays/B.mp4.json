@@ -1,0 +1,4550 @@
+{
+  "analysis_sha256": "926558a2c09d9f1b33fdd4bb1ce8815d828a71efc9d26f2eeb11ac5655892eee",
+  "canvas_dimensions": [
+    640,
+    744
+  ],
+  "clip": "B",
+  "codec": "h264",
+  "confidence_kind": "heuristic",
+  "config_sha256": "7695dff34a042299950ed01c79fdc57703b41f9e7a4fc649acdfa7f72f45a5b2",
+  "duration_s": 3.0,
+  "elapsed_s": 2.794163832004415,
+  "first_timestamp_s": 0.0,
+  "frame_count": 30,
+  "frame_spacing_s": 0.1,
+  "frames": [
+    {
+      "frame": 0,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106188,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1323,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 3260,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "unknown",
+          "mask_area_px": 4580,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 371,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 668,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 139,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4222,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 871,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 429,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 180,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 527,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 14.5,
+      "timestamp_s": 0.0,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 1,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106822,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1320,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 3302,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "unknown",
+          "mask_area_px": 4700,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 406,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 623,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 139,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4239,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 844,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 450,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 194,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 519,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 14.6,
+      "timestamp_s": 0.1,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 2,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106784,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1322,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 3328,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "unknown",
+          "mask_area_px": 4797,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 403,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 545,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 147,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4265,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 825,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 455,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 209,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 515,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 14.7,
+      "timestamp_s": 0.2,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 3,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106758,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.652243605869671,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1308,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6763035648579978,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3311,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5800337617962288,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 4910,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 412,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 435,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 147,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4238,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6405300667964409,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 826,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6683543860537775,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 436,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.676574409119014,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 196,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6752431362124692,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 509,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 14.8,
+      "timestamp_s": 0.3,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 4,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106766,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6753829827030445,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1264,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6655223689571005,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3356,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5858455508265763,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 4974,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6840345929349321,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 388,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 362,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 155,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.477937343613134,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4244,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6421159249625292,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 843,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6694091221673613,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 413,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6812800318994278,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 193,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6727322412865742,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 503,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 14.9,
+      "timestamp_s": 0.4,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 5,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106750,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6143736948662408,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1298,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6762317109623227,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3371,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.578583823683571,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5220,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6825381676345238,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 429,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 205,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 161,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.428211316903512,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4240,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6769132759100229,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 823,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6793969784938081,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 393,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6701030849878143,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 185,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6871888263510572,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 512,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 15.0,
+      "timestamp_s": 0.5,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 6,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106847,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6385416409107497,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1295,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6690772310680567,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3339,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5972566665915834,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5268,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.688104911926808,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 424,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 671,
+          "role": "foreground",
+          "track_id": 6
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 165,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.2431605845932598,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4196,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6777561207312182,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 803,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5067041468227619,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 375,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6890361384339205,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 190,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.681926588048053,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 511,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 15.1,
+      "timestamp_s": 0.6,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 7,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106703,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6727499026295527,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1331,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6782268854711068,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3381,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6079854122729205,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5345,
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 434,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 175,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.40091416991318,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4228,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6659470883465328,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 797,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5654603242983676,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 355,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 181,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6803572643501681,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 515,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 15.2,
+      "timestamp_s": 0.7,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 8,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106601,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6761267714922489,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1350,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7231148208839683,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3410,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6507105237797679,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5542,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": true,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.7337668163788393,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 434,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 184,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.3669545965597505,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4240,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7120140445607396,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 775,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6742488101881804,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 321,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7332273336938002,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 180,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7231469324860147,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 518,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 15.3,
+      "timestamp_s": 0.8,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 9,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106461,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6099889066787849,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1365,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6817093931788927,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3393,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6019233541145427,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5675,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6758980180510713,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 435,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 174,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5716163666157974,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4248,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.666262911297115,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 754,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5093875983059089,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 306,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6903339615127407,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 184,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6825688450334958,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 509,
+          "role": "foreground",
+          "track_id": 12
+        }
+      ],
+      "source_s": 15.4,
+      "timestamp_s": 0.9,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 10,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107600,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6769265394177272,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1411,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6722854539868673,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3415,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.584169927395475,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5769,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6865606137091909,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 394,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 186,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.3538040887126657,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4154,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.663011080606406,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 778,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6848874198530123,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 289,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 187,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6757263786002613,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 529,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 205,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1136,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 2796,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 15.5,
+      "timestamp_s": 1.0,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 11,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107256,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6707309380904554,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1432,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6822837323358508,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3415,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5955100362063878,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5916,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 428,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 185,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4969453524375087,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4246,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6779969919521527,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 767,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6772831550076724,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 274,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 192,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6810077349231446,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 519,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 178,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1148,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 2844,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 15.6,
+      "timestamp_s": 1.1,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 12,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107611,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6856190507494366,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1421,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.6814844621407011,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3397,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6100933916747883,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 5947,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 439,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 177,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.2849094937087214,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4176,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6436893877352036,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 744,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6826351857042826,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 255,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 203,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6879098829779045,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 516,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 183,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1029,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 2827,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 15.7,
+      "timestamp_s": 1.2,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 13,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107310,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6583662871106759,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1444,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6830179686465699,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3486,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5848786516658836,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 6109,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6726557087059951,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 450,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 203,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.501979598313397,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4201,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6427315653826454,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 739,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6851436483586998,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 218,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 209,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.69171328398722,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 510,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 184,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1012,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.35553888564133107,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2799,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 15.8,
+      "timestamp_s": 1.3,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 14,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107405,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6819818231615793,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1482,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6768263865441143,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3471,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5789539312054431,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 6248,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 450,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 224,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4200,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6579498043919916,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 732,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6874051018069819,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 190,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 192,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6843027993481453,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 519,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 210,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1020,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.35071937282346943,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2827,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 15.9,
+      "timestamp_s": 1.4,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 15,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107212,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6486475450050745,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1414,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6960222487448727,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3533,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5887117435694269,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 6372,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 439,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5332833470955114,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 221,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4214,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6786051250616316,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 745,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6842647523511348,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 178,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 179,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7006520495708645,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 516,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 219,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 891,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4708861547695129,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2852,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 16.0,
+      "timestamp_s": 1.5,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 16,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107317,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4546848733530257,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1386,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5572861466123448,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3554,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4840349926441369,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 6627,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 430,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5406655988416995,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 210,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.419412661140964,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4192,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5487307898922313,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 738,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5650902208941438,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 149,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5700286337441024,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 210,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5710446160672571,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 514,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 223,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 818,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4231891072955199,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2855,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 16.1,
+      "timestamp_s": 1.6,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 17,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107089,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.46707387654882065,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1382,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5622271572596462,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3613,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.46669175974344046,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 6714,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5678549646985648,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 452,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4584494637730057,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 264,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4898915087055572,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4192,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5245870398887794,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 727,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 131,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5723356170650797,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 194,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5673763287223977,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 505,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 212,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 835,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5041694016937214,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2844,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 16.2,
+      "timestamp_s": 1.7,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 18,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 107018,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.44596061284985894,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1410,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5452795981362487,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3647,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.44716477956429296,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 6970,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 452,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5470258223161797,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 221,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.49603610368620654,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4162,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.547452421721059,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 726,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 112,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5606849870359925,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 203,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5679827100660615,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 502,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 223,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 766,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.40792517349189195,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2831,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 16.3,
+      "timestamp_s": 1.8,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 19,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106811,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6068060462766965,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1385,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6824183782249921,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3662,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5424512840338452,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 7124,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 456,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 317,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5031370883695396,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4108,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6920320654326063,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 720,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 86,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6925527274418529,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 202,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.683836894348786,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 513,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 211,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 685,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5571327422831241,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2843,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 16.4,
+      "timestamp_s": 1.9,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 20,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 105742,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6567259198023867,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1489,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.7264806481025561,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3719,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5671211849202065,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 7308,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 429,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6924072788725966,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 314,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.3611796866544836,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4077,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7322969140929309,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 734,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 87,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7493292193340007,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 200,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7297753744037728,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 505,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.7379313191121886,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 214,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 638,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5420503751368999,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2829,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 407,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 371,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 16.5,
+      "timestamp_s": 2.0,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 21,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106384,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6215680243222114,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1468,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6315895093332333,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3754,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5558781454974489,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 7451,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 450,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 340,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3393190173326929,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4040,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6434913869979707,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 719,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_2",
+          "mask_area_px": 57,
+          "role": "foreground",
+          "track_id": 10
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 187,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.648492065188961,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 502,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 221,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 726,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6014480284442126,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2810,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 262,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 420,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 16.6,
+      "timestamp_s": 2.1,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 22,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 106131,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6254609087713627,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1478,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6250955982568858,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3764,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.49429791544318374,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 7619,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6523844939584529,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 480,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5278583973660562,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 379,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4006,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6341895269131907,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 712,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6492151178292864,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 190,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6464723359440626,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 506,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 193,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 810,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4927014123018212,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2843,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 49,
+          "role": "foreground",
+          "track_id": 16
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 467,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 16.7,
+      "timestamp_s": 2.2,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 23,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 105718,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6050450434408188,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1567,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6250248667066057,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3753,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4666704934886984,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 7808,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6378904181845028,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 471,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 335,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.38296966351141754,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4017,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.642204086925818,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 672,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6490563564674716,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 195,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6507112036677626,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 511,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 149,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 769,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5700826535702422,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2850,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 543,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 16.8,
+      "timestamp_s": 2.3,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 24,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 105642,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6526202015940316,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1511,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6571143521366004,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3832,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5702414487621227,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 8209,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6672301134879178,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 459,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 354,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.3415513028863786,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 4029,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6307259716054425,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 658,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 212,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6776665562500587,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 504,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 71,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 792,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5214499522640127,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2812,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 501,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 16.9,
+      "timestamp_s": 2.4,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 25,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 105516,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6777657303988482,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1449,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6496696610843056,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3905,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5699489446047736,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 8391,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 457,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6167234092040373,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 362,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.2864365095066775,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4015,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6494677715298799,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 667,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6616593897972896,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 206,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6783851123996893,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 507,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 15,
+          "role": "foreground",
+          "track_id": 13
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 869,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6093364463898079,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2814,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 339,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 17.0,
+      "timestamp_s": 2.5,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 26,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 105265,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6454571187924263,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1452,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6311641659536967,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 3962,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.47968224976961554,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 8518,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6650367123594246,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 478,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 398,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 3992,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6688405887798072,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 670,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6325979003810056,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 239,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6591862951036663,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 505,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 977,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.4484516292633201,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2811,
+          "role": "foreground",
+          "track_id": 15
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 145,
+          "role": "foreground",
+          "track_id": 17
+        }
+      ],
+      "source_s": 17.1,
+      "timestamp_s": 2.6,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 27,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 105115,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5992534898276493,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1468,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.596268777343119,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 4031,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.45719235645125256,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 8883,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6188325784942293,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 519,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.5513021138132166,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 442,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6239222772273205,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 4002,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6234931215367793,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 658,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 196,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.632923792919713,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 509,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 1022,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.45997019226528557,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2789,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 17.2,
+      "timestamp_s": 2.7,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 28,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 104896,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5841018639273464,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1490,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.597913240039544,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 4087,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.4881495151875958,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 9142,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 538,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4573158349910163,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 460,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6020839790771156,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 3947,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6287533333091622,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 657,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6264082521552528,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 218,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6303564055086744,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 496,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 955,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.47103800677294416,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2793,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 17.3,
+      "timestamp_s": 2.8,
+      "viewpoint_note": "same source, different viewpoint"
+    },
+    {
+      "frame": 29,
+      "objects": [
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "background surface",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 104420,
+          "role": "background_surface",
+          "track_id": 1
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5883022311110851,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 1500,
+          "role": "foreground",
+          "track_id": 2
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.6122434030548795,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_1",
+          "mask_area_px": 4139,
+          "role": "foreground",
+          "track_id": 3
+        },
+        {
+          "class": "STATIONARY",
+          "confidence": 0.5224176252831387,
+          "label": "stationary_object_lane_2",
+          "label_source": "model",
+          "lane": "lane_2",
+          "mask_area_px": 9353,
+          "proposed_edit": {
+            "badge_position_source": "current_visible_mask_bounds",
+            "coordinate_system": "road_reference_image",
+            "draw_reference_position": false,
+            "edit_id": "phase16d:B:4",
+            "reference_frame": 8,
+            "reference_position_visible": true,
+            "reference_position_xy": [
+              401.1831350835709,
+              224.80592598599145
+            ],
+            "status": "Proposed"
+          },
+          "role": "foreground",
+          "track_id": 4
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 595,
+          "role": "foreground",
+          "track_id": 5
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.4801157352592187,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "lane_0",
+          "mask_area_px": 406,
+          "role": "foreground",
+          "track_id": 7
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5879902602284822,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 3973,
+          "role": "foreground",
+          "track_id": 8
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6299532973025544,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 638,
+          "role": "foreground",
+          "track_id": 9
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.6260195790278303,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 224,
+          "role": "foreground",
+          "track_id": 11
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.625104042621137,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "unknown",
+          "mask_area_px": 502,
+          "role": "foreground",
+          "track_id": 12
+        },
+        {
+          "class": "UNKNOWN",
+          "confidence": 0.0,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "off-road",
+          "mask_area_px": 939,
+          "role": "foreground",
+          "track_id": 14
+        },
+        {
+          "class": "MOVING",
+          "confidence": 0.5513354001469335,
+          "label": "unlabelled object",
+          "label_source": "unlabelled",
+          "lane": "shoulder",
+          "mask_area_px": 2794,
+          "role": "foreground",
+          "track_id": 15
+        }
+      ],
+      "source_s": 17.4,
+      "timestamp_s": 2.9,
+      "viewpoint_note": "same source, different viewpoint"
+    }
+  ],
+  "frames_per_second": "10",
+  "labels_used_for_motion": false,
+  "last_timestamp_s": 2.9,
+  "legend_rgb": {
+    "MOVING": [
+      35,
+      165,
+      255
+    ],
+    "STATIONARY": [
+      255,
+      75,
+      70
+    ],
+    "UNKNOWN": [
+      245,
+      205,
+      60
+    ]
+  },
+  "mask_alpha": 0.35,
+  "mask_draw_count": 395,
+  "output_bytes": 656570,
+  "output_sha256": "1a3a4e8b10b83b0c7b3bf7f69a694df750a32cc1f45878d9f4b9847dbc449ce3",
+  "outputs_code_sha256": "da058a77c35ae952bd108ddcb8003f608a005906c925e5254bf60529d2dd9094",
+  "pixel_format": "yuv420p",
+  "proposed_edit_badge_draw_count": 22,
+  "proposed_edit_marker_policy": "actual Proposed records only; badge from emission frame, recorded position on emission frame only",
+  "proposed_edit_marker_rgb": [
+    255,
+    135,
+    15
+  ],
+  "proposed_edit_reference_point_draw_count": 1,
+  "source_dimensions": [
+    640,
+    360
+  ],
+  "source_sha256": "69aacfa02ba73de9d2f5c63fcf7155bb5dc71fbf8c71eda731677669bf08a44a",
+  "tracking_identity": {
+    "checkpoint_sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+    "limit_frames": null,
+    "proposal_code_sha256": "fc3c2e3a7cd20439c3ef2baee2e5c40e7daa3580742e0d642d4e3183e6d533ad",
+    "source_sha256": "69aacfa02ba73de9d2f5c63fcf7155bb5dc71fbf8c71eda731677669bf08a44a",
+    "tracker_code_sha256": "e41ce3502abedc83f526c7305dfdb1916be6e1883b229532da4e7a5bf1f37f38",
+    "tracking_config_sha256": "453aad50dafb060c1ca18fb0bddfb523fda48e21b85d17f979d0a69455688567"
+  },
+  "tracking_model_id": "facebook/sam2.1-hiera-large",
+  "tracking_result_fingerprint": "942e33a5024ebf097b0f7dd722e3c3a162cb9ed608d8e5ff03b60691c4861019",
+  "tracking_timings_s": {
+    "decode": 0.3668783799994344,
+    "model_load": 1.6569563909997669,
+    "video_state_init": 11.704566086999876
+  },
+  "version": 1,
+  "viewpoint_note": "same source, different viewpoint"
+}

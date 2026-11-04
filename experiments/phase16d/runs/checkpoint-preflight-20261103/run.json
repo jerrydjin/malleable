@@ -1,0 +1,138 @@
+{
+  "artifact_manifest": [
+    {
+      "bytes": 3738,
+      "path": "config.json",
+      "sha256": "975fa36d0d81426dbda6343db582df9a76d481d516f117b3dd323d962de93ed2"
+    }
+  ],
+  "base_preservation": {
+    "base_commit": "874c0c869426831fefa0624ed9e395c5c67ab9af",
+    "changed_files": 0,
+    "checked_files": 543,
+    "manifest_sha256": "19959497984b63e86aeb2f2ed270d6b0d855e7d5b243fba8bac10b7e86c121f6"
+  },
+  "clips": {},
+  "code_manifest": {
+    "files": [
+      {
+        "path": "examples/phase16d_record.rs",
+        "sha256": "499d1ef28f1672b624e50376b00b8220d4e5182e73ecd74f984026da2dbe1d9c"
+      },
+      {
+        "path": "experiments/phase16d/README.md",
+        "sha256": "568f47c3c4199ffa188f051ddd44d803b69eb865d6608f9eabbdc3d6f10ad831"
+      },
+      {
+        "path": "experiments/phase16d/acquire_checkpoint.py",
+        "sha256": "121953b05e349151049118327d35e0b5f17b98a3067219818e3236b58e3db642"
+      },
+      {
+        "path": "experiments/phase16d/base-preservation.json",
+        "sha256": "19959497984b63e86aeb2f2ed270d6b0d855e7d5b243fba8bac10b7e86c121f6"
+      },
+      {
+        "path": "experiments/phase16d/config.json",
+        "sha256": "41fd7791a0e0ba2ce5cbe803ea5b98c4720d8c2e83190832cb90352f61cc6594"
+      },
+      {
+        "path": "experiments/phase16d/dev-targets.json",
+        "sha256": "eb5ec4e698647ea03ebd622b2050d8a393ff0453f00aa78588212058a93bc760"
+      },
+      {
+        "path": "experiments/phase16d/evaluate.py",
+        "sha256": "14f0406828a2c7365075e1a8ef16c2a941fe943aebd3c2efc6409dce0a15d41e"
+      },
+      {
+        "path": "experiments/phase16d/mapping.py",
+        "sha256": "a08a3242e50968b5240b59922d846d3cbcf785b1b46d22bd1a89bc09bc62b3be"
+      },
+      {
+        "path": "experiments/phase16d/motion.py",
+        "sha256": "511139835fc0edb6fcf26e70a7be79f7609c16ccc0b8702badaa8e0f7a620888"
+      },
+      {
+        "path": "experiments/phase16d/outputs.py",
+        "sha256": "d15570a820f17416a97b2e306a80ceedb05e305ff9647e28b53fe50c5998a436"
+      },
+      {
+        "path": "experiments/phase16d/protocol.py",
+        "sha256": "926c304ab75c417613393e3aae01e29cd293ecc637d2c03351234263541838e8"
+      },
+      {
+        "path": "experiments/phase16d/record_adapter.rs",
+        "sha256": "7fe45567a82c903d6b9eaf2924150e53252f07549366527a72737afda15e4bd6"
+      },
+      {
+        "path": "experiments/phase16d/run_mapping.py",
+        "sha256": "9e4821c1632e2a55a15ba4536e50d0015172c7c325c83166032a1a259aaa0150"
+      },
+      {
+        "path": "experiments/phase16d/runtime/requirements.lock.txt",
+        "sha256": "d9660a6c49ca768360d8246aa0b94e8717e50f00be2e3c77251a9feb3463c637"
+      },
+      {
+        "path": "experiments/phase16d/runtime/sam2-source.json",
+        "sha256": "fdf70cc73fed202a6edaf9a81610ad6c6f4cb28046afbd8b304866f5d17a9580"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_emission.py",
+        "sha256": "12302695e962b96bb884d8e6c7c1231fd766e2c2c4fb4bc527db27636d0bb621"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_evaluate.py",
+        "sha256": "4bacc4756ad2abe2c295a29e0e227f620b5e8f7015632c8d66f2ffac64d5adfd"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_motion.py",
+        "sha256": "ebd961e1208d7775fbd3b0f4b771081edca7cfdaa3bd817dbe83b23943bb502b"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_outputs.py",
+        "sha256": "6a194e9bb580fafc8339353834ac2ebd2deb35dc68c51d0184fede9f88e52771"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_protocol.py",
+        "sha256": "5d1bc39f5ff6a21cae23ebcadd543dd2ad4cfd5e94373341c04e1e6e3c89e349"
+      },
+      {
+        "path": "experiments/phase16d/tests/test_tracker.py",
+        "sha256": "a3c815b5fa3e24f3e39f2bf61faaf093a057edd89f313b264912df0f6441354a"
+      },
+      {
+        "path": "experiments/phase16d/tracker.py",
+        "sha256": "202f4885e1e5a31dcbaaefaa586b5f12977de8ac2ab302078cf257ba3ff316e4"
+      },
+      {
+        "path": "experiments/phase16d/validate.py",
+        "sha256": "fff79676ad057e25ca5193bc586c1e9a82e166fb1aeb8e5d360af56903c0a61a"
+      },
+      {
+        "path": "tests/phase16d.rs",
+        "sha256": "78c7a6e6ee8ec10f6fa928e4e0487dab1f3f18c390265e4ea57d1b6254b906b1"
+      }
+    ],
+    "sha256": "ae1faae9fb60ef46f607215c5194344502810f7e8f12113861c163fd74a40a09"
+  },
+  "development_all_pass": null,
+  "elapsed_s": 2.2264001017902046e-05,
+  "failure_reason": "Native SAM 2.1 checkpoint is unavailable: /workspace/.cache/phase16d/checkpoints/sam2.1_hiera_tiny.pt",
+  "failure_stage": "checkpoint_preflight",
+  "failure_type": "CheckpointUnavailable",
+  "git_commit": "74f6c73def8f1d6ec790ec0c3f534a4801f5b828",
+  "heldout_opened": false,
+  "labels_deferred": true,
+  "merge_reviews_applied": 0,
+  "phase": "development",
+  "run_id": "checkpoint-preflight-20261103",
+  "sam_inference_completed_clips": 0,
+  "selected_clips": [
+    "A",
+    "B",
+    "C"
+  ],
+  "started_at_utc": "2026-11-03T20:49:21.604134+00:00",
+  "state": "blocked",
+  "vehicle_motion_actions": 0,
+  "version": 1
+}

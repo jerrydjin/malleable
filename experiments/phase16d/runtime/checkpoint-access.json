@@ -1,0 +1,18 @@
+{
+  "policy_checked_at_utc": "2026-11-03T20:41:18Z",
+  "policy_rechecked_at_utc": "2026-11-03T20:58:30Z",
+  "network_policy_state": "enforced",
+  "observations_current": true,
+  "required_host": "dl.fbaipublicfiles.com",
+  "host_in_effective_allowlist": false,
+  "user_authorized_host_addition": true,
+  "configuration_tools_available": "Cloud Environment status and diagnostics are read-only; no configuration mutation tool is available",
+  "official_checkpoint_url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+  "head_check_at_utc": "2026-11-03T16:38:38Z",
+  "head_http_status": 403,
+  "head_curl_exit_code": 22,
+  "checkpoint_bytes_downloaded": 0,
+  "native_checkpoint_present": false,
+  "phase16d_sam_inference_runs": 0,
+  "policy_bypass_attempted": false
+}

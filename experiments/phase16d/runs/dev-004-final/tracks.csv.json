@@ -1,0 +1,10 @@
+{
+  "analyses_sha256": "0abcd87fb7c2c7867b6b73b07b842180a35e688aa01e989bc7fda6895941f5a5",
+  "confidence_kind": "heuristic",
+  "elapsed_s": 0.013626681997266132,
+  "output_sha256": "ebf5c966670963f9099e932b46642dc49f48886304252e7161af380be6daba58",
+  "outputs_code_sha256": "da058a77c35ae952bd108ddcb8003f608a005906c925e5254bf60529d2dd9094",
+  "rows": 54,
+  "scores_recomputed": false,
+  "version": 1
+}
