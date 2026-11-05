@@ -1515,9 +1515,18 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     }
   }
 
+  var lastPhase15aPaint = null;
   function paint(now) {
     var canvas = document.getElementById("network");
     if (!canvas) return;
+    if (isPhase15a) {
+      // These are held story beats, not moving trajectories. Rebuilding the
+      // entire SVG every frame otherwise delays the captions and screenshots.
+      var elapsed = seekTo != null ? Math.max(0, seekTo) : elapsedSec(now);
+      var key = canvas.clientWidth + "x" + canvas.clientHeight + ":" + Math.min(3, Math.floor(elapsed / 4));
+      if (key === lastPhase15aPaint) return;
+      lastPhase15aPaint = key;
+    }
     var fitted = fit(canvas);
     var ctx = fitted.ctx;
     var view = makeView(fitted.w, fitted.h);
