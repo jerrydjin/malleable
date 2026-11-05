@@ -1459,7 +1459,7 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     }
     ctx.appendChild(svgNode("path", { d: "M" + rear.x + " " + rear.y + " L" + front.x + " " + front.y,
       fill: "none", stroke: merged ? red : amber, "stroke-width": 8,
-      "stroke-dasharray": merged ? "none" : "7 5", "stroke-linecap": "round",
+      "stroke-dasharray": merged ? "none" : "7 5", "stroke-linecap": merged ? "round" : "butt",
       "data-role": "phase15a-edit-link", "data-link": edit.link, "data-status": merged ? "merged" : "proposed" }));
     phase15aText(ctx, at.x + 18, at.y + 12, "tree · link " + edit.link, 13, merged ? red : amber);
 
