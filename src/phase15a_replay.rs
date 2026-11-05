@@ -52,6 +52,19 @@ pub struct Phase15aView {
     pub scored: Value,
 }
 
+impl Phase15aView {
+    /// Presentation-only provenance for legacy recordings which name the reply
+    /// file but do not embed its reach. Never regenerate or score the run.
+    pub(crate) fn recorded_tree_reach(&self) -> Option<Value> {
+        if self.reply_file != REPLY_FILE {
+            return None;
+        }
+        let replies: Value =
+            serde_json::from_str(include_str!("../docs/gates/phase-15-model-replies.json")).ok()?;
+        Some(replies.get("tree")?.get("reply")?.get("reach")?.clone())
+    }
+}
+
 /// The retained seed-1 RECORD row at 300 m from the Phase 15a gate file.
 pub fn gate_seed1_record_row() -> Result<Value, String> {
     let line = gate_seed1_record_line()?;

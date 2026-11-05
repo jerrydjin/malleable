@@ -372,6 +372,15 @@ pub fn render_board_html(board: &DinnerBoard) -> String {
         .replace("__TITLE__", &esc(title))
         .replace("__ARIA__", &esc(aria))
         .replace("__PILLS__", &pills)
+        .replace(
+            "__PHASE15A_REACH__",
+            &board
+                .phase15a
+                .as_ref()
+                .and_then(|shot| shot.recorded_tree_reach())
+                .unwrap_or(serde_json::Value::Null)
+                .to_string(),
+        )
         .replace("__BOARD_JSON__", &json)
 }
 
@@ -425,6 +434,7 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
   var isDemo = !!data.demo && (isReplay || /[?&]demo=1(?:&|$)/.test(location.search));
   var isRush = !!data.rush;
   var phase15a = data.phase15a || null;
+  var phase15aReach = __PHASE15A_REACH__;
   var isPhase15a = !!phase15a;
   var isReason = !isRush && !isPhase15a && (!!data.reason || /[?&]reason=1(?:&|$)/.test(location.search));
   if(isRush){document.getElementById("pills").hidden=true;document.getElementById("pills").style.display="none";document.getElementById("replay").hidden=true;}
@@ -895,7 +905,8 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
   if (isPhase15a) {
     var focus = links[phase15a.link];
     if (focus) {
-      var pad = phase15a.focus_m || 220;
+      // The edit link is only ~20 m long; keep both upstream dots legible.
+      var pad = Math.min(phase15a.focus_m || 220, 40);
       bounds = { minX: 1e9, minY: 1e9, maxX: -1e9, maxY: -1e9 };
       focus.pts.forEach(take);
       bounds.minX -= pad;
@@ -1364,56 +1375,143 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     });
   }
 
+  // Freeze each participant at their recorded event time, when trajectories
+  // exist. Legacy Phase 15a archives have no cars, so use labelled layout dots.
+  function phase15aCar(car, atTime, fraction, link, incident) {
+    var frame = town.frames[Math.round(atTime)];
+    var recorded = frame && frame.cars.find(function (c) { return c[0] === car; });
+    if (recorded) return { car: car, point: routeLoc(routes[recorded[1]], recorded[2]), illustrative: false };
+    return { car: car, point: pointOn(link, incident.position_m * fraction), illustrative: true };
+  }
+
+  function phase15aText(ctx, x, y, text, size, color, attrs) {
+    ctx.appendChild(svgNode("text", Object.assign({
+      x: x, y: y, fill: color || "#222", "font-family": "system-ui, sans-serif",
+      "font-size": size, stroke: "white", "stroke-width": 4, "paint-order": "stroke"
+    }, attrs || {}), text));
+  }
+
+  function drawPhase15aReach(ctx, view, center) {
+    if (!phase15aReach || !(phase15aReach.radius_m > 0)) return;
+    // A separate map scale fits the full recorded radius without collapsing
+    // the two dots in the local view. Both maps share the same edit center.
+    var radius = phase15aReach.radius_m;
+    var size = Math.min(250, view.width * 0.38, view.height * 0.4);
+    var x = view.width - size - 20, y = view.height - size - 40;
+    var r = size * 0.36, cx = x + size / 2, cy = y + size * 0.57;
+    ctx.appendChild(svgNode("rect", { x: x, y: y, width: size, height: size,
+      rx: 12, fill: "white", stroke: "#ddd", "data-role": "phase15a-reach-overview" }));
+    phase15aText(ctx, x + 12, y + 23, "Recorded reply · reach overview", 11, "#555");
+    var overview = { sc: r / radius, ox: cx - center.x * r / radius, oy: cy - center.y * r / radius };
+    var clip = svgNode("clipPath", { id: "phase15a-reach-clip" });
+    clip.appendChild(svgNode("circle", { cx: cx, cy: cy, r: r }));
+    ctx.appendChild(clip);
+    var roads = svgNode("g", { "clip-path": "url(#phase15a-reach-clip)" });
+    links.forEach(function (road) {
+      roads.appendChild(svgNode("path", { d: pathFor(overview, road.pts), fill: "none", stroke: "#e5e7eb", "stroke-width": 1 }));
+    });
+    ctx.appendChild(roads);
+    ctx.appendChild(svgNode("circle", { cx: cx, cy: cy, r: r, fill: "#dc40400a",
+      stroke: "#cf3333", "stroke-width": 2, "data-role": "phase15a-reach",
+      "data-radius-m": radius, "data-scope": phase15aReach.scope, "data-scale": overview.sc }));
+    ctx.appendChild(svgNode("line", { x1: cx, y1: cy, x2: cx + r, y2: cy,
+      stroke: "#cf3333", "stroke-width": 1 }));
+    ctx.appendChild(svgNode("circle", { cx: cx, cy: cy, r: 4, fill: "#cf3333" }));
+    phase15aText(ctx, cx, y + size - 10, phase15aReach.scope + " radius · " + radius.toLocaleString("en-GB") + " m", 12, "#a32e2e", { "text-anchor": "middle" });
+  }
+
   function drawPhase15a(ctx, view, now) {
     var elapsed = seekTo != null ? Math.max(0, seekTo) : elapsedSec(now);
-    var beats = phase15a.beats;
-    var hold = 6;
-    var index = Math.min(beats.length - 1, Math.floor(elapsed / hold));
-    var beat = beats[index];
-    var complete = elapsed >= beats.length * hold;
+    var index = Math.min(3, Math.floor(elapsed / 4));
+    var kind = ["propose", "review", "merge", "outcome"][index];
+    var scored = phase15a.scored;
+    var edit = scored.record.edits[0];
+    var review = edit.confirmations[0];
+    var merged = index >= 2 && edit.status === "Merged";
+    var atTime = index === 0 ? edit.since_s : index === 1 ? review.at_s : edit.merged_at;
     var svg = document.getElementById("network");
     svg.dataset.phase15aLabel = phase15a.label;
-    svg.dataset.phase15aBeat = beat.kind;
-    svg.dataset.phase15aComplete = String(complete);
-    svg.dataset.time = Number(beat.at_s).toFixed(3);
-    if (complete) {
-      svg.dataset.rushComplete = "true";
-      svg.dataset.recordingComplete = "true";
+    svg.dataset.phase15aBeat = kind;
+    svg.dataset.phase15aComplete = String(index === 3);
+    svg.dataset.time = Number(atTime).toFixed(3);
+    svg.dataset.rushComplete = String(index === 3);
+    svg.dataset.recordingComplete = String(index === 3);
+
+    var link = links[edit.link];
+    var record = (town.incidents || []).find(function (i) { return i.link === edit.link; });
+    if (!link || !record) return;
+    var incident = record.definition;
+    var rear = toScreen(view, pointOn(link, incident.position_m));
+    var front = toScreen(view, pointOn(link, incident.position_m + incident.length_m));
+    var center = pointOn(link, incident.position_m + incident.length_m / 2);
+    var at = toScreen(view, center);
+    var proposer = phase15aCar(edit.author_car, edit.since_s, 0.18, link, incident);
+    var reviewer = phase15aCar(review.car, review.at_s, 0.65, link, incident);
+    var amber = "#ba790b", red = "#cf3333", blue = "#2865b8", green = "#23835b";
+    if (merged) drawPhase15aReach(ctx, view, center);
+
+    if (index >= 1) {
+      var from = toScreen(view, reviewer.point);
+      ctx.appendChild(svgNode("path", { d: "M" + from.x + " " + from.y + " Q" +
+        (from.x + 75) + " " + ((from.y + at.y) / 2) + " " + at.x + " " + at.y,
+        fill: "none", stroke: green, "stroke-width": 2,
+        "data-role": "phase15a-review-line", "data-car": review.car }));
     }
-    var link = links[phase15a.link];
-    if (link) {
-      ctx.appendChild(svgNode("path", { d: pathFor(view, link.pts), fill: "none", stroke: "#6e4434",
-        "stroke-width": 6, "data-role": "phase15a-edit-link", "data-link": phase15a.link }));
-    }
-    ctx.appendChild(svgNode("text", {
-      x: 16, y: 28, fill: "#222", "font-family": "system-ui, sans-serif", "font-size": 16,
-      stroke: "white", "stroke-width": 4, "paint-order": "stroke", "data-role": "phase15a-label"
-    }, phase15a.label));
-    ctx.appendChild(svgNode("text", {
-      x: 16, y: 48, fill: "#555", "font-family": "system-ui, sans-serif", "font-size": 12,
-      stroke: "white", "stroke-width": 4, "paint-order": "stroke", "data-role": "phase15a-note"
-    }, phase15a.note));
-    beat.text.split(" · ").forEach(function (line, i) {
-      ctx.appendChild(svgNode("text", {
-        x: 16, y: 78 + i * 18, fill: "#222", "font-family": "system-ui, sans-serif", "font-size": 14,
-        stroke: "white", "stroke-width": 4, "paint-order": "stroke",
-        "data-role": "phase15a-beat", "data-beat": beat.kind, "data-line": String(i)
-      }, line));
+    ctx.appendChild(svgNode("path", { d: "M" + rear.x + " " + rear.y + " L" + front.x + " " + front.y,
+      fill: "none", stroke: merged ? red : amber, "stroke-width": 8,
+      "stroke-dasharray": merged ? "none" : "7 5", "stroke-linecap": "round",
+      "data-role": "phase15a-edit-link", "data-link": edit.link, "data-status": merged ? "merged" : "proposed" }));
+    phase15aText(ctx, at.x + 18, at.y + 12, "tree · link " + edit.link, 13, merged ? red : amber);
+
+    [proposer, reviewer].forEach(function (participant, i) {
+      var p = toScreen(view, participant.point);
+      var color = i ? green : blue;
+      ctx.appendChild(svgNode("circle", { cx: p.x, cy: p.y, r: 6, fill: color, stroke: "white", "stroke-width": 2,
+        "data-role": "phase15a-car", "data-car": participant.car, "data-illustrative": participant.illustrative }));
+      phase15aText(ctx, p.x + (i ? 15 : -15), p.y - 10, "car " + participant.car, 14, color,
+        { "text-anchor": i ? "start" : "end", "data-role": "phase15a-car-label", "data-car": participant.car });
     });
-    if (beat.car != null && link) {
-      var mid = link.pts[Math.floor(link.pts.length / 2)];
-      var at = toScreen(view, mid);
-      var verb = beat.kind === "propose" ? "proposes edit" : "reviews edit";
-      ctx.appendChild(svgNode("circle", {
-        cx: at.x, cy: at.y, r: 8, fill: "none",
-        stroke: beat.kind === "propose" ? "#2f6fdb" : "#2f7a4a", "stroke-width": 2,
-        "data-role": "phase15a-car", "data-car": beat.car, "data-beat": beat.kind
-      }));
-      ctx.appendChild(svgNode("text", {
-        x: at.x + 12, y: at.y - 12, fill: "#222", "font-family": "system-ui, sans-serif", "font-size": 13,
-        stroke: "white", "stroke-width": 3, "paint-order": "stroke",
-        "data-role": "phase15a-car-label", "data-car": beat.car
-      }, verb + " · car " + beat.car));
+
+    // Keep the main caption short. Recorded simulation times remain metadata;
+    // these four-second presentation beats do not change the saved timeline.
+    var headline = index === 0 ? "car " + edit.author_car + " proposes: tree blocks lane" :
+      index === 1 ? "car " + review.car + " reviews: " + (review.saw_blockage ? "saw blockage" : "no blockage seen") :
+      edit.status.toLowerCase();
+    ctx.appendChild(svgNode("rect", { x: 0, y: 0, width: view.width, height: 150, fill: "white" }));
+    phase15aText(ctx, 24, 28, phase15a.label, 13, "#666", { "data-role": "phase15a-label" });
+    phase15aText(ctx, 24, 68, headline, view.width < 700 ? 19 : 28, merged ? red : "#222",
+      { "data-role": "phase15a-beat", "data-beat": kind });
+    ["1  propose", "2  review", "3  merge"].forEach(function (label, i) {
+      phase15aText(ctx, 24 + i * 120, 102, label, 13, i <= index ? (i === 2 ? red : "#222") : "#aaa");
+      ctx.appendChild(svgNode("rect", { x: 24 + i * 120, y: 112, width: 100, height: 3,
+        fill: i <= index ? (i === 2 ? red : amber) : "#eee" }));
+    });
+    phase15aText(ctx, 24, 140, (proposer.illustrative || reviewer.illustrative ? "positions illustrative · " : "recorded positions · ") +
+      "recorded event: " + Number(atTime).toFixed(2) + " s", 12, "#666", { "data-role": "phase15a-position-note" });
+
+    if (index === 3) {
+      var outcome = phase15a.beats.find(function (beat) { return beat.kind === "outcome"; });
+      var width = Math.min(510, view.width - 48);
+      var lines = [];
+      // Preserve every word of the existing scorecard and provenance note.
+      [outcome.text, phase15a.note].forEach(function (text) {
+        text.split(" · ").forEach(function (line) {
+          var words = line.split(" "), row = "";
+          words.forEach(function (word) {
+            if (row && (row.length + word.length + 1) * 6 > width - 24) { lines.push(row); row = ""; }
+            row += (row ? " " : "") + word;
+          });
+          if (row) lines.push(row);
+        });
+      });
+      var card = svgNode("g", { "data-role": "phase15a-scorecard" });
+      card.appendChild(svgNode("rect", { x: 12, y: 160, width: width, height: 46 + lines.length * 17,
+        rx: 10, fill: "white", "fill-opacity": 0.96, stroke: "#e5e5e5" }));
+      phase15aText(card, 24, 185, "Recorded scorecard", 12, "#555");
+      lines.forEach(function (line, i) {
+        phase15aText(card, 24, 210 + i * 17, line, 11, "#555", { "data-role": "phase15a-score-line" });
+      });
+      ctx.appendChild(card);
     }
   }
 
@@ -1426,7 +1524,7 @@ const PAGE_TEMPLATE: &str = r##"<!DOCTYPE html>
     drawRoads(ctx, view);
     if(!isRush && !isPhase15a)drawHome(ctx, view);
     if(!isPhase15a)drawTown(ctx, view, townTime(now));
-    drawIncidents(ctx,view,isPhase15a ? phase15a.incident_visible_s : townTime(now));
+    if(!isPhase15a)drawIncidents(ctx,view,townTime(now));
     if (isPhase15a) {
       drawPhase15a(ctx, view, now);
     } else {
